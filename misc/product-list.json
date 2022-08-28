@@ -1,0 +1,27 @@
+[
+  {
+    "cat-code": "kouti",
+    "cat-name": "Κουτί",
+    "cat-desc": "Το σπίτι του νέου σας συστήματος. Επιλέξτε το μοντέλο και το χρώμα που προτιμάτε!",
+    "init-prod": "kouti0",
+    "type": "radio",
+    "singleQuant": true,
+    "product-list": [
+      {
+        "prod-code": "kouti0",
+        "emptyval": "emptyval",
+        "prod-price": "0000",
+        "prod-name": "Χωρίς κουτί"
+      },
+      {
+        "prod-code": "kouti1",
+        "prod-erp": "001-46638",
+        "prod-price": "2590",
+        "prod-av": "Άμεσα διαθέσιμο",
+        "prod-name": "Kolink KLA-002 Mid-Tower Case - Black",        
+        "prod-min": "1",
+        "prod-max": "2"
+      }
+    ]
+  }
+]
