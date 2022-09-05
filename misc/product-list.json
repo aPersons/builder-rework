@@ -18,6 +18,11 @@
         "prod-price": "6990",
         "static-num": "1"
       }, {
+        "prod-code": "cat0-prod42587",
+        "prod-erp": "001-55023",
+        "prod-price": "7990",
+        "static-num": "1"
+      }, {
         "prod-code": "cat0-prod39786",
         "prod-erp": "001-51044",
         "prod-price": "7990",
@@ -25,11 +30,6 @@
       }, {
         "prod-code": "cat0-prod39787",
         "prod-erp": "001-51045",
-        "prod-price": "7990",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat0-prod42587",
-        "prod-erp": "001-55023",
         "prod-price": "7990",
         "static-num": "1"
       }, {
@@ -98,14 +98,14 @@
         "prod-price": "11990",
         "static-num": "1"
       }, {
+        "prod-code": "cat1-prod42682",
+        "prod-erp": "001-55462",
+        "prod-price": "12290",
+        "static-num": "1"
+      }, {
         "prod-code": "cat1-prod43122",
         "prod-erp": "001-56208",
         "prod-price": "13000",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat1-prod42682",
-        "prod-erp": "001-55462",
-        "prod-price": "13290",
         "static-num": "1"
       }, {
         "prod-code": "cat1-prod42688",
@@ -175,7 +175,7 @@
       }, {
         "prod-code": "cat2-prod42588",
         "prod-erp": "001-54811",
-        "prod-price": "24990",
+        "prod-price": "24790",
         "static-num": "1"
       }, {
         "prod-code": "cat2-prod42630",
@@ -195,7 +195,7 @@
       }, {
         "prod-code": "cat2-prod42639",
         "prod-erp": "001-55399",
-        "prod-price": "42090",
+        "prod-price": "41890",
         "static-num": "1"
       }, {
         "prod-code": "cat2-prod42205",
@@ -336,14 +336,14 @@
         "prod-min": "1",
         "prod-max": "2"
       }, {
-        "prod-code": "cat4-prod41301",
-        "prod-erp": "001-53182",
+        "prod-code": "cat4-prod41745",
+        "prod-erp": "001-53846",
         "prod-price": "8390",
         "prod-min": "1",
         "prod-max": "2"
       }, {
-        "prod-code": "cat4-prod41745",
-        "prod-erp": "001-53846",
+        "prod-code": "cat4-prod41301",
+        "prod-erp": "001-53182",
         "prod-price": "8390",
         "prod-min": "1",
         "prod-max": "2"
@@ -397,12 +397,7 @@
       }, {
         "prod-code": "cat5-prod40485",
         "prod-erp": "001-52006",
-        "prod-price": "43900",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat5-prod41489",
-        "prod-erp": "001-53434",
-        "prod-price": "46900",
+        "prod-price": "44500",
         "static-num": "1"
       }, {
         "prod-code": "cat5-prod42473",
@@ -418,6 +413,11 @@
         "prod-code": "cat5-prod28864",
         "prod-erp": "001-45582",
         "prod-price": "49990",
+        "static-num": "1"
+      }, {
+        "prod-code": "cat5-prod41489",
+        "prod-erp": "001-53434",
+        "prod-price": "51900",
         "static-num": "1"
       }, {
         "prod-code": "cat5-prod41933",
@@ -585,24 +585,24 @@
         "prod-price": "10360",
         "static-num": "1"
       }, {
-        "prod-code": "cat8-prod42144",
-        "prod-erp": "001-54467",
-        "prod-price": "10360",
-        "static-num": "1"
-      }, {
         "prod-code": "cat8-prod42140",
         "prod-erp": "001-54471",
         "prod-price": "11280",
         "static-num": "1"
       }, {
-        "prod-code": "cat8-prod42145",
-        "prod-erp": "001-54468",
-        "prod-price": "15420",
+        "prod-code": "cat8-prod27316",
+        "prod-erp": "001-42921",
+        "prod-price": "12390",
         "static-num": "1"
       }, {
         "prod-code": "cat8-prod42145",
         "prod-erp": "001-54468",
         "prod-price": "15420",
+        "static-num": "1"
+      }, {
+        "prod-code": "cat8-prod38667",
+        "prod-erp": "001-49432",
+        "prod-price": "16190",
         "static-num": "1"
       }
     ]
@@ -656,21 +656,15 @@
         "prod-min": "1",
         "prod-max": "4"
       }, {
-        "prod-code": "cat9-prod42144",
-        "prod-erp": "001-54467",
-        "prod-price": "10360",
-        "prod-min": "1",
-        "prod-max": "4"
-      }, {
         "prod-code": "cat9-prod42140",
         "prod-erp": "001-54471",
         "prod-price": "11280",
         "prod-min": "1",
         "prod-max": "4"
       }, {
-        "prod-code": "cat9-prod42145",
-        "prod-erp": "001-54468",
-        "prod-price": "15420",
+        "prod-code": "cat9-prod27316",
+        "prod-erp": "001-42921",
+        "prod-price": "12390",
         "prod-min": "1",
         "prod-max": "4"
       }, {
@@ -683,6 +677,12 @@
         "prod-code": "cat9-prod38667",
         "prod-erp": "001-49432",
         "prod-price": "16190",
+        "prod-min": "1",
+        "prod-max": "4"
+      }, {
+        "prod-code": "cat9-prod42141",
+        "prod-erp": "001-54472",
+        "prod-price": "16950",
         "prod-min": "1",
         "prod-max": "4"
       }
@@ -722,6 +722,12 @@
         "prod-code": "cat10-prod39839",
         "prod-erp": "001-51142",
         "prod-price": "21000",
+        "prod-min": "1",
+        "prod-max": "4"
+      }, {
+        "prod-code": "cat10-prod41485",
+        "prod-erp": "001-52937",
+        "prod-price": "21990",
         "prod-min": "1",
         "prod-max": "4"
       }
@@ -923,17 +929,12 @@
       }, {
         "prod-code": "cat14-prod17372",
         "prod-erp": "001-25319",
-        "prod-price": "890",
+        "prod-price": "990",
         "static-num": "1"
       }, {
         "prod-code": "cat14-prod17586",
         "prod-erp": "001-25749",
-        "prod-price": "990",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat14-prod41942",
-        "prod-erp": "001-54376",
-        "prod-price": "1290",
+        "prod-price": "1090",
         "static-num": "1"
       }, {
         "prod-code": "cat14-prod43035",
@@ -941,9 +942,14 @@
         "prod-price": "1290",
         "static-num": "1"
       }, {
+        "prod-code": "cat14-prod41942",
+        "prod-erp": "001-54376",
+        "prod-price": "1390",
+        "static-num": "1"
+      }, {
         "prod-code": "cat14-prod18641",
         "prod-erp": "001-27092",
-        "prod-price": "1390",
+        "prod-price": "1490",
         "static-num": "1"
       }, {
         "prod-code": "cat14-prod43038",
@@ -1173,7 +1179,7 @@
       }, {
         "prod-code": "cat18-prod29238",
         "prod-erp": "001-46387",
-        "prod-price": "12650",
+        "prod-price": "12690",
         "prod-min": "1",
         "prod-max": "3"
       }, {
@@ -1402,13 +1408,13 @@
         "prod-price": "1790",
         "static-num": "1"
       }, {
-        "prod-code": "cat21-prod38700",
-        "prod-erp": "001-49334",
+        "prod-code": "cat21-prod43175",
+        "prod-erp": "001-56314",
         "prod-price": "1990",
         "static-num": "1"
       }, {
-        "prod-code": "cat21-prod43175",
-        "prod-erp": "001-56314",
+        "prod-code": "cat21-prod38700",
+        "prod-erp": "001-49334",
         "prod-price": "1990",
         "static-num": "1"
       }, {
@@ -1457,13 +1463,13 @@
         "prod-price": "2650",
         "static-num": "1"
       }, {
-        "prod-code": "cat22-prod35539",
-        "prod-erp": "001-54784",
+        "prod-code": "cat22-prod38684",
+        "prod-erp": "001-49470",
         "prod-price": "2990",
         "static-num": "1"
       }, {
-        "prod-code": "cat22-prod38684",
-        "prod-erp": "001-49470",
+        "prod-code": "cat22-prod35539",
+        "prod-erp": "001-54784",
         "prod-price": "2990",
         "static-num": "1"
       }, {
@@ -1482,8 +1488,8 @@
         "prod-price": "3850",
         "static-num": "1"
       }, {
-        "prod-code": "cat22-prod43477",
-        "prod-erp": "001-54770",
+        "prod-code": "cat22-prod26598",
+        "prod-erp": "001-54788",
         "prod-price": "3990",
         "static-num": "1"
       }
@@ -1547,13 +1553,13 @@
         "prod-price": "1990",
         "static-num": "1"
       }, {
-        "prod-code": "cat23-prod40950",
-        "prod-erp": "001-52664",
+        "prod-code": "cat23-prod17256",
+        "prod-erp": "001-25089",
         "prod-price": "2490",
         "static-num": "1"
       }, {
-        "prod-code": "cat23-prod41847",
-        "prod-erp": "001-54082",
+        "prod-code": "cat23-prod29276",
+        "prod-erp": "001-46449",
         "prod-price": "2490",
         "static-num": "1"
       }
@@ -1665,16 +1671,6 @@
         "prod-price": "24900",
         "static-num": "1"
       }, {
-        "prod-code": "cat26-prod42645",
-        "prod-erp": "001-55407",
-        "prod-price": "25900",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat26-prod43098",
-        "prod-erp": "001-56195",
-        "prod-price": "25900",
-        "static-num": "1"
-      }, {
         "prod-code": "cat26-prod43099",
         "prod-erp": "001-56196",
         "prod-price": "25900",
@@ -1690,13 +1686,23 @@
         "prod-price": "25900",
         "static-num": "1"
       }, {
-        "prod-code": "cat26-prod43591",
-        "prod-erp": "001-57047",
+        "prod-code": "cat26-prod42645",
+        "prod-erp": "001-55407",
+        "prod-price": "25900",
+        "static-num": "1"
+      }, {
+        "prod-code": "cat26-prod43098",
+        "prod-erp": "001-56195",
+        "prod-price": "25900",
+        "static-num": "1"
+      }, {
+        "prod-code": "cat26-prod28567",
+        "prod-erp": "001-45068",
         "prod-price": "26900",
         "static-num": "1"
       }, {
-        "prod-code": "cat26-prod43592",
-        "prod-erp": "001-57048",
+        "prod-code": "cat26-prod43590",
+        "prod-erp": "001-57046",
         "prod-price": "26900",
         "static-num": "1"
       }
