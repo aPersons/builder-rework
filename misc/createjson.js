@@ -29,7 +29,7 @@ for (let cnm of domCashe.domOrder) {
   
     qCat["product-list"].push({
       "prod-code": uOrder[i],
-      "prod-name": prod.nmTxt.innerHTML,
+      "prod-name": prod.nmTxt,
       "prod-erp": prod.erp,
       "prod-price": prod.priceVal.toString(),
     })

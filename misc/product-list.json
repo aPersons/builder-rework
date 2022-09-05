@@ -9,63 +9,75 @@
     "product-list": [
       {
         "prod-code": "cat0-prod42412",
+        "prod-name": "Cooler Master MasterBox MB600L V2 Windowed Mid-Tower Case Tempered Glass with Optical Disk Drive Bay [MB600L2-KG5N-S00]",
         "prod-erp": "001-55070",
         "prod-price": "5990",
         "static-num": "1"
       }, {
         "prod-code": "cat0-prod42586",
+        "prod-name": "Barrett No3 RGB Windowed Mid-Tower Case Tempered Glass []",
         "prod-erp": "001-55022",
         "prod-price": "6990",
         "static-num": "1"
       }, {
+        "prod-code": "cat0-prod39787",
+        "prod-name": "Cooler Master MasterBox NR200 Mini Tower Case - White [MCB-NR200-WNNN-S00]",
+        "prod-erp": "001-51045",
+        "prod-price": "7990",
+        "static-num": "1"
+      }, {
         "prod-code": "cat0-prod42587",
+        "prod-name": "Barrett No8 Windowed Mid-Tower Case Tempered Glass []",
         "prod-erp": "001-55023",
         "prod-price": "7990",
         "static-num": "1"
       }, {
         "prod-code": "cat0-prod39786",
+        "prod-name": "Cooler Master MasterBox NR200 Mini Tower Case - Black [MCB-NR200-KNNN-S00]",
         "prod-erp": "001-51044",
         "prod-price": "7990",
         "static-num": "1"
       }, {
-        "prod-code": "cat0-prod39787",
-        "prod-erp": "001-51045",
-        "prod-price": "7990",
-        "static-num": "1"
-      }, {
         "prod-code": "cat0-prod39531",
+        "prod-name": "Cooler Master Masterbox NR200P Windowed Mini Tower Case Tempered Glass - White [MCB-NR200P-WGNN-S00]",
         "prod-erp": "001-50657",
         "prod-price": "7000",
         "static-num": "1"
       }, {
         "prod-code": "cat0-prod35643",
+        "prod-name": "Cooler Master MasterBox NR200P Windowed Mini Tower Case Tempered Glass - Black [MCB-NR200P-KGNN-S00]",
         "prod-erp": "001-48861",
         "prod-price": "9990",
         "static-num": "1"
       }, {
         "prod-code": "cat0-prod38531",
+        "prod-name": "Asus TUF Gaming GT301 Windowed ARBG Mid-Tower Tempered Glass  [90DC0040-B49000] *",
         "prod-erp": "001-49192",
         "prod-price": "11200",
         "static-num": "1"
       }, {
-        "prod-code": "cat0-prod39697",
-        "prod-erp": "001-48804",
-        "prod-price": "11390",
-        "static-num": "1"
-      }, {
         "prod-code": "cat0-prod29746",
+        "prod-name": "Be Quiet! Pure Base 500DX ARGB Windowed Mid-Tower Case Tempered Glass - Black [BGW37]",
         "prod-erp": "001-47395",
         "prod-price": "11390",
         "static-num": "1"
       }, {
         "prod-code": "cat0-prod38615",
+        "prod-name": "Corsair 4000D Windowed Mid-Tower Case Tempered Glass - Black [CC-9011198-WW]",
         "prod-erp": "001-48653",
         "prod-price": "11690",
         "static-num": "1"
       }, {
         "prod-code": "cat0-prod38616",
+        "prod-name": "Corsair 4000D Windowed Mid-Tower Case Tempered Glass - White [CC-9011199-WW]",
         "prod-erp": "001-48654",
         "prod-price": "11690",
+        "static-num": "1"
+      }, {
+        "prod-code": "cat0-prod38618",
+        "prod-name": "Corsair 4000D Airflow Windowed Mid-Tower Case Tempered Glass - White [CC-9011201-WW]",
+        "prod-erp": "001-48656",
+        "prod-price": "11890",
         "static-num": "1"
       }
     ]
@@ -79,61 +91,73 @@
     "product-list": [
       {
         "prod-code": "cat1-prod42671",
+        "prod-name": "Asus Prime H610M-K D4 [90MB1A10-M0EAY0]",
         "prod-erp": "001-55448",
         "prod-price": "11690",
         "static-num": "1"
       }, {
         "prod-code": "cat1-prod42670",
+        "prod-name": "Asus Prime H610M-E D4 [90MB19N0-M0EAY0]",
         "prod-erp": "001-55447",
         "prod-price": "11790",
         "static-num": "1"
       }, {
         "prod-code": "cat1-prod42868",
+        "prod-name": "MSI PRO H610M-B DDR4 []",
         "prod-erp": "001-55750",
         "prod-price": "11990",
         "static-num": "1"
       }, {
         "prod-code": "cat1-prod42669",
+        "prod-name": "Asus Prime H610M-D D4 [90MB1A00-M0EAY0]",
         "prod-erp": "001-55446",
         "prod-price": "11990",
         "static-num": "1"
       }, {
         "prod-code": "cat1-prod42682",
+        "prod-name": "MSI PRO B660M-E DDR4 []",
         "prod-erp": "001-55462",
         "prod-price": "12290",
         "static-num": "1"
       }, {
         "prod-code": "cat1-prod43122",
+        "prod-name": "Asus Prime B660M-K D4 [90MB1950-M0EAY0]",
         "prod-erp": "001-56208",
         "prod-price": "13000",
         "static-num": "1"
       }, {
         "prod-code": "cat1-prod42688",
+        "prod-name": "MSI PRO B660M-A DDR4 []",
         "prod-erp": "001-55466",
         "prod-price": "16990",
         "static-num": "1"
       }, {
         "prod-code": "cat1-prod43119",
+        "prod-name": "Gigabyte B660 DS3H AX DDR4 []",
         "prod-erp": "001-56205",
         "prod-price": "17190",
         "static-num": "1"
       }, {
         "prod-code": "cat1-prod42666",
+        "prod-name": "Asus Prime B660M-A D4 [90MB19K0-M0EAY0]",
         "prod-erp": "001-55439",
         "prod-price": "17590",
         "static-num": "1"
       }, {
         "prod-code": "cat1-prod42672",
+        "prod-name": "Asus Prime H670-Plus D4 [90MB18W0-M0EAY0]",
         "prod-erp": "001-55449",
         "prod-price": "18690",
         "static-num": "1"
       }, {
         "prod-code": "cat1-prod42200",
+        "prod-name": "Asus Prime Z690M-Plus D4 [90MB18Q0-M0EAY0]",
         "prod-erp": "001-54397",
         "prod-price": "21490",
         "static-num": "1"
       }, {
         "prod-code": "cat1-prod42683",
+        "prod-name": "MSI MAG B660M MORTAR WIFI DDR4 []",
         "prod-erp": "001-55463",
         "prod-price": "21990",
         "static-num": "1"
@@ -149,61 +173,73 @@
     "product-list": [
       {
         "prod-code": "cat2-prod43157",
+        "prod-name": "Intel Pentium Gold G7400 [BX80715G7400]",
         "prod-erp": "001-55453",
         "prod-price": "6490",
         "static-num": "1"
       }, {
         "prod-code": "cat2-prod42607",
+        "prod-name": "Intel Core i3-12100F [BX8071512100F]",
         "prod-erp": "001-55357",
         "prod-price": "11190",
         "static-num": "1"
       }, {
         "prod-code": "cat2-prod42606",
+        "prod-name": "Intel Core i3-12100 [BX8071512100]",
         "prod-erp": "001-55356",
         "prod-price": "14990",
         "static-num": "1"
       }, {
         "prod-code": "cat2-prod42589",
+        "prod-name": "Intel Core i5-12400F [BX8071512400F]",
         "prod-erp": "001-54812",
         "prod-price": "21990",
         "static-num": "1"
       }, {
         "prod-code": "cat2-prod42631",
+        "prod-name": "Intel Core i5-12500 [BX8071512500]",
         "prod-erp": "001-55390",
         "prod-price": "23990",
         "static-num": "1"
       }, {
         "prod-code": "cat2-prod42588",
+        "prod-name": "Intel Core i5-12400 [BX8071512400]",
         "prod-erp": "001-54811",
         "prod-price": "24790",
         "static-num": "1"
       }, {
         "prod-code": "cat2-prod42630",
+        "prod-name": "Intel Core i5-12600 [BX8071512600]",
         "prod-erp": "001-55389",
         "prod-price": "29290",
         "static-num": "1"
       }, {
         "prod-code": "cat2-prod42207",
+        "prod-name": "Intel Core i5-12600KF [BX8071512600KF]",
         "prod-erp": "001-54552",
         "prod-price": "32690",
         "static-num": "1"
       }, {
         "prod-code": "cat2-prod42206",
+        "prod-name": "Intel Core i5-12600K [BX8071512600K]",
         "prod-erp": "001-54551",
         "prod-price": "37490",
         "static-num": "1"
       }, {
         "prod-code": "cat2-prod42639",
+        "prod-name": "Intel Core i7-12700 [BX8071512700]",
         "prod-erp": "001-55399",
         "prod-price": "41890",
         "static-num": "1"
       }, {
         "prod-code": "cat2-prod42205",
+        "prod-name": "Intel Core i7-12700KF [BX8071512700KF]",
         "prod-erp": "001-54550",
         "prod-price": "49490",
         "static-num": "1"
       }, {
         "prod-code": "cat2-prod42204",
+        "prod-name": "Intel Core i7-12700K [BX8071512700K]",
         "prod-erp": "001-54432",
         "prod-price": "50990",
         "static-num": "1"
@@ -219,61 +255,73 @@
     "product-list": [
       {
         "prod-code": "cat3-prod0",
+        "prod-name": "Intel Stock Cooler",
         "prod-erp": "-",
         "prod-price": "0",
         "static-num": "1"
       }, {
         "prod-code": "cat3-prod40309",
+        "prod-name": "Cooler Master CPU Cooler Hyper 212 EVO V2 [RR-2V2E-18PK-R1]",
         "prod-erp": "001-51696",
         "prod-price": "3890",
         "static-num": "1"
       }, {
         "prod-code": "cat3-prod28208",
+        "prod-name": "Arctic Cooling Freezer 34 eSports Duo CPU Cooler - Black / Red [ACFRE00060A]",
         "prod-erp": "001-44357",
         "prod-price": "4690",
         "static-num": "1"
       }, {
         "prod-code": "cat3-prod23277",
+        "prod-name": "Cooler Master CPU Cooler MasterLiquid Lite 120 [MLW-D12M-A20PW-R1]",
         "prod-erp": "001-36354",
         "prod-price": "4790",
         "static-num": "1"
       }, {
         "prod-code": "cat3-prod23424",
+        "prod-name": "Cooler Master CPU Cooler MasterLiquid Lite 240 [MLW-D24M-A20PW-R1]",
         "prod-erp": "001-36580",
         "prod-price": "5990",
         "static-num": "1"
       }, {
         "prod-code": "cat3-prod16374",
+        "prod-name": "Noctua NH-U12S [] *",
         "prod-erp": "001-23610",
         "prod-price": "7350",
         "static-num": "1"
       }, {
         "prod-code": "cat3-prod40310",
+        "prod-name": "Cooler Master CPU Cooler MasterAir MA612 STEALTH [MAP-T6PS-218PK-R1]",
         "prod-erp": "001-51697",
         "prod-price": "7490",
         "static-num": "1"
       }, {
         "prod-code": "cat3-prod29844",
+        "prod-name": "Cooler Master MasterLiquid ML240L V2 RGB Liquid CPU Cooler [MLW-D24M-A18PC-R2]",
         "prod-erp": "001-47593",
         "prod-price": "8290",
         "static-num": "1"
       }, {
         "prod-code": "cat3-prod24952",
+        "prod-name": "Be Quiet! CPU Cooler Dark Rock Pro 4 [BK022]",
         "prod-erp": "001-38897",
         "prod-price": "9190",
         "static-num": "1"
       }, {
         "prod-code": "cat3-prod40161",
+        "prod-name": "Be Quiet! Liquid CPU Cooler Pure Loop 240mm [BW006]",
         "prod-erp": "001-51466",
         "prod-price": "10290",
         "static-num": "1"
       }, {
         "prod-code": "cat3-prod42892",
+        "prod-name": "Asus TUF Gaming LC 240 ΑRGB Liquid CPU Cooler [90RC00G1-M0UAY0]",
         "prod-erp": "001-55783",
         "prod-price": "10790",
         "static-num": "1"
       }, {
         "prod-code": "cat3-prod41460",
+        "prod-name": "Arctic Cooling Arctic Liquid Freezer II 240mm + RGB Controller [ACFRE00099A]",
         "prod-erp": "001-53362",
         "prod-price": "10890",
         "static-num": "1"
@@ -289,72 +337,84 @@
     "product-list": [
       {
         "prod-code": "cat4-prod41251",
+        "prod-name": "Kingston 8GB FURY Beast DDR4 3200MHz Non-ECC CL16 [KF432C16BB/8]",
         "prod-erp": "001-53126",
         "prod-price": "3720",
         "prod-min": "1",
         "prod-max": "2"
       }, {
         "prod-code": "cat4-prod41300",
+        "prod-name": "Kingston 8GB FURY Beast RGB DDR4 3200MHz Non-ECC CL16 [KF432C16BBA/8]",
         "prod-erp": "001-53181",
         "prod-price": "4200",
         "prod-min": "1",
         "prod-max": "2"
       }, {
         "prod-code": "cat4-prod28411",
+        "prod-name": "HyperX 8GB Fury DDR4 3200MHz 1Rx8 Non-ECC CL16 [HX432C16FB3/8]",
         "prod-erp": "001-44839",
         "prod-price": "4280",
         "prod-min": "1",
         "prod-max": "2"
       }, {
         "prod-code": "cat4-prod41252",
+        "prod-name": "Kingston 16GB FURY Beast DDR4 3200MHz Non-ECC CL16 (Kit of 2) [KF432C16BBK2/16]",
         "prod-erp": "001-53127",
         "prod-price": "7420",
         "prod-min": "1",
         "prod-max": "2"
       }, {
         "prod-code": "cat4-prod29855",
+        "prod-name": "Corsair Vengeance LPX 16GB DDR4 3200MHz (Kit of 2) - Black [CMK16GX4M2B3200C16]",
         "prod-erp": "001-37928",
         "prod-price": "7590",
         "prod-min": "1",
         "prod-max": "2"
       }, {
         "prod-code": "cat4-prod41353",
+        "prod-name": "Kingston 16GB FURY Renegade DDR4 3200MHz Non-ECC CL16 (Kit of 2) [KF432C16RBK2/16]",
         "prod-erp": "001-53239",
         "prod-price": "7870",
         "prod-min": "1",
         "prod-max": "2"
       }, {
         "prod-code": "cat4-prod23458",
+        "prod-name": "G.Skill 16GB Ripjaws V DDR4 3200MHz Non-ECC CL16 18-18-38  (Kit of 2) Black [F4-3200C16D-16GVKB] *",
         "prod-erp": "001-36989",
         "prod-price": "7990",
         "prod-min": "1",
         "prod-max": "2"
       }, {
         "prod-code": "cat4-prod41264",
+        "prod-name": "Kingston 16GB FURY Beast DDR4 3600MHz Non-ECC CL17 (Kit of 2) [KF436C17BBK2/16]",
         "prod-erp": "001-53139",
         "prod-price": "8270",
         "prod-min": "1",
         "prod-max": "2"
       }, {
         "prod-code": "cat4-prod41745",
+        "prod-name": "Corsair Vengeance RGB RS 16GB DDR4 3200MHz CL16 (Kit of 2) - Black [CMG16GX4M2E3200C16]",
         "prod-erp": "001-53846",
         "prod-price": "8390",
         "prod-min": "1",
         "prod-max": "2"
       }, {
         "prod-code": "cat4-prod41301",
+        "prod-name": "Kingston 16GB FURY Beast RGB DDR4 3200MHz Non-ECC CL16 (Kit of 2) [KF432C16BBAK2/16]",
         "prod-erp": "001-53182",
         "prod-price": "8390",
         "prod-min": "1",
         "prod-max": "2"
       }, {
         "prod-code": "cat4-prod42168",
+        "prod-name": "Kingston 16GB DDR5 4800MHz CL40 1Rx8 [KVR48U40BS8-16]",
         "prod-erp": "001-54522",
         "prod-price": "9230",
         "prod-min": "1",
         "prod-max": "2"
       }, {
         "prod-code": "cat4-prod41331",
+        "prod-name": "Kingston 16GB FURY Beast RGB DDR4 3600MHz Non-ECC CL17 (Kit of 2) [KF436C17BBAK2/16]",
         "prod-erp": "001-53209",
         "prod-price": "9240",
         "prod-min": "1",
@@ -371,63 +431,75 @@
     "product-list": [
       {
         "prod-code": "cat5-prod0",
+        "prod-name": "Intel HD Graphics",
         "prod-erp": "-",
         "prod-price": "0",
         "static-num": "1"
       }, {
         "prod-code": "cat5-prod27284",
+        "prod-name": "Gigabyte GeForce GTX 1660 OC 6G [GV-N1660OC-6GD]",
         "prod-erp": "001-42726",
         "prod-price": "37990",
         "static-num": "1"
       }, {
         "prod-code": "cat5-prod39733",
+        "prod-name": "MSI GeForce GTX 1660 Super Ventus XS OC 6G [912-V375-279]",
         "prod-erp": "001-50951",
         "prod-price": "38150",
         "static-num": "1"
       }, {
         "prod-code": "cat5-prod28839",
+        "prod-name": "Asus GeForce GTX 1660 SUPER Dual EVO OC 6GB [90YV0DS3-M0NA00]",
         "prod-erp": "001-45422",
         "prod-price": "38500",
         "static-num": "1"
       }, {
         "prod-code": "cat5-prod27064",
+        "prod-name": "Gigabyte GeForce GTX 1660 Ti OC 6GB [GV-N166TOC-6GD]",
         "prod-erp": "001-42471",
         "prod-price": "43900",
         "static-num": "1"
       }, {
         "prod-code": "cat5-prod40485",
+        "prod-name": "MSI MSI GeForce RTX 2060 6GB Ventus GP OC []",
         "prod-erp": "001-52006",
         "prod-price": "44500",
         "static-num": "1"
       }, {
+        "prod-code": "cat5-prod42888",
+        "prod-name": "Asus GeForce RTX 3050 Dual OC 8GB [90YV0HH0-M0NA00]",
+        "prod-erp": "001-55785",
+        "prod-price": "45790",
+        "static-num": "1"
+      }, {
         "prod-code": "cat5-prod42473",
+        "prod-name": "Asus TUF GeForce GTX 1660 Ti Gaming EVO 6GB [90YV0CT8-M0NA00]",
         "prod-erp": "001-55198",
         "prod-price": "47450",
         "static-num": "1"
       }, {
         "prod-code": "cat5-prod42680",
+        "prod-name": "MSI GeForce RTX 2060 Ventus 12GB OC [912-V375-659\n]",
         "prod-erp": "001-55458",
         "prod-price": "48900",
         "static-num": "1"
       }, {
         "prod-code": "cat5-prod28864",
+        "prod-name": "Gigabyte GeForce GTX 1660 SUPER OC 6G [GV-N166SOC-6GD]",
         "prod-erp": "001-45582",
         "prod-price": "49990",
         "static-num": "1"
       }, {
         "prod-code": "cat5-prod41489",
+        "prod-name": "Gigabyte GeForce RTX 2060 D6 6GB rev2.0 [GV-N2060D6-6GD 2.0]",
         "prod-erp": "001-53434",
         "prod-price": "51900",
         "static-num": "1"
       }, {
         "prod-code": "cat5-prod41933",
+        "prod-name": "Gigabyte Radeon RX 6600 Eagle 8GB [GV-R66EAGLE-8GD G10]",
         "prod-erp": "001-54298",
         "prod-price": "52900",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat5-prod41880",
-        "prod-erp": "001-54164",
-        "prod-price": "55900",
         "static-num": "1"
       }
     ]
@@ -441,61 +513,73 @@
     "product-list": [
       {
         "prod-code": "cat6-prod39117",
+        "prod-name": "Corsair CV Series CV650 650W Bronze Rated Power Supply [CP-9020236-EU]",
         "prod-erp": "001-50108",
         "prod-price": "6490",
         "static-num": "1"
       }, {
         "prod-code": "cat6-prod42889",
+        "prod-name": "Asus TUF Gaming 650W Bronze Rated Power Supply [90YE00D1-B0NA00] *",
         "prod-erp": "001-55784",
         "prod-price": "8190",
         "static-num": "1"
       }, {
         "prod-code": "cat6-prod38659",
+        "prod-name": "Corsair CX650F RGB Bronze Fully Modular - White [CP-9020226-EU]",
         "prod-erp": "001-49127",
         "prod-price": "9490",
         "static-num": "1"
       }, {
         "prod-code": "cat6-prod41520",
+        "prod-name": "Corsair TX-M Series TX650M (2021) 650W Gold Rated Power Supply [CP-9020229-EU]",
         "prod-erp": "001-53481",
         "prod-price": "9900",
         "static-num": "1"
       }, {
         "prod-code": "cat6-prod38889",
+        "prod-name": "Cooler Master V650 Gold-V2 White Edition Full Modular Gold Power Supply [MPY-650V-AGBAG-EU] *",
         "prod-erp": "001-49752",
         "prod-price": "9990",
         "static-num": "1"
       }, {
         "prod-code": "cat6-prod41521",
+        "prod-name": "Corsair TX-M Series TX750M (2021) 750W Gold Rated Power Supply [CP-9020230-EU]",
         "prod-erp": "001-53482",
         "prod-price": "11590",
         "static-num": "1"
       }, {
         "prod-code": "cat6-prod42873",
+        "prod-name": "MSI MPG A650GF 650W Full Modular Gold Rated Power Supply [306-7ZP0A11-CE0]",
         "prod-erp": "001-55164",
         "prod-price": "12290",
         "static-num": "1"
       }, {
         "prod-code": "cat6-prod39257",
+        "prod-name": "Cooler Master Cooler Master V650 Gold V2 Full Modular [MPY-650V-AFBAG-EU]",
         "prod-erp": "001-50265",
         "prod-price": "12490",
         "static-num": "1"
       }, {
         "prod-code": "cat6-prod39258",
+        "prod-name": "Cooler Master V750 Gold V2 Full Modular [MPY-750V-AFBAG-EU]",
         "prod-erp": "001-50266",
         "prod-price": "13490",
         "static-num": "1"
       }, {
         "prod-code": "cat6-prod29044",
+        "prod-name": "Asus ROG Strix 650W Gold Rated Power Supply [90YE00A1-B0NA00]",
         "prod-erp": "001-46055",
         "prod-price": "13890",
         "static-num": "1"
       }, {
         "prod-code": "cat6-prod42874",
+        "prod-name": "MSI MPG A750GF 750W Full Modular Gold Rated Power Supply [306-7ZP0B11-CE0]",
         "prod-erp": "001-55163",
         "prod-price": "13990",
         "static-num": "1"
       }, {
         "prod-code": "cat6-prod38888",
+        "prod-name": "Cooler Master V750 Gold-V2 White Edition Full Modular Gold Power Supply [MPY-750V-AGBAG-EU]",
         "prod-erp": "001-49753",
         "prod-price": "14490",
         "static-num": "1"
@@ -511,26 +595,31 @@
     "product-list": [
       {
         "prod-code": "cat7-prod0",
+        "prod-name": "Χωρίς Προεκτάσεις Καλωδίων",
         "prod-erp": "-",
         "prod-price": "0",
         "static-num": "1"
       }, {
         "prod-code": "cat7-prod44018",
+        "prod-name": "Cooler Master 12-Pin PCIe to 2x8-Pin VGA adapter 40cm [CMA-SEPC18XXBK1-GL]",
         "prod-erp": "001-57844",
         "prod-price": "1190",
         "static-num": "1"
       }, {
         "prod-code": "cat7-prod35419",
+        "prod-name": "Lian Li Strimer Plus 6+2 Pin A-RGB PCIe VGA Power Cable 30cm [Strimer Plus 8 pin]",
         "prod-erp": "001-48411",
         "prod-price": "4390",
         "static-num": "1"
       }, {
         "prod-code": "cat7-prod43769",
+        "prod-name": "Lian Li Strimer Plus 3x 8 Pin A-RGB PCIe VGA Power Cable [G89.PW12-PV2.00]",
         "prod-erp": "001-57336",
         "prod-price": "5290",
         "static-num": "1"
       }, {
         "prod-code": "cat7-prod35420",
+        "prod-name": "Lian Li Strimer Plus 24 Pin A-RGB Motherboard Cable 20cm [Strimer Plus 24 pin]",
         "prod-erp": "001-48412",
         "prod-price": "6190",
         "static-num": "1"
@@ -546,61 +635,73 @@
     "product-list": [
       {
         "prod-code": "cat8-prod0",
+        "prod-name": "Χωρίς Δίσκο SSD M.2",
         "prod-erp": "-",
         "prod-price": "0",
         "static-num": "1"
       }, {
         "prod-code": "cat8-prod40153",
+        "prod-name": "Samsung 250GB NVMe SSD 980 Series M.2 PCI-Express [MZ-V8V250BW]",
         "prod-erp": "001-51445",
         "prod-price": "4400",
         "static-num": "1"
       }, {
         "prod-code": "cat8-prod40261",
+        "prod-name": "Kingston 500GB NV1 NVMe M.2 PCI-Express SSD [SNVS/500G]",
         "prod-erp": "001-51631",
         "prod-price": "4890",
         "static-num": "1"
       }, {
         "prod-code": "cat8-prod40154",
+        "prod-name": "Samsung 500GB NVMe SSD 980 Series M.2 PCI-Express [MZ-V8V500BW]",
         "prod-erp": "001-51446",
         "prod-price": "5350",
         "static-num": "1"
       }, {
         "prod-code": "cat8-prod27315",
+        "prod-name": "Samsung 500GB NVMe SSD 970 Evo Plus Series M.2 PCI-Express [MZ-V7S500BW]",
         "prod-erp": "001-42810",
         "prod-price": "7850",
         "static-num": "1"
       }, {
         "prod-code": "cat8-prod38666",
+        "prod-name": "Samsung 500GB NVMe SSD 980 Pro Series M.2 PCI-Express [MZ-V8P500BW]",
         "prod-erp": "001-49419",
         "prod-price": "9400",
         "static-num": "1"
       }, {
         "prod-code": "cat8-prod40155",
+        "prod-name": "Samsung 1TB NVMe SSD 980 Series M.2 PCI-Express [MZ-V8V1T0BW]",
         "prod-erp": "001-51447",
         "prod-price": "9590",
         "static-num": "1"
       }, {
         "prod-code": "cat8-prod42144",
+        "prod-name": "Kingston 512GB KC3000 NVMe M.2 PCI-Express 4.0 SSD [SKC3000S/512G]",
         "prod-erp": "001-54467",
         "prod-price": "10360",
         "static-num": "1"
       }, {
         "prod-code": "cat8-prod42140",
+        "prod-name": "Kingston 500GB FURY Renegade NVMe M.2 PCI-Express 4.0 SSD [SFYRS/500G]",
         "prod-erp": "001-54471",
         "prod-price": "11280",
         "static-num": "1"
       }, {
         "prod-code": "cat8-prod27316",
+        "prod-name": "Samsung 1TB NVMe SSD 970 Evo Plus Series M.2 PCI-Express [MZ-V7S1T0BW]",
         "prod-erp": "001-42921",
         "prod-price": "12390",
         "static-num": "1"
       }, {
         "prod-code": "cat8-prod42145",
+        "prod-name": "Kingston 1024GB KC3000 NVMe M.2 PCI-Express 4.0 SSD [SKC3000S/1024G]",
         "prod-erp": "001-54468",
         "prod-price": "15420",
         "static-num": "1"
       }, {
         "prod-code": "cat8-prod38667",
+        "prod-name": "Samsung 1TB NVMe SSD 980 Pro Series M.2 PCI-Express [MZ-V8P1T0BW]",
         "prod-erp": "001-49432",
         "prod-price": "16190",
         "static-num": "1"
@@ -616,71 +717,83 @@
     "product-list": [
       {
         "prod-code": "cat9-prod0",
+        "prod-name": "Χωρίς 2ο Δίσκο SSD M.2",
         "prod-erp": "-",
         "prod-price": "0",
         "static-num": "1"
       }, {
         "prod-code": "cat9-prod40153",
+        "prod-name": "Samsung 250GB NVMe SSD 980 Series M.2 PCI-Express [MZ-V8V250BW]",
         "prod-erp": "001-51445",
         "prod-price": "4400",
         "prod-min": "1",
         "prod-max": "4"
       }, {
         "prod-code": "cat9-prod40154",
+        "prod-name": "Samsung 500GB NVMe SSD 980 Series M.2 PCI-Express [MZ-V8V500BW]",
         "prod-erp": "001-51446",
         "prod-price": "5350",
         "prod-min": "1",
         "prod-max": "4"
       }, {
         "prod-code": "cat9-prod27315",
+        "prod-name": "Samsung 500GB NVMe SSD 970 Evo Plus Series M.2 PCI-Express [MZ-V7S500BW]",
         "prod-erp": "001-42810",
         "prod-price": "7850",
         "prod-min": "1",
         "prod-max": "4"
       }, {
         "prod-code": "cat9-prod38666",
+        "prod-name": "Samsung 500GB NVMe SSD 980 Pro Series M.2 PCI-Express [MZ-V8P500BW]",
         "prod-erp": "001-49419",
         "prod-price": "9400",
         "prod-min": "1",
         "prod-max": "4"
       }, {
         "prod-code": "cat9-prod40155",
+        "prod-name": "Samsung 1TB NVMe SSD 980 Series M.2 PCI-Express [MZ-V8V1T0BW]",
         "prod-erp": "001-51447",
         "prod-price": "9590",
         "prod-min": "1",
         "prod-max": "4"
       }, {
         "prod-code": "cat9-prod42144",
+        "prod-name": "Kingston 512GB KC3000 NVMe M.2 PCI-Express 4.0 SSD [SKC3000S/512G]",
         "prod-erp": "001-54467",
         "prod-price": "10360",
         "prod-min": "1",
         "prod-max": "4"
       }, {
         "prod-code": "cat9-prod42140",
+        "prod-name": "Kingston 500GB FURY Renegade NVMe M.2 PCI-Express 4.0 SSD [SFYRS/500G]",
         "prod-erp": "001-54471",
         "prod-price": "11280",
         "prod-min": "1",
         "prod-max": "4"
       }, {
         "prod-code": "cat9-prod27316",
+        "prod-name": "Samsung 1TB NVMe SSD 970 Evo Plus Series M.2 PCI-Express [MZ-V7S1T0BW]",
         "prod-erp": "001-42921",
         "prod-price": "12390",
         "prod-min": "1",
         "prod-max": "4"
       }, {
         "prod-code": "cat9-prod42145",
+        "prod-name": "Kingston 1024GB KC3000 NVMe M.2 PCI-Express 4.0 SSD [SKC3000S/1024G]",
         "prod-erp": "001-54468",
         "prod-price": "15420",
         "prod-min": "1",
         "prod-max": "4"
       }, {
         "prod-code": "cat9-prod38667",
+        "prod-name": "Samsung 1TB NVMe SSD 980 Pro Series M.2 PCI-Express [MZ-V8P1T0BW]",
         "prod-erp": "001-49432",
         "prod-price": "16190",
         "prod-min": "1",
         "prod-max": "4"
       }, {
         "prod-code": "cat9-prod42141",
+        "prod-name": "Kingston 1TB FURY Renegade NVMe M.2 PCI-Express 4.0 SSD [SFYRS/1000G]",
         "prod-erp": "001-54472",
         "prod-price": "16950",
         "prod-min": "1",
@@ -697,35 +810,41 @@
     "product-list": [
       {
         "prod-code": "cat10-prod0",
+        "prod-name": "Χωρίς Δίσκο SSD",
         "prod-erp": "-",
         "prod-price": "0",
         "static-num": "1"
       }, {
         "prod-code": "cat10-prod39639",
+        "prod-name": "Samsung 250GB SSD 870 Evo Series 2.5 SATA III [MZ-77E250B]",
         "prod-erp": "001-50803",
         "prod-price": "4550",
         "prod-min": "1",
         "prod-max": "4"
       }, {
         "prod-code": "cat10-prod39640",
+        "prod-name": "Samsung 500GB SSD 870 Evo Series 2.5 SATA III [MZ-77E500B]",
         "prod-erp": "001-50804",
         "prod-price": "5990",
         "prod-min": "1",
         "prod-max": "4"
       }, {
         "prod-code": "cat10-prod39641",
+        "prod-name": "Samsung 1TB SSD 870 Evo Series 2.5 SATA III [MZ-77E1T0B]",
         "prod-erp": "001-50805",
         "prod-price": "10390",
         "prod-min": "1",
         "prod-max": "4"
       }, {
         "prod-code": "cat10-prod39839",
+        "prod-name": "Samsung 2TB SSD 870 Evo Series 2.5 SATA III [MZ-77E2T0B]",
         "prod-erp": "001-51142",
         "prod-price": "21000",
         "prod-min": "1",
         "prod-max": "4"
       }, {
         "prod-code": "cat10-prod41485",
+        "prod-name": "Samsung 2TB SSD 870 QVO Series 2.5 SATA III [MZ-77Q2T0BW]",
         "prod-erp": "001-52937",
         "prod-price": "21990",
         "prod-min": "1",
@@ -742,31 +861,37 @@
     "product-list": [
       {
         "prod-code": "cat11-prod0",
+        "prod-name": "Χωρίς Οπτική Συσκευή DVD/BD",
         "prod-erp": "-",
         "prod-price": "0",
         "static-num": "1"
       }, {
         "prod-code": "cat11-prod21630",
+        "prod-name": "Asus DVD Writer DRW-24D5MT (SATA) Black [] *",
         "prod-erp": "001-32927",
         "prod-price": "1600",
         "static-num": "1"
       }, {
         "prod-code": "cat11-prod23786",
+        "prod-name": "LG GH24NSD Internal DVD R/RW - Black [GH24NSD]",
         "prod-erp": "001-37001",
         "prod-price": "1950",
         "static-num": "1"
       }, {
         "prod-code": "cat11-prod24496",
+        "prod-name": "LG Electronics GP57EB40 Slim External Portable DVD-RW - Black [GP57EB40]",
         "prod-erp": "001-38222",
         "prod-price": "3050",
         "static-num": "1"
       }, {
         "prod-code": "cat11-prod21732",
+        "prod-name": "Asus SDRW-08D2S-U Slim Portable USB DVD Writer - Black [90-DQ0435-UA221KZ]",
         "prod-erp": "001-33158",
         "prod-price": "3500",
         "static-num": "1"
       }, {
         "prod-code": "cat11-prod22998",
+        "prod-name": "Asus SBC-06D2X-U External Blu-Ray Writer - Black [90-DT20305-UA199KZ]",
         "prod-erp": "001-35807",
         "prod-price": "11990",
         "static-num": "1"
@@ -782,71 +907,83 @@
     "product-list": [
       {
         "prod-code": "cat12-prod0",
+        "prod-name": "Χωρίς Δίσκο HDD",
         "prod-erp": "-",
         "prod-price": "0",
         "static-num": "1"
       }, {
         "prod-code": "cat12-prod14811",
+        "prod-name": "Western Digital 1TB Caviar Blue SATA III [WD10EZEX]",
         "prod-erp": "001-21333",
         "prod-price": "4290",
         "prod-min": "1",
         "prod-max": "4"
       }, {
         "prod-code": "cat12-prod25710",
+        "prod-name": "Toshiba P300 1TB Desktop SATA III [HDWD110UZSVA]",
         "prod-erp": "001-40285",
         "prod-price": "4390",
         "prod-min": "1",
         "prod-max": "4"
       }, {
         "prod-code": "cat12-prod22368",
+        "prod-name": "Seagate 1TB BarraCuda Compute SATA III [ST1000DM010]",
         "prod-erp": "001-34630",
         "prod-price": "4590",
         "prod-min": "1",
         "prod-max": "4"
       }, {
         "prod-code": "cat12-prod39562",
+        "prod-name": "Western Digital 2TB Blue 256MB Cashe smr SATA III [WD20EZAZ]",
         "prod-erp": "001-50639",
         "prod-price": "5590",
         "prod-min": "1",
         "prod-max": "4"
       }, {
         "prod-code": "cat12-prod25711",
+        "prod-name": "Toshiba P300 2TB Desktop SATA III [HDWD120UZSVA]",
         "prod-erp": "001-40286",
         "prod-price": "5690",
         "prod-min": "1",
         "prod-max": "4"
       }, {
         "prod-code": "cat12-prod25904",
+        "prod-name": "Seagate 2TB BarraCuda Compute SATA III [ST2000DM008]",
         "prod-erp": "001-40645",
         "prod-price": "6790",
         "prod-min": "1",
         "prod-max": "4"
       }, {
         "prod-code": "cat12-prod23823",
+        "prod-name": "Seagate 2TB IronWolf NAS SATA III [ST2000VN004]",
         "prod-erp": "001-35361",
         "prod-price": "8550",
         "prod-min": "1",
         "prod-max": "4"
       }, {
         "prod-code": "cat12-prod28064",
+        "prod-name": "Western Digital 2TB Red SATA III [WD20EFAX]",
         "prod-erp": "001-44239",
         "prod-price": "8790",
         "prod-min": "1",
         "prod-max": "4"
       }, {
         "prod-code": "cat12-prod23842",
+        "prod-name": "Seagate 4TB BarraCuda Compute SATA III [ST4000DM004]",
         "prod-erp": "001-37118",
         "prod-price": "10400",
         "prod-min": "1",
         "prod-max": "4"
       }, {
         "prod-code": "cat12-prod40827",
+        "prod-name": "Western Digital 3TB Blue 256MB Cache SMR SATA III [WD30EZAZ]",
         "prod-erp": "001-52499",
         "prod-price": "11490",
         "prod-min": "1",
         "prod-max": "4"
       }, {
         "prod-code": "cat12-prod40817",
+        "prod-name": "Western Digital 4TB  Blue 256MB Cache SMR SATA III [WD40EZAZ]",
         "prod-erp": "001-52450",
         "prod-price": "11490",
         "prod-min": "1",
@@ -863,26 +1000,31 @@
     "product-list": [
       {
         "prod-code": "cat13-prod0",
+        "prod-name": "Χωρίς Κάρτα Ήχου",
         "prod-erp": "-",
         "prod-price": "0",
         "static-num": "1"
       }, {
         "prod-code": "cat13-prod24590",
+        "prod-name": "Creative Sound Blaster Audigy RX Pci Express [70SB155000001]",
         "prod-erp": "001-27488",
         "prod-price": "5890",
         "static-num": "1"
       }, {
         "prod-code": "cat13-prod39714",
+        "prod-name": "Creative Sound Blaster Z SE Pci Express [70SB150000004]",
         "prod-erp": "001-50899",
         "prod-price": "8790",
         "static-num": "1"
       }, {
         "prod-code": "cat13-prod29262",
+        "prod-name": "Creative Sound BlasterX G6 Surround 7.1 USB [70SB177000000]",
         "prod-erp": "001-46437",
         "prod-price": "12390",
         "static-num": "1"
       }, {
         "prod-code": "cat13-prod35061",
+        "prod-name": "Creative Sound BlasterX RGB AE-5 Plus Pci Express [70SB174000003]",
         "prod-erp": "001-47996",
         "prod-price": "12490",
         "static-num": "1"
@@ -898,61 +1040,73 @@
     "product-list": [
       {
         "prod-code": "cat14-prod0",
+        "prod-name": "Χωρίς Κάρτα Ασύρματου Δικτύου",
         "prod-erp": "-",
         "prod-price": "0",
         "static-num": "1"
       }, {
         "prod-code": "cat14-prod43033",
+        "prod-name": "Mercusys Wireless N300 Mini USB Adapter V3.0 [MW300UM] *",
         "prod-erp": "001-56102",
         "prod-price": "650",
         "static-num": "1"
       }, {
         "prod-code": "cat14-prod25772",
+        "prod-name": "Tp-Link Wireless N150 Nano Usb Adapter V3.0 [TL-WN725N]",
         "prod-erp": "001-29875",
         "prod-price": "690",
         "static-num": "1"
       }, {
         "prod-code": "cat14-prod43034",
+        "prod-name": "Mercusys Wireless N150 Nano USB Adapter V2.0 [MW150US]",
         "prod-erp": "001-56103",
         "prod-price": "690",
         "static-num": "1"
       }, {
         "prod-code": "cat14-prod17388",
+        "prod-name": "D-Link Wireless N 150 Micro USB Adapter [DWA-121]",
         "prod-erp": "001-25354",
         "prod-price": "790",
         "static-num": "1"
       }, {
         "prod-code": "cat14-prod14236",
+        "prod-name": "D-Link Wireless N Nano USB Adapter [DWA-131] *",
         "prod-erp": "001-20579",
         "prod-price": "890",
         "static-num": "1"
       }, {
         "prod-code": "cat14-prod17372",
+        "prod-name": "Tp-Link Wireless N Usb Adapter 300Mbps V3.0 [TL-WN823N]",
         "prod-erp": "001-25319",
         "prod-price": "990",
         "static-num": "1"
       }, {
         "prod-code": "cat14-prod17586",
+        "prod-name": "Tp-Link High Gain Wireless USB Adapter 150Mbps V3.0 [TL-WN722N]",
         "prod-erp": "001-25749",
         "prod-price": "1090",
         "static-num": "1"
       }, {
         "prod-code": "cat14-prod43035",
+        "prod-name": "Mercusys Wireless N300 High Gain USB Adapter V1.0 [MW300UH]",
         "prod-erp": "001-56104",
         "prod-price": "1290",
         "static-num": "1"
       }, {
         "prod-code": "cat14-prod41942",
+        "prod-name": "Tp-Link Wireless N300 USB Adapter v5 [TL-WN822N]",
         "prod-erp": "001-54376",
         "prod-price": "1390",
         "static-num": "1"
       }, {
         "prod-code": "cat14-prod18641",
+        "prod-name": "Tp-Link Wireless N300 PCI Express Adapter 300Mbps V2.0 [TL-WN881ND]",
         "prod-erp": "001-27092",
         "prod-price": "1490",
         "static-num": "1"
       }, {
         "prod-code": "cat14-prod43038",
+        "prod-name": "Mercusys MU6H Wireless AC650 High Gain USB Adapter V1.0 [MU6H]",
         "prod-erp": "001-56107",
         "prod-price": "1490",
         "static-num": "1"
@@ -968,71 +1122,83 @@
     "product-list": [
       {
         "prod-code": "cat15-prod0",
+        "prod-name": "Χωρίς Ανεμιστήρες Κουτιού",
         "prod-erp": "-",
         "prod-price": "0",
         "static-num": "1"
       }, {
         "prod-code": "cat15-prod26954",
+        "prod-name": "Deepcool XFAN 80 Black []",
         "prod-erp": "001-42293",
         "prod-price": "200",
         "prod-min": "1",
         "prod-max": "2"
       }, {
         "prod-code": "cat15-prod41462",
+        "prod-name": "Arctic Cooling Fan F8 80mm - Black [ACFAN00205A] *",
         "prod-erp": "001-53366",
         "prod-price": "350",
         "prod-min": "1",
         "prod-max": "2"
       }, {
         "prod-code": "cat15-prod35262",
+        "prod-name": "Arctic Cooling Cooling P12 Silent Pressure Optimised Fan [ACFAN00130A]",
         "prod-erp": "001-48180",
         "prod-price": "420",
         "prod-min": "1",
         "prod-max": "2"
       }, {
         "prod-code": "cat15-prod40347",
+        "prod-name": "Arctic Cooling Fan F12 PWM PST Black [ACFAN00200A]",
         "prod-erp": "001-51739",
         "prod-price": "500",
         "prod-min": "1",
         "prod-max": "2"
       }, {
         "prod-code": "cat15-prod39419",
+        "prod-name": "Arctic Cooling Fan F12 PWM 120x120x25mm [ACFAN00203A]",
         "prod-erp": "001-50496",
         "prod-price": "590",
         "prod-min": "1",
         "prod-max": "2"
       }, {
         "prod-code": "cat15-prod28846",
+        "prod-name": "Arctic Cooling Pressure Optimised Fan P12 PWM PST [ACFAN00120A]",
         "prod-erp": "001-45540",
         "prod-price": "650",
         "prod-min": "1",
         "prod-max": "2"
       }, {
         "prod-code": "cat15-prod39486",
+        "prod-name": "Arctic Cooling Fan F14 TC White 140x140x27mm [ACFAN00081A]",
         "prod-erp": "001-50575",
         "prod-price": "700",
         "prod-min": "1",
         "prod-max": "2"
       }, {
         "prod-code": "cat15-prod39533",
+        "prod-name": "Cooler Master SickleFlow 120 Black [MFX-B2NN-18NPK-R1]",
         "prod-erp": "001-50660",
         "prod-price": "850",
         "prod-min": "1",
         "prod-max": "2"
       }, {
         "prod-code": "cat15-prod23047",
+        "prod-name": "NZXT Aer P 140mm Static Pressure Fan - Black [RF-AP140-FP]",
         "prod-erp": "001-35896",
         "prod-price": "910",
         "prod-min": "1",
         "prod-max": "2"
       }, {
         "prod-code": "cat15-prod28985",
+        "prod-name": "Cooler Master MasterFan MF122R RGB Fan [R4-122R-20PC-R1]",
         "prod-erp": "001-45916",
         "prod-price": "990",
         "prod-min": "1",
         "prod-max": "2"
       }, {
         "prod-code": "cat15-prod40635",
+        "prod-name": "Arctic Cooling Fan P12 PWM PST RGB 0dB 120x120x25mm [ACFAN00186A]",
         "prod-erp": "001-52215",
         "prod-price": "1000",
         "prod-min": "1",
@@ -1049,29 +1215,34 @@
     "product-list": [
       {
         "prod-code": "cat16-prod0",
+        "prod-name": "Χωρίς Φωτισμό LED",
         "prod-erp": "-",
         "prod-price": "0",
         "static-num": "1"
       }, {
         "prod-code": "cat16-prod25590",
+        "prod-name": "Deepcool RGB 200 Ex Led Strips [] *",
         "prod-erp": "001-40125",
         "prod-price": "1990",
         "prod-min": "1",
         "prod-max": "2"
       }, {
         "prod-code": "cat16-prod22214",
+        "prod-name": "Deepcool RGB 350 Multi Color Led Light Kit with Remote Control  [DP_LED_RGB_350]",
         "prod-erp": "001-34317",
         "prod-price": "2790",
         "prod-min": "1",
         "prod-max": "2"
       }, {
         "prod-code": "cat16-prod35505",
+        "prod-name": "Corsair RGB LED Lighting Pro - Expansion Kit [CL-8930002]",
         "prod-erp": "001-47977",
         "prod-price": "3590",
         "prod-min": "1",
         "prod-max": "2"
       }, {
         "prod-code": "cat16-prod38773",
+        "prod-name": "Corsair iCUE LT100 Smart Lighting Towers Starter Kit (x2) [CD-9010002-EU]",
         "prod-erp": "001-49624",
         "prod-price": "13990",
         "prod-min": "1",
@@ -1088,46 +1259,55 @@
     "product-list": [
       {
         "prod-code": "cat17-prod0",
+        "prod-name": "Χωρίς Λειτουργικό Σύστημα",
         "prod-erp": "-",
         "prod-price": "0",
         "static-num": "1"
       }, {
         "prod-code": "cat17-prod19659",
+        "prod-name": "Microsoft DSP Windows 10 Home 64-bit Greek [KW9-00133]",
         "prod-erp": "001-29534",
         "prod-price": "10890",
         "static-num": "1"
       }, {
         "prod-code": "cat17-prod19661",
+        "prod-name": "Microsoft DSP Windows 10 Home 64-bit English [KW9-00139]",
         "prod-erp": "001-29536",
         "prod-price": "10890",
         "static-num": "1"
       }, {
         "prod-code": "cat17-prod42083",
+        "prod-name": "Microsoft DSP Windows 11 Home 64-bit English [KW9-00632]",
         "prod-erp": "001-54477",
         "prod-price": "10990",
         "static-num": "1"
       }, {
         "prod-code": "cat17-prod42084",
+        "prod-name": "Microsoft DSP Windows 11 Home 64-bit Greek [KW9-00639]",
         "prod-erp": "001-54478",
         "prod-price": "10990",
         "static-num": "1"
       }, {
         "prod-code": "cat17-prod19655",
+        "prod-name": "Microsoft DSP Windows 10 Professional 64-bit Greek [FQC-08923]",
         "prod-erp": "001-29530",
         "prod-price": "14350",
         "static-num": "1"
       }, {
         "prod-code": "cat17-prod19657",
+        "prod-name": "Microsoft DSP Windows 10 Professional 64-bit English [FQC-08929]",
         "prod-erp": "001-29532",
         "prod-price": "14350",
         "static-num": "1"
       }, {
         "prod-code": "cat17-prod42081",
+        "prod-name": "Microsoft DSP Windows 11 Professional 64-bit English [FQC-10528]",
         "prod-erp": "001-54479",
         "prod-price": "14850",
         "static-num": "1"
       }, {
         "prod-code": "cat17-prod42082",
+        "prod-name": "Microsoft DSP Windows 11 Professional 64-bit Greek [FQC-10535]",
         "prod-erp": "001-54480",
         "prod-price": "14850",
         "static-num": "1"
@@ -1143,71 +1323,83 @@
     "product-list": [
       {
         "prod-code": "cat18-prod0",
+        "prod-name": "Χωρίς Οθόνη",
         "prod-erp": "-",
         "prod-price": "0",
         "static-num": "1"
       }, {
         "prod-code": "cat18-prod19419",
+        "prod-name": "AOC E2270SWN 21.5¨ Wide LED []",
         "prod-erp": "001-29065",
         "prod-price": "9990",
         "prod-min": "1",
         "prod-max": "3"
       }, {
         "prod-code": "cat18-prod16868",
+        "prod-name": "Philips V-Line 193V5LSB2 18.5¨ Wide LED []",
         "prod-erp": "001-24442",
         "prod-price": "10590",
         "prod-min": "1",
         "prod-max": "3"
       }, {
         "prod-code": "cat18-prod16873",
+        "prod-name": "Philips V-Line 223V5LSB2 21.5¨ Wide LED []",
         "prod-erp": "001-24460",
         "prod-price": "11390",
         "prod-min": "1",
         "prod-max": "3"
       }, {
         "prod-code": "cat18-prod26429",
+        "prod-name": "AOC 24B1H 23.6¨ Frameless Full HD Wide LED MVA  []",
         "prod-erp": "001-41463",
         "prod-price": "11490",
         "prod-min": "1",
         "prod-max": "3"
       }, {
         "prod-code": "cat18-prod19517",
+        "prod-name": "Philips V-Line 223V5LHSB 21.5¨ Wide LED [] *",
         "prod-erp": "001-29299",
         "prod-price": "12300",
         "prod-min": "1",
         "prod-max": "3"
       }, {
         "prod-code": "cat18-prod29238",
+        "prod-name": "AOC 22E1Q 21.5¨ Full HD Wide LED MVA []",
         "prod-erp": "001-46387",
         "prod-price": "12690",
         "prod-min": "1",
         "prod-max": "3"
       }, {
         "prod-code": "cat18-prod22420",
+        "prod-name": "Dell E Series E2016HV 19.5¨ Wide LED [210-ALFK]",
         "prod-erp": "001-34782",
         "prod-price": "12750",
         "prod-min": "1",
         "prod-max": "3"
       }, {
         "prod-code": "cat18-prod43306",
+        "prod-name": "LG Electronics 22MP410-B Full HD 21.5¨ Wide LED VA 74Hz / 5ms with AMD Freesync [22MP410-B]",
         "prod-erp": "001-56521",
         "prod-price": "12900",
         "prod-min": "1",
         "prod-max": "3"
       }, {
         "prod-code": "cat18-prod41743",
+        "prod-name": "Dell SE2222H Full HD 21.5¨ Wide LED VA [210-AZKU]",
         "prod-erp": "001-53844",
         "prod-price": "13100",
         "prod-min": "1",
         "prod-max": "3"
       }, {
         "prod-code": "cat18-prod19209",
+        "prod-name": "Philips V-Line 223V5LSB 21.5¨ Wide LED []",
         "prod-erp": "001-28617",
         "prod-price": "13300",
         "prod-min": "1",
         "prod-max": "3"
       }, {
         "prod-code": "cat18-prod44058",
+        "prod-name": "BenQ GW2283 Full HD 21.5¨ Wide LED IPS - 60Hz / 5ms [GW2283]",
         "prod-erp": "001-57951",
         "prod-price": "13590",
         "prod-min": "1",
@@ -1224,61 +1416,73 @@
     "product-list": [
       {
         "prod-code": "cat19-prod0",
+        "prod-name": "Χωρίς Πληκτρολόγιο",
         "prod-erp": "-",
         "prod-price": "0",
         "static-num": "1"
       }, {
         "prod-code": "cat19-prod41742",
+        "prod-name": "ZeroGround Soki V2.0 Membrane Gaming keyboard - US Layout [KB-2900G]",
         "prod-erp": "001-53842",
         "prod-price": "1590",
         "static-num": "1"
       }, {
         "prod-code": "cat19-prod23731",
+        "prod-name": "NOD Metal Stealth RGB Gaming Keyboard []",
         "prod-erp": "001-36887",
         "prod-price": "2490",
         "static-num": "1"
       }, {
         "prod-code": "cat19-prod26773",
+        "prod-name": "HyperX Alloy Core RGB Membrane Gaming Keyboard [4P4F5AA]",
         "prod-erp": "001-54753",
         "prod-price": "2990",
         "static-num": "1"
       }, {
         "prod-code": "cat19-prod40872",
+        "prod-name": "NOD Zero Dark RGB Gaming Keyboard - US Layout []",
         "prod-erp": "001-52550",
         "prod-price": "2990",
         "static-num": "1"
       }, {
         "prod-code": "cat19-prod41735",
+        "prod-name": "ZeroGround ZeroGround Simeto V2.0 RGB Mechanical Gaming keyboard - Content Blue Switches - US Layout [KB-2950G] *",
         "prod-erp": "001-53835",
         "prod-price": "2990",
         "static-num": "1"
       }, {
         "prod-code": "cat19-prod35530",
+        "prod-name": "Cooler Master Master Devastator 3 Plus RGB Gaming Combo [SGB-3001-KKMF1-US]",
         "prod-erp": "001-48678",
         "prod-price": "3490",
         "static-num": "1"
       }, {
         "prod-code": "cat19-prod28989",
+        "prod-name": "Cooler Master Cooler Master MK110 RGB Mem-Chanical Gaming Keyboard - Mem-Chanical Linear Switches [MK-110-KKMF1-US]",
         "prod-erp": "001-45921",
         "prod-price": "3490",
         "static-num": "1"
       }, {
         "prod-code": "cat19-prod29019",
+        "prod-name": "Razer Cynosa Lite Chroma Membrane RGB Gaming Keyboard - GR Layout [RZ03-02741700-R3P1]",
         "prod-erp": "001-46027",
         "prod-price": "3890",
         "static-num": "1"
       }, {
         "prod-code": "cat19-prod28609",
+        "prod-name": "ZeroGround Sakimo RGB Mechanical Gaming Keyboard - Outemu Blue Switches [KB-2700G]",
         "prod-erp": "001-45142",
         "prod-price": "4399",
         "static-num": "1"
       }, {
         "prod-code": "cat19-prod28990",
+        "prod-name": "Cooler Master Master MS110 Gaming Combo Set - Mem-Chanical Gaming Keyboard + RGB Gaming Mouse [MS-110-KKMF1-US]",
         "prod-erp": "001-45922",
         "prod-price": "4990",
         "static-num": "1"
       }, {
         "prod-code": "cat19-prod41736",
+        "prod-name": "ZeroGround Tonado Mini RGB Mechanical Gaming keyboard - Outemu Red Switches - US Layout [KB-3100G]",
         "prod-erp": "001-53836",
         "prod-price": "4090",
         "static-num": "1"
@@ -1294,61 +1498,73 @@
     "product-list": [
       {
         "prod-code": "cat20-prod0",
+        "prod-name": "Χωρίς Ποντίκι",
         "prod-erp": "-",
         "prod-price": "0",
         "static-num": "1"
       }, {
         "prod-code": "cat20-prod39261",
+        "prod-name": "NOD Run Amok RGB Gaming Mouse []",
         "prod-erp": "001-50269",
         "prod-price": "1290",
         "static-num": "1"
       }, {
         "prod-code": "cat20-prod28851",
+        "prod-name": "NOD Iron Fire RGB Gaming Mouse []",
         "prod-erp": "001-45561",
         "prod-price": "1490",
         "static-num": "1"
       }, {
         "prod-code": "cat20-prod25658",
+        "prod-name": "Cooler Master CM310 RGB Gaming Mouse [CM-310-KKWO2]",
         "prod-erp": "001-40216",
         "prod-price": "1690",
         "static-num": "1"
       }, {
         "prod-code": "cat20-prod29537",
+        "prod-name": "HP OMEN 600 RGB Gaming Mouse [1KF75AA] *",
         "prod-erp": "001-46918",
         "prod-price": "1900",
         "static-num": "1"
       }, {
         "prod-code": "cat20-prod38674",
+        "prod-name": "Corsair Katar Pro RGB Ultra Light Gaming Mouse [CH-930C011-EU]",
         "prod-erp": "001-49331",
         "prod-price": "1990",
         "static-num": "1"
       }, {
         "prod-code": "cat20-prod43290",
+        "prod-name": "HyperX Pulsefire Core RGB Gaming Mouse [4P4F8AA] *",
         "prod-erp": "001-54799",
         "prod-price": "1990",
         "static-num": "1"
       }, {
         "prod-code": "cat20-prod41726",
+        "prod-name": "ZeroGround Harado V2.0 RGB Gaming Mouse [MS-3900G]",
         "prod-erp": "001-53824",
         "prod-price": "2090",
         "static-num": "1"
       }, {
         "prod-code": "cat20-prod27632",
+        "prod-name": "Gigabyte AORUS M2 RGB Gaming Mouse []",
         "prod-erp": "001-43491",
         "prod-price": "2230",
         "static-num": "1"
       }, {
         "prod-code": "cat20-prod41727",
+        "prod-name": "ZeroGround Daito RGB Gaming Mouse [MS-4000G] *",
         "prod-erp": "001-53825",
         "prod-price": "2290",
         "static-num": "1"
       }, {
         "prod-code": "cat20-prod17129",
+        "prod-name": "Razer DeathAdder Expert/Essential Gaming Mouse [RZ01-03850100-R3M1]",
         "prod-erp": "001-24872",
         "prod-price": "2390",
         "static-num": "1"
       }, {
         "prod-code": "cat20-prod39224",
+        "prod-name": "Asus TUF Gaming M3 mouse [90MP01J0-B0UA00]",
         "prod-erp": "001-50207",
         "prod-price": "2390",
         "static-num": "1"
@@ -1364,61 +1580,73 @@
     "product-list": [
       {
         "prod-code": "cat21-prod0",
+        "prod-name": "Χωρίς Mouse Pad",
         "prod-erp": "-",
         "prod-price": "0",
         "static-num": "1"
       }, {
         "prod-code": "cat21-prod23951",
+        "prod-name": "Razer Goliathus Mobile Mouse Pad [RZ02-01820200-R3M1]",
         "prod-erp": "001-37353",
         "prod-price": "830",
         "static-num": "1"
       }, {
         "prod-code": "cat21-prod23346",
+        "prod-name": "Razer Mouse Pad Goliathus Mobile Stealth [RZ02-01820500-R3M1]",
         "prod-erp": "001-36465",
         "prod-price": "850",
         "static-num": "1"
       }, {
         "prod-code": "cat21-prod40679",
+        "prod-name": "Razer Sphex V3 Small [RZ02-03820100-R3M1]",
         "prod-erp": "001-52272",
         "prod-price": "1080",
         "static-num": "1"
       }, {
         "prod-code": "cat21-prod27819",
+        "prod-name": "NOD Battlefront Mouse Pad - XL Size [] *",
         "prod-erp": "001-43815",
         "prod-price": "1290",
         "static-num": "1"
       }, {
         "prod-code": "cat21-prod41842",
+        "prod-name": "Cooler Master MP511 Gaming Mouse pad - Cordura Fabric - Large [MP-511-CBLC1]",
         "prod-erp": "001-54086",
         "prod-price": "1490",
         "static-num": "1"
       }, {
         "prod-code": "cat21-prod43174",
+        "prod-name": "HyperX Pulsefire Mat Gaming Mouse Pad - Medium [4Z7X3AA]",
         "prod-erp": "001-56313",
         "prod-price": "1490",
         "static-num": "1"
       }, {
         "prod-code": "cat21-prod25749",
+        "prod-name": "Gigabyte AORUS AMP900 Gaming Mouse Pad - Extended [GM-AMP900]",
         "prod-erp": "001-40429",
         "prod-price": "1600",
         "static-num": "1"
       }, {
         "prod-code": "cat21-prod43686",
+        "prod-name": "Asus ROG Strix Slice Gaming Mouse Pad [90MP01M0-BPUA00]",
         "prod-erp": "001-57219",
         "prod-price": "1790",
         "static-num": "1"
       }, {
-        "prod-code": "cat21-prod43175",
-        "prod-erp": "001-56314",
-        "prod-price": "1990",
-        "static-num": "1"
-      }, {
         "prod-code": "cat21-prod38700",
+        "prod-name": "Corsair MM300 Cloth Gaming Mouse Pad - PRO Premium Spill-Proof - Medium [CH-9413631-WW]",
         "prod-erp": "001-49334",
         "prod-price": "1990",
         "static-num": "1"
       }, {
+        "prod-code": "cat21-prod43175",
+        "prod-name": "HyperX Pulsefire Mat Gaming Mouse Pad - Large [4Z7X4AA]",
+        "prod-erp": "001-56314",
+        "prod-price": "1990",
+        "static-num": "1"
+      }, {
         "prod-code": "cat21-prod25179",
+        "prod-name": "Asus ROG Strix Edge Gaming Mouse Pad [90MP00T0-B0UA00]",
         "prod-erp": "001-39266",
         "prod-price": "2190",
         "static-num": "1"
@@ -1434,61 +1662,73 @@
     "product-list": [
       {
         "prod-code": "cat22-prod0",
+        "prod-name": "Χωρίς Headset",
         "prod-erp": "-",
         "prod-price": "0",
         "static-num": "1"
       }, {
         "prod-code": "cat22-prod28539",
+        "prod-name": "HyperX CloudX Chat Gaming Headset for XBOX [4P5J4AA]",
         "prod-erp": "001-54786",
         "prod-price": "1990",
         "static-num": "1"
       }, {
         "prod-code": "cat22-prod38683",
+        "prod-name": "Edifier G1 SE Gaming Headphones - Black [G1 SE]",
         "prod-erp": "001-49469",
         "prod-price": "2390",
         "static-num": "1"
       }, {
         "prod-code": "cat22-prod29707",
+        "prod-name": "ZeroGround Okimo 7.1 Virtual Surround Gaming Headset [HD-2700G]",
         "prod-erp": "001-47331",
         "prod-price": "2790",
         "static-num": "1"
       }, {
         "prod-code": "cat22-prod41495",
+        "prod-name": "NOD Chaos RGB Gaming Headset []",
         "prod-erp": "001-53440",
         "prod-price": "2790",
         "static-num": "1"
       }, {
-        "prod-code": "cat22-prod29847",
-        "prod-erp": "001-47596",
-        "prod-price": "2650",
-        "static-num": "1"
-      }, {
         "prod-code": "cat22-prod38684",
+        "prod-name": "Edifier G1 USB 7.1 Gaming Headphones - Black [G1]",
         "prod-erp": "001-49470",
         "prod-price": "2990",
         "static-num": "1"
       }, {
+        "prod-code": "cat22-prod29847",
+        "prod-name": "Cooler Master CH321 RGB Gaming Headset [CH321] *",
+        "prod-erp": "001-47596",
+        "prod-price": "2650",
+        "static-num": "1"
+      }, {
         "prod-code": "cat22-prod35539",
+        "prod-name": "HyperX Cloud Stinger S 7.1 Surround Gaming Headset [4P4F1AA]",
         "prod-erp": "001-54784",
         "prod-price": "2990",
         "static-num": "1"
       }, {
         "prod-code": "cat22-prod28994",
+        "prod-name": "ZeroGround Sokun 7.1 Virtual Surround RGB Gaming Headset [HD-2800G] *",
         "prod-erp": "001-45955",
         "prod-price": "3199",
         "static-num": "1"
       }, {
         "prod-code": "cat22-prod41719",
+        "prod-name": "ZeroGround Ikeda V2.0 7.1 Virtual Surround Gaming [HD-3300G]",
         "prod-erp": "001-53808",
         "prod-price": "3490",
         "static-num": "1"
       }, {
         "prod-code": "cat22-prod28862",
+        "prod-name": "Razer Kraken X Lite PC/Console Gaming Headset [RZ04-02950100-R381]",
         "prod-erp": "001-45600",
         "prod-price": "3850",
         "static-num": "1"
       }, {
         "prod-code": "cat22-prod26598",
+        "prod-name": "HyperX CloudX Stinger Core Gaming Headset for XBOX [4P5J9AA]",
         "prod-erp": "001-54788",
         "prod-price": "3990",
         "static-num": "1"
@@ -1504,61 +1744,73 @@
     "product-list": [
       {
         "prod-code": "cat23-prod0",
+        "prod-name": "Χωρίς Ηχεία",
         "prod-erp": "-",
         "prod-price": "0",
         "static-num": "1"
       }, {
         "prod-code": "cat23-prod24481",
+        "prod-name": "NOD Base.2.Zero Speakers [] *",
         "prod-erp": "001-38204",
         "prod-price": "890",
         "static-num": "1"
       }, {
         "prod-code": "cat23-prod24483",
+        "prod-name": "NOD SideFX Speakers []",
         "prod-erp": "001-38206",
         "prod-price": "1090",
         "static-num": "1"
       }, {
         "prod-code": "cat23-prod24484",
+        "prod-name": "NOD Base.2.One 2.1 Speakers []",
         "prod-erp": "001-38207",
         "prod-price": "1290",
         "static-num": "1"
       }, {
         "prod-code": "cat23-prod40874",
+        "prod-name": "NOD Soundcheck Bluetooth Speaker []",
         "prod-erp": "001-52554",
         "prod-price": "1290",
         "static-num": "1"
       }, {
         "prod-code": "cat23-prod14723",
+        "prod-name": "Logitech Z120 Speakers [980-000513]",
         "prod-erp": "001-21210",
         "prod-price": "1390",
         "static-num": "1"
       }, {
         "prod-code": "cat23-prod9363",
+        "prod-name": "Edifier M1250 Multimedia Speaker []",
         "prod-erp": "001-12959",
         "prod-price": "1490",
         "static-num": "1"
       }, {
         "prod-code": "cat23-prod39724",
+        "prod-name": "Creative Pebble 2.0 USB Speakers - Black [51MF1680AA000]",
         "prod-erp": "001-50920",
         "prod-price": "1840",
         "static-num": "1"
       }, {
         "prod-code": "cat23-prod39725",
+        "prod-name": "Creative Pebble 2.0 USB Speakers - White [51MF1680AA001]",
         "prod-erp": "001-50921",
         "prod-price": "1840",
         "static-num": "1"
       }, {
         "prod-code": "cat23-prod24485",
+        "prod-name": "NOD B.FAB. Bluetooth Speaker []",
         "prod-erp": "001-38208",
         "prod-price": "1990",
         "static-num": "1"
       }, {
         "prod-code": "cat23-prod17256",
+        "prod-name": "Logitech Z150 Speakers Black [980-000814]",
         "prod-erp": "001-25089",
         "prod-price": "2490",
         "static-num": "1"
       }, {
         "prod-code": "cat23-prod29276",
+        "prod-name": "Creative Pebble V2 USB Speakers [51MF1695AA000]",
         "prod-erp": "001-46449",
         "prod-price": "2490",
         "static-num": "1"
@@ -1574,23 +1826,27 @@
     "product-list": [
       {
         "prod-code": "cat24-prod0",
+        "prod-name": "Χωρίς Gamepad",
         "prod-erp": "-",
         "prod-price": "0",
         "static-num": "1"
       }, {
         "prod-code": "cat24-prod40857",
+        "prod-name": "ZeroGround Kojima Gamepad PC/P4 v2.0 [GP-1500 V2]",
         "prod-erp": "001-52533",
         "prod-price": "2490",
         "prod-min": "1",
         "prod-max": "4"
       }, {
         "prod-code": "cat24-prod39211",
+        "prod-name": "Microsoft XBOX Series X / S  Wireless Controller with USB-C - Black [1V8-00002]",
         "prod-erp": "001-50184",
         "prod-price": "6490",
         "prod-min": "1",
         "prod-max": "4"
       }, {
         "prod-code": "cat24-prod42319",
+        "prod-name": "HyperX ChargePlay Clutch - Charging Controller Grips for Mobile [4P5M3AA]",
         "prod-erp": "001-54810",
         "prod-price": "6490",
         "prod-min": "1",
@@ -1607,31 +1863,37 @@
     "product-list": [
       {
         "prod-code": "cat25-prod0",
+        "prod-name": "Χωρίς Web Camera",
         "prod-erp": "-",
         "prod-price": "0",
         "static-num": "1"
       }, {
         "prod-code": "cat25-prod10943",
+        "prod-name": "Logitech HD Webcam C270 [960-001063]",
         "prod-erp": "001-15256",
         "prod-price": "2150",
         "static-num": "1"
       }, {
         "prod-code": "cat25-prod18244",
+        "prod-name": "Microsoft LifeCam HD-3000 [T3H-00013]",
         "prod-erp": "001-26311",
         "prod-price": "2650",
         "static-num": "1"
       }, {
         "prod-code": "cat25-prod20164",
+        "prod-name": "Microsoft LifeCam Cinema HD [H5D-00015]",
         "prod-erp": "001-24789",
         "prod-price": "5550",
         "static-num": "1"
       }, {
         "prod-code": "cat25-prod19961",
+        "prod-name": "Logitech HD Pro Webcam C920 [960-001055] *",
         "prod-erp": "001-30022",
         "prod-price": "6700",
         "static-num": "1"
       }, {
         "prod-code": "cat25-prod23949",
+        "prod-name": "Razer Kiyo - Ring Light Equipped Broadcasting Camera [RZ19-02320100-R3M1]",
         "prod-erp": "001-37350",
         "prod-price": "8200",
         "static-num": "1"
@@ -1647,61 +1909,73 @@
     "product-list": [
       {
         "prod-code": "cat26-prod0",
+        "prod-name": "Χωρίς Gaming Chair",
         "prod-erp": "-",
         "prod-price": "0",
         "static-num": "1"
       }, {
         "prod-code": "cat26-prod41514",
+        "prod-name": "Anda Seat Gaming Chair Jungle - Black [AD5-03-B-PV]",
         "prod-erp": "001-53474",
         "prod-price": "19900",
         "static-num": "1"
       }, {
         "prod-code": "cat26-prod41515",
+        "prod-name": "Anda Seat Gaming Chair Jungle - Black / Red [AD5-03-BR-PV]",
         "prod-erp": "001-53475",
         "prod-price": "19900",
         "static-num": "1"
       }, {
         "prod-code": "cat26-prod39400",
+        "prod-name": "Anda Seat Gaming Chair Pretty in Pink [AD7-02-PW-PV]",
         "prod-erp": "001-50469",
         "prod-price": "21900",
         "static-num": "1"
       }, {
         "prod-code": "cat26-prod42627",
+        "prod-name": "Anda Seat Gaming Chair Jungle 2 - Black with Footrest [AD5T-03-B-PVF]",
         "prod-erp": "001-55387",
         "prod-price": "24900",
         "static-num": "1"
       }, {
         "prod-code": "cat26-prod43099",
+        "prod-name": "Cooler Master Gaming Chair Caliber R2 - Black / Purple [CMI-GCR2-2019]",
         "prod-erp": "001-56196",
         "prod-price": "25900",
         "static-num": "1"
       }, {
         "prod-code": "cat26-prod43100",
+        "prod-name": "Cooler Master Gaming Chair Caliber R2 - Black / Grey [CMI-GCR2-2019G]",
         "prod-erp": "001-56197",
         "prod-price": "25900",
         "static-num": "1"
       }, {
         "prod-code": "cat26-prod43101",
+        "prod-name": "Cooler Master Gaming Chair Caliber R2 - Black / Red [CMI-GCR2-2019R]",
         "prod-erp": "001-56198",
         "prod-price": "25900",
         "static-num": "1"
       }, {
         "prod-code": "cat26-prod42645",
+        "prod-name": "Cooler Master Gaming Chair Caliber R2S KANA [CMI-GCR2S-KANA]",
         "prod-erp": "001-55407",
         "prod-price": "25900",
         "static-num": "1"
       }, {
         "prod-code": "cat26-prod43098",
+        "prod-name": "Cooler Master Gaming Chair Caliber R2 - Black [CMI-GCR2-2019BB]",
         "prod-erp": "001-56195",
         "prod-price": "25900",
         "static-num": "1"
       }, {
         "prod-code": "cat26-prod28567",
+        "prod-name": "Anda Seat Gaming Chair Bat - Black [AD19-03-B-PV/C]",
         "prod-erp": "001-45068",
         "prod-price": "26900",
         "static-num": "1"
       }, {
         "prod-code": "cat26-prod43590",
+        "prod-name": "Anda Seat Gaming Chair Phantom 3 - Black [AD18Y-06-B-PVC]",
         "prod-erp": "001-57046",
         "prod-price": "26900",
         "static-num": "1"
@@ -1717,61 +1991,73 @@
     "product-list": [
       {
         "prod-code": "cat27-prod0",
+        "prod-name": "Χωρίς Microsoft Office",
         "prod-erp": "-",
         "prod-price": "0",
         "static-num": "1"
       }, {
         "prod-code": "cat27-prod28560",
+        "prod-name": "Microsoft 365 Personal (formerly Office 365 Personal) ESD  - 1 Year [QQ2-00012]",
         "prod-erp": "002-33615",
         "prod-price": "6990",
         "static-num": "1"
       }, {
         "prod-code": "cat27-prod28541",
+        "prod-name": "Microsoft 365 Family (formerly Office 365 Home) ESD - 1 Year [6GQ-00092]",
         "prod-erp": "002-41357",
         "prod-price": "8950",
         "static-num": "1"
       }, {
         "prod-code": "cat27-prod42052",
+        "prod-name": "Microsoft Office Home & Student 2021 (Box) - English [79G-05388]",
         "prod-erp": "001-54290",
         "prod-price": "14300",
         "static-num": "1"
       }, {
         "prod-code": "cat27-prod42053",
+        "prod-name": "Microsoft Office Home & Student 2021 (Box) - Greek [79G-05406]",
         "prod-erp": "001-54291",
         "prod-price": "14300",
         "static-num": "1"
       }, {
         "prod-code": "cat27-prod27800",
+        "prod-name": "Microsoft 365 Business Standard (formerly Office 365 Business Premium) ESD (1 User / 1 Year) [KLQ-00211]",
         "prod-erp": "002-43798",
         "prod-price": "14900",
         "static-num": "1"
       }, {
         "prod-code": "cat27-prod42067",
+        "prod-name": "Microsoft Office Home & Student 2021 ESD - All Languages [79G-05339]",
         "prod-erp": "002-54193",
         "prod-price": "14900",
         "static-num": "1"
       }, {
         "prod-code": "cat27-prod42054",
+        "prod-name": "Microsoft 365 Business Standard (Medialess) - 1 Year / 1 User - English [KLQ-00650]",
         "prod-erp": "001-55762",
         "prod-price": "15000",
         "static-num": "1"
       }, {
         "prod-code": "cat27-prod42055",
+        "prod-name": "Microsoft 365 Business Standard (Medialess) - 1 Year / 1 User - Greek [KLQ-00674]",
         "prod-erp": "001-55763",
         "prod-price": "15000",
         "static-num": "1"
       }, {
         "prod-code": "cat27-prod28535",
+        "prod-name": "ABBYY FineReader 15 Standard Edition (ESD) [FR15SW-FMPL-X]",
         "prod-erp": "002-45018",
         "prod-price": "20900",
         "static-num": "1"
       }, {
         "prod-code": "cat27-prod42050",
+        "prod-name": "Microsoft Office Home & Business 2021 (Box) - English [T5D-03511]",
         "prod-erp": "001-54288",
         "prod-price": "26900",
         "static-num": "1"
       }, {
         "prod-code": "cat27-prod42051",
+        "prod-name": "Microsoft Office Home & Business 2021 (Box) - Greek [T5D-03527]",
         "prod-erp": "001-54289",
         "prod-price": "26900",
         "static-num": "1"
@@ -1787,16 +2073,19 @@
     "product-list": [
       {
         "prod-code": "cat28-prod0",
+        "prod-name": "Χωρίς Antivirus",
         "prod-erp": "-",
         "prod-price": "0",
         "static-num": "1"
       }, {
         "prod-code": "cat28-prod42925",
+        "prod-name": "ESET Internet Security 2022 ( 1 άδεια χρήσης / 2 συσκευές  / 1 έτος ) Retail [EIS2D1Y]",
         "prod-erp": "001-55890",
         "prod-price": "2690",
         "static-num": "1"
       }, {
         "prod-code": "cat28-prod42926",
+        "prod-name": "ESET Smart Security Premium 2022 ( 1 άδεια χρήσης / 2 συσκευές  / 1 έτος ) Retail [ESSP2D1Y]",
         "prod-erp": "001-55891",
         "prod-price": "3690",
         "static-num": "1"
@@ -1812,16 +2101,19 @@
     "product-list": [
       {
         "prod-code": "cat29-prod0",
+        "prod-name": "Δεν επιθυμώ συναρμολόγηση",
         "prod-erp": "-",
         "prod-price": "0",
         "static-num": "1"
       }, {
         "prod-code": "cat29-prod26316",
+        "prod-name": "Msystems Συναρμολόγηση Υπολογιστή []",
         "prod-erp": "100-80005",
         "prod-price": "3000",
         "static-num": "1"
       }, {
         "prod-code": "cat29-prod26317",
+        "prod-name": "Msystems Συναρμολόγηση Υπολογιστή και εγκατάσταση Windows []",
         "prod-erp": "100-80006",
         "prod-price": "5000",
         "static-num": "1"
@@ -1837,11 +2129,13 @@
     "product-list": [
       {
         "prod-code": "cat30-prod0",
+        "prod-name": "Χωρίς System Backup",
         "prod-erp": "-",
         "prod-price": "0",
         "static-num": "1"
       }, {
         "prod-code": "cat30-prod27405",
+        "prod-name": "Msystems Δημιουργία ειδώλου (Image) του συστήματος []",
         "prod-erp": "100-80007",
         "prod-price": "1500",
         "static-num": "1"
