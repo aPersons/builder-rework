@@ -1,0 +1,101 @@
+/* scroll top position fix */
+
+@media only screen and (max-width: 499px) {
+  .btn-scroll-top {
+    bottom: 4rem;
+  }
+}
+
+
+
+
+/* Top offset */
+
+.builder-body-container {
+  margin-top: -4.875rem;
+}
+
+
+
+
+/* Head - Description */
+
+.builder-body-container .cont-descr {
+  background-color: #fff;
+  border-radius: 0.4375rem;
+  margin: 0px;
+  margin-bottom: 1rem;
+  box-shadow: 0 0.3rem 1.525rem -0.375rem rgba(0,0,0,0.1);
+  padding: 15px;
+  text-align: justify;
+}
+
+
+
+/* Product Column */
+
+@media only screen and (min-width:768px) {
+  .builder-parts {
+    padding-right: 0;
+  }
+}
+
+
+
+/* Product Category */
+
+.builder-part-category {
+  margin-bottom: 1rem;
+}
+
+.part-category-header {
+  border: solid 2px #000;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: auto 1fr;
+  grid-template-areas: "img-block category-bar"
+                       "img-block details-block";
+}
+
+.part-category-img {
+  grid-area: img-block;
+}
+
+.part-category-bar {
+  grid-area: category-bar;
+  padding: 0.5rem;
+  font-weight: bolder;
+}
+
+.part-category-details {
+  grid-area: details-block;
+}
+
+.part-category-description {
+  border-left: solid 2px #000;
+  border-right: solid 2px #000;
+  border-bottom: solid 2px #000;
+  padding: 0.5rem;
+}
+
+
+
+
+/* Products */
+
+.part-list-container {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.part-rd-bt, .part-checkbox {
+  display: none;
+}
+
+.listed-part {
+  background-color: #fff;
+  border: solid 2px #000;
+  padding: 0.5rem;
+}

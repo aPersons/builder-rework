@@ -15,16 +15,18 @@
 
 <div class="builder-part-category" id="cat0">
 
-  <div class="part-category-head">Category Name</div>
-  <div class="part-category-description fs-md bg-secondary">Category Description</div><!-- @Optional  -->
-  
-  <div class="part-list-container-outer">
-    <div class="part-list-container">
-
-      <!-- Product List ~~ -->
-
-    </div>
+  <div class="part-category-header">
+    <div class="part-category-img"><img src=""></div>
+    <div class="part-category-bar"><img src=""></div>
+    <div class="part-category-details"><img src=""></div>
   </div>
+  <div class="part-category-description fs-md bg-secondary">Category Description</div><!-- @Optional  -->  
+  
+  <div class="part-list-container">
+
+    <!-- Product List ~~ -->
+
+  </div>  
 
 </div>
 
@@ -34,32 +36,42 @@
 
 <input type="radio" class="part-rd-bt" id="cat0-prod38615" name="option0" value="38615" data-erp="001-48653">
 
-<div class="listed-part">
-  <label class="listed-part-inner" for="cat0-prod38615">
 
-    <div class="part-img">
-      <img class="build-img" src="https://static.msystems.gr/photos/sys_thumbs/38615.jpg" width="100%">
+<label class="listed-part" for="cat0-prod38615">
+
+  <div class="part-img">
+    <img class="build-img" src="https://static.msystems.gr/photos/sys_thumbs/38615.jpg" width="100%">
+  </div>
+
+  <div class="part-text">
+    <div class="part-text-head fs-sm">
+      Product Title  
     </div>
+  </div>
 
-    <div class="part-text">
-      <div class="part-text-head fs-sm">
-        Product Title  
-      </div>
-    </div>
+  <div class="part-number-input static-number">
+    <input type="number" class="part-quantity" id="cat038615-quantity" name="option0_qty" value="1">
+  </div>
 
-    <div class="part-number-input static-number">
-      <input type="number" class="part-quantity" id="cat038615-quantity" name="option0_qty" value="1">
-    </div>
+  <div class="prod-quick-view">
+    <a class="quick-view-btn fs-xs" data-productid="38615" href="#quick-view" data-bs-toggle="modal"><i class="bi bi-eye"></i></a>
+  </div>
 
-    <div class="prod-quick-view">
-      <a class="quick-view-btn fs-xs" data-productid="38615" href="#quick-view" data-bs-toggle="modal"><i class="bi bi-eye"></i></a>
-    </div>
+  <div class="part-price fw-bold" data-priceval="11690">
+    <span class="price-block">+0,00€</span>
+  </div>
 
-    <div class="part-price fw-bold" data-priceval="11690">
-      <span class="price-block">+0,00€</span>
-    </div>
+</label>
 
-  </label>
+
+
+<!-- Product Dynamic Number Input -->
+
+<div class="part-number-input">
+  <input type="number" class="part-quantity"id="ram1-quantity" name="ram-quantity" min="1" max="4000" value="0">
+  <i class="bi bi-dash part-num-decr"></i>
+  <span class="quantity-display">0</span>
+  <i class="bi bi-plus part-num-incr"></i>
 </div>
 
 
