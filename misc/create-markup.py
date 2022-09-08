@@ -69,7 +69,7 @@ def crCat(cat):
   <div class="part-category-header">
     <div class="part-category-img"><img src="img/cat29-prod0.jpg"></div>
     <div class="part-category-bar">{catName}</div>
-    <div class="part-category-details"></div>
+    <div class="part-category-details">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
   </div>
   {description}
   <div class="part-list-container">
