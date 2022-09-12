@@ -92,7 +92,7 @@
 .part-list-container {
   margin-top: 1rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1rem;
 }
 
@@ -120,6 +120,7 @@
 .part-text {
   grid-area: prod-title;
   padding: 0.5rem;
+  text-align: center;
 }
 
 .part-number-input { 
@@ -128,10 +129,29 @@
 .part-number-input.static-number { 
   visibility: hidden;
 }
+.part-number-input {
+  min-height: 24px;
+  display: flex;
+}
+.part-number-input input {
+  display: none;
+}
+.part-num-decr,
+.part-num-incr {
+  flex-grow: 1;
+  text-align: center;
+  background-color: #d0d0d0;
+  color: #fff;
+  cursor: pointer;
+}
+.quantity-display {
+  flex-grow: 2;
+  text-align: center;
+}
 
 .prod-quick-view {
   grid-area: prod-view;
-  padding: 0.5rem;
+  padding: 0.25rem;
   background-color: #4b566b;
   
 }
@@ -141,7 +161,7 @@
 
 .part-price {
   grid-area: prod-price;
-  padding: 0.5rem;
+  padding: 0.25rem;
   background-color: #4b566b;
   color: #fff;
   display: flex;
