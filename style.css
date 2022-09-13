@@ -113,9 +113,35 @@
 }
 
 .part-img {
+  font-family: bootstrap-icons !important;
   grid-area: prod-img;
   padding: 0.5rem;
+  position: relative;
 }
+
+.part-img::before {
+  position: absolute;
+  right: 3px;
+  top: 0;
+  color: #4b566b;
+  font-weight: bold;
+}
+.part-img::after {
+  position: absolute;
+  right: 7px;
+  top: 6px;
+  color: #4b566b;
+  font-size: 0.5rem;
+}
+
+.part-rd-bt + .listed-part .part-img::before{content: "\F28A"}
+.part-checkbox + .listed-part .part-img::before{content: "\F584"}
+
+.part-rd-bt:checked + .listed-part .part-img::before{color: #00ab44;}
+.part-checkbox:checked + .listed-part .part-img::before{content: "\F26C";color: #00ab44;}
+.part-rd-bt:checked + .listed-part .part-img::after{content: "\F287";color: #00ab44;}
+
+
 
 .part-text {
   grid-area: prod-title;
