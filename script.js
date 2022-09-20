@@ -150,10 +150,6 @@ let bTK = {
 
 
 
-  cbAction: function() {
-    
-
-  },
   addProdSel: function (pnm, cnm) {
     let qsize = domCashe.dom[cnm].prodSelected.length;
     let sOrd = domCashe.dom[cnm].prodOrder.indexOf(pnm);
@@ -169,6 +165,25 @@ let bTK = {
   removeProdSel: function (pnm, cnm) {
     domCashe.dom[cnm].prodSelected.splice(domCashe.dom[cnm].prodSelected.indexOf(pnm), 1);
   },
+
+  cbDataOpen: function(pnm, cnm) {
+    if (!domCashe.dom[cnm].prodList[pnm].isSelected) {
+      domCashe.dom[cnm].prodList[pnm].isSelected = true;
+      bTK.addProdSel(pnm, cnm);
+    }  
+  },
+  cbDataClose: function(pnm, cnm) {
+    if (domCashe.dom[cnm].prodList[pnm].isSelected) {
+      domCashe.dom[cnm].prodList[pnm].isSelected = false;
+      domCashe.dom[cnm].prodSelected.splice(domCashe.dom[cnm].prodSelected.indexOf(pnm), 1);
+    }  
+  },
+
+  updateCbState2: function (evArgs) {
+    let pnm = evArgs.pnm;
+    let cnm = evArgs.cnm;
+  },
+
   updateCbState: function (evArgs) {
     let pnm = evArgs.pnm;
     let cnm = evArgs.cnm;
