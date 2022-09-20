@@ -25,7 +25,7 @@ let bTK = {
         "selfDom": cDom,
         "headDom": tmphead,
         "isHidden": cDom.classList.contains("d-none"),
-        "isEmpty": (!cDom.querySelectorAll(".part-rd-bt, .part-checkbox").length) ? true : false,
+        "isEmpty": !cDom.querySelectorAll(".part-rd-bt, .part-checkbox").length,
         "pListDom": cDom.querySelector(".part-list-container"),
         "nmTxt": tmphead.textContent,
         "lpState": cDom.classList.contains("lp-show")
@@ -117,7 +117,7 @@ let bTK = {
     for (const cnm of domCashe.domOrder) {
       let ob = domCashe.dom[cnm];
       let tmpList = ob.selfDom.querySelectorAll(".part-rd-bt");
-      if (!tmpList) continue;
+      if (!tmpList.length) continue;
       ob.prodType = "radio";
       ob.emptyEl = "$blank";
       ob.prodList = {};
@@ -150,6 +150,10 @@ let bTK = {
 
 
 
+  cbAction: function() {
+    
+
+  },
   addProdSel: function (pnm, cnm) {
     let qsize = domCashe.dom[cnm].prodSelected.length;
     let sOrd = domCashe.dom[cnm].prodOrder.indexOf(pnm);
@@ -215,7 +219,7 @@ let bTK = {
       }
     }
   },
-  CbCheck: function () {
+  cbCheck: function () {
     for (const [nm, ob] of Object.entries(domCashe.dom)) {
       if (ob.prodType == "checkbox") {
         if (ob.emptyEl != "$blank") {
@@ -244,7 +248,7 @@ let bTK = {
     for (const cnm of domCashe.domOrder) {
       let ob = domCashe.dom[cnm];
       let tmpList = ob.selfDom.querySelectorAll(".part-checkbox");
-      if (!tmpList) continue;
+      if (!tmpList.length) continue;
       ob.emptyEl = "$blank";
       ob.prodType = "checkbox";
       ob.prodSelected = [],
@@ -271,11 +275,14 @@ let bTK = {
         if (ob.prodList[dname].isSelected) ob.prodSelected.push(dname);
       }
     }
-    bTK.CbCheck();
+    bTK.cbCheck();
     bTK.CFGCbBtHandler.length = 0;
     bTK.CFGCbBtHandler.push(bTK.updateCbState);
   }
 }
+
+
+
 
 document.addEventListener("DOMContentLoaded", function(){
   bTK.crCats();
@@ -283,14 +290,14 @@ document.addEventListener("DOMContentLoaded", function(){
   bTK.crCbBt();
   // bTK.crQuantity();
 
-  // bTK.crProdPrice();
-  // bTK.crFinalPrice();
+  // ~~.crProdPrice();
+  // ~~.crFinalPrice();
 
   bTK.crCOpen();
   // bTK.crHeadSel();
 
-  // bTK.crProdNav();
-  // bTK.crBuildModal();
+  // ~~.crProdNav();
+  // ~~.crBuildModal();
   // bTK.setTimeout(crDomReduce, 0);//quick_view.js must run before this. Won't add events otherwise.
   
 })
