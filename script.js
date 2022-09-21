@@ -150,7 +150,9 @@ let bTK = {
 
 
 
-  addProdSel: function (pnm, cnm) {
+
+  cbDataOpen: function(pnm, cnm) {
+    domCashe.dom[cnm].prodList[pnm].isSelected = true;
     let qsize = domCashe.dom[cnm].prodSelected.length;
     let sOrd = domCashe.dom[cnm].prodOrder.indexOf(pnm);
     for (let i = 0; i < qsize; i++) {
@@ -160,94 +162,69 @@ let bTK = {
         return
       }
     }
-    domCashe.dom[cnm].prodSelected.push(pnm);
-  },
-  removeProdSel: function (pnm, cnm) {
-    domCashe.dom[cnm].prodSelected.splice(domCashe.dom[cnm].prodSelected.indexOf(pnm), 1);
-  },
-
-  cbDataOpen: function(pnm, cnm) {
-    if (!domCashe.dom[cnm].prodList[pnm].isSelected) {
-      domCashe.dom[cnm].prodList[pnm].isSelected = true;
-      bTK.addProdSel(pnm, cnm);
-    }  
+    domCashe.dom[cnm].prodSelected.push(pnm);     
   },
   cbDataClose: function(pnm, cnm) {
+    domCashe.dom[cnm].prodList[pnm].isSelected = false;
+    domCashe.dom[cnm].prodSelected.splice(domCashe.dom[cnm].prodSelected.indexOf(pnm), 1);      
+  },
+  cbOpen: function(pnm, cnm) {
+    if (!domCashe.dom[cnm].prodList[pnm].isSelected) {
+      domCashe.dom[cnm].prodList[pnm].selfDom.checked = true;
+      bTK.cbDataOpen(pnm, cnm);
+    }
+  },
+  cbClose: function(pnm, cnm) {
     if (domCashe.dom[cnm].prodList[pnm].isSelected) {
-      domCashe.dom[cnm].prodList[pnm].isSelected = false;
-      domCashe.dom[cnm].prodSelected.splice(domCashe.dom[cnm].prodSelected.indexOf(pnm), 1);
-    }  
+      domCashe.dom[cnm].prodList[pnm].selfDom.checked = false;
+      bTK.cbDataClose(pnm, cnm);
+    }
   },
-
-  updateCbState2: function (evArgs) {
-    let pnm = evArgs.pnm;
-    let cnm = evArgs.cnm;
+  cbToggle: function(pnm, cnm) {
+    if (domCashe.dom[cnm].prodList[pnm].isSelected) bTK.cbClose(pnm, cnm);
+    else bTK.cbOpen(pnm, cnm);
   },
-
   updateCbState: function (evArgs) {
     let pnm = evArgs.pnm;
     let cnm = evArgs.cnm;
-    
-    if (domCashe.dom[cnm].prodSelected.includes(pnm) && domCashe.dom[cnm].emptyEl == pnm) {
-      if (domCashe.dom[cnm].prodSelected.length > 1) {
-        bTK.removeProdSel(pnm, cnm),
-        domCashe.dom[cnm].prodList[pnm].isSelected = false;
-      } else {
-        domCashe.dom[cnm].prodList[pnm].selfDom.checked = true;
-      }
-    } else if (domCashe.dom[cnm].prodSelected.includes(pnm)) {
-      if (domCashe.dom[cnm].prodSelected.length < 2 && domCashe.dom[cnm].emptyEl == "$blank") {
-        domCashe.dom[cnm].prodList[pnm].selfDom.checked = true;
-      } else {
-        bTK.removeProdSel(pnm, cnm);
-        domCashe.dom[cnm].prodList[pnm].isSelected = false;
-        if (domCashe.dom[cnm].emptyEl != "$blank") {
-          let enm = domCashe.dom[cnm].emptyEl;
-          if (domCashe.dom[cnm].prodSelected.length < 1) {
-            domCashe.dom[cnm].prodSelected = [enm]
-            domCashe.dom[cnm].prodList[enm].isSelected = true;
-            domCashe.dom[cnm].prodList[enm].selfDom.checked = true;
-          } else if (domCashe.dom[cnm].prodSelected.length > 1 && domCashe.dom[cnm].prodSelected.includes(enm)) {
-            bTK.removeProdSel(enm, cnm);
-            domCashe.dom[cnm].prodList[enm].isSelected = false;
-            domCashe.dom[cnm].prodList[enm].selfDom.checked = false;
-          }
+    let emptyEl = domCashe.dom[cnm].emptyEl;
+
+    if (domCashe.dom[cnm].prodSelected.includes(pnm)) {
+      if (pnm == emptyEl) {
+        if (domCashe.dom[cnm].prodSelected.length > 1) {
+          bTK.cbDataClose(pnm, cnm);
+        } else {
+          domCashe.dom[cnm].prodList[pnm].selfDom.checked = true;
         }
+      } else if (domCashe.dom[cnm].prodSelected.length > 1) {
+        bTK.cbDataClose(pnm, cnm);        
+      } else if (emptyEl != "$blank") {
+        domCashe.dom[cnm].prodList[pnm].selfDom.checked = true;
+      } else {
+        bTK.cbDataClose(pnm, cnm);
+        bTK.cbOpen(emptyEl, cnm);
       }
-    } else if (domCashe.dom[cnm].emptyEl == pnm) {
-      for (const pr of domCashe.dom[cnm].prodSelected) {
-        domCashe.dom[cnm].prodList[pr].isSelected = false;
-        domCashe.dom[cnm].prodList[pr].selfDom.checked = false;
+    } else if (pnm == emptyEl) {
+      let lCopy = [...domCashe.dom[cnm].prodSelected];
+      for (const pr of lCopy) {
+        bTK.cbClose(pr, cnm);
       }
-      domCashe.dom[cnm].prodSelected = [pnm]
-      domCashe.dom[cnm].prodList[pnm].isSelected = true;
+      bTK.cbDataOpen(pnm, cnm);
     } else {
-      bTK.addProdSel(pnm, cnm);
-      domCashe.dom[cnm].prodList[pnm].isSelected = true;
-      if (domCashe.dom[cnm].emptyEl != "$blank") {
-        if (domCashe.dom[cnm].prodSelected.includes(domCashe.dom[cnm].emptyEl)) {
-          let enm = domCashe.dom[cnm].emptyEl;
-          bTK.removeProdSel(enm, cnm);
-          domCashe.dom[cnm].prodList[enm].isSelected = false;
-          domCashe.dom[cnm].prodList[enm].selfDom.checked = false;
-        }
+      bTK.cbDataOpen(pnm, cnm);
+      if (emptyEl != "$blank" && domCashe.dom[cnm].prodSelected.includes(emptyEl)) {
+        bTK.cbClose(emptyEl, cnm);
       }
     }
-  },
+  },  
   cbCheck: function () {
-    for (const [nm, ob] of Object.entries(domCashe.dom)) {
-      if (ob.prodType == "checkbox") {
-        if (ob.emptyEl != "$blank") {
-          if (ob.prodList.length < 1) {
-            ob.prodSelected = [ob.emptyEl]
-            ob.prodList[ob.emptyEl].isSelected = true;
-            ob.prodList[ob.emptyEl].selfDom.checked = true;
-          } else if (ob.prodList.length > 1 && ob.prodSelected.includes(ob.emptyEl)) {
-            ob.prodSelected.splice(ob.prodSelected.indexOf(ob.emptyEl), 1);
-            ob.prodList[ob.emptyEl].isSelected = false;
-            ob.prodList[ob.emptyEl].selfDom.checked = false;
-          }
-        }
+    for (const [cnm, ob] of Object.entries(domCashe.dom)) {
+      if (ob.prodType == "checkbox" && ob.emptyEl != "$blank") {
+        if (ob.prodList.length < 1) {
+          bTK.cbOpen(ob.emptyEl, cnm);
+        } else if (ob.prodList.length > 1 && ob.prodSelected.includes(ob.emptyEl)) {
+          bTK.cbClose(ob.emptyEl, cnm);
+        }        
       }
     }
   },
@@ -293,24 +270,159 @@ let bTK = {
     bTK.cbCheck();
     bTK.CFGCbBtHandler.length = 0;
     bTK.CFGCbBtHandler.push(bTK.updateCbState);
+  },
+
+
+
+  updateNumberInput: function (evArgs) {
+    var cnm = evArgs.cnm;
+    var pnm = evArgs.pnm;
+    var opcode = evArgs.hasOwnProperty("opcode")?evArgs.opcode:"update";
+    var pob = domCashe.dom[cnm].prodList[pnm];
+    if (pob.isSelected) {
+      if (pob.qDisabled) {
+        pob.qDisabled = false;
+        pob.qInput.disabled = false;
+      }
+      if (pob.qType == "dynamic") {
+        if (pob.qValue < pob.qMin || pob.qValue>pob.qMax) {
+          pob.qValue = pob.qMin;
+          pob.qInput.value = pob.qMin;
+          pob.qDisplay.textContent = pob.qMin;
+        } else if (opcode == "add" && pob.qValue < pob.qMax) {
+          pob.qValue ++;
+          pob.qInput.value = pob.qValue;
+          pob.qDisplay.textContent = pob.qValue;
+        } else if (opcode == "sub" && pob.qValue > pob.qMin) {
+          pob.qValue --;
+          pob.qInput.value = pob.qValue;
+          pob.qDisplay.textContent = pob.qValue;
+        }
+        if (pob.qValue < pob.qMax) {
+          if (!pob.qAddAv) {
+            pob.qAddAv = true;
+            pob.qCont.classList.add("incr-av");
+          }
+        } else {
+          if (pob.qAddAv) {
+            pob.qAddAv = false;
+            pob.qCont.classList.remove("incr-av");
+          }
+        }
+        if (pob.qValue > pob.qMin) {
+          if (!pob.qSubAv) {
+            pob.qSubAv = true;
+            pob.qCont.classList.add("decr-av");
+          }
+        } else {
+          if (pob.qSubAv) {
+            pob.qSubAv = false;
+            pob.qCont.classList.remove("decr-av");
+          }
+        }        
+      }
+    } else {
+      if (!pob.qDisabled) {
+        pob.qDisabled = true;
+        pob.qInput.disabled = true;
+      }
+      if (pob.qType == "dynamic") {
+        if (pob.qValue != 0) {
+          pob.qValue = 0;
+          pob.qInput.value = 0;
+          pob.qDisplay.textContent = 0;
+        }
+        if (pob.qAddAv) {
+          pob.qAddAv = false;
+          pob.qCont.classList.remove("incr-av");
+        }
+        if (pob.qSubAv) {
+          pob.qSubAv = false;
+          pob.qCont.classList.remove("decr-av");
+        }
+      }
+    }
+  },
+  updateCatQuant: function (evArgs) {
+    var ob = domCashe.dom[evArgs.cnm];
+    for (const pnm of ob.prodOrder) {
+      bTK.updateNumberInput({
+        "cnm": evArgs.cnm,
+        "pnm": pnm
+      });
+    }
+  },  
+  CFGquantHandler: [],
+  quantIncrHandler: function () {
+    var pob = this.parentElement.parentElement.previousElementSibling;
+    var evArgs = {
+      pnm: pob.id,
+      cnm: pob.parentElement.parentElement.id,
+      opcode: "add"
+    }
+    for (const fnc of bTK.CFGquantHandler) fnc(evArgs);
+  },
+  quantDecrHandler: function() {
+    var pob = this.parentElement.parentElement.previousElementSibling;
+    var evArgs = {
+      pnm: pob.id,
+      cnm: pob.parentElement.parentElement.id,
+      opcode: "sub"
+    }
+    for (const fnc of bTK.CFGquantHandler) fnc(evArgs);
+  },
+  crQuantity: function() {
+    for (const cnm of domCashe.domOrder) {
+      var ob = domCashe.dom[cnm];
+      if (ob.isEmpty) continue;
+      for (const pnm of ob.prodOrder) {
+        var pob = ob.prodList[pnm];
+        pob.qCont = pob.cDom.querySelector(".part-number-input");
+        pob.qInput = pob.qCont.querySelector(".part-quantity");
+        pob.qDisabled = pob.qInput.disabled;
+        pob.qValue = Number(pob.qInput.value);
+        if (pob.qCont.classList.contains("static-number")) {
+          pob.qType = "static";
+        } else {
+          pob.qType = "dynamic";
+          pob.qAddAv = pob.qCont.classList.contains("incr-av");
+          pob.qSubAv = pob.qCont.classList.contains("decr-av");
+          pob.qDisplay = pob.qCont.querySelector(".quantity-display");
+          pob.qMin = Number(pob.qInput.min);
+          pob.qMax = Number(pob.qInput.max);
+  
+          var btAdd = pob.qCont.querySelector(".part-num-incr");
+          btAdd.removeEventListener("click",bTK.quantIncrHandler);
+          btAdd.addEventListener("click",bTK.quantIncrHandler);
+          var btSub = pob.qCont.querySelector(".part-num-decr");
+          btSub.removeEventListener("click",bTK.quantDecrHandler);
+          btSub.addEventListener("click",bTK.quantDecrHandler);
+        }
+      }
+      bTK.updateCatQuant({"cnm":cnm});
+    }
+    bTK.CFGRdBtHandler.push(bTK.updateCatQuant);
+    bTK.CFGCbBtHandler.push(bTK.updateCatQuant);
+  
+    bTK.CFGquantHandler.length = 0;
+    bTK.CFGquantHandler.push(bTK.updateNumberInput);
   }
 }
 
 
 
 
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function() {
   bTK.crCats();
   bTK.crRdBt();
   bTK.crCbBt();
-  // bTK.crQuantity();
+  bTK.crQuantity();
 
-  // ~~.crProdPrice();
-  // ~~.crFinalPrice();
-
-  bTK.crCOpen();
+  // bTK.crProdPrice();
   // bTK.crHeadSel();
-
+  bTK.crCOpen();  
+  
+  // crFinalPrice();
   // ~~.crProdNav();
   // ~~.crBuildModal();
   // bTK.setTimeout(crDomReduce, 0);//quick_view.js must run before this. Won't add events otherwise.

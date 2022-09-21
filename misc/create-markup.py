@@ -39,13 +39,13 @@ def crProdList(cat):
     <img class="build-img" src="img/{prod_code}.jpg" width="100%">
   </div>
   <div class="part-text">
-    <div class="part-text-head fs-sm">
+    <div class="part-text-head fs-xs">
       {prod_name}
     </div>
   </div>
   {number_input}
   <div class="prod-quick-view">
-    <a class="quick-view-btn fs-xs" data-productid="38615" href="#quick-view" data-bs-toggle="modal"><i class="bi bi-eye"></i></a>
+    <a class="quick-view-btn fs-sm" data-productid="38615" href="#quick-view" data-bs-toggle="modal"><i class="bi bi-eye"></i></a>
   </div>
   <div class="part-price fw-bold" data-priceval="{prod_price}">
     <span class="price-block">+0,00€</span>

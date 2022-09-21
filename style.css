@@ -49,7 +49,7 @@
 }
 
 .part-category-header {
-  border: solid 2px #4b566b;
+  border: solid 2px #595959;
   display: grid;
   grid-template-rows: auto auto;
   grid-template-columns: 100px 1fr;
@@ -59,7 +59,11 @@
 
 .part-category-img {
   grid-area: img-block;
-  border-right: solid 2px #4b566b;
+  border-right: solid 2px #595959;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  background-color: #ffffff;
 }
 .part-category-img img {width: 100%;}
 
@@ -67,7 +71,8 @@
   grid-area: category-bar;
   padding: 0.5rem;
   font-weight: bolder;
-  background-color: #4b566b;
+  background-color: #595959;
+  transition: background-color 0.25s ease-in-out;
   color: #fff;
   cursor: pointer;
 }
@@ -90,14 +95,16 @@
   grid-area: details-block;
   padding: 0.5rem;
   font-size: 0.75rem;
+  background-color: #ffffff;
 }
 
 .part-category-description {
   display: none;
-  border-left: solid 2px #4b566b;
-  border-right: solid 2px #4b566b;
-  border-bottom: solid 2px #4b566b;
+  border-left: solid 2px #595959;
+  border-right: solid 2px #595959;
+  border-bottom: solid 2px #595959;
   padding: 0.5rem;
+  background-color: #ffffff;
 }
 
 .part-list-container {
@@ -119,8 +126,10 @@
 }
 
 .listed-part {
+  cursor: pointer;
   background-color: #fff;
-  border: solid 2px #4b566b;
+  border: solid 2px #595959;
+  transition: border-color 0.25s ease-in-out;
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: auto 1fr auto auto;
@@ -129,26 +138,31 @@
                        "prod-quant prod-quant"
                        "prod-view prod-price";
 }
+.part-rd-bt:checked + .listed-part,
+.part-checkbox:checked + .listed-part {
+  border-color: #00ab44;
+  cursor: revert;
+}
 
 .part-img {
   font-family: bootstrap-icons !important;
   grid-area: prod-img;
-  padding: 0.5rem;
   position: relative;
+  padding: 0.5rem 1.5rem;
 }
 
 .part-img::before {
   position: absolute;
   right: 3px;
   top: 0;
-  color: #4b566b;
+  color: #595959;
   font-weight: bold;
 }
 .part-img::after {
   position: absolute;
   right: 7px;
   top: 6px;
-  color: #4b566b;
+  color: #595959;
   font-size: 0.5rem;
 }
 
@@ -176,32 +190,53 @@
 .part-number-input {
   min-height: 24px;
   display: flex;
+  margin: 5px 20px;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
 }
+.part-rd-bt:checked + .listed-part .part-number-input,
+.part-checkbox:checked + .listed-part .part-number-input {opacity: 1;}
+
+
 .part-number-input input {
   display: none;
 }
 .part-num-decr,
 .part-num-incr {
-  flex-grow: 3;
+  flex-grow: 1;
   text-align: center;
-  background-color: #d0d0d0;
+  background-color: hsl(0, 0%, 90%);
+  border:1px solid #a6a6a6;
   color: #fff;
-  cursor: pointer;
-  border: solid 5px #ffffff;
+  font-weight: 900!important;
+  line-height: 1;
+  font-size: 21px;
+  transition: background-color 0.25s ease-in-out;
 }
+.part-num-decr {border-radius: 10px 0 0 10px;}
+.part-num-incr {border-radius: 0 10px 10px 0;}
+
+.part-number-input.decr-av .part-num-decr,
+.part-number-input.incr-av .part-num-incr {background-color: hsl(0, 0%, 75%); cursor: pointer;}
+.part-number-input.decr-av .part-num-decr:hover,
+.part-number-input.incr-av .part-num-incr:hover {background-color: #a6a6a6; cursor: pointer;}
+
 .quantity-display {
-  flex-grow: 4;
+  flex-grow: 3;
   display: flex;
   justify-content: center;
   align-content: center;
   align-items: center;
+  border-top: 1px solid #a6a6a6;
+  border-bottom: 1px solid #a6a6a6;
+  font-size: 0.75rem;
 }
 
 .prod-quick-view {
   grid-area: prod-view;
-  padding: 0.25rem;
-  background-color: #4b566b;
-  
+  padding: 0.25rem 0.35rem 0.15rem 0.35rem;
+  background-color: #595959;
+  transition: background-color 0.25s ease-in-out;
 }
 .prod-quick-view i.bi-eye {
   color: #fff; 
@@ -209,11 +244,27 @@
 
 .part-price {
   grid-area: prod-price;
-  padding: 0.25rem;
-  background-color: #4b566b;
+  padding: 0.25rem 0.25rem 0.1rem 0.25rem;
+  background-color: #595959;
+  transition: background-color 0.25s ease-in-out;
   color: #fff;
   display: flex;
   justify-content: end;
   align-items: center;
   align-content: center;
+}
+.part-price .price-block {
+  transition: opacity 0.25s ease-in-out;
+}
+
+.part-rd-bt:checked + .listed-part .part-price .price-block,
+.part-checkbox:checked + .listed-part .part-price .price-block {
+  opacity: 0;
+}
+
+.part-rd-bt:checked + .listed-part .prod-quick-view,
+.part-checkbox:checked + .listed-part .prod-quick-view,
+.part-rd-bt:checked + .listed-part .part-price,
+.part-checkbox:checked + .listed-part .part-price {
+  background-color: #00ab44;;
 }
