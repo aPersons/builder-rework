@@ -159,7 +159,7 @@ let bTK = {
       let lnm = domCashe.dom[cnm].prodSelected[i];
       if (sOrd<domCashe.dom[cnm].prodOrder.indexOf(lnm)) {
         domCashe.dom[cnm].prodSelected.splice(i, 0, pnm);
-        return
+        return;
       }
     }
     domCashe.dom[cnm].prodSelected.push(pnm);     
@@ -273,110 +273,105 @@ let bTK = {
   },
 
 
-
-  updateNumberInput: function (evArgs) {
-    var cnm = evArgs.cnm;
-    var pnm = evArgs.pnm;
-    var opcode = evArgs.hasOwnProperty("opcode")?evArgs.opcode:"update";
-    var pob = domCashe.dom[cnm].prodList[pnm];
+  quantUpdate: function(evArgs) {
+    let pob = domCashe.dom[evArgs.cnm].prodList[evArgs.pnm];
+    if (pob.qType != "dynamic") return;
     if (pob.isSelected) {
       if (pob.qDisabled) {
         pob.qDisabled = false;
         pob.qInput.disabled = false;
       }
-      if (pob.qType == "dynamic") {
-        if (pob.qValue < pob.qMin || pob.qValue>pob.qMax) {
-          pob.qValue = pob.qMin;
-          pob.qInput.value = pob.qMin;
-          pob.qDisplay.textContent = pob.qMin;
-        } else if (opcode == "add" && pob.qValue < pob.qMax) {
-          pob.qValue ++;
-          pob.qInput.value = pob.qValue;
-          pob.qDisplay.textContent = pob.qValue;
-        } else if (opcode == "sub" && pob.qValue > pob.qMin) {
-          pob.qValue --;
-          pob.qInput.value = pob.qValue;
-          pob.qDisplay.textContent = pob.qValue;
-        }
-        if (pob.qValue < pob.qMax) {
-          if (!pob.qAddAv) {
-            pob.qAddAv = true;
-            pob.qCont.classList.add("incr-av");
-          }
-        } else {
-          if (pob.qAddAv) {
-            pob.qAddAv = false;
-            pob.qCont.classList.remove("incr-av");
-          }
-        }
-        if (pob.qValue > pob.qMin) {
-          if (!pob.qSubAv) {
-            pob.qSubAv = true;
-            pob.qCont.classList.add("decr-av");
-          }
-        } else {
-          if (pob.qSubAv) {
-            pob.qSubAv = false;
-            pob.qCont.classList.remove("decr-av");
-          }
-        }        
+      if (pob.qValue<pob.qMin || pob.qValue>pob.qMax) {
+        pob.qValue = pob.qMin;
+        pob.qInput.value = pob.qMin; 
+        pob.qDisplay.textContent = pob.qMin;
+      }
+      if (pob.qValue==pob.qMin && pob.qSubAv) {
+        pob.qSubAv = false;
+        pob.qCont.classList.remove("decr-av");
+      } else if (pob.qValue>pob.qMin && !pob.qSubAv) {
+        pob.qSubAv = true;
+        pob.qCont.classList.add("decr-av");
+      }
+      if (pob.qValue==pob.qMax && pob.qAddAv) {
+        pob.qAddAv = false;
+        pob.qCont.classList.remove("incr-av");
+      } else if (pob.qValue<pob.qMax && !pob.qAddAv) {
+        pob.qAddAv = true;
+        pob.qCont.classList.add("incr-av");
       }
     } else {
       if (!pob.qDisabled) {
         pob.qDisabled = true;
         pob.qInput.disabled = true;
       }
-      if (pob.qType == "dynamic") {
-        if (pob.qValue != 0) {
-          pob.qValue = 0;
-          pob.qInput.value = 0;
-          pob.qDisplay.textContent = 0;
-        }
-        if (pob.qAddAv) {
-          pob.qAddAv = false;
-          pob.qCont.classList.remove("incr-av");
-        }
-        if (pob.qSubAv) {
-          pob.qSubAv = false;
-          pob.qCont.classList.remove("decr-av");
-        }
+      if (pob.qValue != 0) {
+        pob.qValue = 0;
+        pob.qInput.value = 0; 
+        pob.qDisplay.textContent = 0;
+      }
+      if (!pob.qSubAv) {
+        pob.qSubAv = false;
+        pob.qCont.classList.remove("decr-av");
+      }
+      if (!pob.qAddAv) {
+        pob.qAddAv = false;
+        pob.qCont.classList.remove("incr-av");
       }
     }
+
+  },
+  quantIncr: function(evArgs) {
+    let pob = domCashe.dom[evArgs.cnm].prodList[evArgs.pnm];
+    if (pob.qAddAv) {
+      pob.qValue++;
+      pob.qInput.value = pob.qValue; 
+      pob.qDisplay.textContent = pob.qValue; 
+    }
+    bTK.quantUpdate(evArgs);
+  },
+  quantDecr: function(evArgs) {
+    let pob = domCashe.dom[evArgs.cnm].prodList[evArgs.pnm];
+    if (pob.qSubAv) {
+      pob.qValue--;
+      pob.qInput.value = pob.qValue; 
+      pob.qDisplay.textContent = pob.qValue; 
+    }
+    bTK.quantUpdate(evArgs);
   },
   updateCatQuant: function (evArgs) {
-    var ob = domCashe.dom[evArgs.cnm];
+    let ob = domCashe.dom[evArgs.cnm];
     for (const pnm of ob.prodOrder) {
-      bTK.updateNumberInput({
+      bTK.quantUpdate({
         "cnm": evArgs.cnm,
         "pnm": pnm
       });
     }
   },  
-  CFGquantHandler: [],
+  CFGquantIncrHandler: [],
   quantIncrHandler: function () {
-    var pob = this.parentElement.parentElement.previousElementSibling;
-    var evArgs = {
+    let pob = this.parentElement.parentElement.previousElementSibling;
+    let evArgs = {
       pnm: pob.id,
-      cnm: pob.parentElement.parentElement.id,
-      opcode: "add"
+      cnm: pob.parentElement.parentElement.id
     }
-    for (const fnc of bTK.CFGquantHandler) fnc(evArgs);
+    for (const fnc of bTK.CFGquantIncrHandler) fnc(evArgs);
   },
+  CFGquantDecrHandler: [],
   quantDecrHandler: function() {
-    var pob = this.parentElement.parentElement.previousElementSibling;
-    var evArgs = {
+    let pob = this.parentElement.parentElement.previousElementSibling;
+    let evArgs = {
       pnm: pob.id,
-      cnm: pob.parentElement.parentElement.id,
-      opcode: "sub"
+      cnm: pob.parentElement.parentElement.id
     }
-    for (const fnc of bTK.CFGquantHandler) fnc(evArgs);
+    for (const fnc of bTK.CFGquantDecrHandler) fnc(evArgs);
   },
   crQuantity: function() {
     for (const cnm of domCashe.domOrder) {
-      var ob = domCashe.dom[cnm];
+      let ob = domCashe.dom[cnm];
       if (ob.isEmpty) continue;
       for (const pnm of ob.prodOrder) {
-        var pob = ob.prodList[pnm];
+        let pob = ob.prodList[pnm];
         pob.qCont = pob.cDom.querySelector(".part-number-input");
         pob.qInput = pob.qCont.querySelector(".part-quantity");
         pob.qDisabled = pob.qInput.disabled;
@@ -391,10 +386,10 @@ let bTK = {
           pob.qMin = Number(pob.qInput.min);
           pob.qMax = Number(pob.qInput.max);
   
-          var btAdd = pob.qCont.querySelector(".part-num-incr");
+          let btAdd = pob.qCont.querySelector(".part-num-incr");
           btAdd.removeEventListener("click",bTK.quantIncrHandler);
           btAdd.addEventListener("click",bTK.quantIncrHandler);
-          var btSub = pob.qCont.querySelector(".part-num-decr");
+          let btSub = pob.qCont.querySelector(".part-num-decr");
           btSub.removeEventListener("click",bTK.quantDecrHandler);
           btSub.addEventListener("click",bTK.quantDecrHandler);
         }
@@ -404,8 +399,10 @@ let bTK = {
     bTK.CFGRdBtHandler.push(bTK.updateCatQuant);
     bTK.CFGCbBtHandler.push(bTK.updateCatQuant);
   
-    bTK.CFGquantHandler.length = 0;
-    bTK.CFGquantHandler.push(bTK.updateNumberInput);
+    bTK.CFGquantIncrHandler.length = 0;
+    bTK.CFGquantIncrHandler.push(bTK.quantIncr);
+    bTK.CFGquantDecrHandler.length = 0;
+    bTK.CFGquantDecrHandler.push(bTK.quantDecr);
   }
 }
 
