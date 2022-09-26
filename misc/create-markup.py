@@ -15,7 +15,7 @@ def crNumberInput(cat, prod):
   else:
     res += """
 <div class="part-number-input">
-  <input type="number" class="part-quantity" id="{prod_code}_qty" name="{cat_code}_qty" min="{min}" max="{max}" value="0">
+  <input type="number" class="part-quantity" id="{prod_code}_qty" name="{cat_code}_qty{type_ism}" min="{min}" max="{max}" value="0">
   <i class="bi bi-dash part-num-decr"></i>
   <span class="quantity-display">0</span>
   <i class="bi bi-plus part-num-incr"></i>
@@ -24,6 +24,7 @@ def crNumberInput(cat, prod):
       cat_code = cat["cat-code"],
       min = prod["prod-min"],
       max = prod["prod-max"],
+      type_ism = "[]" if cat["type"] == "checkbox" else ""
     )  
 
   return res
@@ -33,7 +34,7 @@ def crProdList(cat):
   for prod in cat["product-list"]:
 
     prodStr = """
-<input type="radio" class="part-rd-bt" id="{prod_code}" name="{cat_code}" value="{prod_code}"{prod_erp}>
+<input type="{btn_type}" class="{type_class}" id="{prod_code}" name="{cat_code}{type_ism}" value="{prod_val}"{prod_erp}>
 <label class="listed-part" for="{prod_code}">
   <div class="part-img">
     <img class="build-img" src="img/{prod_code}.jpg" width="100%">
@@ -52,11 +53,15 @@ def crProdList(cat):
   </div>
 </label>""".format(
       prod_code = prod["prod-code"],
+      prod_val = prod["prod-code"] if prod["prod-erp"] != "-" else "0",
       cat_code = cat["cat-code"],
       prod_erp = f' data-erp="{prod["prod-erp"]}"' if prod["prod-erp"] != "-" else "",
       prod_name = prod["prod-name"],
       number_input = crNumberInput(cat, prod),
-      prod_price = prod["prod-price"]
+      prod_price = prod["prod-price"],
+      btn_type = "checkbox" if cat["type"] == "checkbox" else "radio",
+      type_ism = "[]" if cat["type"] == "checkbox" else "",
+      type_class = "part-checkbox" if cat["type"] == "checkbox" else "part-rd-bt"
     )
     
     res += prodStr

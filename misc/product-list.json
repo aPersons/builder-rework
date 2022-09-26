@@ -711,7 +711,7 @@
     "cat-code": "cat9",
     "cat-name": "2ος Δίσκος SSD M.2",
     "cat-desc": "<i class=\"ci-announcement me-2\"></i>Η τελευταία τεχνολογία των δίσκων SSD, η επικοινωνία γίνεται μέσω των γρήγορων PCIe lanes αντί των θυρών SATA με αποτέλεσμα πολύ υψηλότερες ταχύτητες ανάγνωσης και εγγραφής.",
-    "type": "radio",
+    "type": "checkbox",
     "init-prod": "$blank",
     "singleQuant": false,
     "product-list": [

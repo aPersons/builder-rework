@@ -189,42 +189,51 @@ let bTK = {
     let cnm = evArgs.cnm;
     let emptyEl = domCashe.dom[cnm].emptyEl;
 
-    if (domCashe.dom[cnm].prodSelected.includes(pnm)) {
-      if (pnm == emptyEl) {
+    if (pnm == emptyEl) {
+      if (domCashe.dom[cnm].prodSelected.includes(pnm)) {
         if (domCashe.dom[cnm].prodSelected.length > 1) {
           bTK.cbDataClose(pnm, cnm);
         } else {
           domCashe.dom[cnm].prodList[pnm].selfDom.checked = true;
         }
-      } else if (domCashe.dom[cnm].prodSelected.length > 1) {
-        bTK.cbDataClose(pnm, cnm);        
-      } else if (emptyEl != "$blank") {
-        domCashe.dom[cnm].prodList[pnm].selfDom.checked = true;
       } else {
-        bTK.cbDataClose(pnm, cnm);
-        bTK.cbOpen(emptyEl, cnm);
-      }
-    } else if (pnm == emptyEl) {
-      let lCopy = [...domCashe.dom[cnm].prodSelected];
-      for (const pr of lCopy) {
-        bTK.cbClose(pr, cnm);
-      }
-      bTK.cbDataOpen(pnm, cnm);
+        let lCopy = [...domCashe.dom[cnm].prodSelected];
+        for (const pr of lCopy) {
+          bTK.cbClose(pr, cnm);
+        }
+        bTK.cbDataOpen(pnm, cnm);
+        }
     } else {
-      bTK.cbDataOpen(pnm, cnm);
-      if (emptyEl != "$blank" && domCashe.dom[cnm].prodSelected.includes(emptyEl)) {
-        bTK.cbClose(emptyEl, cnm);
+      if (domCashe.dom[cnm].prodSelected.includes(pnm)) {
+        if (domCashe.dom[cnm].prodSelected.length > 1) {
+          bTK.cbDataClose(pnm, cnm);
+        } else {
+          if (emptyEl != "$blank") {
+            bTK.cbDataClose(pnm, cnm);
+            bTK.cbOpen(emptyEl, cnm);
+          } else {
+            domCashe.dom[cnm].prodList[pnm].selfDom.checked = true;
+          }
+        }
+      } else {
+        bTK.cbDataOpen(pnm, cnm);
+        if (emptyEl != "$blank" && domCashe.dom[cnm].prodSelected.includes(emptyEl)) {
+          bTK.cbClose(emptyEl, cnm);
+        }
       }
     }
   },  
   cbCheck: function () {
     for (const [cnm, ob] of Object.entries(domCashe.dom)) {
-      if (ob.prodType == "checkbox" && ob.emptyEl != "$blank") {
-        if (ob.prodList.length < 1) {
+      if (ob.prodType != "checkbox") continue;
+      if (ob.emptyEl != "$blank") {
+        if (ob.prodSelected.length < 1) {
           bTK.cbOpen(ob.emptyEl, cnm);
-        } else if (ob.prodList.length > 1 && ob.prodSelected.includes(ob.emptyEl)) {
+        } else if (ob.prodSelected.length > 1 && ob.prodSelected.includes(ob.emptyEl)) {
           bTK.cbClose(ob.emptyEl, cnm);
         }        
+      } else if (ob.prodSelected.length < 1) {
+        bTK.cbOpen(ob.prodOrder[0], cnm);
       }
     }
   },
@@ -247,8 +256,8 @@ let bTK = {
       ob.prodOrder = [];
       ob.prodList = {};
       for (const pob of tmpList) {
-        pob.removeEventListener("change", CbBtHandler);
-        pob.addEventListener("change", CbBtHandler);
+        pob.removeEventListener("change", bTK.CbBtHandler);
+        pob.addEventListener("change", bTK.CbBtHandler);
         let dname = pob.id;
         ob.prodOrder.push(dname);
         let cdom = pob.nextElementSibling;
