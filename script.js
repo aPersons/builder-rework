@@ -1,4 +1,30 @@
-
+function wtDecimal(wholeNum) {
+  let numVal = Number(wholeNum);
+  if (!Number.isSafeInteger(numVal)) return "unsupported input";
+  let wholeStr = numVal.toString();
+  let sl = wholeStr.length;
+  if (wholeNum >= 0) {
+    if (sl == 0) {
+      return "0,00";
+    } else if (sl == 1) {
+      return `0,0${wholeStr}`;
+    } else if (sl == 2) {
+      return `0,${wholeStr}`;
+    } else {
+      return `${wholeStr.slice(0, sl-2)},${wholeStr.slice(sl-2, sl)}`;
+    }
+  } else {
+    if (sl < 2) {
+      return "0,00";
+    } else if (sl == 2) {
+      return `-0,0${wholeStr[1]}`;
+    } else if (sl == 3) {
+      return `-0,${wholeStr.slice(1, sl)}`;
+    } else {
+      return `-${wholeStr.slice(1, sl-2)},${wholeStr.slice(sl-2, sl)}`;
+    }
+  }
+}
 
 
 
@@ -359,23 +385,23 @@ let bTK = {
   },  
   CFGquantIncrHandler: [],
   quantIncrHandler: function (e) {
+    e.preventDefault();
     let pob = this.parentElement.parentElement.previousElementSibling;
     let evArgs = {
       pnm: pob.id,
       cnm: pob.parentElement.parentElement.id
     }
     for (const fnc of bTK.CFGquantIncrHandler) fnc(evArgs);
-    e.preventDefault();
   },
   CFGquantDecrHandler: [],
   quantDecrHandler: function(e) {
+    e.preventDefault();
     let pob = this.parentElement.parentElement.previousElementSibling;
     let evArgs = {
       pnm: pob.id,
       cnm: pob.parentElement.parentElement.id
     }
     for (const fnc of bTK.CFGquantDecrHandler) fnc(evArgs);
-    e.preventDefault();
   },
   crQuantity: function() {
     for (const cnm of domCashe.domOrder) {
@@ -414,10 +440,109 @@ let bTK = {
     bTK.CFGquantIncrHandler.push(bTK.quantIncr);
     bTK.CFGquantDecrHandler.length = 0;
     bTK.CFGquantDecrHandler.push(bTK.quantDecr);
+  },
+
+
+
+
+  updateProdPrice: function(evArgs) {
+    let ob = domCashe.dom[evArgs.cnm];
+    if (ob.prodType == "radio") {
+      let sprice = ob.prodList[ob.prodSelected].priceVal;
+      for (const pnm of ob.prodOrder) {
+        let pob = ob.prodList[pnm];
+        if (!pob.hasOwnProperty("priceBlock")) continue;
+        if (pnm == ob.prodSelected) {
+          // pob.priceBlock.textContent = `${wtDecimal(sprice)}€`;
+          continue;
+        }
+        let dfr = pob.priceVal - sprice;
+        if (dfr == 0) {
+          pob.priceBlock.textContent = `+0,00€`;
+        } else if (dfr < 0) {
+          pob.priceBlock.textContent = `${wtDecimal(dfr)}€`;
+        } else {
+          pob.priceBlock.textContent = `+${wtDecimal(dfr)}€`;
+        }
+      }
+    }
+  },  
+  crProdPrice: function() {
+    for (const cnm of domCashe.domOrder) {
+      let ob = domCashe.dom[cnm];
+      if (ob.prodType == "radio") {
+        for (const pnm of ob.prodOrder) {
+          let pod = ob.prodList[pnm];
+          let fixedPrice = pod.cDom.querySelector(".price-fixed-block");
+          if (fixedPrice) fixedPrice.textContent = `${wtDecimal(pod.priceVal)}€`;
+          let relPrice = pod.cDom.querySelector(".price-block");
+          if (relPrice) pod.priceBlock = relPrice;
+        }
+        bTK.updateProdPrice({"cnm":cnm});
+      } else if (ob.prodType == "checkbox") {
+        for (const pnm of ob.prodOrder) {
+          let pod = ob.prodList[pnm];
+          let fixedPrice = pod.cDom.querySelector(".price-fixed-block");
+          if (fixedPrice) fixedPrice.textContent = `${wtDecimal(pod.priceVal)}€`;
+          let relPrice = pod.cDom.querySelector(".price-block");
+          if (relPrice) relPrice.textContent = `${wtDecimal(pod.priceVal)}€`;
+        }
+      }
+    }
+    bTK.CFGRdBtHandler.push(bTK.updateProdPrice);
   }
 }
 
 
+
+
+pr = {
+  updateFinalPrice: function() {
+    let nresult = 0;
+    for (const ob of Object.values(domCashe.dom)) {
+      if (ob.prodType=="radio") {
+        let pob = ob.prodList[ob.prodSelected];
+        nresult += pob.priceVal * pob.qValue;
+      } else if (ob.prodType=="checkbox") {
+        for (const pnm of ob.prodSelected) {
+          let pob = ob.prodList[pnm];
+          nresult += pob.priceVal * pob.qValue;
+        }
+      }
+    }
+    if (nresult < 0) nresult = 0;
+    if (nresult!=domCashe.finalPrice.totalVal) {
+      domCashe.finalPrice.totalVal = nresult;
+      if (domCashe.finalPrice.priceDom.length) {
+        let pricestr = wtDecimal(nresult);
+        for (const priceItem of domCashe.finalPrice.priceDom) {
+          priceItem.textContent = pricestr;
+        }
+      }
+      if (domCashe.finalPrice.priceTaxLessDom.length) {
+        let pricestr = wtDecimal(Math.floor(nresult / 1.24));
+        for (const priceItem of domCashe.finalPrice.priceTaxLessDom) {
+          priceItem.textContent = pricestr;
+        }
+      }
+    }
+  },
+  crFinalPrice: function() {
+    domCashe.finalPrice = {}
+    let buildPrice = document.querySelectorAll(".build-price-total");
+    let buildPriceTaxLess = document.querySelectorAll(".build-price-taxless");
+    domCashe.finalPrice.priceDom = [...buildPrice];
+    domCashe.finalPrice.priceTaxLessDom = [...buildPriceTaxLess];
+    if (buildPrice.length || buildPriceTaxLess.length) {
+      domCashe.finalPrice.totalVal = 0;
+      bTK.CFGRdBtHandler.push(pr.updateFinalPrice);
+      bTK.CFGCbBtHandler.push(pr.updateFinalPrice);
+      bTK.CFGquantIncrHandler.push(pr.updateFinalPrice);
+      bTK.CFGquantDecrHandler.push(pr.updateFinalPrice);
+      pr.updateFinalPrice();
+    }
+  }
+}
 
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -426,11 +551,11 @@ document.addEventListener("DOMContentLoaded", function() {
   bTK.crCbBt();
   bTK.crQuantity();
 
-  // bTK.crProdPrice();
+  bTK.crProdPrice();
   // bTK.crHeadSel();
   bTK.crCOpen();  
   
-  // crFinalPrice();
+  pr.crFinalPrice();
   // ~~.crProdNav();
   // ~~.crBuildModal();
   // bTK.setTimeout(crDomReduce, 0);//quick_view.js must run before this. Won't add events otherwise.
