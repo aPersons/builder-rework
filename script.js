@@ -358,22 +358,24 @@ let bTK = {
     }
   },  
   CFGquantIncrHandler: [],
-  quantIncrHandler: function () {
+  quantIncrHandler: function (e) {
     let pob = this.parentElement.parentElement.previousElementSibling;
     let evArgs = {
       pnm: pob.id,
       cnm: pob.parentElement.parentElement.id
     }
     for (const fnc of bTK.CFGquantIncrHandler) fnc(evArgs);
+    e.preventDefault();
   },
   CFGquantDecrHandler: [],
-  quantDecrHandler: function() {
+  quantDecrHandler: function(e) {
     let pob = this.parentElement.parentElement.previousElementSibling;
     let evArgs = {
       pnm: pob.id,
       cnm: pob.parentElement.parentElement.id
     }
     for (const fnc of bTK.CFGquantDecrHandler) fnc(evArgs);
+    e.preventDefault();
   },
   crQuantity: function() {
     for (const cnm of domCashe.domOrder) {
