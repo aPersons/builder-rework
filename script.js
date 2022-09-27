@@ -490,13 +490,120 @@ let bTK = {
       }
     }
     bTK.CFGRdBtHandler.push(bTK.updateProdPrice);
+  },
+
+
+
+
+  updateHeadSel: function(evArgs) {
+    let ob = domCashe.dom[evArgs.cnm];
+    if (ob.prodType == "radio") {
+      if (ob.prodSelected == ob.emptyEl) {
+        if (ob.hasSelected) {
+          ob.hasSelected = false;
+          ob.selfDom.classList.remove("contains-selected");
+        }
+      } else if (!ob.hasSelected) {
+        ob.hasSelected = true;
+        ob.selfDom.classList.add("contains-selected");
+      }
+    } else if (ob.prodType == "checkbox") {
+      if (ob.prodSelected.length < 1 || (ob.prodSelected.length < 2 && ob.prodSelected.includes(ob.emptyEl))) {
+        if (ob.hasSelected) {
+          ob.hasSelected = false;
+          ob.selfDom.classList.remove("contains-selected");
+        }
+      } else if (!ob.hasSelected){
+        ob.hasSelected = true;
+        ob.selfDom.classList.add("contains-selected");
+      }
+    }
+  },  
+  crHeadSel: function() {
+    for (const cnm of domCashe.domOrder) {
+      domCashe.dom[cnm].hasSelected = domCashe.dom[cnm].selfDom.classList.contains("contains-selected");
+      bTK.updateHeadSel({"cnm":cnm});
+    }
+    bTK.CFGRdBtHandler.push(bTK.updateHeadSel);
+    bTK.CFGCbBtHandler.push(bTK.updateHeadSel);
+  },
+
+
+
+
+  updateCatDetails: function(evArgs) {
+    let ob = domCashe.dom[evArgs.cnm];
+    if (ob.isEmpty) return;
+    if (ob.prodType == "radio") {
+      let tEl = document.createElement("div");      
+      tEl.classList.add("dt-item");
+      let pob = ob.prodList[ob.prodSelected];
+      tEl.textContent = pob.nmTxt;
+      if (pob.qType == "dynamic") {
+        let snippet = document.createElement("strong");
+        snippet.textContent = `${pob.qValue}x - `;
+        tEl.prepend(snippet);
+      }
+      ob.dtDom.replaceChildren(tEl);
+    } else if (ob.prodType == "checkbox") {
+      let lst = [];
+      for (const pnm of ob.prodSelected) {
+        let tEl = document.createElement("div");        
+        tEl.classList.add("dt-item");
+        let pob = ob.prodList[pnm];
+        tEl.textContent = pob.nmTxt;
+        if (pob.qType == "dynamic") {
+          let snippet = document.createElement("strong");
+          snippet.textContent = `${pob.qValue}x - `;
+          tEl.prepend(snippet);
+        }
+        lst.push(tEl);
+      }
+      ob.dtDom.replaceChildren(...lst);
+    }    
+  },
+  crCatDetails: function() {
+    for (const ob of Object.values(domCashe.dom)) {
+      if (!ob.isEmpty) ob.dtDom = ob.selfDom.querySelector(".part-category-details");      
+    }
+    for (const cnm of domCashe.domOrder) {
+      bTK.updateCatDetails({cnm: cnm});
+    }
+    bTK.CFGRdBtHandler.push(bTK.updateCatDetails);
+    bTK.CFGCbBtHandler.push(bTK.updateCatDetails);
+    bTK.CFGquantIncrHandler.push(bTK.updateCatDetails);
+    bTK.CFGquantDecrHandler.push(bTK.updateCatDetails);
+  },
+
+  
+
+  updateCatIMG: function(evArgs) {
+    let ob = domCashe.dom[evArgs.cnm];
+    if (ob.isEmpty) return;
+    if (ob.prodType == "radio") {
+      ob.catIMG.src = ob.prodList[ob.prodSelected].imgSrc;
+    } else if (ob.prodType == "checkbox") {
+      ob.catIMG.src = ob.prodList[ob.prodSelected[0]].imgSrc;
+    }
+  },
+  crCatIMG: function() {
+    for (const ob of Object.values(domCashe.dom)) {
+      if (ob.isEmpty) continue;
+      ob.catIMG = ob.selfDom.querySelector(".part-category-img img");
+      for (const pob of Object.values(ob.prodList)) pob.imgSrc = pob.cDom.querySelector(".part-img img").src;
+    }
+    for (const cnm of domCashe.domOrder) {
+      bTK.updateCatIMG({cnm: cnm});
+    }
+    bTK.CFGRdBtHandler.push(bTK.updateCatIMG);
+    bTK.CFGCbBtHandler.push(bTK.updateCatIMG);
   }
 }
 
 
 
 
-pr = {
+let pr = {
   updateFinalPrice: function() {
     let nresult = 0;
     for (const ob of Object.values(domCashe.dom)) {
@@ -547,13 +654,15 @@ pr = {
 
 document.addEventListener("DOMContentLoaded", function() {
   bTK.crCats();
+  bTK.crCOpen();
   bTK.crRdBt();
   bTK.crCbBt();
   bTK.crQuantity();
 
   bTK.crProdPrice();
-  // bTK.crHeadSel();
-  bTK.crCOpen();  
+  bTK.crHeadSel();
+  bTK.crCatDetails();
+  bTK.crCatIMG();
   
   pr.crFinalPrice();
   // ~~.crProdNav();
