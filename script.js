@@ -37,6 +37,7 @@ let domCashe = {
   buildModal: {},
   prodNav: {},
   finalPrice: {},
+  build: {}
 }
 
 let bTK = {
@@ -602,6 +603,33 @@ let bTK = {
 
 
 
+let build = {
+  updateBuildIMG: function(evArgs) {
+    if (evArgs.cnm != "cat0") return;
+    let ob = domCashe.dom["cat0"];
+    if (ob.isEmpty) return;
+    if (ob.prodType == "radio") {
+      domCashe.build.bIMG.src = ob.prodList[ob.prodSelected].imgSrc;
+    } else if (ob.prodType == "checkbox") {
+      domCashe.build.bIMG.src = ob.prodList[ob.prodSelected[0]].imgSrc;
+    }
+  },
+  crBuilldIMG: function() {
+    domCashe.build = {};
+    let imgDom = document.querySelector(".build-img");
+    if (!imgDom) return;
+    if (!domCashe.dom.hasOwnProperty("cat0")) return;
+    domCashe.build.bIMG = imgDom;
+    
+    build.updateBuildIMG({cnm: "cat0"});
+    bTK.CFGRdBtHandler.push(build.updateBuildIMG);
+    bTK.CFGCbBtHandler.push(build.updateBuildIMG);
+  }
+}
+
+
+
+
 
 let pr = {
   updateFinalPrice: function() {
@@ -663,6 +691,7 @@ document.addEventListener("DOMContentLoaded", function() {
   bTK.crHeadSel();
   bTK.crCatDetails();
   bTK.crCatIMG();
+  build.crBuilldIMG();
   
   pr.crFinalPrice();
   // ~~.crProdNav();

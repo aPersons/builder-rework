@@ -37,7 +37,7 @@ def crProdList(cat):
 <input type="{btn_type}" class="{type_class}" id="{prod_code}" name="{cat_code}{type_ism}" value="{prod_val}"{prod_erp}>
 <label class="listed-part" for="{prod_code}">
   <div class="part-img">
-    <img class="build-img" src="img/{prod_code}.jpg" width="100%">
+    <img class="prod-img" src="img/{prod_code}.jpg" width="100%">
   </div>
   <div class="part-text">
     <div class="part-text-head fs-xs">
