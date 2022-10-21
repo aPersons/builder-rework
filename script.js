@@ -28,7 +28,7 @@ function wtDecimal(wholeNum) {
 
 
 
-/*--------------------------------------------
+/*---------------------------------------------
 ---------------------------------------------*/
 
 let domCashe = {
@@ -59,6 +59,7 @@ let bTK = {
       }
     }
   },
+
 
 
 
@@ -106,6 +107,7 @@ let bTK = {
     bTK.CFGcHeadHandler.length = 0;
     bTK.CFGcHeadHandler.push(bTK.catGroupAction);
   },
+
 
 
 
@@ -174,6 +176,7 @@ let bTK = {
     bTK.CFGRdBtHandler.length = 0;
     bTK.CFGRdBtHandler.push(bTK.updateRdState);
   },
+
 
 
 
@@ -307,6 +310,9 @@ let bTK = {
     bTK.CFGCbBtHandler.length = 0;
     bTK.CFGCbBtHandler.push(bTK.updateCbState);
   },
+
+
+
 
 
   quantUpdate: function(evArgs) {
@@ -446,6 +452,7 @@ let bTK = {
 
 
 
+
   updateProdPrice: function(evArgs) {
     let ob = domCashe.dom[evArgs.cnm];
     if (ob.prodType == "radio") {
@@ -496,6 +503,7 @@ let bTK = {
 
 
 
+
   updateHeadSel: function(evArgs) {
     let ob = domCashe.dom[evArgs.cnm];
     if (ob.prodType == "radio") {
@@ -528,6 +536,7 @@ let bTK = {
     bTK.CFGRdBtHandler.push(bTK.updateHeadSel);
     bTK.CFGCbBtHandler.push(bTK.updateHeadSel);
   },
+
 
 
 
@@ -576,6 +585,8 @@ let bTK = {
     bTK.CFGquantDecrHandler.push(bTK.updateCatDetails);
   },
 
+
+
   
 
   updateCatIMG: function(evArgs) {
@@ -600,6 +611,8 @@ let bTK = {
     bTK.CFGCbBtHandler.push(bTK.updateCatIMG);
   }
 }
+
+
 
 
 
@@ -678,6 +691,9 @@ let pr = {
     }
   }
 }
+
+
+
 
 
 document.addEventListener("DOMContentLoaded", function() {
