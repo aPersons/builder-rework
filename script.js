@@ -34,10 +34,6 @@ function wtDecimal(wholeNum) {
 let domCashe = {
   dom: {},
   domOrder: [],
-  buildModal: {},
-  prodNav: {},
-  finalPrice: {},
-  build: {}
 }
 
 let bTK = {
@@ -622,17 +618,16 @@ let build = {
     let ob = domCashe.dom["cat0"];
     if (ob.isEmpty) return;
     if (ob.prodType == "radio") {
-      domCashe.build.bIMG.src = ob.prodList[ob.prodSelected].imgSrc;
+      build.bIMG.src = ob.prodList[ob.prodSelected].imgSrc;
     } else if (ob.prodType == "checkbox") {
-      domCashe.build.bIMG.src = ob.prodList[ob.prodSelected[0]].imgSrc;
+      build.bIMG.src = ob.prodList[ob.prodSelected[0]].imgSrc;
     }
   },
   crBuilldIMG: function() {
-    domCashe.build = {};
     let imgDom = document.querySelector(".build-img");
     if (!imgDom) return;
     if (!domCashe.dom.hasOwnProperty("cat0")) return;
-    domCashe.build.bIMG = imgDom;
+    build.bIMG = imgDom;
     
     build.updateBuildIMG({cnm: "cat0"});
     bTK.CFGRdBtHandler.push(build.updateBuildIMG);
@@ -645,6 +640,9 @@ let build = {
 
 
 let pr = {
+  totalVal: 0,
+  priceDom: [],
+
   updateFinalPrice: function() {
     let nresult = 0;
     for (const ob of Object.values(domCashe.dom)) {
@@ -659,11 +657,11 @@ let pr = {
       }
     }
     if (nresult < 0) nresult = 0;
-    if (nresult!=domCashe.finalPrice.totalVal) {
-      domCashe.finalPrice.totalVal = nresult;
-      if (domCashe.finalPrice.priceDom.length) {
+    if (nresult != pr.totalVal) {
+      pr.totalVal = nresult;
+      if (pr.priceDom.length) {
         let pricestr = wtDecimal(nresult);
-        for (const priceItem of domCashe.finalPrice.priceDom) {
+        for (const priceItem of pr.priceDom) {
           priceItem.textContent = pricestr;
         }
       }
@@ -679,16 +677,61 @@ let pr = {
     domCashe.finalPrice = {}
     let buildPrice = document.querySelectorAll(".build-price-total");
     let buildPriceTaxLess = document.querySelectorAll(".build-price-taxless");
-    domCashe.finalPrice.priceDom = [...buildPrice];
+    pr.priceDom = [...buildPrice];
     domCashe.finalPrice.priceTaxLessDom = [...buildPriceTaxLess];
     if (buildPrice.length || buildPriceTaxLess.length) {
-      domCashe.finalPrice.totalVal = 0;
+      pr.totalVal = 0;
       bTK.CFGRdBtHandler.push(pr.updateFinalPrice);
       bTK.CFGCbBtHandler.push(pr.updateFinalPrice);
       bTK.CFGquantIncrHandler.push(pr.updateFinalPrice);
       bTK.CFGquantDecrHandler.push(pr.updateFinalPrice);
       pr.updateFinalPrice();
     }
+  }
+}
+
+
+var CFGscrollHandler = [];
+var scrollHandlerAv = true;
+var tmRef;
+function scrollHandler() {
+  if (scrollHandlerAv) {
+    scrollHandlerAv = false;
+    for (const fnc of CFGscrollHandler) fnc();
+    setTimeout(() => scrollHandlerAv = true, 25);
+  }
+  clearTimeout(tmRef);
+  tmRef = setTimeout(scrollHandlerEnd,50);
+}
+var CFGscrollHandlerEnd = [];
+function scrollHandlerEnd() {
+  scrollHandlerAv = false;
+  for (const fnc of CFGscrollHandlerEnd) fnc();
+}
+
+
+let nav = {
+  mobileMode: false,
+  hide: false,
+
+  CFGresizeHadler: [],
+  resizeAv: true,
+  resizeHandler: function() {
+    if (nav.resizeAv) {
+      nav.resizeAv = false;
+      for (const fnc of nav.CFGresizeHadler) fnc();
+      setTimeout(() => nav.resizeAv = true, 25);
+    }
+    clearTimeout(tmRef);
+    tmRef = setTimeout(nav.resizeHandler,50);
+  },
+
+  resizeHandler: function() {
+
+  },
+
+  crProdNav: function() {
+
   }
 }
 
