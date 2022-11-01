@@ -691,23 +691,7 @@ let pr = {
 }
 
 
-var CFGscrollHandler = [];
-var scrollHandlerAv = true;
-var tmRef;
-function scrollHandler() {
-  if (scrollHandlerAv) {
-    scrollHandlerAv = false;
-    for (const fnc of CFGscrollHandler) fnc();
-    setTimeout(() => scrollHandlerAv = true, 25);
-  }
-  clearTimeout(tmRef);
-  tmRef = setTimeout(scrollHandlerEnd,50);
-}
-var CFGscrollHandlerEnd = [];
-function scrollHandlerEnd() {
-  scrollHandlerAv = false;
-  for (const fnc of CFGscrollHandlerEnd) fnc();
-}
+
 
 
 let nav = {
@@ -715,23 +699,88 @@ let nav = {
   hide: false,
 
   CFGresizeHadler: [],
+
+  resixeEv: false,
   resizeAv: true,
   resizeHandler: function() {
     if (nav.resizeAv) {
       nav.resizeAv = false;
       for (const fnc of nav.CFGresizeHadler) fnc();
-      setTimeout(() => nav.resizeAv = true, 25);
+      setTimeout(() => nav.resizeAv = true, 500);
     }
-    clearTimeout(tmRef);
-    tmRef = setTimeout(nav.resizeHandler,50);
+    clearTimeout(nav.resixeEv);
+    nav.resixeEv = setTimeout(nav.resizeHandlerEnd,550);
   },
 
-  resizeHandler: function() {
+  CFGresizeHadlerEnd: [],
 
+  resizeHandlerEnd: function() {
+    nav.resizeAv = false;
+    for (const fnc of nav.CFGresizeHadlerEnd) fnc();
+    setTimeout(() => nav.resizeAv = true, 500);
+  },
+
+  CFGscrollHadler: [],
+
+  scrollEv: false,
+  scrollAv: true,
+  scrollHandler: function() {
+    if (nav.scrollAv) {
+      nav.scrollAv = false;
+      for (const fnc of nav.CFGscrollHadler) fnc();
+      setTimeout(() => nav.scrollAv = true, 50);
+    }
+    clearTimeout(nav.scrollEv);
+    nav.scrollEv = setTimeout(nav.scrollHandlerEnd,55);
+  },
+
+  CFGscrollHadlerEnd: [],
+
+  scrollHandlerEnd: function() {
+    nav.scrollAv = false;
+    for (const fnc of nav.CFGscrollHadlerEnd) fnc();
+    setTimeout(() => nav.scrollAv = true, 500);
+  },
+
+
+  crNavDom: function() {
+    if (!domCashe.domOrder.length) return;
+    let selfDom = document.querySelector(".prod-navigation");
+    if (!selfDom) return;
+    nav.selfDom = selfDom;
+    let tmpDom = "";
+    let tmpItems = {};
+    for (const cnm of domCashe.domOrder) {
+      let ob = domCashe.dom[cnm];
+      if (ob.isEmpty || ob.isHidden) continue;
+
+      tmpItems[cnm] = {
+        "lpState": ob.lpState,
+        "hasSelected": ob.hasSelected,
+        "isFocused": false
+      }
+
+      tmpDom += `<div class="prod-navigator" data-navdest="${cnm}">
+      <i class="bi bi-circle-fill fs-xs pe-1 text-muted"></i>
+      <span>${ob.nmTxt}</span>
+      </div>`
+    }
+    if (tmpDom) {
+      nav.selfDom.innerHTML = tmpDom;
+      nav.navItems = tmpItems;
+      for (const obb of nav.selfDom.querySelectorAll(".prod-navigator")) {
+        let cnm = obb.dataset.navdest;
+        nav.navItems[cnm].navDom = obb;
+      }
+    }
   },
 
   crProdNav: function() {
-
+    nav.crNavDom();
+    document.removeEventListener("scroll", nav.scrollHandler);
+    document.addEventListener("scroll", nav.scrollHandler);
+    window.removeEventListener("resize", nav.resizeHandler);
+    window.addEventListener("resize", nav.resizeHandler);
   }
 }
 
@@ -753,7 +802,7 @@ document.addEventListener("DOMContentLoaded", function() {
   build.crBuilldIMG();
   
   pr.crFinalPrice();
-  // ~~.crProdNav();
+  nav.crProdNav();
   // ~~.crBuildModal();
   // bTK.setTimeout(crDomReduce, 0);//quick_view.js must run before this. Won't add events otherwise.
   
