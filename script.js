@@ -760,8 +760,8 @@ let nav = {
         "isFocused": false
       }
 
-      tmpDom += `<div class="prod-navigator" data-navdest="${cnm}">
-      <i class="bi bi-circle-fill fs-xs pe-1 text-muted"></i>
+      tmpDom += `<div class="prod-navigator ${ob.lpState?"navlpshow":""}" data-navdest="${cnm}">
+      <i class="bi bi-circle-fill fs-xs pe-1 ${ob.hasSelected?"text-success":"text-muted"}"></i>
       <span>${ob.nmTxt}</span>
       </div>`
     }

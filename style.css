@@ -74,11 +74,99 @@
   display: flex;
   flex-direction: column;  
   max-height: calc(100vh - 210px);
-  position: -webkit-sticky;
-  position: sticky;
-  top: 149px;
-  padding: 15px;
 }
+
+@media only screen and (min-width: 768px) {
+  .panel-inner {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 149px;
+    padding: 15px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .panel-inner {
+    top: 139px;
+    max-height: calc(100vh - 205px);
+  }
+}
+.prod-navigation {
+  overflow: auto;
+}
+
+.prod-navigation.barMode {
+  display: flex;
+  position: fixed;
+  top: 130px;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  background-color: #2b3445;
+  padding: 7px;
+  color: #fff;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  scrollbar-width: none;
+  gap: 1ch;
+}
+.prod-navigation.barMode::-webkit-scrollbar {
+  display: none;
+}
+.prod-navigation.outOfView {
+  display: none;
+}
+
+
+.prod-navigator {
+  padding: 0 5px;
+  font-size: 0.9rem;  
+  cursor: pointer;
+}
+.prod-navigation:not(.barMode) .prod-navigator {
+  transition: background-color 0.25s;
+}
+.prod-navigation:not(.barMode) .prod-navigator:hover {
+  /* background-color: #f6f6f6; */
+  background: linear-gradient(90deg, rgba(246,246,246,1) 50%, rgba(255,255,255,1) 100%);
+  border-radius: 0.4375rem;
+}
+.prod-navigation:not(.barMode) .prod-navigator.navlpshow {
+  border-radius: 0.4375rem;
+  background: linear-gradient(90deg, rgba(246,246,246,1) 50%, rgba(255,255,255,1) 100%);
+}
+
+/* .prod-navigation .prod-navigator i{margin-right: 10px;} */
+.prod-navigator i.bi-slash-circle {
+  padding-right: 0.5ch;
+  color: #eabe4b;
+}
+.prod-navigator i.bi-check-circle {
+  padding-right: 0.5ch;
+  color: #42d697;
+}
+.prod-navigator i.bi-tools {float: right;}
+
+
+.prod-navigation.barMode .prod-navigator {
+  display: flex;
+  white-space: pre;
+}
+.prod-navigation.barMode .prod-navigator {
+  border-bottom: 1px #2b3445 solid;
+}
+.prod-navigation.barMode .prod-navigator.isfocused {
+  border-bottom-color: #fff;
+}
+/* .prod-navigation.barMode .prod-navigator.navlpshow i.bi-circle-fill.text-muted + span {
+  color: #7d879c;
+} */
+.prod-navigation.barMode .prod-navigator.navlpshow i.bi-circle-fill.text-success + span {
+  color: #42d697;
+}
+.prod-navigation.barMode .prod-navigator i.bi-tools {
+  display: none;
+}
+
 
 
 /* Product Column */
