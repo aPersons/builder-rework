@@ -62,7 +62,7 @@ let bTK = {
 
   catAction: function(evArgs) {
     let ob  = domCashe.dom[evArgs.cnm];
-    var action = evArgs.action ?? "toggle";
+    let action = evArgs.action ?? "toggle";
 
     switch(action) {
       case "open":
@@ -132,7 +132,7 @@ let bTK = {
   },
   CFGRdBtHandler: [],
   RdBtHandler: function() {
-    var evArgs = {
+    let evArgs = {
       pnm: this.id,
       cnm: this.parentElement.parentElement.id
     }
@@ -700,7 +700,7 @@ let nav = {
 
   CFGresizeHadler: [],
 
-  resixeEv: false,
+  resizeEv: false,
   resizeAv: true,
   resizeHandler: function() {
     if (nav.resizeAv) {
@@ -708,8 +708,8 @@ let nav = {
       for (const fnc of nav.CFGresizeHadler) fnc();
       setTimeout(() => nav.resizeAv = true, 500);
     }
-    clearTimeout(nav.resixeEv);
-    nav.resixeEv = setTimeout(nav.resizeHandlerEnd,550);
+    clearTimeout(nav.resizeEv);
+    nav.resizeEv = setTimeout(nav.resizeHandlerEnd,550);
   },
 
   CFGresizeHadlerEnd: [],
@@ -743,6 +743,38 @@ let nav = {
   },
 
 
+
+
+  updateHasSelected: function(evArgs) {
+    let catVal = domCashe.dom[evArgs.cnm].hasSelected;
+    if (catVal) {
+      if (!nav.navItems[evArgs.cnm].hasSelected) {
+        nav.navItems[evArgs.cnm].hasSelected = true;
+        nav.navItems[evArgs.cnm].navDom.firstElementChild.classList.replace("text-muted", "text-success");
+      }
+    } else {
+      if (nav.navItems[evArgs.cnm].hasSelected) {
+        nav.navItems[evArgs.cnm].hasSelected = false;
+        nav.navItems[evArgs.cnm].navDom.firstElementChild.classList.replace("text-success", "text-muted");
+      }
+    }
+  },
+  updateLpState: function(evArgs) {
+    let catVal = domCashe.dom[evArgs.cnm].lpState;
+    if (catVal) {
+      if (!nav.navItems[evArgs.cnm].lpState) {
+        nav.navItems[evArgs.cnm].lpState = true;
+        nav.navItems[evArgs.cnm].navDom.add("navlpshow");
+      }
+    } else {
+      if (nav.navItems[evArgs.cnm].lpState) {
+        nav.navItems[evArgs.cnm].lpState = false;
+        nav.navItems[evArgs.cnm].navDom.firstElementChild.classList.replace("text-success", "text-muted");
+      }
+    }
+  },
+  updateisFocused: function(evArgs) {},
+
   crNavDom: function() {
     if (!domCashe.domOrder.length) return;
     let selfDom = document.querySelector(".prod-navigation");
@@ -773,6 +805,8 @@ let nav = {
         nav.navItems[cnm].navDom = obb;
       }
     }
+    bTK.CFGRdBtHandler.push(nav.updateHasSelected);
+    bTK.CFGCbBtHandler.push(nav.updateHasSelected);
   },
 
   crProdNav: function() {
