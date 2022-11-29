@@ -695,7 +695,7 @@ let pr = {
 
 
 let nav = {
-  mobileMode: false,
+  barMode: false,
   hide: false,
 
   CFGresizeHadler: [],
@@ -729,6 +729,7 @@ let nav = {
       nav.scrollAv = false;
       for (const fnc of nav.CFGscrollHadler) fnc();
       setTimeout(() => nav.scrollAv = true, 50);
+      console.log("scroll event");
     }
     clearTimeout(nav.scrollEv);
     nav.scrollEv = setTimeout(nav.scrollHandlerEnd,55);
@@ -739,11 +740,23 @@ let nav = {
   scrollHandlerEnd: function() {
     nav.scrollAv = false;
     for (const fnc of nav.CFGscrollHadlerEnd) fnc();
-    setTimeout(() => nav.scrollAv = true, 500);
+    setTimeout(() => nav.scrollAv = true, 50);
   },
 
 
-
+  updateBarMode: function() {
+    if (window.innerWidth >= 768) {
+      if (nav.barMode) {
+        nav.barMode = false;
+        nav.selfDom.classList.remove("barMode");
+      }
+    } else {
+      if (!nav.barMode) {
+        nav.barMode = true;
+        nav.selfDom.classList.add("barMode");
+      }
+    }
+  },
 
   updateHasSelected: function(evArgs) {
     let catVal = domCashe.dom[evArgs.cnm].hasSelected;
@@ -810,11 +823,20 @@ let nav = {
   },
 
   crProdNav: function() {
-    nav.crNavDom();
     document.removeEventListener("scroll", nav.scrollHandler);
     document.addEventListener("scroll", nav.scrollHandler);
     window.removeEventListener("resize", nav.resizeHandler);
     window.addEventListener("resize", nav.resizeHandler);
+
+    nav.CFGresizeHadler.length = 0;
+    nav.CFGresizeHadlerEnd.length = 0;
+    nav.CFGscrollHadler.length = 0;
+    nav.CFGscrollHadlerEnd.length = 0;
+
+    nav.CFGresizeHadlerEnd.push(nav.updateBarMode);
+
+
+    nav.crNavDom();
   }
 }
 

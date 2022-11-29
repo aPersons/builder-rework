@@ -98,7 +98,7 @@
 .prod-navigation.barMode {
   display: flex;
   position: fixed;
-  top: 130px;
+  top: 139px;
   left: 0;
   z-index: 999;
   width: 100%;
