@@ -696,7 +696,7 @@ let pr = {
 
 let nav = {
   barMode: false,
-  hide: false,
+  inView: false,
 
   CFGresizeHadler: [],
 
@@ -729,7 +729,7 @@ let nav = {
       nav.scrollAv = false;
       for (const fnc of nav.CFGscrollHadler) fnc();
       setTimeout(() => nav.scrollAv = true, 50);
-      console.log("scroll event");
+      // console.log("scroll event");
     }
     clearTimeout(nav.scrollEv);
     nav.scrollEv = setTimeout(nav.scrollHandlerEnd,55);
@@ -755,6 +755,18 @@ let nav = {
         nav.barMode = true;
         nav.selfDom.classList.add("barMode");
       }
+    }
+  },
+  updateBarScroll: function() {
+    if (!nav.barMode) return
+    if (nav.selfDom.parentElement.getBoundingClientRect().top > 110) {
+      if (nav.inView) {
+        nav.inView = false;
+        nav.selfDom.classList.remove("inView");
+      }
+    } else if (!nav.inView) {
+      nav.inView = true;
+      nav.selfDom.classList.add("inView");
     }
   },
 
@@ -820,6 +832,11 @@ let nav = {
     }
     bTK.CFGRdBtHandler.push(nav.updateHasSelected);
     bTK.CFGCbBtHandler.push(nav.updateHasSelected);
+
+    nav.CFGresizeHadlerEnd.push(nav.updateBarMode);
+    nav.CFGscrollHadler.push(nav.updateBarScroll);
+    nav.updateBarMode();
+    nav.updateBarScroll();
   },
 
   crProdNav: function() {
@@ -832,9 +849,6 @@ let nav = {
     nav.CFGresizeHadlerEnd.length = 0;
     nav.CFGscrollHadler.length = 0;
     nav.CFGscrollHadlerEnd.length = 0;
-
-    nav.CFGresizeHadlerEnd.push(nav.updateBarMode);
-
 
     nav.crNavDom();
   }
