@@ -1,3 +1,50 @@
+/*--------------------------------------------
+ Functions to make scroll with speed control
+---------------------------------------------*/
+
+// Element or Position to move + Time in ms (milliseconds)
+
+function scrollToQ(element, duration) {
+	let e = document.documentElement;
+    if (e.scrollTop===0) {
+        let t = e.scrollTop;
+        ++e.scrollTop;
+        e = t+1===e.scrollTop--?e:document.body;
+    }
+    scrollToC(e, e.scrollTop, element, duration);
+}
+// Element to move, element or px from, element or px to, time in ms to animate
+function scrollToC(element, from, to, duration) {
+  if (duration <= 0) return;
+  if (typeof from === "object") from=from.offsetTop;
+  if (typeof to === "object") to=to.offsetTop;
+  // Choose one effect like easeInQuart
+  scrollToX(element, from, to, 0, 1/duration, Date.now(), easeInOutCuaic);
+}
+function scrollToX(element, xFrom, xTo, t01, speed, q, motion) {
+  let nq = Date.now();
+  let step = nq - q;
+  if (t01 < 0 || t01 > 1 || speed<= 0) {
+      element.scrollTop = xTo;
+      return;
+  }
+	element.scrollTop = xFrom - (xFrom - xTo) * motion(t01);
+	t01 += speed * step;
+	
+	requestAnimationFrame(() => scrollToX(element, xFrom, xTo, t01, speed, nq, motion));
+}
+function easeInOutCuaic(t) {
+	t/=0.5;
+	if(t<1)return t*t*t/2;
+	t-=2;
+	return (t*t*t+2)/2;
+}
+
+/*---------------------------------------------
+---------------------------------------------*/
+
+
+
 function wtDecimal(wholeNum) {
   let numVal = Number(wholeNum);
   if (!Number.isSafeInteger(numVal)) return "unsupported input";
@@ -51,13 +98,35 @@ let bTK = {
         "isEmpty": !cDom.querySelectorAll(".part-rd-bt, .part-checkbox").length,
         "pListDom": cDom.querySelector(".part-list-container"),
         "nmTxt": tmphead.textContent,
-        "lpState": cDom.classList.contains("lp-show")
+        "lpState": cDom.classList.contains("lp-show"),
+        "collapseDom": cDom.querySelector(".catCollapsible")
       }
     }
   },
 
 
-
+  catOpen: function(evArgs) {
+    let ob  = domCashe.dom[evArgs.cnm];
+    if (ob.lpState) return;
+    ob.lpState = true;
+    ob.selfDom.classList.add("lp-show");
+    ob.collapseDom.style.display = "block";
+    requestAnimationFrame(()=>requestAnimationFrame(
+      ()=>ob.collapseDom.style.maxHeight = ob.collapseDom.scrollHeight + "px"
+    ))    
+  },
+  catClose: function(evArgs) {
+    let ob  = domCashe.dom[evArgs.cnm];
+    if (!ob.lpState) return;
+    ob.lpState = false;
+    ob.selfDom.classList.remove("lp-show");
+    ob.collapseDom.style.maxHeight = null;
+    function closeEnd() {
+      this.style.display = null;
+      this.removeEventListener("transitionend", closeEnd)
+    }
+    ob.collapseDom.addEventListener("transitionend", closeEnd)
+  },
 
 
   catAction: function(evArgs) {
@@ -66,19 +135,18 @@ let bTK = {
 
     switch(action) {
       case "open":
-        if (ob.lpState) break;
-        ob.lpState = true;
-        ob.selfDom.classList.add("lp-show");
+        bTK.catOpen(evArgs);
       break;
       case "close":
-        if (!ob.lpState) break;
-        ob.lpState = false;
-        ob.selfDom.classList.remove("lp-show");
+        bTK.catClose(evArgs);
       break;
       case "same": break;
       default://toggle
-        ob.lpState = !ob.lpState
-        ob.selfDom.classList.toggle("lp-show");
+        if (ob.lpState) {
+          bTK.catClose(evArgs);
+        } else {
+          bTK.catOpen(evArgs);
+        }
     }
   },
   catGroupAction: function(evArgs) {
@@ -134,7 +202,7 @@ let bTK = {
   RdBtHandler: function() {
     let evArgs = {
       pnm: this.id,
-      cnm: this.parentElement.parentElement.id
+      cnm: this.parentElement.parentElement.parentElement.id
     }
     for (const fnc of bTK.CFGRdBtHandler) fnc(evArgs);
   },
@@ -267,7 +335,7 @@ let bTK = {
   CbBtHandler: function () {
     let evArgs = {
       pnm: this.id,
-      cnm: this.parentElement.parentElement.id
+      cnm: this.parentElement.parentElement.parentElement.id
     }
     for (const fnc of bTK.CFGCbBtHandler) fnc(evArgs);
   },
@@ -392,7 +460,7 @@ let bTK = {
     let pob = this.parentElement.parentElement.previousElementSibling;
     let evArgs = {
       pnm: pob.id,
-      cnm: pob.parentElement.parentElement.id
+      cnm: pob.parentElement.parentElement.parentElement.id
     }
     for (const fnc of bTK.CFGquantIncrHandler) fnc(evArgs);
   },
@@ -402,7 +470,7 @@ let bTK = {
     let pob = this.parentElement.parentElement.previousElementSibling;
     let evArgs = {
       pnm: pob.id,
-      cnm: pob.parentElement.parentElement.id
+      cnm: pob.parentElement.parentElement.parentElement.id
     }
     for (const fnc of bTK.CFGquantDecrHandler) fnc(evArgs);
   },
@@ -748,12 +816,10 @@ let nav = {
     if (window.innerWidth >= 768) {
       if (nav.barMode) {
         nav.barMode = false;
-        nav.selfDom.classList.remove("barMode");
       }
     } else {
       if (!nav.barMode) {
         nav.barMode = true;
-        nav.selfDom.classList.add("barMode");
       }
     }
   },
@@ -785,20 +851,77 @@ let nav = {
     }
   },
   updateLpState: function(evArgs) {
-    let catVal = domCashe.dom[evArgs.cnm].lpState;
-    if (catVal) {
-      if (!nav.navItems[evArgs.cnm].lpState) {
-        nav.navItems[evArgs.cnm].lpState = true;
-        nav.navItems[evArgs.cnm].navDom.add("navlpshow");
-      }
-    } else {
-      if (nav.navItems[evArgs.cnm].lpState) {
-        nav.navItems[evArgs.cnm].lpState = false;
-        nav.navItems[evArgs.cnm].navDom.firstElementChild.classList.replace("text-success", "text-muted");
+    // let catVal = domCashe.dom[evArgs.cnm].lpState;
+    // if (catVal) {
+    //   if (!nav.navItems[evArgs.cnm].lpState) {
+    //     nav.navItems[evArgs.cnm].lpState = true;
+    //     nav.navItems[evArgs.cnm].navDom.classList.add("navlpshow");
+    //   }
+    // } else {
+    //   if (nav.navItems[evArgs.cnm].lpState) {
+    //     nav.navItems[evArgs.cnm].lpState = false;
+    //     nav.navItems[evArgs.cnm].navDom.classList.remove("navlpshow");
+    //   }
+    // }
+    for (const [cnm, ob] of Object.entries(domCashe.dom)) {
+      if (ob.lpState && !nav.navItems[cnm].lpState) {
+        nav.navItems[cnm].lpState = true;
+        nav.navItems[cnm].navDom.classList.add("navlpshow");
+      } else if (!ob.lpState && nav.navItems[cnm].lpState) {
+        nav.navItems[cnm].lpState = false;
+        nav.navItems[cnm].navDom.classList.remove("navlpshow");
       }
     }
   },
-  updateisFocused: function(evArgs) {},
+  updateisFocused: function(evArgs) {
+    if (!nav.barMode) return;
+    let focused = "";
+    let rdistance = 0;
+    for (const [cnm, ob] of Object.entries(domCashe.dom)) {
+      let nhead = ob.selfDom.getBoundingClientRect().top;
+      let nfloor = ob.selfDom.getBoundingClientRect().bottom;
+      if (nhead < window.innerHeight - 50 && nfloor > 245) {
+        if (!focused) {
+          focused = cnm
+          rdistance = nfloor;
+        } else if (nfloor<rdistance) {
+          focused = cnm
+          rdistance = nfloor;
+        }
+      }
+    }
+    for (const [cnm, navob] of Object.entries(nav.navItems)) {
+      if (cnm != focused) {
+        if (navob.isFocused) {
+          navob.isFocused = false;
+          navob.navDom.classList.remove("isfocused");
+        }
+      } else if (!navob.isFocused) {
+        navob.isFocused = true;
+        navob.navDom.classList.add("isfocused");
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          let navbody = nav.selfDom;
+          let bpos = navob.navDom.getBoundingClientRect()
+          let bleft = bpos.left;
+          let bwidth = bpos.width;
+          let posOffset = navbody.scrollLeft + bleft-((window.innerWidth-bwidth) / 2);
+          navbody.scrollTo({
+            left: posOffset,
+            behavior: "smooth"
+          });
+        }))
+      }
+    }
+  },
+
+  CFGnavigatorHandler: [],
+
+  navigatorHandler: function() {
+    let evArgs = {
+      cnm: this.dataset.navdest
+    }
+    for (const fnc of nav.CFGnavigatorHandler) fnc(evArgs);
+  },
 
   crNavDom: function() {
     if (!domCashe.domOrder.length) return;
@@ -828,15 +951,26 @@ let nav = {
       for (const obb of nav.selfDom.querySelectorAll(".prod-navigator")) {
         let cnm = obb.dataset.navdest;
         nav.navItems[cnm].navDom = obb;
+        obb.removeEventListener("click", nav.navigatorHandler);
+        obb.addEventListener("click", nav.navigatorHandler);
       }
     }
     bTK.CFGRdBtHandler.push(nav.updateHasSelected);
     bTK.CFGCbBtHandler.push(nav.updateHasSelected);
 
+    bTK.CFGcHeadHandler.push(nav.updateLpState);
+    nav.updateLpState();
+
     nav.CFGresizeHadlerEnd.push(nav.updateBarMode);
     nav.CFGscrollHadler.push(nav.updateBarScroll);
     nav.updateBarMode();
     nav.updateBarScroll();
+    
+    nav.CFGscrollHadler.push(nav.updateisFocused);
+    nav.updateisFocused();
+
+    nav.CFGnavigatorHandler.push(bTK.catGroupAction);
+    nav.CFGnavigatorHandler.push(nav.updateLpState);
   },
 
   crProdNav: function() {
@@ -849,6 +983,7 @@ let nav = {
     nav.CFGresizeHadlerEnd.length = 0;
     nav.CFGscrollHadler.length = 0;
     nav.CFGscrollHadlerEnd.length = 0;
+    nav.CFGnavigatorHandler.length = 0;
 
     nav.crNavDom();
   }
@@ -856,6 +991,130 @@ let nav = {
 
 
 
+
+
+bModal = {
+
+  updateBuildModal: function(evArgs) {
+    let linktext = window.location.href.split('&');
+    linktext = `${linktext[0]}&${linktext[1]}&prefill=1`;
+    // linktext = `https://www.msystems.gr/section/systems_new/?&system=18&prefill=1`;   //temp change
+    let tabletext = `<div class="table-row">
+    <div class="modal-cat-header">Κατηγορία</div>
+    <div class="modal-prnum-header">Κωδικός</div>
+    <div class="modal-product-header">Προϊόν</div>
+    <div class="modal-quant-header">Τμχ.</div></div>`;
+    let totalVal = 0;
+    let isEmpty = true;
+    for (let i = 0; i < domCashe.domOrder.length; i++) {
+      let ob = domCashe.dom[domCashe.domOrder[i]];
+      if (ob.isHidden) continue;
+      if (!ob.hasSelected) continue;
+      isEmpty = false;
+      if (ob.prodType == "radio") {
+        let pob = ob.prodList[ob.prodSelected];
+        tabletext += `<div class="table-row">
+        <div class="cat-nm">${ob.nmTxt}</div>
+        <div class="erp-pn">${pob.erp}</div>
+        <div class="prod-nm">${pob.nmTxt}</div>
+        <div class="prod-quant">${pob.qValue}</div></div>`;
+        totalVal+= (pob.qValue * pob.priceVal);
+        if (ob.hasSelected) linktext += `&o${i}=${pob.value}&q${i}=${pob.qValue}`;
+      } else if (ob.prodType == "checkbox") {
+        for (const pnm of ob.prodSelected) {
+          let pob = ob.prodList[pnm];
+          tabletext += `<div class="table-row">
+          <div class="cat-nm">${ob.nmTxt}</div>
+          <div class="erp-pn">${pob.erp}</div>
+          <div class="prod-nm">${pob.nmTxt}</div>
+          <div class="prod-quant">${pob.qValue}</div></div>`;
+          totalVal += (pob.qValue * pob.priceVal);
+          if (ob.hasSelected) linktext += `&o${i}[]=${pob.value}&q${i}[]=${pob.qValue}`;
+        }
+      }
+    }
+    if (isEmpty) tabletext += `<div class="table-row"><div></div><div></div><div>&nbsp;</div><div></div></div>`;
+    totalVal = totalVal < 0 ? 0 : totalVal;
+    tabletext += `<div class="table-row">
+    <div class="modal-total-title">Σύνολο:</div>
+    <div></div><div></div><div class="modal-total-num"><span>${wtDecimal(totalVal)}</span> €</div>
+    </div>`
+    bModal.modalTable.innerHTML = tabletext;
+    bModal.linkFull = linktext;
+    bModal.qLink = bModal.linkFull;
+    bModal.footerLinkBody.textContent = bModal.linkFull;
+    // (async () => {
+    //   try {  
+    //     const request = await fetch(
+    //       'https://api-ssl.bitly.com/v4/shorten',{
+    //       method: 'POST',
+    //       headers: {
+    //         'Authorization': `Bearer ${gettoken}`,
+    //         'Content-Type': 'application/json'
+    //       },
+    //       body: JSON.stringify({ "long_url": bModal.linkFull})
+    //     })
+        
+    //     if(request.status >= 400) throw new Error(`Response status: ${request.status}`);
+    //     const getjson = await request.json()
+    //     bModal.qLink = getjson["link"];
+    //     bModal.footerLinkBody.textContent = bModal.qLink;
+    //   } catch(err) {
+    //     console.log(err);
+    //   }
+    // })()
+  },
+  
+  buildShortLink: function(evArgs) {
+    try {
+      navigator.clipboard.writeText(bModal.qLink);
+      bModal.btnCopy.innerHTML = '<i class="bi bi-check2"></i>';
+      setTimeout(() => {
+        bModal.btnCopy.innerHTML = '<i class="bi bi-paperclip"></i>';      
+      },2000)
+    } catch {
+      bModal.btnCopy.innerHTML = '<i class="bi bi-check2"></i>';
+      setTimeout(() => {
+        bModal.btnCopy.innerHTML = '<i class="bi bi-x-lg"></i>';      
+      },2000)
+    }
+  },  
+
+
+  CFGbuildModalOpenHandler: [],
+  buildModalOpenHandler: function() {
+    let evArgs = {}
+    for (const fnc of bModal.CFGbuildModalOpenHandler) fnc(evArgs);
+  },
+  CFGbuildShortLinkHandler: [],
+  buildShortLinkHandler: function() {
+    let evArgs = {}
+    for (const fnc of bModal.CFGbuildShortLinkHandler) fnc(evArgs);
+  },
+
+
+  crBuildModal, function() {
+    let mdl = document.getElementById("build-modal");
+    if (!mdl) return;
+    bModal.modalTable = mdl.querySelector(".modal-body .modal-table");
+    bModal.footerLinkBody = mdl.querySelector(".footer-link-body");
+    bModal.linkFull = "";
+    bModal.btnCopy = mdl.querySelector(".btn-copy-link");
+    bModal.btnCopy.removeEventListener("click", bModal.buildShortLinkHandler);
+    bModal.btnCopy.addEventListener("click", bModal.buildShortLinkHandler);
+  
+    let btns = document.querySelectorAll('[data-bs-toggle="modal"][data-bs-target="#build-modal"]');
+    for (const btn of btns) {
+      btn.removeEventListener("click", bbModal.uildModalOpenHandler);
+      btn.addEventListener("click", bModal.buildModalOpenHandler);
+    }
+    bModal.CFGbuildModalOpenHandler.length = 0;
+    bModal.CFGbuildModalOpenHandler.push(updateBuildModal);
+  
+    bModal.CFGbuildShortLinkHandler.length = 0;
+    bModal.CFGbuildShortLinkHandler.push(buildShortLink);
+  }
+}
 
 
 document.addEventListener("DOMContentLoaded", function() {

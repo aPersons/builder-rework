@@ -76,10 +76,11 @@ def crCat(cat):
     <div class="part-category-bar">{catName}</div>
     <div class="part-category-details">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
   </div>
+  <div class="catCollapsible">
   {description}
   <div class="part-list-container">
     {prodlist}
-  </div>
+  </div></div>
 </div>""".format(
     catId = cat["cat-code"],
     catName = cat["cat-name"],
