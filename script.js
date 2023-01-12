@@ -1042,7 +1042,7 @@ bModal = {
     bModal.modalTable.innerHTML = tabletext;
     bModal.linkFull = linktext;
     bModal.qLink = bModal.linkFull;
-    bModal.footerLinkBody.textContent = bModal.linkFull;
+
     // (async () => {
     //   try {  
     //     const request = await fetch(
@@ -1053,16 +1053,16 @@ bModal = {
     //         'Content-Type': 'application/json'
     //       },
     //       body: JSON.stringify({ "long_url": bModal.linkFull})
-    //     })
-        
+    //     })        
     //     if(request.status >= 400) throw new Error(`Response status: ${request.status}`);
     //     const getjson = await request.json()
     //     bModal.qLink = getjson["link"];
-    //     bModal.footerLinkBody.textContent = bModal.qLink;
     //   } catch(err) {
     //     console.log(err);
     //   }
     // })()
+
+    bModal.footerLinkBody.textContent = bModal.qLink;
   },
   
   buildShortLink: function(evArgs) {
@@ -1093,9 +1093,14 @@ bModal = {
   },
 
 
-  crBuildModal, function() {
+  crBuildModal: function() {
     let mdl = document.getElementById("build-modal");
     if (!mdl) return;
+    let nTitle = document.querySelector('[aria-current="page"]');
+    if (nTitle) {
+      let ntlDom = mdl.querySelector(".modal-title");
+      ntlDom.replaceChildren(ntlDom.childNodes[0], document.createTextNode(nTitle.textContent));
+    }
     bModal.modalTable = mdl.querySelector(".modal-body .modal-table");
     bModal.footerLinkBody = mdl.querySelector(".footer-link-body");
     bModal.linkFull = "";
@@ -1105,14 +1110,14 @@ bModal = {
   
     let btns = document.querySelectorAll('[data-bs-toggle="modal"][data-bs-target="#build-modal"]');
     for (const btn of btns) {
-      btn.removeEventListener("click", bbModal.uildModalOpenHandler);
+      btn.removeEventListener("click", bModal.uildModalOpenHandler);
       btn.addEventListener("click", bModal.buildModalOpenHandler);
     }
     bModal.CFGbuildModalOpenHandler.length = 0;
-    bModal.CFGbuildModalOpenHandler.push(updateBuildModal);
+    bModal.CFGbuildModalOpenHandler.push(bModal.updateBuildModal);
   
     bModal.CFGbuildShortLinkHandler.length = 0;
-    bModal.CFGbuildShortLinkHandler.push(buildShortLink);
+    bModal.CFGbuildShortLinkHandler.push(bModal.buildShortLink);
   }
 }
 
@@ -1132,7 +1137,7 @@ document.addEventListener("DOMContentLoaded", function() {
   
   pr.crFinalPrice();
   nav.crProdNav();
-  // ~~.crBuildModal();
+  bModal.crBuildModal();
   // bTK.setTimeout(crDomReduce, 0);//quick_view.js must run before this. Won't add events otherwise.
   
 })
