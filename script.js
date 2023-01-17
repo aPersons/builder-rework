@@ -79,11 +79,18 @@ function wtDecimal(wholeNum) {
 ---------------------------------------------*/
 
 let domCashe = {
+
   dom: {},
   domOrder: [],
+
 }
 
+
+
+
+
 let bTK = {
+
   crCats: function() {
     domCashe.dom = {}
     domCashe.domOrder = []
@@ -115,6 +122,8 @@ let bTK = {
       ()=>ob.collapseDom.style.maxHeight = ob.collapseDom.scrollHeight + "px"
     ))    
   },
+
+
   catClose: function(evArgs) {
     let ob  = domCashe.dom[evArgs.cnm];
     if (!ob.lpState) return;
@@ -149,12 +158,16 @@ let bTK = {
         }
     }
   },
+
+
   catGroupAction: function(evArgs) {
     for (cnm of domCashe.domOrder) {
       if (cnm == evArgs.cnm) bTK.catAction(evArgs);
       else bTK.catAction({cnm: cnm, action: "close"});
     }
   },
+
+
   CFGcHeadHandler: [],
   cHeadHandler: function() {
     let evArgs = {
@@ -162,6 +175,8 @@ let bTK = {
     }
     for (const fnc of bTK.CFGcHeadHandler) fnc(evArgs);
   },
+
+
   crCOpen: function () {
     for (const cnm of domCashe.domOrder) {
       let ob = domCashe.dom[cnm];
@@ -173,9 +188,6 @@ let bTK = {
   },
 
 
-
-
-
   updateRdState: function (evArgs) {
     let cnm = evArgs.cnm;
     let pnm = evArgs.pnm;
@@ -183,7 +195,9 @@ let bTK = {
     domCashe.dom[cnm].prodList[lastl].isSelected = false;
     domCashe.dom[cnm].prodList[pnm].isSelected = true;
     domCashe.dom[cnm].prodSelected = pnm;
-  },  
+  },
+
+
   rdSelCheck: function () {
     for (const ob of Object.values(domCashe.dom)) {
       if (ob.prodType != "radio") continue;
@@ -194,10 +208,14 @@ let bTK = {
       }
     }
   },
+
+
   rdSelect: function(pnm, cnm) {
     if (domCashe.dom[cnm].prodType == "radio")
       domCashe.dom[cnm].prodList[pnm].selfDom.click();
   },
+
+
   CFGRdBtHandler: [],
   RdBtHandler: function() {
     let evArgs = {
@@ -206,6 +224,8 @@ let bTK = {
     }
     for (const fnc of bTK.CFGRdBtHandler) fnc(evArgs);
   },
+
+
   crRdBt() {
     for (const cnm of domCashe.domOrder) {
       let ob = domCashe.dom[cnm];
@@ -242,9 +262,6 @@ let bTK = {
   },
 
 
-
-
-
   cbDataOpen: function(pnm, cnm) {
     domCashe.dom[cnm].prodList[pnm].isSelected = true;
     let qsize = domCashe.dom[cnm].prodSelected.length;
@@ -278,6 +295,8 @@ let bTK = {
     if (domCashe.dom[cnm].prodList[pnm].isSelected) bTK.cbClose(pnm, cnm);
     else bTK.cbOpen(pnm, cnm);
   },
+
+
   updateCbState: function (evArgs) {
     let pnm = evArgs.pnm;
     let cnm = evArgs.cnm;
@@ -316,7 +335,9 @@ let bTK = {
         }
       }
     }
-  },  
+  },
+  
+  
   cbCheck: function () {
     for (const [cnm, ob] of Object.entries(domCashe.dom)) {
       if (ob.prodType != "checkbox") continue;
@@ -331,6 +352,8 @@ let bTK = {
       }
     }
   },
+
+
   CFGCbBtHandler: [],
   CbBtHandler: function () {
     let evArgs = {
@@ -339,6 +362,8 @@ let bTK = {
     }
     for (const fnc of bTK.CFGCbBtHandler) fnc(evArgs);
   },
+
+
   crCbBt: function() {
     for (const cnm of domCashe.domOrder) {
       let ob = domCashe.dom[cnm];
@@ -374,9 +399,6 @@ let bTK = {
     bTK.CFGCbBtHandler.length = 0;
     bTK.CFGCbBtHandler.push(bTK.updateCbState);
   },
-
-
-
 
 
   quantUpdate: function(evArgs) {
@@ -427,6 +449,8 @@ let bTK = {
     }
 
   },
+
+
   quantIncr: function(evArgs) {
     let pob = domCashe.dom[evArgs.cnm].prodList[evArgs.pnm];
     if (pob.qAddAv) {
@@ -436,6 +460,8 @@ let bTK = {
     }
     bTK.quantUpdate(evArgs);
   },
+
+
   quantDecr: function(evArgs) {
     let pob = domCashe.dom[evArgs.cnm].prodList[evArgs.pnm];
     if (pob.qSubAv) {
@@ -445,6 +471,8 @@ let bTK = {
     }
     bTK.quantUpdate(evArgs);
   },
+
+
   updateCatQuant: function (evArgs) {
     let ob = domCashe.dom[evArgs.cnm];
     for (const pnm of ob.prodOrder) {
@@ -453,7 +481,9 @@ let bTK = {
         "pnm": pnm
       });
     }
-  },  
+  },
+
+
   CFGquantIncrHandler: [],
   quantIncrHandler: function (e) {
     e.preventDefault();
@@ -464,6 +494,8 @@ let bTK = {
     }
     for (const fnc of bTK.CFGquantIncrHandler) fnc(evArgs);
   },
+
+
   CFGquantDecrHandler: [],
   quantDecrHandler: function(e) {
     e.preventDefault();
@@ -474,6 +506,8 @@ let bTK = {
     }
     for (const fnc of bTK.CFGquantDecrHandler) fnc(evArgs);
   },
+
+
   crQuantity: function() {
     for (const cnm of domCashe.domOrder) {
       let ob = domCashe.dom[cnm];
@@ -514,9 +548,6 @@ let bTK = {
   },
 
 
-
-
-
   updateProdPrice: function(evArgs) {
     let ob = domCashe.dom[evArgs.cnm];
     if (ob.prodType == "radio") {
@@ -538,7 +569,9 @@ let bTK = {
         }
       }
     }
-  },  
+  },
+
+
   crProdPrice: function() {
     for (const cnm of domCashe.domOrder) {
       let ob = domCashe.dom[cnm];
@@ -565,9 +598,6 @@ let bTK = {
   },
 
 
-
-
-
   updateHeadSel: function(evArgs) {
     let ob = domCashe.dom[evArgs.cnm];
     if (ob.prodType == "radio") {
@@ -591,7 +621,9 @@ let bTK = {
         ob.selfDom.classList.add("contains-selected");
       }
     }
-  },  
+  },
+
+
   crHeadSel: function() {
     for (const cnm of domCashe.domOrder) {
       domCashe.dom[cnm].hasSelected = domCashe.dom[cnm].selfDom.classList.contains("contains-selected");
@@ -600,9 +632,6 @@ let bTK = {
     bTK.CFGRdBtHandler.push(bTK.updateHeadSel);
     bTK.CFGCbBtHandler.push(bTK.updateHeadSel);
   },
-
-
-
 
 
   updateCatDetails: function(evArgs) {
@@ -636,6 +665,8 @@ let bTK = {
       ob.dtDom.replaceChildren(...lst);
     }    
   },
+
+
   crCatDetails: function() {
     for (const ob of Object.values(domCashe.dom)) {
       if (!ob.isEmpty) ob.dtDom = ob.selfDom.querySelector(".part-category-details");      
@@ -648,9 +679,6 @@ let bTK = {
     bTK.CFGquantIncrHandler.push(bTK.updateCatDetails);
     bTK.CFGquantDecrHandler.push(bTK.updateCatDetails);
   },
-
-
-
   
 
   updateCatIMG: function(evArgs) {
@@ -662,6 +690,8 @@ let bTK = {
       ob.catIMG.src = ob.prodList[ob.prodSelected[0]].imgSrc;
     }
   },
+
+
   crCatIMG: function() {
     for (const ob of Object.values(domCashe.dom)) {
       if (ob.isEmpty) continue;
@@ -674,6 +704,7 @@ let bTK = {
     bTK.CFGRdBtHandler.push(bTK.updateCatIMG);
     bTK.CFGCbBtHandler.push(bTK.updateCatIMG);
   }
+
 }
 
 
@@ -681,6 +712,7 @@ let bTK = {
 
 
 let build = {
+
   updateBuildIMG: function(evArgs) {
     if (evArgs.cnm != "cat0") return;
     let ob = domCashe.dom["cat0"];
@@ -691,6 +723,8 @@ let build = {
       build.bIMG.src = ob.prodList[ob.prodSelected[0]].imgSrc;
     }
   },
+
+
   crBuilldIMG: function() {
     let imgDom = document.querySelector(".build-img");
     if (!imgDom) return;
@@ -701,6 +735,7 @@ let build = {
     bTK.CFGRdBtHandler.push(build.updateBuildIMG);
     bTK.CFGCbBtHandler.push(build.updateBuildIMG);
   }
+
 }
 
 
@@ -708,8 +743,10 @@ let build = {
 
 
 let pr = {
+
   totalVal: 0,
   priceDom: [],
+
 
   updateFinalPrice: function() {
     let nresult = 0;
@@ -741,6 +778,8 @@ let pr = {
       }
     }
   },
+
+
   crFinalPrice: function() {
     domCashe.finalPrice = {}
     let buildPrice = document.querySelectorAll(".build-price-total");
@@ -756,6 +795,7 @@ let pr = {
       pr.updateFinalPrice();
     }
   }
+
 }
 
 
@@ -763,11 +803,12 @@ let pr = {
 
 
 let nav = {
+  
   barMode: false,
   inView: false,
 
-  CFGresizeHadler: [],
 
+  CFGresizeHadler: [],
   resizeEv: false,
   resizeAv: true,
   resizeHandler: function() {
@@ -780,16 +821,16 @@ let nav = {
     nav.resizeEv = setTimeout(nav.resizeHandlerEnd,550);
   },
 
-  CFGresizeHadlerEnd: [],
 
+  CFGresizeHadlerEnd: [],
   resizeHandlerEnd: function() {
     nav.resizeAv = false;
     for (const fnc of nav.CFGresizeHadlerEnd) fnc();
     setTimeout(() => nav.resizeAv = true, 500);
   },
 
-  CFGscrollHadler: [],
 
+  CFGscrollHadler: [],
   scrollEv: false,
   scrollAv: true,
   scrollHandler: function() {
@@ -803,8 +844,8 @@ let nav = {
     nav.scrollEv = setTimeout(nav.scrollHandlerEnd,55);
   },
 
-  CFGscrollHadlerEnd: [],
 
+  CFGscrollHadlerEnd: [],
   scrollHandlerEnd: function() {
     nav.scrollAv = false;
     for (const fnc of nav.CFGscrollHadlerEnd) fnc();
@@ -823,6 +864,8 @@ let nav = {
       }
     }
   },
+
+
   updateBarScroll: function() {
     if (!nav.barMode) return
     if (nav.selfDom.parentElement.getBoundingClientRect().top > 110) {
@@ -835,6 +878,7 @@ let nav = {
       nav.selfDom.classList.add("inView");
     }
   },
+
 
   updateHasSelected: function(evArgs) {
     let catVal = domCashe.dom[evArgs.cnm].hasSelected;
@@ -850,6 +894,8 @@ let nav = {
       }
     }
   },
+
+
   updateLpState: function(evArgs) {
     // let catVal = domCashe.dom[evArgs.cnm].lpState;
     // if (catVal) {
@@ -873,6 +919,8 @@ let nav = {
       }
     }
   },
+
+  qFocus: "",
   updateisFocused: function(evArgs) {
     if (!nav.barMode) return;
     let focused = "";
@@ -914,14 +962,15 @@ let nav = {
     }
   },
 
-  CFGnavigatorHandler: [],
 
+  CFGnavigatorHandler: [],
   navigatorHandler: function() {
     let evArgs = {
       cnm: this.dataset.navdest
     }
     for (const fnc of nav.CFGnavigatorHandler) fnc(evArgs);
   },
+
 
   crNavDom: function() {
     if (!domCashe.domOrder.length) return;
@@ -973,6 +1022,7 @@ let nav = {
     nav.CFGnavigatorHandler.push(nav.updateLpState);
   },
 
+
   crProdNav: function() {
     document.removeEventListener("scroll", nav.scrollHandler);
     document.addEventListener("scroll", nav.scrollHandler);
@@ -987,6 +1037,7 @@ let nav = {
 
     nav.crNavDom();
   }
+
 }
 
 
@@ -1119,10 +1170,15 @@ bModal = {
     bModal.CFGbuildShortLinkHandler.length = 0;
     bModal.CFGbuildShortLinkHandler.push(bModal.buildShortLink);
   }
+
 }
 
 
+
+
+
 document.addEventListener("DOMContentLoaded", function() {
+
   bTK.crCats();
   bTK.crCOpen();
   bTK.crRdBt();
