@@ -24,7 +24,7 @@ function scrollToC(element, from, to, duration) {
 function scrollToX(element, xFrom, xTo, t01, speed, q, motion) {
   let nq = Date.now();
   let step = nq - q;
-  if (t01 < 0 || t01 > 1 || speed<= 0) {
+  if (t01 < 0 || t01 > 1 || speed <= 0) {
       element.scrollTop = xTo;
       return;
   }
@@ -118,9 +118,23 @@ let bTK = {
     ob.lpState = true;
     ob.selfDom.classList.add("lp-show");
     ob.collapseDom.style.display = "block";
+    function openEnd() {
+      // scrollToC(element, from, to, duration)
+      scrollToC(
+        document.documentElement,
+        window.scrollY,
+        window.scrollY + ob.selfDom.getBoundingClientRect().top - (
+          window.innerWidth > 991 ? 149 : window.innerWidth > 767 ? 95 : 125
+        ),//125 ~ 95 ~ 149
+        200
+      )
+      ob.collapseDom.style.maxHeight = "none";
+      this.removeEventListener("transitionend", openEnd); 
+    }
     requestAnimationFrame(()=>requestAnimationFrame(
       ()=>ob.collapseDom.style.maxHeight = ob.collapseDom.scrollHeight + "px"
-    ))    
+    ))
+    ob.collapseDom.addEventListener("transitionend", openEnd);
   },
 
 
@@ -132,9 +146,9 @@ let bTK = {
     ob.collapseDom.style.maxHeight = null;
     function closeEnd() {
       this.style.display = null;
-      this.removeEventListener("transitionend", closeEnd)
+      this.removeEventListener("transitionend", closeEnd);
     }
-    ob.collapseDom.addEventListener("transitionend", closeEnd)
+    ob.collapseDom.addEventListener("transitionend", closeEnd);
   },
 
 
