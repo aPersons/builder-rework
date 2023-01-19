@@ -82,7 +82,7 @@ let domCashe = {
 
   dom: {},
   domOrder: [],
-
+  groups: []
 }
 
 
@@ -90,7 +90,7 @@ let domCashe = {
 
 
 let bTK = {
-
+  
   crCats: function() {
     domCashe.dom = {}
     domCashe.domOrder = []
@@ -113,39 +113,46 @@ let bTK = {
 
 
   catOpen: function(evArgs) {
-    let ob  = domCashe.dom[evArgs.cnm];
+    let ob = domCashe.dom[evArgs.cnm];
     if (ob.lpState) return;
-    ob.lpState = true;
-    ob.selfDom.classList.add("lp-show");
-    ob.collapseDom.style.display = "block";
-    function openEnd() {
-      // scrollToC(element, from, to, duration)
-      scrollToC(
-        document.documentElement,
-        window.scrollY,
-        window.scrollY + ob.selfDom.getBoundingClientRect().top - (
-          window.innerWidth > 991 ? 149 : window.innerWidth > 767 ? 95 : 125
-        ),//125 ~ 95 ~ 149
-        200
-      )
-      ob.collapseDom.style.maxHeight = "none";
-      this.removeEventListener("transitionend", openEnd); 
-    }
+    ob.lpState = true;    
+    ob.collapseDom.classList.add("collapseTransition");
     requestAnimationFrame(()=>requestAnimationFrame(
-      ()=>ob.collapseDom.style.maxHeight = ob.collapseDom.scrollHeight + "px"
-    ))
+      ()=>{
+        ob.collapseDom.style.setProperty("--qheight", ob.collapseDom.scrollHeight + "px")
+        ob.selfDom.classList.add("lp-show")
+      }
+      ))
+      function openEnd() {
+        // scrollToC(element, from, to, duration)
+        scrollToC(
+          document.documentElement,
+          window.scrollY,
+          window.scrollY + ob.selfDom.getBoundingClientRect().top - (
+            window.innerWidth > 991 ? 149 : window.innerWidth > 767 ? 95 : 125
+          ),//125 ~ 95 ~ 149
+          200
+        )
+        ob.collapseDom.classList.remove("collapseTransition");
+        this.removeEventListener("transitionend", openEnd);
+      }
     ob.collapseDom.addEventListener("transitionend", openEnd);
   },
 
 
   catClose: function(evArgs) {
-    let ob  = domCashe.dom[evArgs.cnm];
+    let ob = domCashe.dom[evArgs.cnm];
     if (!ob.lpState) return;
     ob.lpState = false;
-    ob.selfDom.classList.remove("lp-show");
-    ob.collapseDom.style.maxHeight = null;
+    ob.collapseDom.style.setProperty("--qheight", ob.collapseDom.scrollHeight + "px")
+    ob.collapseDom.classList.add("collapseTransition");
+    requestAnimationFrame(()=>requestAnimationFrame(
+      ()=>{
+        ob.selfDom.classList.remove("lp-show");
+      }
+    ))
     function closeEnd() {
-      this.style.display = null;
+      this.classList.remove("collapseTransition");
       this.removeEventListener("transitionend", closeEnd);
     }
     ob.collapseDom.addEventListener("transitionend", closeEnd);
@@ -199,6 +206,15 @@ let bTK = {
     }
     bTK.CFGcHeadHandler.length = 0;
     bTK.CFGcHeadHandler.push(bTK.catGroupAction);
+  },
+
+
+  crGroups: function() {
+    domCashe.groups = [];
+    domCashe.groupsOrder = [];
+    for (const cnm of domCashe.domOrder) {
+
+    }
   },
 
 

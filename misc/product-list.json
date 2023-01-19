@@ -1314,831 +1314,843 @@
       }
     ]
   }, {
-    "cat-code": "cat18",
-    "cat-name": "Οθόνη",
-    "cat-desc": "$blank",
-    "type": "radio",
-    "init-prod": "$blank",
-    "singleQuant": false,
-    "product-list": [
+    "group-code": "peripherals",
+    "group-name": "Περιφερειακά",
+    "cat-list": [
       {
-        "prod-code": "cat18-prod0",
-        "prod-name": "Χωρίς Οθόνη",
-        "prod-erp": "-",
-        "prod-price": "0",
-        "static-num": "1"
+        "cat-code": "cat18",
+        "cat-name": "Οθόνη",
+        "cat-desc": "$blank",
+        "type": "radio",
+        "init-prod": "$blank",
+        "singleQuant": false,
+        "product-list": [
+          {
+            "prod-code": "cat18-prod0",
+            "prod-name": "Χωρίς Οθόνη",
+            "prod-erp": "-",
+            "prod-price": "0",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat18-prod19419",
+            "prod-name": "AOC E2270SWN 21.5¨ Wide LED []",
+            "prod-erp": "001-29065",
+            "prod-price": "9990",
+            "prod-min": "1",
+            "prod-max": "3"
+          }, {
+            "prod-code": "cat18-prod16868",
+            "prod-name": "Philips V-Line 193V5LSB2 18.5¨ Wide LED []",
+            "prod-erp": "001-24442",
+            "prod-price": "10590",
+            "prod-min": "1",
+            "prod-max": "3"
+          }, {
+            "prod-code": "cat18-prod16873",
+            "prod-name": "Philips V-Line 223V5LSB2 21.5¨ Wide LED []",
+            "prod-erp": "001-24460",
+            "prod-price": "11390",
+            "prod-min": "1",
+            "prod-max": "3"
+          }, {
+            "prod-code": "cat18-prod26429",
+            "prod-name": "AOC 24B1H 23.6¨ Frameless Full HD Wide LED MVA  []",
+            "prod-erp": "001-41463",
+            "prod-price": "11490",
+            "prod-min": "1",
+            "prod-max": "3"
+          }, {
+            "prod-code": "cat18-prod19517",
+            "prod-name": "Philips V-Line 223V5LHSB 21.5¨ Wide LED []",
+            "prod-erp": "001-29299",
+            "prod-price": "12300",
+            "prod-min": "1",
+            "prod-max": "3"
+          }, {
+            "prod-code": "cat18-prod29238",
+            "prod-name": "AOC 22E1Q 21.5¨ Full HD Wide LED MVA []",
+            "prod-erp": "001-46387",
+            "prod-price": "12690",
+            "prod-min": "1",
+            "prod-max": "3"
+          }, {
+            "prod-code": "cat18-prod22420",
+            "prod-name": "Dell E Series E2016HV 19.5¨ Wide LED [210-ALFK]",
+            "prod-erp": "001-34782",
+            "prod-price": "12750",
+            "prod-min": "1",
+            "prod-max": "3"
+          }, {
+            "prod-code": "cat18-prod43306",
+            "prod-name": "LG Electronics 22MP410-B Full HD 21.5¨ Wide LED VA 74Hz / 5ms with AMD Freesync [22MP410-B]",
+            "prod-erp": "001-56521",
+            "prod-price": "12900",
+            "prod-min": "1",
+            "prod-max": "3"
+          }, {
+            "prod-code": "cat18-prod41743",
+            "prod-name": "Dell SE2222H Full HD 21.5¨ Wide LED VA [210-AZKU]",
+            "prod-erp": "001-53844",
+            "prod-price": "13100",
+            "prod-min": "1",
+            "prod-max": "3"
+          }, {
+            "prod-code": "cat18-prod19209",
+            "prod-name": "Philips V-Line 223V5LSB 21.5¨ Wide LED []",
+            "prod-erp": "001-28617",
+            "prod-price": "13300",
+            "prod-min": "1",
+            "prod-max": "3"
+          }, {
+            "prod-code": "cat18-prod44058",
+            "prod-name": "BenQ GW2283 Full HD 21.5¨ Wide LED IPS - 60Hz / 5ms [GW2283]",
+            "prod-erp": "001-57951",
+            "prod-price": "13590",
+            "prod-min": "1",
+            "prod-max": "3"
+          }
+        ]
       }, {
-        "prod-code": "cat18-prod19419",
-        "prod-name": "AOC E2270SWN 21.5¨ Wide LED []",
-        "prod-erp": "001-29065",
-        "prod-price": "9990",
-        "prod-min": "1",
-        "prod-max": "3"
+        "cat-code": "cat19",
+        "cat-name": "Πληκτρολόγιο",
+        "cat-desc": "$blank",
+        "type": "radio",
+        "init-prod": "$blank",
+        "singleQuant": false,
+        "product-list": [
+          {
+            "prod-code": "cat19-prod0",
+            "prod-name": "Χωρίς Πληκτρολόγιο",
+            "prod-erp": "-",
+            "prod-price": "0",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat19-prod41742",
+            "prod-name": "ZeroGround Soki V2.0 Membrane Gaming keyboard - US Layout [KB-2900G]",
+            "prod-erp": "001-53842",
+            "prod-price": "1590",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat19-prod23731",
+            "prod-name": "NOD Metal Stealth RGB Gaming Keyboard []",
+            "prod-erp": "001-36887",
+            "prod-price": "2490",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat19-prod26773",
+            "prod-name": "HyperX Alloy Core RGB Membrane Gaming Keyboard [4P4F5AA]",
+            "prod-erp": "001-54753",
+            "prod-price": "2990",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat19-prod40872",
+            "prod-name": "NOD Zero Dark RGB Gaming Keyboard - US Layout []",
+            "prod-erp": "001-52550",
+            "prod-price": "2990",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat19-prod41735",
+            "prod-name": "ZeroGround ZeroGround Simeto V2.0 RGB Mechanical Gaming keyboard - Content Blue Switches - US Layout [KB-2950G]",
+            "prod-erp": "001-53835",
+            "prod-price": "2990",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat19-prod35530",
+            "prod-name": "Cooler Master Master Devastator 3 Plus RGB Gaming Combo [SGB-3001-KKMF1-US]",
+            "prod-erp": "001-48678",
+            "prod-price": "3490",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat19-prod28989",
+            "prod-name": "Cooler Master Cooler Master MK110 RGB Mem-Chanical Gaming Keyboard - Mem-Chanical Linear Switches [MK-110-KKMF1-US]",
+            "prod-erp": "001-45921",
+            "prod-price": "3490",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat19-prod29019",
+            "prod-name": "Razer Cynosa Lite Chroma Membrane RGB Gaming Keyboard - GR Layout [RZ03-02741700-R3P1]",
+            "prod-erp": "001-46027",
+            "prod-price": "3890",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat19-prod28609",
+            "prod-name": "ZeroGround Sakimo RGB Mechanical Gaming Keyboard - Outemu Blue Switches [KB-2700G]",
+            "prod-erp": "001-45142",
+            "prod-price": "4399",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat19-prod28990",
+            "prod-name": "Cooler Master Master MS110 Gaming Combo Set - Mem-Chanical Gaming Keyboard + RGB Gaming Mouse [MS-110-KKMF1-US]",
+            "prod-erp": "001-45922",
+            "prod-price": "4990",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat19-prod41736",
+            "prod-name": "ZeroGround Tonado Mini RGB Mechanical Gaming keyboard - Outemu Red Switches - US Layout [KB-3100G]",
+            "prod-erp": "001-53836",
+            "prod-price": "4090",
+            "static-num": "1"
+          }
+        ]
       }, {
-        "prod-code": "cat18-prod16868",
-        "prod-name": "Philips V-Line 193V5LSB2 18.5¨ Wide LED []",
-        "prod-erp": "001-24442",
-        "prod-price": "10590",
-        "prod-min": "1",
-        "prod-max": "3"
+        "cat-code": "cat20",
+        "cat-name": "Ποντίκι",
+        "cat-desc": "$blank",
+        "type": "radio",
+        "init-prod": "$blank",
+        "singleQuant": false,
+        "product-list": [
+          {
+            "prod-code": "cat20-prod0",
+            "prod-name": "Χωρίς Ποντίκι",
+            "prod-erp": "-",
+            "prod-price": "0",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat20-prod39261",
+            "prod-name": "NOD Run Amok RGB Gaming Mouse []",
+            "prod-erp": "001-50269",
+            "prod-price": "1290",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat20-prod28851",
+            "prod-name": "NOD Iron Fire RGB Gaming Mouse []",
+            "prod-erp": "001-45561",
+            "prod-price": "1490",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat20-prod25658",
+            "prod-name": "Cooler Master CM310 RGB Gaming Mouse [CM-310-KKWO2]",
+            "prod-erp": "001-40216",
+            "prod-price": "1690",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat20-prod29537",
+            "prod-name": "HP OMEN 600 RGB Gaming Mouse [1KF75AA]",
+            "prod-erp": "001-46918",
+            "prod-price": "1900",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat20-prod38674",
+            "prod-name": "Corsair Katar Pro RGB Ultra Light Gaming Mouse [CH-930C011-EU]",
+            "prod-erp": "001-49331",
+            "prod-price": "1990",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat20-prod43290",
+            "prod-name": "HyperX Pulsefire Core RGB Gaming Mouse [4P4F8AA]",
+            "prod-erp": "001-54799",
+            "prod-price": "1990",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat20-prod41726",
+            "prod-name": "ZeroGround Harado V2.0 RGB Gaming Mouse [MS-3900G]",
+            "prod-erp": "001-53824",
+            "prod-price": "2090",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat20-prod27632",
+            "prod-name": "Gigabyte AORUS M2 RGB Gaming Mouse []",
+            "prod-erp": "001-43491",
+            "prod-price": "2230",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat20-prod41727",
+            "prod-name": "ZeroGround Daito RGB Gaming Mouse [MS-4000G]",
+            "prod-erp": "001-53825",
+            "prod-price": "2290",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat20-prod17129",
+            "prod-name": "Razer DeathAdder Expert/Essential Gaming Mouse [RZ01-03850100-R3M1]",
+            "prod-erp": "001-24872",
+            "prod-price": "2390",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat20-prod39224",
+            "prod-name": "Asus TUF Gaming M3 mouse [90MP01J0-B0UA00]",
+            "prod-erp": "001-50207",
+            "prod-price": "2390",
+            "static-num": "1"
+          }
+        ]
       }, {
-        "prod-code": "cat18-prod16873",
-        "prod-name": "Philips V-Line 223V5LSB2 21.5¨ Wide LED []",
-        "prod-erp": "001-24460",
-        "prod-price": "11390",
-        "prod-min": "1",
-        "prod-max": "3"
+        "cat-code": "cat21",
+        "cat-name": "Mouse Pad",
+        "cat-desc": "$blank",
+        "type": "radio",
+        "init-prod": "$blank",
+        "singleQuant": false,
+        "product-list": [
+          {
+            "prod-code": "cat21-prod0",
+            "prod-name": "Χωρίς Mouse Pad",
+            "prod-erp": "-",
+            "prod-price": "0",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat21-prod23951",
+            "prod-name": "Razer Goliathus Mobile Mouse Pad [RZ02-01820200-R3M1]",
+            "prod-erp": "001-37353",
+            "prod-price": "830",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat21-prod23346",
+            "prod-name": "Razer Mouse Pad Goliathus Mobile Stealth [RZ02-01820500-R3M1]",
+            "prod-erp": "001-36465",
+            "prod-price": "850",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat21-prod40679",
+            "prod-name": "Razer Sphex V3 Small [RZ02-03820100-R3M1]",
+            "prod-erp": "001-52272",
+            "prod-price": "1080",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat21-prod27819",
+            "prod-name": "NOD Battlefront Mouse Pad - XL Size []",
+            "prod-erp": "001-43815",
+            "prod-price": "1290",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat21-prod41842",
+            "prod-name": "Cooler Master MP511 Gaming Mouse pad - Cordura Fabric - Large [MP-511-CBLC1]",
+            "prod-erp": "001-54086",
+            "prod-price": "1490",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat21-prod43174",
+            "prod-name": "HyperX Pulsefire Mat Gaming Mouse Pad - Medium [4Z7X3AA]",
+            "prod-erp": "001-56313",
+            "prod-price": "1490",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat21-prod25749",
+            "prod-name": "Gigabyte AORUS AMP900 Gaming Mouse Pad - Extended [GM-AMP900]",
+            "prod-erp": "001-40429",
+            "prod-price": "1600",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat21-prod43686",
+            "prod-name": "Asus ROG Strix Slice Gaming Mouse Pad [90MP01M0-BPUA00]",
+            "prod-erp": "001-57219",
+            "prod-price": "1790",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat21-prod38700",
+            "prod-name": "Corsair MM300 Cloth Gaming Mouse Pad - PRO Premium Spill-Proof - Medium [CH-9413631-WW]",
+            "prod-erp": "001-49334",
+            "prod-price": "1990",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat21-prod43175",
+            "prod-name": "HyperX Pulsefire Mat Gaming Mouse Pad - Large [4Z7X4AA]",
+            "prod-erp": "001-56314",
+            "prod-price": "1990",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat21-prod25179",
+            "prod-name": "Asus ROG Strix Edge Gaming Mouse Pad [90MP00T0-B0UA00]",
+            "prod-erp": "001-39266",
+            "prod-price": "2190",
+            "static-num": "1"
+          }
+        ]
       }, {
-        "prod-code": "cat18-prod26429",
-        "prod-name": "AOC 24B1H 23.6¨ Frameless Full HD Wide LED MVA  []",
-        "prod-erp": "001-41463",
-        "prod-price": "11490",
-        "prod-min": "1",
-        "prod-max": "3"
+        "cat-code": "cat22",
+        "cat-name": "Headset",
+        "cat-desc": "$blank",
+        "type": "radio",
+        "init-prod": "$blank",
+        "singleQuant": false,
+        "product-list": [
+          {
+            "prod-code": "cat22-prod0",
+            "prod-name": "Χωρίς Headset",
+            "prod-erp": "-",
+            "prod-price": "0",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat22-prod28539",
+            "prod-name": "HyperX CloudX Chat Gaming Headset for XBOX [4P5J4AA]",
+            "prod-erp": "001-54786",
+            "prod-price": "1990",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat22-prod38683",
+            "prod-name": "Edifier G1 SE Gaming Headphones - Black [G1 SE]",
+            "prod-erp": "001-49469",
+            "prod-price": "2390",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat22-prod29707",
+            "prod-name": "ZeroGround Okimo 7.1 Virtual Surround Gaming Headset [HD-2700G]",
+            "prod-erp": "001-47331",
+            "prod-price": "2790",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat22-prod41495",
+            "prod-name": "NOD Chaos RGB Gaming Headset []",
+            "prod-erp": "001-53440",
+            "prod-price": "2790",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat22-prod38684",
+            "prod-name": "Edifier G1 USB 7.1 Gaming Headphones - Black [G1]",
+            "prod-erp": "001-49470",
+            "prod-price": "2990",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat22-prod29847",
+            "prod-name": "Cooler Master CH321 RGB Gaming Headset [CH321]",
+            "prod-erp": "001-47596",
+            "prod-price": "2650",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat22-prod35539",
+            "prod-name": "HyperX Cloud Stinger S 7.1 Surround Gaming Headset [4P4F1AA]",
+            "prod-erp": "001-54784",
+            "prod-price": "2990",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat22-prod28994",
+            "prod-name": "ZeroGround Sokun 7.1 Virtual Surround RGB Gaming Headset [HD-2800G]",
+            "prod-erp": "001-45955",
+            "prod-price": "3199",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat22-prod41719",
+            "prod-name": "ZeroGround Ikeda V2.0 7.1 Virtual Surround Gaming [HD-3300G]",
+            "prod-erp": "001-53808",
+            "prod-price": "3490",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat22-prod28862",
+            "prod-name": "Razer Kraken X Lite PC/Console Gaming Headset [RZ04-02950100-R381]",
+            "prod-erp": "001-45600",
+            "prod-price": "3850",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat22-prod26598",
+            "prod-name": "HyperX CloudX Stinger Core Gaming Headset for XBOX [4P5J9AA]",
+            "prod-erp": "001-54788",
+            "prod-price": "3990",
+            "static-num": "1"
+          }
+        ]
       }, {
-        "prod-code": "cat18-prod19517",
-        "prod-name": "Philips V-Line 223V5LHSB 21.5¨ Wide LED []",
-        "prod-erp": "001-29299",
-        "prod-price": "12300",
-        "prod-min": "1",
-        "prod-max": "3"
+        "cat-code": "cat23",
+        "cat-name": "Ηχεία",
+        "cat-desc": "$blank",
+        "type": "radio",
+        "init-prod": "$blank",
+        "singleQuant": false,
+        "product-list": [
+          {
+            "prod-code": "cat23-prod0",
+            "prod-name": "Χωρίς Ηχεία",
+            "prod-erp": "-",
+            "prod-price": "0",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat23-prod24481",
+            "prod-name": "NOD Base.2.Zero Speakers []",
+            "prod-erp": "001-38204",
+            "prod-price": "890",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat23-prod24483",
+            "prod-name": "NOD SideFX Speakers []",
+            "prod-erp": "001-38206",
+            "prod-price": "1090",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat23-prod24484",
+            "prod-name": "NOD Base.2.One 2.1 Speakers []",
+            "prod-erp": "001-38207",
+            "prod-price": "1290",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat23-prod40874",
+            "prod-name": "NOD Soundcheck Bluetooth Speaker []",
+            "prod-erp": "001-52554",
+            "prod-price": "1290",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat23-prod14723",
+            "prod-name": "Logitech Z120 Speakers [980-000513]",
+            "prod-erp": "001-21210",
+            "prod-price": "1390",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat23-prod9363",
+            "prod-name": "Edifier M1250 Multimedia Speaker []",
+            "prod-erp": "001-12959",
+            "prod-price": "1490",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat23-prod39724",
+            "prod-name": "Creative Pebble 2.0 USB Speakers - Black [51MF1680AA000]",
+            "prod-erp": "001-50920",
+            "prod-price": "1840",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat23-prod39725",
+            "prod-name": "Creative Pebble 2.0 USB Speakers - White [51MF1680AA001]",
+            "prod-erp": "001-50921",
+            "prod-price": "1840",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat23-prod24485",
+            "prod-name": "NOD B.FAB. Bluetooth Speaker []",
+            "prod-erp": "001-38208",
+            "prod-price": "1990",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat23-prod17256",
+            "prod-name": "Logitech Z150 Speakers Black [980-000814]",
+            "prod-erp": "001-25089",
+            "prod-price": "2490",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat23-prod29276",
+            "prod-name": "Creative Pebble V2 USB Speakers [51MF1695AA000]",
+            "prod-erp": "001-46449",
+            "prod-price": "2490",
+            "static-num": "1"
+          }
+        ]
       }, {
-        "prod-code": "cat18-prod29238",
-        "prod-name": "AOC 22E1Q 21.5¨ Full HD Wide LED MVA []",
-        "prod-erp": "001-46387",
-        "prod-price": "12690",
-        "prod-min": "1",
-        "prod-max": "3"
+        "cat-code": "cat24",
+        "cat-name": "Gamepad",
+        "cat-desc": "$blank",
+        "type": "radio",
+        "init-prod": "$blank",
+        "singleQuant": false,
+        "product-list": [
+          {
+            "prod-code": "cat24-prod0",
+            "prod-name": "Χωρίς Gamepad",
+            "prod-erp": "-",
+            "prod-price": "0",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat24-prod40857",
+            "prod-name": "ZeroGround Kojima Gamepad PC/P4 v2.0 [GP-1500 V2]",
+            "prod-erp": "001-52533",
+            "prod-price": "2490",
+            "prod-min": "1",
+            "prod-max": "4"
+          }, {
+            "prod-code": "cat24-prod39211",
+            "prod-name": "Microsoft XBOX Series X / S  Wireless Controller with USB-C - Black [1V8-00002]",
+            "prod-erp": "001-50184",
+            "prod-price": "6490",
+            "prod-min": "1",
+            "prod-max": "4"
+          }, {
+            "prod-code": "cat24-prod42319",
+            "prod-name": "HyperX ChargePlay Clutch - Charging Controller Grips for Mobile [4P5M3AA]",
+            "prod-erp": "001-54810",
+            "prod-price": "6490",
+            "prod-min": "1",
+            "prod-max": "4"
+          }
+        ]
       }, {
-        "prod-code": "cat18-prod22420",
-        "prod-name": "Dell E Series E2016HV 19.5¨ Wide LED [210-ALFK]",
-        "prod-erp": "001-34782",
-        "prod-price": "12750",
-        "prod-min": "1",
-        "prod-max": "3"
+        "cat-code": "cat25",
+        "cat-name": "Web Camera",
+        "cat-desc": "$blank",
+        "type": "radio",
+        "init-prod": "$blank",
+        "singleQuant": false,
+        "product-list": [
+          {
+            "prod-code": "cat25-prod0",
+            "prod-name": "Χωρίς Web Camera",
+            "prod-erp": "-",
+            "prod-price": "0",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat25-prod10943",
+            "prod-name": "Logitech HD Webcam C270 [960-001063]",
+            "prod-erp": "001-15256",
+            "prod-price": "2150",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat25-prod18244",
+            "prod-name": "Microsoft LifeCam HD-3000 [T3H-00013]",
+            "prod-erp": "001-26311",
+            "prod-price": "2650",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat25-prod20164",
+            "prod-name": "Microsoft LifeCam Cinema HD [H5D-00015]",
+            "prod-erp": "001-24789",
+            "prod-price": "5550",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat25-prod19961",
+            "prod-name": "Logitech HD Pro Webcam C920 [960-001055]",
+            "prod-erp": "001-30022",
+            "prod-price": "6700",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat25-prod23949",
+            "prod-name": "Razer Kiyo - Ring Light Equipped Broadcasting Camera [RZ19-02320100-R3M1]",
+            "prod-erp": "001-37350",
+            "prod-price": "8200",
+            "static-num": "1"
+          }
+        ]
       }, {
-        "prod-code": "cat18-prod43306",
-        "prod-name": "LG Electronics 22MP410-B Full HD 21.5¨ Wide LED VA 74Hz / 5ms with AMD Freesync [22MP410-B]",
-        "prod-erp": "001-56521",
-        "prod-price": "12900",
-        "prod-min": "1",
-        "prod-max": "3"
-      }, {
-        "prod-code": "cat18-prod41743",
-        "prod-name": "Dell SE2222H Full HD 21.5¨ Wide LED VA [210-AZKU]",
-        "prod-erp": "001-53844",
-        "prod-price": "13100",
-        "prod-min": "1",
-        "prod-max": "3"
-      }, {
-        "prod-code": "cat18-prod19209",
-        "prod-name": "Philips V-Line 223V5LSB 21.5¨ Wide LED []",
-        "prod-erp": "001-28617",
-        "prod-price": "13300",
-        "prod-min": "1",
-        "prod-max": "3"
-      }, {
-        "prod-code": "cat18-prod44058",
-        "prod-name": "BenQ GW2283 Full HD 21.5¨ Wide LED IPS - 60Hz / 5ms [GW2283]",
-        "prod-erp": "001-57951",
-        "prod-price": "13590",
-        "prod-min": "1",
-        "prod-max": "3"
+        "cat-code": "cat26",
+        "cat-name": "Gaming Chairs",
+        "cat-desc": "$blank",
+        "type": "radio",
+        "init-prod": "$blank",
+        "singleQuant": false,
+        "product-list": [
+          {
+            "prod-code": "cat26-prod0",
+            "prod-name": "Χωρίς Gaming Chair",
+            "prod-erp": "-",
+            "prod-price": "0",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat26-prod41514",
+            "prod-name": "Anda Seat Gaming Chair Jungle - Black [AD5-03-B-PV]",
+            "prod-erp": "001-53474",
+            "prod-price": "19900",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat26-prod41515",
+            "prod-name": "Anda Seat Gaming Chair Jungle - Black / Red [AD5-03-BR-PV]",
+            "prod-erp": "001-53475",
+            "prod-price": "19900",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat26-prod39400",
+            "prod-name": "Anda Seat Gaming Chair Pretty in Pink [AD7-02-PW-PV]",
+            "prod-erp": "001-50469",
+            "prod-price": "21900",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat26-prod42627",
+            "prod-name": "Anda Seat Gaming Chair Jungle 2 - Black with Footrest [AD5T-03-B-PVF]",
+            "prod-erp": "001-55387",
+            "prod-price": "24900",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat26-prod43099",
+            "prod-name": "Cooler Master Gaming Chair Caliber R2 - Black / Purple [CMI-GCR2-2019]",
+            "prod-erp": "001-56196",
+            "prod-price": "25900",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat26-prod43100",
+            "prod-name": "Cooler Master Gaming Chair Caliber R2 - Black / Grey [CMI-GCR2-2019G]",
+            "prod-erp": "001-56197",
+            "prod-price": "25900",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat26-prod43101",
+            "prod-name": "Cooler Master Gaming Chair Caliber R2 - Black / Red [CMI-GCR2-2019R]",
+            "prod-erp": "001-56198",
+            "prod-price": "25900",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat26-prod42645",
+            "prod-name": "Cooler Master Gaming Chair Caliber R2S KANA [CMI-GCR2S-KANA]",
+            "prod-erp": "001-55407",
+            "prod-price": "25900",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat26-prod43098",
+            "prod-name": "Cooler Master Gaming Chair Caliber R2 - Black [CMI-GCR2-2019BB]",
+            "prod-erp": "001-56195",
+            "prod-price": "25900",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat26-prod28567",
+            "prod-name": "Anda Seat Gaming Chair Bat - Black [AD19-03-B-PV/C]",
+            "prod-erp": "001-45068",
+            "prod-price": "26900",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat26-prod43590",
+            "prod-name": "Anda Seat Gaming Chair Phantom 3 - Black [AD18Y-06-B-PVC]",
+            "prod-erp": "001-57046",
+            "prod-price": "26900",
+            "static-num": "1"
+          }
+        ]
       }
     ]
   }, {
-    "cat-code": "cat19",
-    "cat-name": "Πληκτρολόγιο",
-    "cat-desc": "$blank",
-    "type": "radio",
-    "init-prod": "$blank",
-    "singleQuant": false,
-    "product-list": [
+    "group-code": "service",
+    "group-name": "Υπηρεσίες & Λογισμικό",
+    "cat-list": [
       {
-        "prod-code": "cat19-prod0",
-        "prod-name": "Χωρίς Πληκτρολόγιο",
-        "prod-erp": "-",
-        "prod-price": "0",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat19-prod41742",
-        "prod-name": "ZeroGround Soki V2.0 Membrane Gaming keyboard - US Layout [KB-2900G]",
-        "prod-erp": "001-53842",
-        "prod-price": "1590",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat19-prod23731",
-        "prod-name": "NOD Metal Stealth RGB Gaming Keyboard []",
-        "prod-erp": "001-36887",
-        "prod-price": "2490",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat19-prod26773",
-        "prod-name": "HyperX Alloy Core RGB Membrane Gaming Keyboard [4P4F5AA]",
-        "prod-erp": "001-54753",
-        "prod-price": "2990",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat19-prod40872",
-        "prod-name": "NOD Zero Dark RGB Gaming Keyboard - US Layout []",
-        "prod-erp": "001-52550",
-        "prod-price": "2990",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat19-prod41735",
-        "prod-name": "ZeroGround ZeroGround Simeto V2.0 RGB Mechanical Gaming keyboard - Content Blue Switches - US Layout [KB-2950G]",
-        "prod-erp": "001-53835",
-        "prod-price": "2990",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat19-prod35530",
-        "prod-name": "Cooler Master Master Devastator 3 Plus RGB Gaming Combo [SGB-3001-KKMF1-US]",
-        "prod-erp": "001-48678",
-        "prod-price": "3490",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat19-prod28989",
-        "prod-name": "Cooler Master Cooler Master MK110 RGB Mem-Chanical Gaming Keyboard - Mem-Chanical Linear Switches [MK-110-KKMF1-US]",
-        "prod-erp": "001-45921",
-        "prod-price": "3490",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat19-prod29019",
-        "prod-name": "Razer Cynosa Lite Chroma Membrane RGB Gaming Keyboard - GR Layout [RZ03-02741700-R3P1]",
-        "prod-erp": "001-46027",
-        "prod-price": "3890",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat19-prod28609",
-        "prod-name": "ZeroGround Sakimo RGB Mechanical Gaming Keyboard - Outemu Blue Switches [KB-2700G]",
-        "prod-erp": "001-45142",
-        "prod-price": "4399",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat19-prod28990",
-        "prod-name": "Cooler Master Master MS110 Gaming Combo Set - Mem-Chanical Gaming Keyboard + RGB Gaming Mouse [MS-110-KKMF1-US]",
-        "prod-erp": "001-45922",
-        "prod-price": "4990",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat19-prod41736",
-        "prod-name": "ZeroGround Tonado Mini RGB Mechanical Gaming keyboard - Outemu Red Switches - US Layout [KB-3100G]",
-        "prod-erp": "001-53836",
-        "prod-price": "4090",
-        "static-num": "1"
-      }
-    ]
-  }, {
-    "cat-code": "cat20",
-    "cat-name": "Ποντίκι",
-    "cat-desc": "$blank",
-    "type": "radio",
-    "init-prod": "$blank",
-    "singleQuant": false,
-    "product-list": [
-      {
-        "prod-code": "cat20-prod0",
-        "prod-name": "Χωρίς Ποντίκι",
-        "prod-erp": "-",
-        "prod-price": "0",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat20-prod39261",
-        "prod-name": "NOD Run Amok RGB Gaming Mouse []",
-        "prod-erp": "001-50269",
-        "prod-price": "1290",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat20-prod28851",
-        "prod-name": "NOD Iron Fire RGB Gaming Mouse []",
-        "prod-erp": "001-45561",
-        "prod-price": "1490",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat20-prod25658",
-        "prod-name": "Cooler Master CM310 RGB Gaming Mouse [CM-310-KKWO2]",
-        "prod-erp": "001-40216",
-        "prod-price": "1690",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat20-prod29537",
-        "prod-name": "HP OMEN 600 RGB Gaming Mouse [1KF75AA]",
-        "prod-erp": "001-46918",
-        "prod-price": "1900",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat20-prod38674",
-        "prod-name": "Corsair Katar Pro RGB Ultra Light Gaming Mouse [CH-930C011-EU]",
-        "prod-erp": "001-49331",
-        "prod-price": "1990",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat20-prod43290",
-        "prod-name": "HyperX Pulsefire Core RGB Gaming Mouse [4P4F8AA]",
-        "prod-erp": "001-54799",
-        "prod-price": "1990",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat20-prod41726",
-        "prod-name": "ZeroGround Harado V2.0 RGB Gaming Mouse [MS-3900G]",
-        "prod-erp": "001-53824",
-        "prod-price": "2090",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat20-prod27632",
-        "prod-name": "Gigabyte AORUS M2 RGB Gaming Mouse []",
-        "prod-erp": "001-43491",
-        "prod-price": "2230",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat20-prod41727",
-        "prod-name": "ZeroGround Daito RGB Gaming Mouse [MS-4000G]",
-        "prod-erp": "001-53825",
-        "prod-price": "2290",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat20-prod17129",
-        "prod-name": "Razer DeathAdder Expert/Essential Gaming Mouse [RZ01-03850100-R3M1]",
-        "prod-erp": "001-24872",
-        "prod-price": "2390",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat20-prod39224",
-        "prod-name": "Asus TUF Gaming M3 mouse [90MP01J0-B0UA00]",
-        "prod-erp": "001-50207",
-        "prod-price": "2390",
-        "static-num": "1"
-      }
-    ]
-  }, {
-    "cat-code": "cat21",
-    "cat-name": "Mouse Pad",
-    "cat-desc": "$blank",
-    "type": "radio",
-    "init-prod": "$blank",
-    "singleQuant": false,
-    "product-list": [
-      {
-        "prod-code": "cat21-prod0",
-        "prod-name": "Χωρίς Mouse Pad",
-        "prod-erp": "-",
-        "prod-price": "0",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat21-prod23951",
-        "prod-name": "Razer Goliathus Mobile Mouse Pad [RZ02-01820200-R3M1]",
-        "prod-erp": "001-37353",
-        "prod-price": "830",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat21-prod23346",
-        "prod-name": "Razer Mouse Pad Goliathus Mobile Stealth [RZ02-01820500-R3M1]",
-        "prod-erp": "001-36465",
-        "prod-price": "850",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat21-prod40679",
-        "prod-name": "Razer Sphex V3 Small [RZ02-03820100-R3M1]",
-        "prod-erp": "001-52272",
-        "prod-price": "1080",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat21-prod27819",
-        "prod-name": "NOD Battlefront Mouse Pad - XL Size []",
-        "prod-erp": "001-43815",
-        "prod-price": "1290",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat21-prod41842",
-        "prod-name": "Cooler Master MP511 Gaming Mouse pad - Cordura Fabric - Large [MP-511-CBLC1]",
-        "prod-erp": "001-54086",
-        "prod-price": "1490",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat21-prod43174",
-        "prod-name": "HyperX Pulsefire Mat Gaming Mouse Pad - Medium [4Z7X3AA]",
-        "prod-erp": "001-56313",
-        "prod-price": "1490",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat21-prod25749",
-        "prod-name": "Gigabyte AORUS AMP900 Gaming Mouse Pad - Extended [GM-AMP900]",
-        "prod-erp": "001-40429",
-        "prod-price": "1600",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat21-prod43686",
-        "prod-name": "Asus ROG Strix Slice Gaming Mouse Pad [90MP01M0-BPUA00]",
-        "prod-erp": "001-57219",
-        "prod-price": "1790",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat21-prod38700",
-        "prod-name": "Corsair MM300 Cloth Gaming Mouse Pad - PRO Premium Spill-Proof - Medium [CH-9413631-WW]",
-        "prod-erp": "001-49334",
-        "prod-price": "1990",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat21-prod43175",
-        "prod-name": "HyperX Pulsefire Mat Gaming Mouse Pad - Large [4Z7X4AA]",
-        "prod-erp": "001-56314",
-        "prod-price": "1990",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat21-prod25179",
-        "prod-name": "Asus ROG Strix Edge Gaming Mouse Pad [90MP00T0-B0UA00]",
-        "prod-erp": "001-39266",
-        "prod-price": "2190",
-        "static-num": "1"
-      }
-    ]
-  }, {
-    "cat-code": "cat22",
-    "cat-name": "Headset",
-    "cat-desc": "$blank",
-    "type": "radio",
-    "init-prod": "$blank",
-    "singleQuant": false,
-    "product-list": [
-      {
-        "prod-code": "cat22-prod0",
-        "prod-name": "Χωρίς Headset",
-        "prod-erp": "-",
-        "prod-price": "0",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat22-prod28539",
-        "prod-name": "HyperX CloudX Chat Gaming Headset for XBOX [4P5J4AA]",
-        "prod-erp": "001-54786",
-        "prod-price": "1990",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat22-prod38683",
-        "prod-name": "Edifier G1 SE Gaming Headphones - Black [G1 SE]",
-        "prod-erp": "001-49469",
-        "prod-price": "2390",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat22-prod29707",
-        "prod-name": "ZeroGround Okimo 7.1 Virtual Surround Gaming Headset [HD-2700G]",
-        "prod-erp": "001-47331",
-        "prod-price": "2790",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat22-prod41495",
-        "prod-name": "NOD Chaos RGB Gaming Headset []",
-        "prod-erp": "001-53440",
-        "prod-price": "2790",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat22-prod38684",
-        "prod-name": "Edifier G1 USB 7.1 Gaming Headphones - Black [G1]",
-        "prod-erp": "001-49470",
-        "prod-price": "2990",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat22-prod29847",
-        "prod-name": "Cooler Master CH321 RGB Gaming Headset [CH321]",
-        "prod-erp": "001-47596",
-        "prod-price": "2650",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat22-prod35539",
-        "prod-name": "HyperX Cloud Stinger S 7.1 Surround Gaming Headset [4P4F1AA]",
-        "prod-erp": "001-54784",
-        "prod-price": "2990",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat22-prod28994",
-        "prod-name": "ZeroGround Sokun 7.1 Virtual Surround RGB Gaming Headset [HD-2800G]",
-        "prod-erp": "001-45955",
-        "prod-price": "3199",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat22-prod41719",
-        "prod-name": "ZeroGround Ikeda V2.0 7.1 Virtual Surround Gaming [HD-3300G]",
-        "prod-erp": "001-53808",
-        "prod-price": "3490",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat22-prod28862",
-        "prod-name": "Razer Kraken X Lite PC/Console Gaming Headset [RZ04-02950100-R381]",
-        "prod-erp": "001-45600",
-        "prod-price": "3850",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat22-prod26598",
-        "prod-name": "HyperX CloudX Stinger Core Gaming Headset for XBOX [4P5J9AA]",
-        "prod-erp": "001-54788",
-        "prod-price": "3990",
-        "static-num": "1"
-      }
-    ]
-  }, {
-    "cat-code": "cat23",
-    "cat-name": "Ηχεία",
-    "cat-desc": "$blank",
-    "type": "radio",
-    "init-prod": "$blank",
-    "singleQuant": false,
-    "product-list": [
-      {
-        "prod-code": "cat23-prod0",
-        "prod-name": "Χωρίς Ηχεία",
-        "prod-erp": "-",
-        "prod-price": "0",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat23-prod24481",
-        "prod-name": "NOD Base.2.Zero Speakers []",
-        "prod-erp": "001-38204",
-        "prod-price": "890",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat23-prod24483",
-        "prod-name": "NOD SideFX Speakers []",
-        "prod-erp": "001-38206",
-        "prod-price": "1090",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat23-prod24484",
-        "prod-name": "NOD Base.2.One 2.1 Speakers []",
-        "prod-erp": "001-38207",
-        "prod-price": "1290",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat23-prod40874",
-        "prod-name": "NOD Soundcheck Bluetooth Speaker []",
-        "prod-erp": "001-52554",
-        "prod-price": "1290",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat23-prod14723",
-        "prod-name": "Logitech Z120 Speakers [980-000513]",
-        "prod-erp": "001-21210",
-        "prod-price": "1390",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat23-prod9363",
-        "prod-name": "Edifier M1250 Multimedia Speaker []",
-        "prod-erp": "001-12959",
-        "prod-price": "1490",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat23-prod39724",
-        "prod-name": "Creative Pebble 2.0 USB Speakers - Black [51MF1680AA000]",
-        "prod-erp": "001-50920",
-        "prod-price": "1840",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat23-prod39725",
-        "prod-name": "Creative Pebble 2.0 USB Speakers - White [51MF1680AA001]",
-        "prod-erp": "001-50921",
-        "prod-price": "1840",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat23-prod24485",
-        "prod-name": "NOD B.FAB. Bluetooth Speaker []",
-        "prod-erp": "001-38208",
-        "prod-price": "1990",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat23-prod17256",
-        "prod-name": "Logitech Z150 Speakers Black [980-000814]",
-        "prod-erp": "001-25089",
-        "prod-price": "2490",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat23-prod29276",
-        "prod-name": "Creative Pebble V2 USB Speakers [51MF1695AA000]",
-        "prod-erp": "001-46449",
-        "prod-price": "2490",
-        "static-num": "1"
-      }
-    ]
-  }, {
-    "cat-code": "cat24",
-    "cat-name": "Gamepad",
-    "cat-desc": "$blank",
-    "type": "radio",
-    "init-prod": "$blank",
-    "singleQuant": false,
-    "product-list": [
-      {
-        "prod-code": "cat24-prod0",
-        "prod-name": "Χωρίς Gamepad",
-        "prod-erp": "-",
-        "prod-price": "0",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat24-prod40857",
-        "prod-name": "ZeroGround Kojima Gamepad PC/P4 v2.0 [GP-1500 V2]",
-        "prod-erp": "001-52533",
-        "prod-price": "2490",
-        "prod-min": "1",
-        "prod-max": "4"
-      }, {
-        "prod-code": "cat24-prod39211",
-        "prod-name": "Microsoft XBOX Series X / S  Wireless Controller with USB-C - Black [1V8-00002]",
-        "prod-erp": "001-50184",
-        "prod-price": "6490",
-        "prod-min": "1",
-        "prod-max": "4"
-      }, {
-        "prod-code": "cat24-prod42319",
-        "prod-name": "HyperX ChargePlay Clutch - Charging Controller Grips for Mobile [4P5M3AA]",
-        "prod-erp": "001-54810",
-        "prod-price": "6490",
-        "prod-min": "1",
-        "prod-max": "4"
-      }
-    ]
-  }, {
-    "cat-code": "cat25",
-    "cat-name": "Web Camera",
-    "cat-desc": "$blank",
-    "type": "radio",
-    "init-prod": "$blank",
-    "singleQuant": false,
-    "product-list": [
-      {
-        "prod-code": "cat25-prod0",
-        "prod-name": "Χωρίς Web Camera",
-        "prod-erp": "-",
-        "prod-price": "0",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat25-prod10943",
-        "prod-name": "Logitech HD Webcam C270 [960-001063]",
-        "prod-erp": "001-15256",
-        "prod-price": "2150",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat25-prod18244",
-        "prod-name": "Microsoft LifeCam HD-3000 [T3H-00013]",
-        "prod-erp": "001-26311",
-        "prod-price": "2650",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat25-prod20164",
-        "prod-name": "Microsoft LifeCam Cinema HD [H5D-00015]",
-        "prod-erp": "001-24789",
-        "prod-price": "5550",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat25-prod19961",
-        "prod-name": "Logitech HD Pro Webcam C920 [960-001055]",
-        "prod-erp": "001-30022",
-        "prod-price": "6700",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat25-prod23949",
-        "prod-name": "Razer Kiyo - Ring Light Equipped Broadcasting Camera [RZ19-02320100-R3M1]",
-        "prod-erp": "001-37350",
-        "prod-price": "8200",
-        "static-num": "1"
-      }
-    ]
-  }, {
-    "cat-code": "cat26",
-    "cat-name": "Gaming Chairs",
-    "cat-desc": "$blank",
-    "type": "radio",
-    "init-prod": "$blank",
-    "singleQuant": false,
-    "product-list": [
-      {
-        "prod-code": "cat26-prod0",
-        "prod-name": "Χωρίς Gaming Chair",
-        "prod-erp": "-",
-        "prod-price": "0",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat26-prod41514",
-        "prod-name": "Anda Seat Gaming Chair Jungle - Black [AD5-03-B-PV]",
-        "prod-erp": "001-53474",
-        "prod-price": "19900",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat26-prod41515",
-        "prod-name": "Anda Seat Gaming Chair Jungle - Black / Red [AD5-03-BR-PV]",
-        "prod-erp": "001-53475",
-        "prod-price": "19900",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat26-prod39400",
-        "prod-name": "Anda Seat Gaming Chair Pretty in Pink [AD7-02-PW-PV]",
-        "prod-erp": "001-50469",
-        "prod-price": "21900",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat26-prod42627",
-        "prod-name": "Anda Seat Gaming Chair Jungle 2 - Black with Footrest [AD5T-03-B-PVF]",
-        "prod-erp": "001-55387",
-        "prod-price": "24900",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat26-prod43099",
-        "prod-name": "Cooler Master Gaming Chair Caliber R2 - Black / Purple [CMI-GCR2-2019]",
-        "prod-erp": "001-56196",
-        "prod-price": "25900",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat26-prod43100",
-        "prod-name": "Cooler Master Gaming Chair Caliber R2 - Black / Grey [CMI-GCR2-2019G]",
-        "prod-erp": "001-56197",
-        "prod-price": "25900",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat26-prod43101",
-        "prod-name": "Cooler Master Gaming Chair Caliber R2 - Black / Red [CMI-GCR2-2019R]",
-        "prod-erp": "001-56198",
-        "prod-price": "25900",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat26-prod42645",
-        "prod-name": "Cooler Master Gaming Chair Caliber R2S KANA [CMI-GCR2S-KANA]",
-        "prod-erp": "001-55407",
-        "prod-price": "25900",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat26-prod43098",
-        "prod-name": "Cooler Master Gaming Chair Caliber R2 - Black [CMI-GCR2-2019BB]",
-        "prod-erp": "001-56195",
-        "prod-price": "25900",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat26-prod28567",
-        "prod-name": "Anda Seat Gaming Chair Bat - Black [AD19-03-B-PV/C]",
-        "prod-erp": "001-45068",
-        "prod-price": "26900",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat26-prod43590",
-        "prod-name": "Anda Seat Gaming Chair Phantom 3 - Black [AD18Y-06-B-PVC]",
-        "prod-erp": "001-57046",
-        "prod-price": "26900",
-        "static-num": "1"
-      }
-    ]
-  }, {
-    "cat-code": "cat27",
-    "cat-name": "Microsoft Office",
-    "cat-desc": "$blank",
-    "type": "radio",
-    "init-prod": "$blank",
-    "singleQuant": false,
-    "product-list": [
-      {
-        "prod-code": "cat27-prod0",
-        "prod-name": "Χωρίς Microsoft Office",
-        "prod-erp": "-",
-        "prod-price": "0",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat27-prod28560",
-        "prod-name": "Microsoft 365 Personal (formerly Office 365 Personal) ESD  - 1 Year [QQ2-00012]",
-        "prod-erp": "002-33615",
-        "prod-price": "6990",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat27-prod28541",
-        "prod-name": "Microsoft 365 Family (formerly Office 365 Home) ESD - 1 Year [6GQ-00092]",
-        "prod-erp": "002-41357",
-        "prod-price": "8950",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat27-prod42052",
-        "prod-name": "Microsoft Office Home & Student 2021 (Box) - English [79G-05388]",
-        "prod-erp": "001-54290",
-        "prod-price": "14300",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat27-prod42053",
-        "prod-name": "Microsoft Office Home & Student 2021 (Box) - Greek [79G-05406]",
-        "prod-erp": "001-54291",
-        "prod-price": "14300",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat27-prod27800",
-        "prod-name": "Microsoft 365 Business Standard (formerly Office 365 Business Premium) ESD (1 User / 1 Year) [KLQ-00211]",
-        "prod-erp": "002-43798",
-        "prod-price": "14900",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat27-prod42067",
-        "prod-name": "Microsoft Office Home & Student 2021 ESD - All Languages [79G-05339]",
-        "prod-erp": "002-54193",
-        "prod-price": "14900",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat27-prod42054",
-        "prod-name": "Microsoft 365 Business Standard (Medialess) - 1 Year / 1 User - English [KLQ-00650]",
-        "prod-erp": "001-55762",
-        "prod-price": "15000",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat27-prod42055",
-        "prod-name": "Microsoft 365 Business Standard (Medialess) - 1 Year / 1 User - Greek [KLQ-00674]",
-        "prod-erp": "001-55763",
-        "prod-price": "15000",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat27-prod28535",
-        "prod-name": "ABBYY FineReader 15 Standard Edition (ESD) [FR15SW-FMPL-X]",
-        "prod-erp": "002-45018",
-        "prod-price": "20900",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat27-prod42050",
-        "prod-name": "Microsoft Office Home & Business 2021 (Box) - English [T5D-03511]",
-        "prod-erp": "001-54288",
-        "prod-price": "26900",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat27-prod42051",
-        "prod-name": "Microsoft Office Home & Business 2021 (Box) - Greek [T5D-03527]",
-        "prod-erp": "001-54289",
-        "prod-price": "26900",
-        "static-num": "1"
-      }
-    ]
-  }, {
-    "cat-code": "cat28",
-    "cat-name": "Antivirus",
-    "cat-desc": "$blank",
-    "type": "radio",
-    "init-prod": "$blank",
-    "singleQuant": false,
-    "product-list": [
-      {
-        "prod-code": "cat28-prod0",
-        "prod-name": "Χωρίς Antivirus",
-        "prod-erp": "-",
-        "prod-price": "0",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat28-prod42925",
-        "prod-name": "ESET Internet Security 2022 ( 1 άδεια χρήσης / 2 συσκευές  / 1 έτος ) Retail [EIS2D1Y]",
-        "prod-erp": "001-55890",
-        "prod-price": "2690",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat28-prod42926",
-        "prod-name": "ESET Smart Security Premium 2022 ( 1 άδεια χρήσης / 2 συσκευές  / 1 έτος ) Retail [ESSP2D1Y]",
-        "prod-erp": "001-55891",
-        "prod-price": "3690",
-        "static-num": "1"
-      }
-    ]
-  }, {
-    "cat-code": "cat29",
-    "cat-name": "Συναρμολόγηση",
-    "cat-desc": "<i class=\"ci-announcement me-2\"></i>Με πάνω από 1000 συναρμολογήσεις κάθε έτος και με παρουσία στον χώρο της πληροφορικής από το 2000, μπορείτε να νιώθετε σίγουροι για την ποιότητα των συναρμολογήσεων μας. Οι τεχνικοί μας είναι περήφανοι για κάθε σύστημα που στήνουν και οι έλεγχοι που πραγματοποιούμε στο σύστημα πριν το παραλάβετε διασφαλίζουν ότι δεν θα αντιμετωπίσετε κανένα θέμα με τον νέο σας υπολογιστή.",
-    "type": "radio",
-    "init-prod": "$blank",
-    "singleQuant": false,
-    "product-list": [
-      {
-        "prod-code": "cat29-prod0",
-        "prod-name": "Δεν επιθυμώ συναρμολόγηση",
-        "prod-erp": "-",
-        "prod-price": "0",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat29-prod26316",
-        "prod-name": "Msystems Συναρμολόγηση Υπολογιστή []",
-        "prod-erp": "100-80005",
-        "prod-price": "3000",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat29-prod26317",
-        "prod-name": "Msystems Συναρμολόγηση Υπολογιστή και εγκατάσταση Windows []",
-        "prod-erp": "100-80006",
-        "prod-price": "5000",
-        "static-num": "1"
-      }
-    ]
-  }, {
-    "cat-code": "cat30",
-    "cat-name": "System Backup",
-    "cat-desc": "<i class=\"ci-announcement me-2\"></i>Επαναφέρετε το σύστημά σας στην αρχική του κατάσταση εύκολα και γρήγορα από το Msystems USB flash drive",
-    "type": "radio",
-    "init-prod": "$blank",
-    "singleQuant": false,
-    "product-list": [
-      {
-        "prod-code": "cat30-prod0",
-        "prod-name": "Χωρίς System Backup",
-        "prod-erp": "-",
-        "prod-price": "0",
-        "static-num": "1"
-      }, {
-        "prod-code": "cat30-prod27405",
-        "prod-name": "Msystems Δημιουργία ειδώλου (Image) του συστήματος []",
-        "prod-erp": "100-80007",
-        "prod-price": "1500",
-        "static-num": "1"
+        "cat-code": "cat27",
+        "cat-name": "Microsoft Office",
+        "cat-desc": "$blank",
+        "type": "radio",
+        "init-prod": "$blank",
+        "singleQuant": false,
+        "product-list": [
+          {
+            "prod-code": "cat27-prod0",
+            "prod-name": "Χωρίς Microsoft Office",
+            "prod-erp": "-",
+            "prod-price": "0",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat27-prod28560",
+            "prod-name": "Microsoft 365 Personal (formerly Office 365 Personal) ESD  - 1 Year [QQ2-00012]",
+            "prod-erp": "002-33615",
+            "prod-price": "6990",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat27-prod28541",
+            "prod-name": "Microsoft 365 Family (formerly Office 365 Home) ESD - 1 Year [6GQ-00092]",
+            "prod-erp": "002-41357",
+            "prod-price": "8950",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat27-prod42052",
+            "prod-name": "Microsoft Office Home & Student 2021 (Box) - English [79G-05388]",
+            "prod-erp": "001-54290",
+            "prod-price": "14300",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat27-prod42053",
+            "prod-name": "Microsoft Office Home & Student 2021 (Box) - Greek [79G-05406]",
+            "prod-erp": "001-54291",
+            "prod-price": "14300",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat27-prod27800",
+            "prod-name": "Microsoft 365 Business Standard (formerly Office 365 Business Premium) ESD (1 User / 1 Year) [KLQ-00211]",
+            "prod-erp": "002-43798",
+            "prod-price": "14900",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat27-prod42067",
+            "prod-name": "Microsoft Office Home & Student 2021 ESD - All Languages [79G-05339]",
+            "prod-erp": "002-54193",
+            "prod-price": "14900",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat27-prod42054",
+            "prod-name": "Microsoft 365 Business Standard (Medialess) - 1 Year / 1 User - English [KLQ-00650]",
+            "prod-erp": "001-55762",
+            "prod-price": "15000",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat27-prod42055",
+            "prod-name": "Microsoft 365 Business Standard (Medialess) - 1 Year / 1 User - Greek [KLQ-00674]",
+            "prod-erp": "001-55763",
+            "prod-price": "15000",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat27-prod28535",
+            "prod-name": "ABBYY FineReader 15 Standard Edition (ESD) [FR15SW-FMPL-X]",
+            "prod-erp": "002-45018",
+            "prod-price": "20900",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat27-prod42050",
+            "prod-name": "Microsoft Office Home & Business 2021 (Box) - English [T5D-03511]",
+            "prod-erp": "001-54288",
+            "prod-price": "26900",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat27-prod42051",
+            "prod-name": "Microsoft Office Home & Business 2021 (Box) - Greek [T5D-03527]",
+            "prod-erp": "001-54289",
+            "prod-price": "26900",
+            "static-num": "1"
+          }
+        ]
+      }, {
+        "cat-code": "cat28",
+        "cat-name": "Antivirus",
+        "cat-desc": "$blank",
+        "type": "radio",
+        "init-prod": "$blank",
+        "singleQuant": false,
+        "product-list": [
+          {
+            "prod-code": "cat28-prod0",
+            "prod-name": "Χωρίς Antivirus",
+            "prod-erp": "-",
+            "prod-price": "0",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat28-prod42925",
+            "prod-name": "ESET Internet Security 2022 ( 1 άδεια χρήσης / 2 συσκευές  / 1 έτος ) Retail [EIS2D1Y]",
+            "prod-erp": "001-55890",
+            "prod-price": "2690",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat28-prod42926",
+            "prod-name": "ESET Smart Security Premium 2022 ( 1 άδεια χρήσης / 2 συσκευές  / 1 έτος ) Retail [ESSP2D1Y]",
+            "prod-erp": "001-55891",
+            "prod-price": "3690",
+            "static-num": "1"
+          }
+        ]
+      }, {
+        "cat-code": "cat29",
+        "cat-name": "Συναρμολόγηση",
+        "cat-desc": "<i class=\"ci-announcement me-2\"></i>Με πάνω από 1000 συναρμολογήσεις κάθε έτος και με παρουσία στον χώρο της πληροφορικής από το 2000, μπορείτε να νιώθετε σίγουροι για την ποιότητα των συναρμολογήσεων μας. Οι τεχνικοί μας είναι περήφανοι για κάθε σύστημα που στήνουν και οι έλεγχοι που πραγματοποιούμε στο σύστημα πριν το παραλάβετε διασφαλίζουν ότι δεν θα αντιμετωπίσετε κανένα θέμα με τον νέο σας υπολογιστή.",
+        "type": "radio",
+        "init-prod": "$blank",
+        "singleQuant": false,
+        "product-list": [
+          {
+            "prod-code": "cat29-prod0",
+            "prod-name": "Δεν επιθυμώ συναρμολόγηση",
+            "prod-erp": "-",
+            "prod-price": "0",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat29-prod26316",
+            "prod-name": "Msystems Συναρμολόγηση Υπολογιστή []",
+            "prod-erp": "100-80005",
+            "prod-price": "3000",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat29-prod26317",
+            "prod-name": "Msystems Συναρμολόγηση Υπολογιστή και εγκατάσταση Windows []",
+            "prod-erp": "100-80006",
+            "prod-price": "5000",
+            "static-num": "1"
+          }
+        ]
+      }, {
+        "cat-code": "cat30",
+        "cat-name": "System Backup",
+        "cat-desc": "<i class=\"ci-announcement me-2\"></i>Επαναφέρετε το σύστημά σας στην αρχική του κατάσταση εύκολα και γρήγορα από το Msystems USB flash drive",
+        "type": "radio",
+        "init-prod": "$blank",
+        "singleQuant": false,
+        "product-list": [
+          {
+            "prod-code": "cat30-prod0",
+            "prod-name": "Χωρίς System Backup",
+            "prod-erp": "-",
+            "prod-price": "0",
+            "static-num": "1"
+          }, {
+            "prod-code": "cat30-prod27405",
+            "prod-name": "Msystems Δημιουργία ειδώλου (Image) του συστήματος []",
+            "prod-erp": "100-80007",
+            "prod-price": "1500",
+            "static-num": "1"
+          }
+        ]
       }
     ]
   }

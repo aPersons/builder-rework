@@ -264,10 +264,22 @@
 }
 
 .catCollapsible {
+  --qheight: 0px;
   max-height: 0;
   transition: max-height 0.2s ease-in-out;
   overflow: hidden;
   display: none;
+}
+.builder-part-category .catCollapsible.collapseTransition {
+  display: block;
+}
+.builder-part-category.lp-show .catCollapsible {
+  display: block;
+  max-height: none;
+}
+.builder-part-category.lp-show .catCollapsible.collapseTransition {
+  display: block;
+  max-height: var(--qheight, 0);
 }
 
 .part-category-description {

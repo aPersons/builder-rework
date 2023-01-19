@@ -69,6 +69,9 @@ def crProdList(cat):
   return res
 
 def crCat(cat):
+  if "group-code" in cat:
+    res = f"""<div id="{cat["group-code"]}" class="cat-group" data-title="{cat["group-name"]}">{"".join([crCat(x) for x in cat["cat-list"]])}</div>"""
+    return res
   res = """
 <div class="builder-part-category" id="{catId}">
   <div class="part-category-header">
