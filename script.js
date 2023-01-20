@@ -140,6 +140,20 @@ let bTK = {
   },
 
 
+  catOpenQ: function(evArgs) {
+    let ob = domCashe.dom[evArgs.cnm];
+    if (ob.lpState) return;
+    ob.lpState = true;
+    ob.selfDom.classList.add("lp-show");
+  },
+  catCloseQ: function(evArgs) {
+    let ob = domCashe.dom[evArgs.cnm];
+    if (!ob.lpState) return;
+    ob.lpState = false;
+    ob.selfDom.classList.remove("lp-show");
+  },
+
+
   catClose: function(evArgs) {
     let ob = domCashe.dom[evArgs.cnm];
     if (!ob.lpState) return;
@@ -209,11 +223,68 @@ let bTK = {
   },
 
 
-  crGroups: function() {
-    domCashe.groups = [];
-    domCashe.groupsOrder = [];
-    for (const cnm of domCashe.domOrder) {
+  groupOpen: function(groupNm) {
+    if (domCashe.groups[groupNm].isActive) return;    
+    domCashe.groups[groupNm].isActive = true;
+    domCashe.groups[groupNm].selfDom.classList.add("group-active");
+  },
+  
+  
+  groupClose: function(groupNm) {
+    if (!domCashe.groups[groupNm].isActive) return;
+    for (cnm of domCashe.groups[groupNm].catList) {
+      bTK.catCloseQ({cnm:cnm});
+    }    
+    domCashe.groups[groupNm].isActive = false;
+    domCashe.groups[groupNm].selfDom.classList.remove("group-active");
+  },
 
+
+  groupSelect: function(gList) {
+    for (groupNm of domCashe.groupOrder) {
+      if (groupNm == "group-default") continue;
+      if (gList.includes(groupNm)) {
+        bTK.groupOpen(groupNm);
+      } else {
+        bTK.groupClose(groupNm);
+      }
+    }
+    bTK.groupUpdateHandler();
+  },
+
+
+  CFGgroupUpdateHandler: [],
+  groupUpdateHandler: function() {
+    for (const fnc of bTK.CFGgroupUpdateHandler) fnc();
+  },
+
+
+  crGroups: function() {
+    domCashe.groups = {"group-default": {
+      "title": "Default",
+      "catList": [],
+      "selfDom": null,
+      "isActive": true
+    }};
+    domCashe.groupOrder = ["group-default"];
+    for (const cnm of domCashe.domOrder) {
+      let qGroup = domCashe.dom[cnm].selfDom.parentElement
+      if (qGroup.classList.contains("cat-group")) {
+        if (!domCashe.groupOrder.includes(qGroup.id)) {
+          domCashe.groupOrder.push(qGroup.id);
+          domCashe.groups[qGroup.id] = {
+            "title": qGroup.dataset.title,
+            "catList": [],
+            "selfDom": qGroup,
+            "isActive": qGroup.classList.contains("group-active")
+          }
+        }
+        domCashe.groups[qGroup.id].catList.push(cnm);
+        domCashe.dom[cnm].group = qGroup.id;
+      } else {
+        domCashe.groups["group-default"].catList.push(cnm);
+        domCashe.dom[cnm].group = "group-default";
+      }
     }
   },
 
@@ -1210,6 +1281,7 @@ bModal = {
 document.addEventListener("DOMContentLoaded", function() {
 
   bTK.crCats();
+  bTK.crGroups();
   bTK.crCOpen();
   bTK.crRdBt();
   bTK.crCbBt();
