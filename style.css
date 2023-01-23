@@ -187,6 +187,13 @@
 
 
 
+/* Cat Groups */
+
+.cat-group.isHidden {
+  display: none;
+}
+
+
 /* Product Category */
 
 .builder-part-category {

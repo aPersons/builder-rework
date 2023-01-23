@@ -224,19 +224,19 @@ let bTK = {
 
 
   groupOpen: function(groupNm) {
-    if (domCashe.groups[groupNm].isActive) return;    
-    domCashe.groups[groupNm].isActive = true;
-    domCashe.groups[groupNm].selfDom.classList.add("group-active");
+    if (!domCashe.groups[groupNm].isHidden) return;    
+    domCashe.groups[groupNm].isHidden = false;
+    domCashe.groups[groupNm].selfDom.classList.remove("isHidden");
   },
   
   
   groupClose: function(groupNm) {
-    if (!domCashe.groups[groupNm].isActive) return;
+    if (domCashe.groups[groupNm].isHidden) return;
     for (cnm of domCashe.groups[groupNm].catList) {
       bTK.catCloseQ({cnm:cnm});
     }    
-    domCashe.groups[groupNm].isActive = false;
-    domCashe.groups[groupNm].selfDom.classList.remove("group-active");
+    domCashe.groups[groupNm].isHidden = true;
+    domCashe.groups[groupNm].selfDom.classList.add("isHidden");
   },
 
 
@@ -264,7 +264,7 @@ let bTK = {
       "title": "Default",
       "catList": [],
       "selfDom": null,
-      "isActive": true
+      "isHidden": false
     }};
     domCashe.groupOrder = ["group-default"];
     for (const cnm of domCashe.domOrder) {
@@ -276,7 +276,7 @@ let bTK = {
             "title": qGroup.dataset.title,
             "catList": [],
             "selfDom": qGroup,
-            "isActive": qGroup.classList.contains("group-active")
+            "isHidden": qGroup.classList.contains("isHidden")
           }
         }
         domCashe.groups[qGroup.id].catList.push(cnm);
