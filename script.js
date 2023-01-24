@@ -958,18 +958,26 @@ let nav = {
     if (window.innerWidth >= 768) {
       if (nav.barMode) {
         nav.barMode = false;
+        nav.updateBarScroll();
+        nav.updateisFocused();
       }
     } else {
       if (!nav.barMode) {
         nav.barMode = true;
+        nav.updateBarScroll();
+        nav.updateisFocused();
       }
     }
   },
 
 
   updateBarScroll: function() {
-    if (!nav.barMode) return
-    if (nav.selfDom.parentElement.getBoundingClientRect().top > 110) {
+    if (!nav.barMode) {
+      if (nav.inView) {
+        nav.inView = false;
+        nav.selfDom.classList.remove("inView");
+      }
+    } else if (nav.selfDom.parentElement.getBoundingClientRect().top > 110) {
       if (nav.inView) {
         nav.inView = false;
         nav.selfDom.classList.remove("inView");

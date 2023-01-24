@@ -91,6 +91,23 @@
     max-height: calc(100vh - 205px);
   }
 }
+
+.nav-menu {
+  display: none;
+  position: fixed;
+  top: 85px;
+  left: 0px;
+  padding: 7px;
+  color: #fff;
+  background-color: #2b3445;
+  font-size: 0.9rem;
+}
+
+.nav-group .nav-header {
+  /* placeholder */
+}
+
+
 .prod-navigation {
   overflow: auto;
 }
@@ -121,7 +138,24 @@
   .prod-navigation.inView {
     display: flex;
   }
+  .nav-group {
+    display: contents;
+  }
+  .nav-group.isHidden {
+    display: none;
+  }
+  .nav-group .nav-header {
+    display: none;
+  }
+  .nav-menu {
+    display: block;
+    z-index: 1009;
+  }
+  .nav-menu + .prod-navigation {
+    padding-left: 5ch;
+  }
 }
+
 
 
 .prod-navigator {
@@ -141,6 +175,7 @@
     border-radius: 0.4375rem;
     background: linear-gradient(90deg, rgba(246,246,246,1) 50%, rgba(255,255,255,1) 100%);
   }
+  
 }
 
 /* .prod-navigation .prod-navigator i{margin-right: 10px;} */
