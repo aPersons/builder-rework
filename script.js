@@ -1081,6 +1081,15 @@ let nav = {
   },
 
 
+  CFGnavGroupHandler: [],
+  navGroupHandler: function() {
+    let evArgs = {
+      cnm: this.dataset.navdest
+    }
+    for (const fnc of nav.CFGnavGroupHandler) fnc(evArgs);
+  },
+
+
   crNavDom: function() {
     if (!domCashe.domOrder.length) return;
     let selfDom = document.querySelector(".prod-navigation");
@@ -1143,6 +1152,7 @@ let nav = {
     nav.CFGscrollHadler.length = 0;
     nav.CFGscrollHadlerEnd.length = 0;
     nav.CFGnavigatorHandler.length = 0;
+    nav.CFGnavGroupHandler.length = 0;
 
     nav.crNavDom();
   }
