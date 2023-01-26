@@ -994,6 +994,7 @@
     "cat-code": "cat13",
     "cat-name": "Κάρτα Ήχου",
     "cat-desc": "$blank",
+    "hide-cat": true,
     "type": "radio",
     "init-prod": "$blank",
     "singleQuant": false,

@@ -73,7 +73,7 @@ def crCat(cat):
     res = f"""<div id="group-{cat["group-code"]}" class="cat-group" data-title="{cat["group-name"]}">{"".join([crCat(x) for x in cat["cat-list"]])}</div>"""
     return res
   res = """
-<div class="builder-part-category" id="{catId}">
+<div class="builder-part-category{isHidden}" id="{catId}">
   <div class="part-category-header">
     <div class="part-category-img"><img src="img/cat29-prod0.jpg"></div>
     <div class="part-category-bar">{catName}</div>
@@ -85,6 +85,7 @@ def crCat(cat):
     {prodlist}
   </div></div>
 </div>""".format(
+    isHidden = " d-none" if "hide-cat" in cat else "",
     catId = cat["cat-code"],
     catName = cat["cat-name"],
     description = "" if cat["cat-desc"] == "$blank" else f'<div class="part-category-description fs-md bg-secondary">{cat["cat-desc"]}</div>',

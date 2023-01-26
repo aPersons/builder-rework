@@ -197,6 +197,7 @@ let bTK = {
 
   catGroupAction: function(evArgs) {
     for (cnm of domCashe.domOrder) {
+      if (domCashe.dom[cnm].isEmpty || domCashe.dom[cnm].isHidden) continue;
       if (cnm == evArgs.cnm) bTK.catAction(evArgs);
       else bTK.catAction({cnm: cnm, action: "close"});
     }
@@ -215,6 +216,7 @@ let bTK = {
   crCOpen: function () {
     for (const cnm of domCashe.domOrder) {
       let ob = domCashe.dom[cnm];
+      if (ob.isEmpty || ob.isHidden) continue;
       ob.headDom.removeEventListener("click",bTK.cHeadHandler);
       ob.headDom.addEventListener("click",bTK.cHeadHandler);  
     }
@@ -268,7 +270,8 @@ let bTK = {
     }};
     domCashe.groupOrder = ["group-default"];
     for (const cnm of domCashe.domOrder) {
-      let qGroup = domCashe.dom[cnm].selfDom.parentElement
+      if (domCashe.dom[cnm].isEmpty || domCashe.dom[cnm].isHidden) continue;
+      let qGroup = domCashe.dom[cnm].selfDom.parentElement;
       if (qGroup.classList.contains("cat-group")) {
         if (!domCashe.groupOrder.includes(qGroup.id)) {
           domCashe.groupOrder.push(qGroup.id);
@@ -330,6 +333,7 @@ let bTK = {
   crRdBt() {
     for (const cnm of domCashe.domOrder) {
       let ob = domCashe.dom[cnm];
+      if (ob.isEmpty || ob.isHidden) continue;
       let tmpList = ob.selfDom.querySelectorAll(".part-rd-bt");
       if (!tmpList.length) continue;
       ob.prodType = "radio";
@@ -468,6 +472,7 @@ let bTK = {
   crCbBt: function() {
     for (const cnm of domCashe.domOrder) {
       let ob = domCashe.dom[cnm];
+      if (ob.isEmpty || ob.isHidden) continue;
       let tmpList = ob.selfDom.querySelectorAll(".part-checkbox");
       if (!tmpList.length) continue;
       ob.emptyEl = "$blank";
@@ -612,7 +617,7 @@ let bTK = {
   crQuantity: function() {
     for (const cnm of domCashe.domOrder) {
       let ob = domCashe.dom[cnm];
-      if (ob.isEmpty) continue;
+      if (ob.isEmpty || ob.isHidden) continue;
       for (const pnm of ob.prodOrder) {
         let pob = ob.prodList[pnm];
         pob.qCont = pob.cDom.querySelector(".part-number-input");
@@ -727,6 +732,7 @@ let bTK = {
 
   crHeadSel: function() {
     for (const cnm of domCashe.domOrder) {
+      if (domCashe.dom[cnm].isEmpty || domCashe.dom[cnm].isHidden) continue;
       domCashe.dom[cnm].hasSelected = domCashe.dom[cnm].selfDom.classList.contains("contains-selected");
       bTK.updateHeadSel({"cnm":cnm});
     }
@@ -737,7 +743,6 @@ let bTK = {
 
   updateCatDetails: function(evArgs) {
     let ob = domCashe.dom[evArgs.cnm];
-    if (ob.isEmpty) return;
     if (ob.prodType == "radio") {
       let tEl = document.createElement("div");      
       tEl.classList.add("dt-item");
@@ -770,7 +775,7 @@ let bTK = {
 
   crCatDetails: function() {
     for (const ob of Object.values(domCashe.dom)) {
-      if (!ob.isEmpty) ob.dtDom = ob.selfDom.querySelector(".part-category-details");      
+      if (!(ob.isEmpty || ob.isHidden)) ob.dtDom = ob.selfDom.querySelector(".part-category-details");      
     }
     for (const cnm of domCashe.domOrder) {
       bTK.updateCatDetails({cnm: cnm});
@@ -784,7 +789,6 @@ let bTK = {
 
   updateCatIMG: function(evArgs) {
     let ob = domCashe.dom[evArgs.cnm];
-    if (ob.isEmpty) return;
     if (ob.prodType == "radio") {
       ob.catIMG.src = ob.prodList[ob.prodSelected].imgSrc;
     } else if (ob.prodType == "checkbox") {
@@ -795,7 +799,7 @@ let bTK = {
 
   crCatIMG: function() {
     for (const ob of Object.values(domCashe.dom)) {
-      if (ob.isEmpty) continue;
+      if (ob.isEmpty || ob.isHidden) continue;
       ob.catIMG = ob.selfDom.querySelector(".part-category-img img");
       for (const pob of Object.values(ob.prodList)) pob.imgSrc = pob.cDom.querySelector(".part-img img").src;
     }
@@ -817,7 +821,6 @@ let build = {
   updateBuildIMG: function(evArgs) {
     if (evArgs.cnm != "cat0") return;
     let ob = domCashe.dom["cat0"];
-    if (ob.isEmpty) return;
     if (ob.prodType == "radio") {
       build.bIMG.src = ob.prodList[ob.prodSelected].imgSrc;
     } else if (ob.prodType == "checkbox") {
@@ -852,10 +855,10 @@ let pr = {
   updateFinalPrice: function() {
     let nresult = 0;
     for (const ob of Object.values(domCashe.dom)) {
-      if (ob.prodType=="radio") {
+      if (ob.prodType == "radio") {
         let pob = ob.prodList[ob.prodSelected];
         nresult += pob.priceVal * pob.qValue;
-      } else if (ob.prodType=="checkbox") {
+      } else if (ob.prodType == "checkbox") {
         for (const pnm of ob.prodSelected) {
           let pob = ob.prodList[pnm];
           nresult += pob.priceVal * pob.qValue;
@@ -1019,6 +1022,7 @@ let nav = {
     //   }
     // }
     for (const [cnm, ob] of Object.entries(domCashe.dom)) {
+      if (ob.isEmpty || ob.isHidden) continue;
       if (ob.lpState && !nav.navItems[cnm].lpState) {
         nav.navItems[cnm].lpState = true;
         nav.navItems[cnm].navDom.classList.add("navlpshow");
@@ -1035,6 +1039,7 @@ let nav = {
     let focused = "";
     let rdistance = 0;
     for (const [cnm, ob] of Object.entries(domCashe.dom)) {
+      if (ob.isEmpty || ob.isHidden) continue;
       let nhead = ob.selfDom.getBoundingClientRect().top;
       let nfloor = ob.selfDom.getBoundingClientRect().bottom;
       if (nhead < window.innerHeight - 50 && nfloor > 245) {
@@ -1178,7 +1183,7 @@ bModal = {
     let isEmpty = true;
     for (let i = 0; i < domCashe.domOrder.length; i++) {
       let ob = domCashe.dom[domCashe.domOrder[i]];
-      if (ob.isHidden) continue;
+      if (ob.isHidden || ob.isEmpty) continue;
       if (!ob.hasSelected) continue;
       isEmpty = false;
       if (ob.prodType == "radio") {
