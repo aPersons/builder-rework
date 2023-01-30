@@ -114,7 +114,17 @@ let bTK = {
 
   catOpen: function(evArgs) {
     let ob = domCashe.dom[evArgs.cnm];
-    if (ob.lpState) return;
+    if (ob.lpState) {
+      scrollToC(
+        document.documentElement,
+        window.scrollY,
+        window.scrollY + ob.selfDom.getBoundingClientRect().top - (
+          window.innerWidth > 991 ? 149 : window.innerWidth > 767 ? 95 : 125
+        ),//125 ~ 95 ~ 149
+        200
+      )
+      return
+    }
     ob.lpState = true;    
     ob.collapseDom.classList.add("collapseTransition");
     requestAnimationFrame(()=>requestAnimationFrame(
@@ -122,20 +132,20 @@ let bTK = {
         ob.collapseDom.style.setProperty("--qheight", ob.collapseDom.scrollHeight + "px")
         ob.selfDom.classList.add("lp-show")
       }
-      ))
-      function openEnd() {
-        // scrollToC(element, from, to, duration)
-        scrollToC(
-          document.documentElement,
-          window.scrollY,
-          window.scrollY + ob.selfDom.getBoundingClientRect().top - (
-            window.innerWidth > 991 ? 149 : window.innerWidth > 767 ? 95 : 125
-          ),//125 ~ 95 ~ 149
-          200
-        )
-        ob.collapseDom.classList.remove("collapseTransition");
-        this.removeEventListener("transitionend", openEnd);
-      }
+    ))
+    function openEnd() {
+      // scrollToC(element, from, to, duration)
+      scrollToC(
+        document.documentElement,
+        window.scrollY,
+        window.scrollY + ob.selfDom.getBoundingClientRect().top - (
+          window.innerWidth > 991 ? 149 : window.innerWidth > 767 ? 95 : 125
+        ),//125 ~ 95 ~ 149
+        200
+      )
+      ob.collapseDom.classList.remove("collapseTransition");
+      this.removeEventListener("transitionend", openEnd);
+    }
     ob.collapseDom.addEventListener("transitionend", openEnd);
   },
 
@@ -1080,7 +1090,8 @@ let nav = {
   CFGnavigatorHandler: [],
   navigatorHandler: function() {
     let evArgs = {
-      cnm: this.dataset.navdest
+      cnm: this.dataset.navdest,
+      action: "open"
     }
     for (const fnc of nav.CFGnavigatorHandler) fnc(evArgs);
   },
