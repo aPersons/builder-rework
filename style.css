@@ -532,7 +532,7 @@
 #build-modal .modal-table {
   width: 100%;
   display: grid;
-  grid-template-columns:auto 11ch 1fr auto;
+  grid-template-columns:auto 1fr auto;
 }
 #build-modal .modal-table .table-row > div {
   padding:0 5px;
@@ -552,42 +552,15 @@
   color:#fff;
 }
 
-#build-modal .modal-table .table-row > div:nth-child(n+4),
-#build-modal .modal-table .table-row > div:nth-child(2){text-align: center;}
+#build-modal .modal-table .table-row > div:nth-child(n+3){text-align: center;}
 
 @media only screen and (max-width: 767px) {
   #build-modal .modal-table {
-    grid-template-columns: 10ch 1fr auto;
+    grid-template-columns: 1fr auto;
   }
   #build-modal .modal-table .table-row > div:nth-child(1) {display: none;}
-  #build-modal .modal-table .table-row > div:nth-child(2) {text-align: left;}
   #build-modal .modal-table .table-row:last-child > div:nth-child(1) {display: block;}
   #build-modal .modal-table .table-row:last-child > div:nth-child(2) {display: none;}
-}
-@media only screen and (max-width: 499px) {
-  #build-modal .modal-table {
-    grid-template-columns: auto;
-  }
-  #build-modal .modal-table .table-row {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  #build-modal .modal-table .table-row > div:nth-child(2) {
-    width:10ch;
-    order: 1
-  }
-  #build-modal .modal-table .table-row > div:nth-child(3) {
-    width:100%;
-    border: none;
-  }
-  #build-modal .modal-table .table-row > div:nth-child(4) {
-    flex-grow: 1;
-    text-align: right;
-    order: 2;
-  }
-  #build-modal .modal-table .table-row:last-child > div {
-    width: unset;
-  }
 }
 
 #build-modal .modal-footer .footer-interface {

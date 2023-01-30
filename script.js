@@ -1176,7 +1176,6 @@ bModal = {
     // linktext = `https://www.msystems.gr/section/systems_new/?&system=18&prefill=1`;   //temp change
     let tabletext = `<div class="table-row">
     <div class="modal-cat-header">Κατηγορία</div>
-    <div class="modal-prnum-header">Κωδικός</div>
     <div class="modal-product-header">Προϊόν</div>
     <div class="modal-quant-header">Τμχ.</div></div>`;
     let totalVal = 0;
@@ -1190,7 +1189,6 @@ bModal = {
         let pob = ob.prodList[ob.prodSelected];
         tabletext += `<div class="table-row">
         <div class="cat-nm">${ob.nmTxt}</div>
-        <div class="erp-pn">${pob.erp}</div>
         <div class="prod-nm">${pob.nmTxt}</div>
         <div class="prod-quant">${pob.qValue}</div></div>`;
         totalVal+= (pob.qValue * pob.priceVal);
@@ -1200,7 +1198,6 @@ bModal = {
           let pob = ob.prodList[pnm];
           tabletext += `<div class="table-row">
           <div class="cat-nm">${ob.nmTxt}</div>
-          <div class="erp-pn">${pob.erp}</div>
           <div class="prod-nm">${pob.nmTxt}</div>
           <div class="prod-quant">${pob.qValue}</div></div>`;
           totalVal += (pob.qValue * pob.priceVal);
@@ -1212,7 +1209,7 @@ bModal = {
     totalVal = totalVal < 0 ? 0 : totalVal;
     tabletext += `<div class="table-row">
     <div class="modal-total-title">Σύνολο:</div>
-    <div></div><div></div><div class="modal-total-num"><span>${wtDecimal(totalVal)}</span> €</div>
+    <div></div><div class="modal-total-num"><span>${wtDecimal(totalVal)}</span> €</div>
     </div>`
     bModal.modalTable.innerHTML = tabletext;
     bModal.linkFull = linktext;
