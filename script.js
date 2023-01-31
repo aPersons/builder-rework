@@ -82,6 +82,7 @@ let domCashe = {
 
   dom: {},
   domOrder: [],
+  avCats: [],
   groups: []
 }
 
@@ -92,21 +93,26 @@ let domCashe = {
 let bTK = {
   
   crCats: function() {
-    domCashe.dom = {}
-    domCashe.domOrder = []
+    domCashe.dom = {};
+    domCashe.domOrder = [];
+    domCashe.avCats = [];
     let tmpList = document.querySelectorAll(".builder-part-category");
     for (const cDom of tmpList) {
       let tmphead = cDom.querySelector(".part-category-bar");
-      domCashe.domOrder.push(cDom.id);
-      domCashe.dom[domCashe.domOrder[domCashe.domOrder.length-1]] = {
+      let cnm = cDom.id
+      domCashe.domOrder.push(cnm);
+      domCashe.dom[cnm] = {
         "selfDom": cDom,
         "headDom": tmphead,
         "isHidden": cDom.classList.contains("d-none"),
-        "isEmpty": !cDom.querySelectorAll(".part-rd-bt, .part-checkbox").length,
+        "isEmpty": !cDom.querySelectorAll(".part-list-container > input").length,
         "pListDom": cDom.querySelector(".part-list-container"),
         "nmTxt": tmphead.textContent,
         "lpState": cDom.classList.contains("lp-show"),
         "collapseDom": cDom.querySelector(".catCollapsible")
+      }
+      if (!domCashe.dom[cnm].isEmpty && !domCashe.dom[cnm].isHidden) {
+        domCashe.avCats.push([cnm, domCashe.dom[cnm]])
       }
     }
   },
@@ -206,8 +212,7 @@ let bTK = {
 
 
   catGroupAction: function(evArgs) {
-    for (cnm of domCashe.domOrder) {
-      if (domCashe.dom[cnm].isEmpty || domCashe.dom[cnm].isHidden) continue;
+    for (const [cnm,] of domCashe.avCats) {
       if (cnm == evArgs.cnm) bTK.catAction(evArgs);
       else bTK.catAction({cnm: cnm, action: "close"});
     }
@@ -224,11 +229,9 @@ let bTK = {
 
 
   crCOpen: function () {
-    for (const cnm of domCashe.domOrder) {
-      let ob = domCashe.dom[cnm];
-      if (ob.isEmpty || ob.isHidden) continue;
-      ob.headDom.removeEventListener("click",bTK.cHeadHandler);
-      ob.headDom.addEventListener("click",bTK.cHeadHandler);  
+    for (const [, ob] of domCashe.avCats) {
+      ob.headDom.removeEventListener("click", bTK.cHeadHandler);
+      ob.headDom.addEventListener("click", bTK.cHeadHandler);  
     }
     bTK.CFGcHeadHandler.length = 0;
     bTK.CFGcHeadHandler.push(bTK.catGroupAction);
@@ -279,11 +282,10 @@ let bTK = {
       "isHidden": false
     }};
     domCashe.groupOrder = ["group-default"];
-    for (const cnm of domCashe.domOrder) {
-      if (domCashe.dom[cnm].isEmpty || domCashe.dom[cnm].isHidden) continue;
-      let qGroup = domCashe.dom[cnm].selfDom.parentElement;
+    for (const [cnm, ob] of domCashe.avCats) {
+      let qGroup = ob.selfDom.parentElement;
       if (qGroup.classList.contains("cat-group")) {
-        if (!domCashe.groupOrder.includes(qGroup.id)) {
+        if (!domCashe.groups.hasOwnProperty(qGroup.id)) {
           domCashe.groupOrder.push(qGroup.id);
           domCashe.groups[qGroup.id] = {
             "title": qGroup.dataset.title,
@@ -293,10 +295,10 @@ let bTK = {
           }
         }
         domCashe.groups[qGroup.id].catList.push(cnm);
-        domCashe.dom[cnm].group = qGroup.id;
+        ob.group = qGroup.id;
       } else {
         domCashe.groups["group-default"].catList.push(cnm);
-        domCashe.dom[cnm].group = "group-default";
+        ob.group = "group-default";
       }
     }
   },
@@ -313,7 +315,7 @@ let bTK = {
 
 
   rdSelCheck: function () {
-    for (const ob of Object.values(domCashe.dom)) {
+    for (const [, ob] of domCashe.avCats) {
       if (ob.prodType != "radio") continue;
       if (!ob.hasOwnProperty("prodSelected")) {
         ob.prodSelected = ob.prodOrder[0];
@@ -341,15 +343,14 @@ let bTK = {
 
 
   crRdBt() {
-    for (const cnm of domCashe.domOrder) {
-      let ob = domCashe.dom[cnm];
-      if (ob.isEmpty || ob.isHidden) continue;
+    for (const [cnm, ob] of domCashe.avCats) {
       let tmpList = ob.selfDom.querySelectorAll(".part-rd-bt");
       if (!tmpList.length) continue;
       ob.prodType = "radio";
       ob.emptyEl = "$blank";
       ob.prodList = {};
       ob.prodOrder = [];
+      ob.avProds = [];
       for (const pob of tmpList) {
         pob.removeEventListener("change", bTK.RdBtHandler);
         pob.addEventListener("change", bTK.RdBtHandler);
@@ -369,6 +370,8 @@ let bTK = {
         }
         if (ob.prodList[dname].value == "0") ob.emptyEl = dname;
         if (ob.prodList[dname].isSelected) ob.prodSelected = dname;
+
+        ob.avProds.push(dname, ob.prodList[dname]);
       }
     }
     bTK.rdSelCheck();
@@ -378,31 +381,35 @@ let bTK = {
 
 
   cbDataOpen: function(pnm, cnm) {
-    domCashe.dom[cnm].prodList[pnm].isSelected = true;
-    let qsize = domCashe.dom[cnm].prodSelected.length;
-    let sOrd = domCashe.dom[cnm].prodOrder.indexOf(pnm);
+    let ob = domCashe.dom[cnm];
+    ob.prodList[pnm].isSelected = true;
+    let qsize = ob.prodSelected.length;
+    let sOrd = ob.prodOrder.indexOf(pnm);
     for (let i = 0; i < qsize; i++) {
-      let lnm = domCashe.dom[cnm].prodSelected[i];
-      if (sOrd<domCashe.dom[cnm].prodOrder.indexOf(lnm)) {
-        domCashe.dom[cnm].prodSelected.splice(i, 0, pnm);
+      let lnm = ob.prodSelected[i];
+      if (sOrd < ob.prodOrder.indexOf(lnm)) {
+        ob.prodSelected.splice(i, 0, pnm);
         return;
       }
     }
     domCashe.dom[cnm].prodSelected.push(pnm);     
   },
   cbDataClose: function(pnm, cnm) {
-    domCashe.dom[cnm].prodList[pnm].isSelected = false;
-    domCashe.dom[cnm].prodSelected.splice(domCashe.dom[cnm].prodSelected.indexOf(pnm), 1);      
+    let ob = domCashe.dom[cnm];
+    ob.prodList[pnm].isSelected = false;
+    ob.prodSelected.splice(ob.prodSelected.indexOf(pnm), 1);      
   },
   cbOpen: function(pnm, cnm) {
-    if (!domCashe.dom[cnm].prodList[pnm].isSelected) {
-      domCashe.dom[cnm].prodList[pnm].selfDom.checked = true;
+    let pob = domCashe.dom[cnm].prodList[pnm];
+    if (!pob.isSelected) {
+      pob.selfDom.checked = true;
       bTK.cbDataOpen(pnm, cnm);
     }
   },
   cbClose: function(pnm, cnm) {
-    if (domCashe.dom[cnm].prodList[pnm].isSelected) {
-      domCashe.dom[cnm].prodList[pnm].selfDom.checked = false;
+    let pob = domCashe.dom[cnm].prodList[pnm];
+    if (pob.isSelected) {
+      pob.selfDom.checked = false;
       bTK.cbDataClose(pnm, cnm);
     }
   },
@@ -415,37 +422,38 @@ let bTK = {
   updateCbState: function (evArgs) {
     let pnm = evArgs.pnm;
     let cnm = evArgs.cnm;
-    let emptyEl = domCashe.dom[cnm].emptyEl;
+    let ob = domCashe.dom[cnm];
+    let emptyEl = ob.emptyEl;
 
     if (pnm == emptyEl) {
-      if (domCashe.dom[cnm].prodSelected.includes(pnm)) {
-        if (domCashe.dom[cnm].prodSelected.length > 1) {
+      if (ob.prodSelected.includes(pnm)) {
+        if (ob.prodSelected.length > 1) {
           bTK.cbDataClose(pnm, cnm);
         } else {
-          domCashe.dom[cnm].prodList[pnm].selfDom.checked = true;
+          ob.prodList[pnm].selfDom.checked = true;
         }
       } else {
-        let lCopy = [...domCashe.dom[cnm].prodSelected];
+        let lCopy = [...ob.prodSelected];
         for (const pr of lCopy) {
           bTK.cbClose(pr, cnm);
         }
         bTK.cbDataOpen(pnm, cnm);
         }
     } else {
-      if (domCashe.dom[cnm].prodSelected.includes(pnm)) {
-        if (domCashe.dom[cnm].prodSelected.length > 1) {
+      if (ob.prodSelected.includes(pnm)) {
+        if (ob.prodSelected.length > 1) {
           bTK.cbDataClose(pnm, cnm);
         } else {
           if (emptyEl != "$blank") {
             bTK.cbDataClose(pnm, cnm);
             bTK.cbOpen(emptyEl, cnm);
           } else {
-            domCashe.dom[cnm].prodList[pnm].selfDom.checked = true;
+            ob.prodList[pnm].selfDom.checked = true;
           }
         }
       } else {
         bTK.cbDataOpen(pnm, cnm);
-        if (emptyEl != "$blank" && domCashe.dom[cnm].prodSelected.includes(emptyEl)) {
+        if (emptyEl != "$blank" && ob.prodSelected.includes(emptyEl)) {
           bTK.cbClose(emptyEl, cnm);
         }
       }
@@ -454,7 +462,7 @@ let bTK = {
   
   
   cbCheck: function () {
-    for (const [cnm, ob] of Object.entries(domCashe.dom)) {
+    for (const [cnm, ob] of domCashe.avCats) {
       if (ob.prodType != "checkbox") continue;
       if (ob.emptyEl != "$blank") {
         if (ob.prodSelected.length < 1) {
@@ -480,9 +488,7 @@ let bTK = {
 
 
   crCbBt: function() {
-    for (const cnm of domCashe.domOrder) {
-      let ob = domCashe.dom[cnm];
-      if (ob.isEmpty || ob.isHidden) continue;
+    for (const [cnm, ob] of domCashe.avCats) {
       let tmpList = ob.selfDom.querySelectorAll(".part-checkbox");
       if (!tmpList.length) continue;
       ob.emptyEl = "$blank";
@@ -490,6 +496,7 @@ let bTK = {
       ob.prodSelected = [],
       ob.prodOrder = [];
       ob.prodList = {};
+      ob.avProds = [];
       for (const pob of tmpList) {
         pob.removeEventListener("change", bTK.CbBtHandler);
         pob.addEventListener("change", bTK.CbBtHandler);
@@ -509,6 +516,8 @@ let bTK = {
         }
         if (ob.prodList[dname].value == "0") ob.emptyEl = dname;
         if (ob.prodList[dname].isSelected) ob.prodSelected.push(dname);
+
+        ob.avProds.push(dname, ob.prodList[dname]);
       }
     }
     bTK.cbCheck();
@@ -1312,7 +1321,7 @@ bModal = {
 document.addEventListener("DOMContentLoaded", function() {
 
   bTK.crCats();
-  bTK.crGroups();
+  // bTK.crGroups();
   bTK.crCOpen();
   bTK.crRdBt();
   bTK.crCbBt();
