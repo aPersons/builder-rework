@@ -371,7 +371,7 @@ let bTK = {
         if (ob.prodList[dname].value == "0") ob.emptyEl = dname;
         if (ob.prodList[dname].isSelected) ob.prodSelected = dname;
 
-        ob.avProds.push(dname, ob.prodList[dname]);
+        ob.avProds.push([dname, ob.prodList[dname]]);
       }
     }
     bTK.rdSelCheck();
@@ -517,7 +517,7 @@ let bTK = {
         if (ob.prodList[dname].value == "0") ob.emptyEl = dname;
         if (ob.prodList[dname].isSelected) ob.prodSelected.push(dname);
 
-        ob.avProds.push(dname, ob.prodList[dname]);
+        ob.avProds.push([dname, ob.prodList[dname]]);
       }
     }
     bTK.cbCheck();
@@ -534,19 +534,19 @@ let bTK = {
         pob.qDisabled = false;
         pob.qInput.disabled = false;
       }
-      if (pob.qValue<pob.qMin || pob.qValue>pob.qMax) {
+      if (pob.qValue < pob.qMin || pob.qValue > pob.qMax) {
         pob.qValue = pob.qMin;
         pob.qInput.value = pob.qMin; 
         pob.qDisplay.textContent = pob.qMin;
       }
-      if (pob.qValue==pob.qMin && pob.qSubAv) {
+      if (pob.qValue == pob.qMin && pob.qSubAv) {
         pob.qSubAv = false;
         pob.qCont.classList.remove("decr-av");
-      } else if (pob.qValue>pob.qMin && !pob.qSubAv) {
+      } else if (pob.qValue > pob.qMin && !pob.qSubAv) {
         pob.qSubAv = true;
         pob.qCont.classList.add("decr-av");
       }
-      if (pob.qValue==pob.qMax && pob.qAddAv) {
+      if (pob.qValue == pob.qMax && pob.qAddAv) {
         pob.qAddAv = false;
         pob.qCont.classList.remove("incr-av");
       } else if (pob.qValue<pob.qMax && !pob.qAddAv) {
@@ -599,8 +599,7 @@ let bTK = {
 
 
   updateCatQuant: function (evArgs) {
-    let ob = domCashe.dom[evArgs.cnm];
-    for (const pnm of ob.prodOrder) {
+    for (const [pnm,] of domCashe.dom[evArgs.cnm].avProds) {
       bTK.quantUpdate({
         "cnm": evArgs.cnm,
         "pnm": pnm
@@ -634,11 +633,8 @@ let bTK = {
 
 
   crQuantity: function() {
-    for (const cnm of domCashe.domOrder) {
-      let ob = domCashe.dom[cnm];
-      if (ob.isEmpty || ob.isHidden) continue;
-      for (const pnm of ob.prodOrder) {
-        let pob = ob.prodList[pnm];
+    for (const [cnm, ob] of domCashe.avCats) {
+      for (const [, pob] of ob.avProds) {
         pob.qCont = pob.cDom.querySelector(".part-number-input");
         pob.qInput = pob.qCont.querySelector(".part-quantity");
         pob.qDisabled = pob.qInput.disabled;
@@ -652,6 +648,7 @@ let bTK = {
           pob.qDisplay = pob.qCont.querySelector(".quantity-display");
           pob.qMin = Number(pob.qInput.min);
           pob.qMax = Number(pob.qInput.max);
+          pob.qMax = Number(pob.qInput.step);
   
           let btAdd = pob.qCont.querySelector(".part-num-incr");
           btAdd.removeEventListener("click",bTK.quantIncrHandler);
@@ -677,8 +674,7 @@ let bTK = {
     let ob = domCashe.dom[evArgs.cnm];
     if (ob.prodType == "radio") {
       let sprice = ob.prodList[ob.prodSelected].priceVal;
-      for (const pnm of ob.prodOrder) {
-        let pob = ob.prodList[pnm];
+      for (const [pnm, pob] of ob.avProds) {
         if (!pob.hasOwnProperty("priceBlock")) continue;
         if (pnm == ob.prodSelected) {
           // pob.priceBlock.textContent = `${wtDecimal(sprice)}€`;
@@ -698,24 +694,21 @@ let bTK = {
 
 
   crProdPrice: function() {
-    for (const cnm of domCashe.domOrder) {
-      let ob = domCashe.dom[cnm];
+    for (const [cnm, ob] of domCashe.avCats) {
       if (ob.prodType == "radio") {
-        for (const pnm of ob.prodOrder) {
-          let pod = ob.prodList[pnm];
-          let fixedPrice = pod.cDom.querySelector(".price-fixed-block");
-          if (fixedPrice) fixedPrice.textContent = `${wtDecimal(pod.priceVal)}€`;
-          let relPrice = pod.cDom.querySelector(".price-block");
-          if (relPrice) pod.priceBlock = relPrice;
+        for (const [, pob] of ob.avProds) {
+          let fixedPrice = pob.cDom.querySelector(".price-fixed-block");
+          if (fixedPrice) fixedPrice.textContent = `${wtDecimal(pob.priceVal)}€`;
+          let relPrice = pob.cDom.querySelector(".price-block");
+          if (relPrice) pob.priceBlock = relPrice;
         }
         bTK.updateProdPrice({"cnm":cnm});
       } else if (ob.prodType == "checkbox") {
-        for (const pnm of ob.prodOrder) {
-          let pod = ob.prodList[pnm];
-          let fixedPrice = pod.cDom.querySelector(".price-fixed-block");
-          if (fixedPrice) fixedPrice.textContent = `${wtDecimal(pod.priceVal)}€`;
-          let relPrice = pod.cDom.querySelector(".price-block");
-          if (relPrice) relPrice.textContent = `${wtDecimal(pod.priceVal)}€`;
+        for (const [, pob] of ob.avProds) {
+          let fixedPrice = pob.cDom.querySelector(".price-fixed-block");
+          if (fixedPrice) fixedPrice.textContent = `${wtDecimal(pob.priceVal)}€`;
+          let relPrice = pob.cDom.querySelector(".price-block");
+          if (relPrice) relPrice.textContent = `${wtDecimal(pob.priceVal)}€`;
         }
       }
     }
