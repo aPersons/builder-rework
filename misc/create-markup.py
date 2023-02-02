@@ -15,7 +15,7 @@ def crNumberInput(cat, prod):
   else:
     res += """
 <div class="part-number-input">
-  <input type="number" class="part-quantity" id="{prod_code}_qty" name="{cat_code}_qty{type_ism}" min="{min}" max="{max}" value="0">
+  <input type="number" class="part-quantity" id="{prod_code}_qty" name="{cat_code}_qty{type_ism}" min="{min}" max="{max}" step="{step}" value="0">
   <i class="bi bi-dash part-num-decr"></i>
   <span class="quantity-display">0</span>
   <i class="bi bi-plus part-num-incr"></i>
@@ -24,7 +24,8 @@ def crNumberInput(cat, prod):
       cat_code = cat["cat-code"],
       min = prod["prod-min"],
       max = prod["prod-max"],
-      type_ism = "[]" if cat["type"] == "checkbox" else ""
+      type_ism = "[]" if cat["type"] == "checkbox" else "",
+      step = prod["qstep"] if "qstep" in prod else "1"
     )  
 
   return res

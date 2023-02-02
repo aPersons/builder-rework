@@ -58,7 +58,13 @@ function wtDecimal(wholeNum) {
     } else if (sl == 2) {
       return `0,${wholeStr}`;
     } else {
-      return `${wholeStr.slice(0, sl-2)},${wholeStr.slice(sl-2, sl)}`;
+      let fntext = `${wholeStr.slice(0, sl-2)},${wholeStr.slice(sl-2, sl)}`;
+      let nsl = fntext.length
+      if (nsl < 7) {
+        return fntext
+      } else {
+        return `${fntext.slice(0, nsl-6)}.${fntext.slice(nsl-6, nsl)}`
+      }
     }
   } else {
     if (sl < 2) {
@@ -68,10 +74,17 @@ function wtDecimal(wholeNum) {
     } else if (sl == 3) {
       return `-0,${wholeStr.slice(1, sl)}`;
     } else {
-      return `-${wholeStr.slice(1, sl-2)},${wholeStr.slice(sl-2, sl)}`;
+      let fntext =  `${wholeStr.slice(0, sl-2)},${wholeStr.slice(sl-2, sl)}`;
+      let nsl = fntext.length
+      if (nsl < 8) {
+        return fntext
+      } else {
+        return `${fntext.slice(0, nsl-6)}.${fntext.slice(nsl-6, nsl)}`
+      }
     }
   }
 }
+
 
 
 
@@ -534,24 +547,32 @@ let bTK = {
         pob.qDisabled = false;
         pob.qInput.disabled = false;
       }
-      if (pob.qValue < pob.qMin || pob.qValue > pob.qMax) {
+      if (pob.qValue < pob.qMin || pob.qValue > pob.qMax || (pob.qValue - pob.qMin) % pob.qstep != 0 ) {
         pob.qValue = pob.qMin;
         pob.qInput.value = pob.qMin; 
         pob.qDisplay.textContent = pob.qMin;
       }
-      if (pob.qValue == pob.qMin && pob.qSubAv) {
-        pob.qSubAv = false;
-        pob.qCont.classList.remove("decr-av");
-      } else if (pob.qValue > pob.qMin && !pob.qSubAv) {
-        pob.qSubAv = true;
-        pob.qCont.classList.add("decr-av");
+      if (pob.qValue < (pob.qMin + pob.qstep)) {
+        if (pob.qSubAv) {
+          pob.qSubAv = false;
+          pob.qCont.classList.remove("decr-av");
+        }
+      } else {
+        if (!pob.qSubAv) {
+          pob.qSubAv = true;
+          pob.qCont.classList.add("decr-av");
+        }
       }
-      if (pob.qValue == pob.qMax && pob.qAddAv) {
-        pob.qAddAv = false;
-        pob.qCont.classList.remove("incr-av");
-      } else if (pob.qValue<pob.qMax && !pob.qAddAv) {
-        pob.qAddAv = true;
-        pob.qCont.classList.add("incr-av");
+      if (pob.qValue > (pob.qMax - pob.qstep)) {
+        if (pob.qAddAv) {
+          pob.qAddAv = false;
+          pob.qCont.classList.remove("incr-av");
+        }
+      } else {
+        if (!pob.qAddAv) {
+          pob.qAddAv = true;
+          pob.qCont.classList.add("incr-av");
+        }
       }
     } else {
       if (!pob.qDisabled) {
@@ -579,7 +600,7 @@ let bTK = {
   quantIncr: function(evArgs) {
     let pob = domCashe.dom[evArgs.cnm].prodList[evArgs.pnm];
     if (pob.qAddAv) {
-      pob.qValue++;
+      pob.qValue += pob.qstep;
       pob.qInput.value = pob.qValue; 
       pob.qDisplay.textContent = pob.qValue; 
     }
@@ -590,7 +611,7 @@ let bTK = {
   quantDecr: function(evArgs) {
     let pob = domCashe.dom[evArgs.cnm].prodList[evArgs.pnm];
     if (pob.qSubAv) {
-      pob.qValue--;
+      pob.qValue -= pob.qstep;
       pob.qInput.value = pob.qValue; 
       pob.qDisplay.textContent = pob.qValue; 
     }
@@ -648,7 +669,7 @@ let bTK = {
           pob.qDisplay = pob.qCont.querySelector(".quantity-display");
           pob.qMin = Number(pob.qInput.min);
           pob.qMax = Number(pob.qInput.max);
-          pob.qMax = Number(pob.qInput.step);
+          pob.qstep = Number(pob.qInput.step);
   
           let btAdd = pob.qCont.querySelector(".part-num-incr");
           btAdd.removeEventListener("click",bTK.quantIncrHandler);
@@ -743,9 +764,9 @@ let bTK = {
 
 
   crHeadSel: function() {
-    for (const cnm of domCashe.domOrder) {
-      if (domCashe.dom[cnm].isEmpty || domCashe.dom[cnm].isHidden) continue;
-      domCashe.dom[cnm].hasSelected = domCashe.dom[cnm].selfDom.classList.contains("contains-selected");
+    for (const [cnm, ob] of domCashe.avCats) {
+      if (ob.isEmpty || ob.isHidden) continue;
+      ob.hasSelected = ob.selfDom.classList.contains("contains-selected");
       bTK.updateHeadSel({"cnm":cnm});
     }
     bTK.CFGRdBtHandler.push(bTK.updateHeadSel);
@@ -786,10 +807,10 @@ let bTK = {
 
 
   crCatDetails: function() {
-    for (const ob of Object.values(domCashe.dom)) {
-      if (!(ob.isEmpty || ob.isHidden)) ob.dtDom = ob.selfDom.querySelector(".part-category-details");      
+    for (const [, ob] of domCashe.avCats) {
+      ob.dtDom = ob.selfDom.querySelector(".part-category-details");      
     }
-    for (const cnm of domCashe.domOrder) {
+    for (const [cnm,] of domCashe.avCats) {
       bTK.updateCatDetails({cnm: cnm});
     }
     bTK.CFGRdBtHandler.push(bTK.updateCatDetails);
@@ -810,12 +831,11 @@ let bTK = {
 
 
   crCatIMG: function() {
-    for (const ob of Object.values(domCashe.dom)) {
-      if (ob.isEmpty || ob.isHidden) continue;
+    for (const [, ob] of domCashe.avCats) {
       ob.catIMG = ob.selfDom.querySelector(".part-category-img img");
-      for (const pob of Object.values(ob.prodList)) pob.imgSrc = pob.cDom.querySelector(".part-img img").src;
+      for (const [, pob] of ob.avProds) pob.imgSrc = pob.cDom.querySelector(".part-img img").src;
     }
-    for (const cnm of domCashe.domOrder) {
+    for (const [cnm,] of domCashe.avCats) {
       bTK.updateCatIMG({cnm: cnm});
     }
     bTK.CFGRdBtHandler.push(bTK.updateCatIMG);
@@ -834,9 +854,9 @@ let build = {
     if (evArgs.cnm != "cat0") return;
     let ob = domCashe.dom["cat0"];
     if (ob.prodType == "radio") {
-      build.bIMG.src = ob.prodList[ob.prodSelected].imgSrc;
+      build.bIMG.src = ob.prodList[ob.prodSelected].imgSrc.replace("/cat_thumbs/", "/big_photos/");
     } else if (ob.prodType == "checkbox") {
-      build.bIMG.src = ob.prodList[ob.prodSelected[0]].imgSrc;
+      build.bIMG.src = ob.prodList[ob.prodSelected[0]].imgSrc.replace("/cat_thumbs/", "/big_photos/");
     }
   },
 
@@ -866,7 +886,7 @@ let pr = {
 
   updateFinalPrice: function() {
     let nresult = 0;
-    for (const ob of Object.values(domCashe.dom)) {
+    for (const [, ob] of domCashe.avCats) {
       if (ob.prodType == "radio") {
         let pob = ob.prodList[ob.prodSelected];
         nresult += pob.priceVal * pob.qValue;
@@ -1033,8 +1053,7 @@ let nav = {
     //     nav.navItems[evArgs.cnm].navDom.classList.remove("navlpshow");
     //   }
     // }
-    for (const [cnm, ob] of Object.entries(domCashe.dom)) {
-      if (ob.isEmpty || ob.isHidden) continue;
+    for (const [cnm, ob] of domCashe.avCats) {
       if (ob.lpState && !nav.navItems[cnm].lpState) {
         nav.navItems[cnm].lpState = true;
         nav.navItems[cnm].navDom.classList.add("navlpshow");
@@ -1050,8 +1069,7 @@ let nav = {
     if (!nav.barMode) return;
     let focused = "";
     let rdistance = 0;
-    for (const [cnm, ob] of Object.entries(domCashe.dom)) {
-      if (ob.isEmpty || ob.isHidden) continue;
+    for (const [cnm, ob] of domCashe.avCats) {
       let nhead = ob.selfDom.getBoundingClientRect().top;
       let nfloor = ob.selfDom.getBoundingClientRect().bottom;
       if (nhead < window.innerHeight - 50 && nfloor > 245) {
@@ -1115,9 +1133,7 @@ let nav = {
     nav.selfDom = selfDom;
     let tmpDom = "";
     let tmpItems = {};
-    for (const cnm of domCashe.domOrder) {
-      let ob = domCashe.dom[cnm];
-      if (ob.isEmpty || ob.isHidden) continue;
+    for (const [cnm, ob] of domCashe.avCats) {
 
       tmpItems[cnm] = {
         "lpState": ob.lpState,
