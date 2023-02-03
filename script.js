@@ -374,7 +374,8 @@ let bTK = {
         ob.prodList[dname] = {
           "selfDom": pob,
           "cDom": cdom,
-          "nmTxt": cdom.querySelector(".part-text-head").textContent,
+          // "nmTxt": cdom.querySelector(".part-text-head").textContent,
+          "nmTxt": cdom.querySelector(".part-text-head").outerText + (cdom.querySelector(".badge")?.outerHTML ?? ""),
           "priceVal": Number(cdom.querySelector(".part-price").dataset.priceval),
           "parentCat": cnm,
           "isSelected": pob.checked,
@@ -520,7 +521,8 @@ let bTK = {
         ob.prodList[dname] = {
           "selfDom": pob,
           "cDom": cdom,
-          "nmTxt": cdom.querySelector(".part-text-head").textContent,
+          // "nmTxt": cdom.querySelector(".part-text-head").textContent,
+          "nmTxt": cdom.querySelector(".part-text-head").outerText + (cdom.querySelector(".badge")?.outerHTML ?? ""),
           "priceVal": Number(cdom.querySelector(".part-price").dataset.priceval),
           "parentCat": cnm,
           "isSelected": pob.checked,
@@ -780,7 +782,7 @@ let bTK = {
       let tEl = document.createElement("div");      
       tEl.classList.add("dt-item");
       let pob = ob.prodList[ob.prodSelected];
-      tEl.textContent = pob.nmTxt;
+      tEl.innerHTML = pob.nmTxt;
       if (pob.qType == "dynamic") {
         let snippet = document.createElement("strong");
         snippet.textContent = `${pob.qValue}x - `;
@@ -793,7 +795,7 @@ let bTK = {
         let tEl = document.createElement("div");        
         tEl.classList.add("dt-item");
         let pob = ob.prodList[pnm];
-        tEl.textContent = pob.nmTxt;
+        tEl.innerHTML = pob.nmTxt;
         if (pob.qType == "dynamic") {
           let snippet = document.createElement("strong");
           snippet.textContent = `${pob.qValue}x - `;
