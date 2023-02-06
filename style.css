@@ -585,6 +585,10 @@
   padding: 0.5rem;
 }
 
+#build-modal .badge, .part-category-details .badge {
+  vertical-align: middle;
+}
+
 @media only screen and (max-width: 499px) {
   #build-modal .modal-footer .btns{
     float: none;
