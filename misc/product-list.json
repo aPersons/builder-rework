@@ -820,7 +820,8 @@
         "prod-erp": "001-50803",
         "prod-price": "4550",
         "prod-min": "1",
-        "prod-max": "4"
+        "prod-max": "9",
+        "qstep": "2"
       }, {
         "prod-code": "cat10-prod39640",
         "prod-name": "Samsung 500GB SSD 870 Evo Series 2.5 SATA III [MZ-77E500B]",
