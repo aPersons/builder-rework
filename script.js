@@ -375,7 +375,15 @@ let bTK = {
           "selfDom": pob,
           "cDom": cdom,
           // "nmTxt": cdom.querySelector(".part-text-head").textContent,
-          "nmTxt": cdom.querySelector(".part-text-head").innerText + (cdom.querySelector(".badge")?.outerHTML ?? ""),
+          // "nmTxt": cdom.querySelector(".part-text-head").innerText + (cdom.querySelector(".badge")?.outerHTML ?? ""),
+          "nmTxt": new Array(...cdom.querySelector(".part-text-head").childNodes).reduce((a, b) => {
+            if (!Array.isArray(a)) {
+              if (a.nodeType === Node.TEXT_NODE) a = [a.data];
+              else a = [""];
+            }
+            if (b.nodeType === Node.TEXT_NODE) a.push(b.data);
+            return a
+          }).concat([cdom.querySelector(".badge")?.outerHTML ?? ""]).join(),
           "priceVal": Number(cdom.querySelector(".part-price").dataset.priceval),
           "parentCat": cnm,
           "isSelected": pob.checked,
@@ -522,7 +530,15 @@ let bTK = {
           "selfDom": pob,
           "cDom": cdom,
           // "nmTxt": cdom.querySelector(".part-text-head").textContent,
-          "nmTxt": cdom.querySelector(".part-text-head").innerText + (cdom.querySelector(".badge")?.outerHTML ?? ""),
+          // "nmTxt": cdom.querySelector(".part-text-head").innerText + (cdom.querySelector(".badge")?.outerHTML ?? ""),
+          "nmTxt": new Array(...cdom.querySelector(".part-text-head").childNodes).reduce((a, b) => {
+            if (!Array.isArray(a)) {
+              if (a.nodeType === Node.TEXT_NODE) a = [a.data];
+              else a = [""];
+            }
+            if (b.nodeType === Node.TEXT_NODE) a.push(b.data);
+            return a
+          }).concat([cdom.querySelector(".badge")?.outerHTML ?? ""]).join(),
           "priceVal": Number(cdom.querySelector(".part-price").dataset.priceval),
           "parentCat": cnm,
           "isSelected": pob.checked,
