@@ -374,16 +374,14 @@ let bTK = {
         ob.prodList[dname] = {
           "selfDom": pob,
           "cDom": cdom,
-          // "nmTxt": cdom.querySelector(".part-text-head").textContent,
-          // "nmTxt": cdom.querySelector(".part-text-head").innerText + (cdom.querySelector(".badge")?.outerHTML ?? ""),
-          "nmTxt": new Array(...cdom.querySelector(".part-text-head").childNodes).reduce((a, b) => {
-            if (!Array.isArray(a)) {
-              if (a.nodeType === Node.TEXT_NODE) a = [a.data];
-              else a = [""];
+          "nmTxt": new Array([],...cdom.querySelector(".part-text-head").childNodes).reduce((a, b) => {
+            if (b.nodeType === Node.TEXT_NODE){
+              a.push(b.data);
+            } else if (b.classList.contains("badge")) {
+              a.push(b.outerHTML);
             }
-            if (b.nodeType === Node.TEXT_NODE) a.push(b.data);
             return a
-          }).concat([cdom.querySelector(".badge")?.outerHTML ?? ""]).join(),
+          }).join(" "),
           "priceVal": Number(cdom.querySelector(".part-price").dataset.priceval),
           "parentCat": cnm,
           "isSelected": pob.checked,
@@ -529,16 +527,14 @@ let bTK = {
         ob.prodList[dname] = {
           "selfDom": pob,
           "cDom": cdom,
-          // "nmTxt": cdom.querySelector(".part-text-head").textContent,
-          // "nmTxt": cdom.querySelector(".part-text-head").innerText + (cdom.querySelector(".badge")?.outerHTML ?? ""),
-          "nmTxt": new Array(...cdom.querySelector(".part-text-head").childNodes).reduce((a, b) => {
-            if (!Array.isArray(a)) {
-              if (a.nodeType === Node.TEXT_NODE) a = [a.data];
-              else a = [""];
+          "nmTxt": new Array([],...cdom.querySelector(".part-text-head").childNodes).reduce((a, b) => {
+            if (b.nodeType === Node.TEXT_NODE){
+              a.push(b.data);
+            } else if (b.classList.contains("badge")) {
+              a.push(b.outerHTML);
             }
-            if (b.nodeType === Node.TEXT_NODE) a.push(b.data);
             return a
-          }).concat([cdom.querySelector(".badge")?.outerHTML ?? ""]).join(),
+          }).join(" "),
           "priceVal": Number(cdom.querySelector(".part-price").dataset.priceval),
           "parentCat": cnm,
           "isSelected": pob.checked,
