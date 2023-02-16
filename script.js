@@ -1354,7 +1354,7 @@ document.addEventListener("DOMContentLoaded", function() {
   bTK.crHeadSel();
   bTK.crCatDetails();
   bTK.crCatIMG();
-  build.crBuilldIMG();
+  // build.crBuilldIMG();
   
   pr.crFinalPrice();
   nav.crProdNav();

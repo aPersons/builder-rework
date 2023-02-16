@@ -48,10 +48,8 @@ def crProdList(cat):
     </div>
   </div>
   {number_input}
-  <div class="prod-quick-view">
-    <a class="quick-view-btn fs-sm" data-productid="38615" href="#quick-view" data-bs-toggle="modal"><i class="bi bi-eye"></i></a>
-  </div>
   <div class="part-price fw-bold" data-priceval="{prod_price}">
+    <a class="quick-view-btn fs-sm" data-productid="38615" href="#quick-view" data-bs-toggle="modal"><i class="bi bi-eye"></i></a>
     <span class="price-block">+0,00€</span>
   </div>
 </label>""".format(
@@ -93,7 +91,7 @@ def crCat(cat):
     catId = cat["cat-code"],
     demopage = "../" if demo else "",
     catName = cat["cat-name"],
-    description = "" if cat["cat-desc"] == "$blank" else f'<div class="part-category-description fs-md bg-secondary">{cat["cat-desc"]}</div>',
+    description = "" if cat["cat-desc"] == "$blank" else f'<div class="part-category-description fs-md">{cat["cat-desc"]}</div>',
     prodlist = crProdList(cat)
   )
 
