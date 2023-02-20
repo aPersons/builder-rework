@@ -140,8 +140,8 @@
             <div class="ms-auto pb-3">
               <div class="d-flex justify-content-between align-items-center mb-2">
                 <div class="mb-3">
-                  <span class="h3 fw-normal me-1"><strong><span class="build-price-total">794,10</span> €</strong></span><br>
-                  <span class="text-muted fs-xs">Χωρίς ΦΠΑ: <span class="build-price-taxless">640,40</span> €</span>
+                  <span class="h3 fw-normal me-1"><strong><span class="build-price-total">-,--</span> €</strong></span><br>
+                  <span class="text-muted fs-xs">Χωρίς ΦΠΑ: <span class="build-price-taxless">-,--</span> €</span>
               </div>
             </div>
               <div class="mb-3">
@@ -267,8 +267,22 @@
   <div class="container pb-md-4 builder-body-container">  
     <div class="row cont-body">
 			
-      <div class="col-lg-3 col-md-4 order-md-2 builder-panel">
+      <div class="col-lg-3 order-lg-2 builder-panel">
 				<div class="panel-inner">
+          <div class="shopControls mb-3 d-flex flex-column align-items-stretch gap-2 d-none d-lg-block">
+            <div >
+              <span class="h3 fw-normal me-1"><strong><span class="build-price-total">-,--</span> €</strong></span><br>
+              <span class="text-muted fs-xs">Χωρίς ΦΠΑ: <span class="build-price-taxless">-,--</span> €</span>
+            </div>
+            <div>
+              <button class="btn btn-success btn-shadow d-block w-100" onclick="$('#builder-form').submit();" type="submit" id="builder_addtocart"><i class="ci-cart fs-lg me-2"></i><strong>Προσθήκη στο Καλάθι</strong></button>
+            </div>
+            <div >
+              <button type="button" class="btn btn-primary btn-shadow d-block w-100" data-bs-toggle="modal" data-bs-target="#build-modal">
+                <strong>Σύνοψη &amp; Αποθήκευση</strong>
+              </button>
+            </div>
+          </div>
 					<div class="prod-navigation">
 						<div class="bg-placeholder placeholder col-12"><div class="activity"></div></div>
 						<div class="bg-placeholder placeholder col-12"><div class="activity"></div></div>
@@ -290,7 +304,7 @@
 			</div>
 			
 			
-<form class="col-lg-9 col-md-8 order-lg-1 builder-parts prod-form-body" id="builder-form" method="GET" action="_blank">
+<form class="col-lg-9 order-lg-1 builder-parts prod-form-body" id="builder-form" method="GET" action="_blank">
   <input type="hidden" name="system_name" value="Msystems Intel 12th Gen Gaming" readonly="">
   <input type="hidden" name="system_erp_code" value="500-00002" readonly="">
   

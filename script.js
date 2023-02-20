@@ -864,6 +864,30 @@ let bTK = {
 
 let build = {
 
+  async getAltIMG(pnm, pob) {
+    try {  
+      const request = await fetch(
+        `https://static.msystems.gr/photos/big_photos/${pob.value}.sys.jpg`, {
+        }
+      )
+      if(request.status >= 200) throw new Error(`Response status: ${request.status}`);
+      const getimg = await request.blob();
+      pob.imgAlt = [URL.createObjectURL(getimg), getimg];
+
+      let ob = domCashe.dom["cat0"];
+
+      if (ob.prodType == "radio") {
+        if (ob.prodSelected == pnm) build.bIMG.src = pob.imgAlt[0];
+      } else if (ob.prodType == "checkbox") {
+        if (ob.prodSelected[0] == pnm) build.bIMG.src = pob.imgAlt[0];
+      }
+
+    } catch(err) {
+      pob.imgAlt = false;
+    }
+  },
+
+
   updateBuildIMG: function(evArgs) {
     if (evArgs.cnm != "cat0") return;
     let ob = domCashe.dom["cat0"];
@@ -884,6 +908,10 @@ let build = {
     build.updateBuildIMG({cnm: "cat0"});
     bTK.CFGRdBtHandler.push(build.updateBuildIMG);
     bTK.CFGCbBtHandler.push(build.updateBuildIMG);
+
+    for (const [, ob] of domCashe.avCats) {
+      for (const [pnm, pob] of ob.avProds) build.getAltIMG(pnm, pob);
+    }    
   }
 
 }

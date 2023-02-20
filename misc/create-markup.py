@@ -105,7 +105,7 @@ def crContent():
     catList += crCat(cat)
 
   res = """
-<form class="col-lg-9 col-md-8 order-lg-1 builder-parts prod-form-body" id="builder-form" method="GET" action="_blank">
+<form class="col-lg-9 order-lg-1 builder-parts prod-form-body" id="builder-form" method="GET" action="_blank">
   <input type="hidden" name="system_name" value="Msystems Intel 12th Gen Gaming" readonly="">
   <input type="hidden" name="system_erp_code" value="500-00002" readonly="">
   {catlist}  
