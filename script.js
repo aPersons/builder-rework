@@ -137,9 +137,10 @@ let bTK = {
       scrollToC(
         document.documentElement,
         window.scrollY,
-        window.scrollY + ob.selfDom.getBoundingClientRect().top - (
-          window.innerWidth > 991 ? 149 : window.innerWidth > 767 ? 95 : 125
-        ),//125 ~ 95 ~ 149
+        // window.scrollY + ob.selfDom.getBoundingClientRect().top - (
+        //   window.innerWidth > 991 ? 149 : window.innerWidth > 767 ? 95 : 125
+        // ),//125 ~ 95 ~ 149
+        window.scrollY + ob.selfDom.getBoundingClientRect().top - (window.innerWidth > 991 ? 95 : 125),//125 ~ 95 ~ 149
         200
       )
       return
@@ -157,9 +158,10 @@ let bTK = {
       scrollToC(
         document.documentElement,
         window.scrollY,
-        window.scrollY + ob.selfDom.getBoundingClientRect().top - (
-          window.innerWidth > 991 ? 149 : window.innerWidth > 767 ? 95 : 125
-        ),//125 ~ 95 ~ 149
+        // window.scrollY + ob.selfDom.getBoundingClientRect().top - (
+        //   window.innerWidth > 991 ? 149 : window.innerWidth > 767 ? 95 : 125
+        // ),//125 ~ 95 ~ 149
+        window.scrollY + ob.selfDom.getBoundingClientRect().top - (window.innerWidth > 991 ? 95 : 125),//125 ~ 95 ~ 149
         200
       )
       ob.collapseDom.classList.remove("collapseTransition");
@@ -1032,7 +1034,7 @@ let nav = {
 
 
   updateBarMode: function() {
-    if (window.innerWidth >= 768) {
+    if (window.innerWidth > 991) {
       if (nav.barMode) {
         nav.barMode = false;
         nav.updateBarScroll();
@@ -1083,18 +1085,6 @@ let nav = {
 
 
   updateLpState: function(evArgs) {
-    // let catVal = domCashe.dom[evArgs.cnm].lpState;
-    // if (catVal) {
-    //   if (!nav.navItems[evArgs.cnm].lpState) {
-    //     nav.navItems[evArgs.cnm].lpState = true;
-    //     nav.navItems[evArgs.cnm].navDom.classList.add("navlpshow");
-    //   }
-    // } else {
-    //   if (nav.navItems[evArgs.cnm].lpState) {
-    //     nav.navItems[evArgs.cnm].lpState = false;
-    //     nav.navItems[evArgs.cnm].navDom.classList.remove("navlpshow");
-    //   }
-    // }
     for (const [cnm, ob] of domCashe.avCats) {
       if (ob.lpState && !nav.navItems[cnm].lpState) {
         nav.navItems[cnm].lpState = true;
@@ -1114,7 +1104,7 @@ let nav = {
     for (const [cnm, ob] of domCashe.avCats) {
       let nhead = ob.selfDom.getBoundingClientRect().top;
       let nfloor = ob.selfDom.getBoundingClientRect().bottom;
-      if (nhead < window.innerHeight - 50 && nfloor > 245) {
+      if (nhead < window.innerHeight && nfloor > 122) {
         if (!focused) {
           focused = cnm
           rdistance = nfloor;
@@ -1184,7 +1174,7 @@ let nav = {
       }
 
       tmpDom += `<div class="prod-navigator ${ob.lpState?"navlpshow":""}" data-navdest="${cnm}">
-      <i class="bi bi-circle-fill fs-xs pe-1 ${ob.hasSelected?"text-success":"text-muted"}"></i>
+      <i class="bi ${ob.prodType === "radio"?"bi-circle-fill":"bi-square-fill"} fs-xs pe-1 ${ob.hasSelected?"text-success":"text-muted"}"></i>
       <span>${ob.nmTxt}</span>
       </div>`
     }
