@@ -894,9 +894,17 @@ let build = {
     if (evArgs.cnm != "cat0") return;
     let ob = domCashe.dom["cat0"];
     if (ob.prodType == "radio") {
-      build.bIMG.src = ob.prodList[ob.prodSelected].imgSrc.replace("/cat_thumbs/", "/big_photos/");
+      if (ob.prodList[ob.prodSelected].imgAlt) {
+        build.bIMG.src = ob.prodList[ob.prodSelected].imgAlt[0];
+      } else {
+        build.bIMG.src = ob.prodList[ob.prodSelected].imgSrc.replace("/cat_thumbs/", "/big_photos/");
+      }
     } else if (ob.prodType == "checkbox") {
-      build.bIMG.src = ob.prodList[ob.prodSelected[0]].imgSrc.replace("/cat_thumbs/", "/big_photos/");
+      if (ob.prodList[ob.prodSelected[0]].imgAlt) {
+        build.bIMG.src = ob.prodList[ob.prodSelected[0]].imgAlt[0];
+      } else {
+        build.bIMG.src = ob.prodList[ob.prodSelected[0]].imgSrc.replace("/cat_thumbs/", "/big_photos/");
+      }
     }
   },
 

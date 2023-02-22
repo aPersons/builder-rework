@@ -94,12 +94,18 @@
           </ul>
           <div class="navbar-toolbar d-flex flex-shrink-0 align-items-center">
 						<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft"><span class="navbar-toggler-icon"></span></button>
-            <div class="navbar-tool me-2" id="top_cart">
+            <div class="navbar-tool me-2 d-none d-md-flex" id="top_cart">
               <a class="navbar-tool-icon-box bg-dark text-white" href="/section/basket">
                 <span class="navbar-tool-label bg-danger">0</span>
                 <i class="navbar-tool-icon ci-cart"></i>
               </a>
               <a class="navbar-tool-text" href="/section/basket"><small>Καλάθι</small><strong>0,00 €</strong></a>
+            </div>
+            <div class="d-flex d-md-none gap-2 align-items-center">
+              <div class="bg-white px-2 py-1 btn" style="cursor: initial;"><strong><span class="build-price-total">343,80</span> €</strong></div>
+              <a class="navbar-tool-icon-box text-white" style="background-color: var(--bg-color-f);" href="#">
+                <i class="navbar-tool-icon ci-cart"></i>
+              </a>
             </div>
           </div>
 				</div>
@@ -145,10 +151,10 @@
               </div>
             </div>
               <div class="mb-3">
-                <button class="btn btn-success btn-shadow d-block w-100" onclick="$('#builder-form').submit();" type="submit" id="builder_addtocart"><i class="ci-cart fs-lg me-2"></i><strong>Προσθήκη στο Καλάθι</strong></button>
+                <button class="btn btn-success d-block w-100" onclick="$('#builder-form').submit();" type="submit" id="builder_addtocart"><i class="ci-cart fs-lg me-2"></i><strong>Προσθήκη στο Καλάθι</strong></button>
               </div>
               <div class="mb-3">
-                <button type="button" class="btn btn-primary btn-shadow d-block w-100" data-bs-toggle="modal" data-bs-target="#build-modal">
+                <button type="button" class="btn btn-primary d-block w-100" data-bs-toggle="modal" data-bs-target="#build-modal">
                   <strong>Σύνοψη &amp; Αποθήκευση</strong>
                 </button>
               </div>
@@ -271,15 +277,15 @@
       <div class="col-lg-3 order-lg-2 builder-panel">
 				<div class="panel-inner">
           <div class="shopControls mb-3 d-none d-lg-flex flex-column align-items-stretch gap-2">
-            <div >
-              <span class="h3 fw-normal me-1"><strong><span class="build-price-total">-,--</span> €</strong></span><br>
+            <div class="d-flex flex-column align-items-center">
+              <span class="h3 fw-normal mb-0"><strong><span class="build-price-total">-,--</span> €</strong></span>
               <span class="text-muted fs-xs">Χωρίς ΦΠΑ: <span class="build-price-taxless">-,--</span> €</span>
             </div>
             <div>
-              <button class="btn btn-success btn-shadow d-block w-100" onclick="$('#builder-form').submit();" type="submit" id="builder_addtocart"><i class="ci-cart fs-lg me-2"></i><strong>Προσθήκη στο Καλάθι</strong></button>
+              <button class="btn btn-success d-block w-100" onclick="$('#builder-form').submit();" type="submit" id="builder_addtocart"><i class="ci-cart fs-lg me-2"></i><strong>Προσθήκη στο Καλάθι</strong></button>
             </div>
             <div >
-              <button type="button" class="btn btn-primary btn-shadow d-block w-100" data-bs-toggle="modal" data-bs-target="#build-modal">
+              <button type="button" class="btn btn-primary d-block w-100" data-bs-toggle="modal" data-bs-target="#build-modal">
                 <strong>Σύνοψη &amp; Αποθήκευση</strong>
               </button>
             </div>
