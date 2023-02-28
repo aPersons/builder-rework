@@ -200,27 +200,39 @@
 
 
 
-    <div class="collapse" id="cont-descr-collapse">
-
-
-
-      <div class="desc-item pt-5 pb-4" style="background: left / cover no-repeat url(https://cwsmgmt.corsair.com/pdp/k70-mini-wireless/k70-tri-hex-bg.jpg);">
-        <div class="container">
-          <div class="row">
-            <div class="align-content-center align-items-center col-md-6 d-flex justify-content-center">
-              <div>
-                <h4 class="text-center">RAM DDR4</h4>
-                <p class="text-center fs-sm">Μνήμες RAM από 4GB ως 256GB χωρητικότητα και συχνότητα λειτουργίας 2666Mhz ως 5333Mhz.</p>
-              </div>
-            </div>    
-            <div class="align-content-center align-items-center col-md-6 d-flex justify-content-center">
-              <div>
-                <p class="text-center"><img class="img-responsive rounded" src="https://static.msystems.gr/systems/images/ddr4_ram.jpg"></p>
-              </div>
+    <div class="desc-item pt-5 pb-4" style="background: left / cover no-repeat url(https://cwsmgmt.corsair.com/pdp/k70-mini-wireless/k70-tri-hex-bg.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="align-content-center align-items-center col-md-6 d-flex justify-content-center">
+            <div>
+              <h4 class="text-center">RAM DDR4</h4>
+              <p class="text-center fs-sm">Μνήμες RAM από 4GB ως 256GB χωρητικότητα και συχνότητα λειτουργίας 2666Mhz ως 5333Mhz.</p>
+            </div>
+          </div>    
+          <div class="align-content-center align-items-center col-md-6 d-flex justify-content-center">
+            <div>
+              <p class="text-center"><img class="img-responsive rounded" src="https://static.msystems.gr/systems/images/ddr4_ram.jpg"></p>
             </div>
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="collapse" id="cont-descr-collapse">
+
+      <script>
+        let contDescrCollape = document.querySelector("#cont-descr-collapse");
+
+        if (contDescrCollape.classList.contains("show")) contDescrCollape.previousElementSibling.classList.remove("show-partial");
+        else contDescrCollape.previousElementSibling.classList.add("show-partial");
+
+        contDescrCollape.addEventListener("show.bs.collapse", function() {
+          this.previousElementSibling.classList.remove("show-partial");
+        })
+        contDescrCollape.addEventListener("hide.bs.collapse", function() {
+          this.previousElementSibling.classList.add("show-partial");
+        })
+      </script>
 
       <div class="desc-item pt-5 pb-4" style="background-color: #00ff005c;">
         <div class="container">
@@ -263,7 +275,7 @@
 
 
 
-    <div class="d-flex justify-content-center" style="margin-top:-1rem;">
+    <div class="d-flex justify-content-center position-relative" style="margin-top:-1rem;">
       <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#cont-descr-collapse" aria-expanded="false" aria-controls="Description Collapse">
       <span class="clps-a">Show More...</span>
       <span class="clps-b">Show Less...</span>

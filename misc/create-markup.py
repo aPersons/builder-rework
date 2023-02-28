@@ -119,9 +119,12 @@ def crContent():
 with open("product-list.json","r",encoding="UTF-8") as rawjson:
     prodlist = json.loads(rawjson.read())
 with open(f'{"../demoPage/" if demo else ""}index-template.html',"r",encoding="UTF-8") as readtemp:
-    results = readtemp.read().format(
-      category_container = crContent(),
-      quick_view_modal = ""
-      )
+    # results = readtemp.read().format(
+    #   category_container = crContent(),
+    #   quick_view_modal = ""
+    #   )
+    results = readtemp.read()
+    results = results.replace("{category_container}", crContent())
+    results = results.replace("{quick_view_modal}", "")
 with open(f'../{"demoPage/" if demo else ""}index.html',"w",encoding="UTF-8") as out:
     out.write(results)
