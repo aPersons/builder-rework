@@ -1237,6 +1237,42 @@ let nav = {
 
 
 
+let buildSummary = {
+
+  catPairs: {
+    "cat2":[],
+    "cat4":[],
+    "cat5":[],
+    "cat7":[],
+    "cat8":[],
+    "cat9":[],
+    "cat10":[],
+    "cat15":[],
+  },
+
+
+  catSum(cnm) {
+
+  },
+
+
+  sumUpdate: function(evArgs) {
+
+  },
+
+  
+  crSummary: function() {
+    buildSummary.sumUpdate();
+    bTK.CFGRdBtHandler.push(buildSummary.sumUpdate);
+    bTK.CFGCbBtHandler.push(buildSummary.sumUpdate);
+  }
+
+}
+
+
+
+
+
 bModal = {
 
   updateBuildModal: function(evArgs) {
@@ -1384,6 +1420,7 @@ document.addEventListener("DOMContentLoaded", function() {
   
   pr.crFinalPrice();
   nav.crProdNav();
+  buildSummary.crSummary();
   bModal.crBuildModal();
   // bTK.setTimeout(crDomReduce, 0);//quick_view.js must run before this. Won't add events otherwise.
   

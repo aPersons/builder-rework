@@ -150,16 +150,26 @@
                   <span class="text-muted fs-xs">Χωρίς ΦΠΑ: <span class="build-price-taxless">-,--</span> €</span>
               </div>
             </div>
-              <div class="mb-3">
+              <div class="mb-2">
                 <button class="btn btn-success d-block w-100" onclick="$('#builder-form').submit();" type="submit" id="builder_addtocart"><i class="ci-cart fs-lg me-2"></i><strong>Προσθήκη στο Καλάθι</strong></button>
               </div>
-              <div class="mb-3">
-                <button type="button" class="btn btn-primary d-block w-100" data-bs-toggle="modal" data-bs-target="#build-modal">
+              <div class="mb-3 d-flex flex-wrap gap-2">
+                <button type="button" class="btn btn-primary d-block flex-grow-1" data-bs-toggle="modal" data-bs-target="#build-modal">
                   <strong>Σύνοψη &amp; Αποθήκευση</strong>
+                </button>
+                <button type="button" class="btn btn-primary d-block flex-grow-1" onclick="
+                  scrollToC(
+                    document.documentElement,
+                    window.scrollY,
+                    window.scrollY + document.querySelector('.builder-parts').getBoundingClientRect().top - (window.innerWidth > 991 ? 95 : 125),
+                    500
+                  )
+                ">
+                  <strong>Τροποποίηση</strong>
                 </button>
               </div>
               <h5 class="h6 mb-2 pb-2 border-bottom"><i class="ci-announcement text-muted fs-lg align-middle mt-n1 me-2"></i>Πληροφορίες</h5>
-              <ul>
+              <ul class="build-summary">
                 <li>Operating System: Windows 11 Home</li>
                 <li>CPU: Intel Core i5-12400F 2.5GHz (4.4GHz Turbo Boost Max) 6-Core 12-Thread</li>
                 <li>GPU: Intel Arc A750</li>
