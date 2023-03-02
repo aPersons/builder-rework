@@ -1239,16 +1239,18 @@ let nav = {
 
 let buildSummary = {
 
-  catPairs: {
-    "cat2":[],
-    "cat4":[],
-    "cat5":[],
-    "cat7":[],
-    "cat8":[],
-    "cat9":[],
-    "cat10":[],
-    "cat15":[],
-  },
+  sumDom: false,
+
+  catList: [
+    ["Επεξεργαστής", false],
+    ["Μητρική", false],
+    ["Κάρτα Γραφικών", false],
+    ["Μνήμη RAM", false],
+    ["Δίσκος SSD M.2", false],
+    ["Λειτουργικό Σύστημα", false],
+  ],
+
+  domList: {},
 
 
   catSum(cnm) {
@@ -1262,6 +1264,26 @@ let buildSummary = {
 
   
   crSummary: function() {
+    let sumElement = document.querySelector(".build-summary");
+    if (sumElement) buildSummary.sumDom = sumElement;
+    else return;
+    if (!domCashe.domOrder.length) return;
+
+    elList = []
+
+    for (const [i, nmTxt] of buildSummary.catList.entries()) {
+      for (const [cnm, ob] of domCashe.avCats) {
+        if (nmTxt === ob.nmTxt) {
+          buildSummary.catList[i][1] = cnm;
+          buildSummary.domList[cnm] = Document.createElement("DIV");
+          elList.push(uildSummary.domList[cnm]);
+          break;
+        }
+      }
+    }
+    
+    sumElement.replaceChildren(elList)
+
     buildSummary.sumUpdate();
     bTK.CFGRdBtHandler.push(buildSummary.sumUpdate);
     bTK.CFGCbBtHandler.push(buildSummary.sumUpdate);

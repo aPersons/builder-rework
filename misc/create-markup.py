@@ -77,8 +77,8 @@ def crCat(cat):
   res = """
 <div class="builder-part-category{isHidden}" id="{catId}">
   <div class="part-category-header">
-    <div class="part-category-img"><img src="{demopage}img/cat29-prod0.jpg"></div>
     <div class="part-category-bar">{catName}</div>
+    <div class="part-category-img"><img src="{demopage}img/cat29-prod0.jpg"></div>
     <div class="part-category-details"></div>
   </div>
   <div class="catCollapsible">
