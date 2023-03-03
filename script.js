@@ -1167,7 +1167,7 @@ let nav = {
 
 
   crNavDom: function() {
-    if (!domCashe.domOrder.length) return;
+    if (!domCashe.avCats.length) return;
     let selfDom = document.querySelector(".prod-navigation");
     if (!selfDom) return;
     nav.selfDom = selfDom;
@@ -1241,6 +1241,7 @@ let buildSummary = {
 
   sumDom: false,
 
+
   catList: [
     ["Επεξεργαστής", false],
     ["Μητρική", false],
@@ -1250,16 +1251,30 @@ let buildSummary = {
     ["Λειτουργικό Σύστημα", false],
   ],
 
+
   domList: {},
 
-
-  catSum(cnm) {
-
-  },
-
-
+  
   sumUpdate: function(evArgs) {
-
+    if (!buildSummary.domList.hasOwnProperty(evArgs.cnm)) return;
+    let ob = domCashe.dom[evArgs.cnm];
+    if (ob.prodType == "radio") {
+      let pItem = document.createElement("LI");
+      pItem.classList.add("fs-sm");
+      let sp = ob.prodList[ob.prodSelected];
+      pItem.innerHTML = (sp.qValue > 1? `${sp.qValue}x - ` :"") +  sp.nmTxt;
+      buildSummary.domList[evArgs.cnm][1].replaceChildren(pItem);
+    } else if (ob.prodType == "checkbox") {
+      pList = []
+      for (pnm of ob.prodSelected) {
+        let pItem = document.createElement("LI");
+        pItem.classList.add("fs-sm");
+        let sp = ob.prodList[pnm];
+        pItem.innerHTML = (sp.qValue > 1? `${sp.qValue}x - ` :"") +  sp.nmTxt;
+        pList.push(pItem);
+      }
+      buildSummary.domList[evArgs.cnm][1].replaceChildren(...pList);
+    }
   },
 
   
@@ -1267,26 +1282,41 @@ let buildSummary = {
     let sumElement = document.querySelector(".build-summary");
     if (sumElement) buildSummary.sumDom = sumElement;
     else return;
-    if (!domCashe.domOrder.length) return;
+    if (!domCashe.avCats.length) return;
 
-    elList = []
+    elList = [];
 
-    for (const [i, nmTxt] of buildSummary.catList.entries()) {
+    for (const [i, [nmTxt,]] of buildSummary.catList.entries()) {
       for (const [cnm, ob] of domCashe.avCats) {
         if (nmTxt === ob.nmTxt) {
           buildSummary.catList[i][1] = cnm;
-          buildSummary.domList[cnm] = Document.createElement("DIV");
-          elList.push(uildSummary.domList[cnm]);
+          let catEl = document.createElement("LI");
+          catEl.classList.add("sumcat");
+
+          let nmChild = document.createElement("SPAN");
+          nmChild.classList.add("text-muted", "fs-sm");
+          nmChild.textContent = ob.nmTxt;
+          let childItems = document.createElement("UL");
+
+          catEl.replaceChildren(nmChild, childItems);
+
+          buildSummary.domList[cnm] = [catEl, childItems];
+          elList.push(catEl);
           break;
         }
       }
     }
-    
-    sumElement.replaceChildren(elList)
 
-    buildSummary.sumUpdate();
+    for (const [,cnm] of buildSummary.catList) {
+      buildSummary.sumUpdate({cnm:cnm});
+    }
+    
+    sumElement.replaceChildren(...elList);
+
     bTK.CFGRdBtHandler.push(buildSummary.sumUpdate);
     bTK.CFGCbBtHandler.push(buildSummary.sumUpdate);
+    bTK.CFGquantIncrHandler.push(buildSummary.sumUpdate);
+    bTK.CFGquantDecrHandler.push(buildSummary.sumUpdate);
   }
 
 }
@@ -1377,7 +1407,7 @@ bModal = {
         bModal.btnCopy.innerHTML = '<i class="bi bi-x-lg"></i>';      
       },2000)
     }
-  },  
+  },
 
 
   CFGbuildModalOpenHandler: [],

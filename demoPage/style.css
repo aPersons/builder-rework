@@ -119,6 +119,21 @@ h1, h2, h3, h4, h5, h6 {
 
 
 
+.build-summary {
+  padding-left: 0;
+}
+.build-summary > li{
+  list-style-type: none;
+}
+.sumcat > ul {
+  padding-left: 1rem;
+}
+.sumcat li {
+  list-style-type: disc;
+}
+
+
+
 /* Pannel Column */
 
 .panel-inner {
