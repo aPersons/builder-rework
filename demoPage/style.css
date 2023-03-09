@@ -167,6 +167,23 @@ body.alt-dark {
   background-color: var(--bg-gray-20);  
 }
 
+.offcanvas-header {
+  background-color: var(--bg-gray-25);
+}
+.offcanvas-header .btn-close {
+  filter: invert();
+}
+.offcanvas-body {
+  background-color: var(--bg-gray-20);
+}
+.offcanvas-body .border-bottom {
+  border-bottom: 1px solid var(--bg-gray-20)!important;
+}
+.offcanvas-body .nav-link {
+  background-color: var(--bg-gray-25);
+  color: var(--txt-white-80);
+}
+
 
 .btn-primary {
   background-color: var(--bg-blue-30);
@@ -507,10 +524,10 @@ body.alt-dark {
   font-size: 1rem;
   float: right;
 }
-.contains-selected .part-category-bar {background-color: var(--bg-blue-25);}
+.contains-selected .part-category-bar {background-color: var(--bg-blue-30);}
 
-.part-category-bar:hover {background-color: var(--bg-gray-30);}
-.contains-selected .part-category-bar:hover {background-color: var(--bg-blue-30);}
+.part-category-bar:hover {background-color: var(--bg-gray-20);}
+.contains-selected .part-category-bar:hover {background-color: var(--bg-blue-25);}
 
 .builder-part-category.lp-show .part-category-bar:after {
   content: "\f63b";

@@ -62,6 +62,33 @@
 
 <main class="page-wrapper d-print-none">
   <header>
+
+    <div class="offcanvas offcanvas-start d-print-none" id="offcanvasLeft" tabindex="-1">
+			<div class="offcanvas-header py-3">
+				<h6 class="offcanvas-title">Συστήματα</h6>
+				<button class="btn-close" type="button" data-bs-dismiss="offcanvas"></button>
+			</div>
+			<div class="offcanvas-body" data-simplebar>
+        
+        <div class="nav-item border-bottom mt-3">
+          <a class="nav-link" href="/section/gaming-systems-browser"><strong>Gaming</strong></a>
+        </div>
+        <div class="nav-item border-bottom">
+          <a class="nav-link" href="/section/gaming-systems-browser"><strong>Business</strong></a>
+        </div>
+        <div class="nav-item border-bottom mb-3">
+          <a class="nav-link" href="/section/workstation-systems-browser"><strong>Workstations</strong></a>
+        </div>
+        <div class="nav-item border-bottom">
+          <a class="nav-link" href="/syspage/why-choose-m"><strong>Γιατί να επιλέξεις ένα <img class="img-responsive ps-1" style="vertical-align: baseline;" src="https://static.msystems.gr/theme/img/teliko_logo_m15.png"> PC?</strong></a>
+        </div>
+        <div class="nav-item border-bottom">
+          <a class="nav-link" href="/"><strong>Msystems Store</strong></a>
+        </div>
+
+      </div>
+		</div>
+
     <div class="topbar topbar-dark bg-dark">
       <div class="container">
         <div>
@@ -101,11 +128,16 @@
               </a>
               <!-- <a class="navbar-tool-text" href="/section/basket"><small>Καλάθι</small><strong>0,00 €</strong></a> -->
             </div>
-            <div class="d-flex d-lg-none align-items-center">
-              <div class="bg-white px-2 py-1 btn pe-3" style="cursor: initial; margin-right: -0.7rem;"><strong><span class="build-price-total">343,80</span> €</strong></div>
-              <a class="navbar-tool-icon-box text-white" style="background-color: var(--bg-color-f);" href="#">
-                <i class="navbar-tool-icon ci-cart"></i>
-              </a>
+            <div class="d-flex d-lg-none flex-column align-items-start">
+              <div class="d-flex d-lg-none align-items-center">
+                <div class="bg-white px-2 py-1 btn pe-3" style="cursor: initial; margin-right: -0.7rem;"><strong><span class="build-price-total">343,80</span> €</strong></div>
+                <a class="navbar-tool-icon-box" style="background-color: var(--bg-green-30); color:var(--txt-white-80)" href="#">
+                  <i class="navbar-tool-icon ci-cart"></i>
+                </a>
+              </div>
+              <button type="button" class="btn btn-primary d-block flex-grow-1" data-bs-toggle="modal" data-bs-target="#build-modal" style="margin-top: -0.3rem; width: 88%; padding: 0.1rem">
+                <strong>Σύνοψη</strong>
+              </button>
             </div>
           </div>
 				</div>
