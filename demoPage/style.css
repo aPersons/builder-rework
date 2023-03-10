@@ -166,6 +166,14 @@ body.alt-dark {
 .navbar {
   background-color: var(--bg-gray-20);  
 }
+.navbar-expand-lg .navbar-nav .dropdown-menu {
+  background-color: var(--bg-gray-15);
+}
+.navbar-expand-lg .navbar-nav .dropdown-menu .border-bottom {
+  border-bottom: 1px solid var(--bg-gray-20)!important;
+}
+
+
 
 .offcanvas-header {
   background-color: var(--bg-gray-25);
@@ -176,12 +184,15 @@ body.alt-dark {
 .offcanvas-body {
   background-color: var(--bg-gray-20);
 }
-.offcanvas-body .border-bottom {
+.offcanvas-body .border-bottom, .offcanvas-body .border-top {
   border-bottom: 1px solid var(--bg-gray-20)!important;
 }
 .offcanvas-body .nav-link {
   background-color: var(--bg-gray-25);
   color: var(--txt-white-80);
+}
+.offcanvas-body .collapse .nav-link, .offcanvas-body .collapsing .nav-link {
+  background-color: var(--bg-gray-20);
 }
 
 

@@ -69,21 +69,40 @@
 				<button class="btn-close" type="button" data-bs-dismiss="offcanvas"></button>
 			</div>
 			<div class="offcanvas-body" data-simplebar>
-        
-        <div class="nav-item border-bottom mt-3">
-          <a class="nav-link" href="/section/gaming-systems-browser"><strong>Gaming</strong></a>
-        </div>
-        <div class="nav-item border-bottom">
-          <a class="nav-link" href="/section/gaming-systems-browser"><strong>Business</strong></a>
-        </div>
-        <div class="nav-item border-bottom mb-3">
-          <a class="nav-link" href="/section/workstation-systems-browser"><strong>Workstations</strong></a>
-        </div>
-        <div class="nav-item border-bottom">
-          <a class="nav-link" href="/syspage/why-choose-m"><strong>Γιατί να επιλέξεις ένα <img class="img-responsive ps-1" style="vertical-align: baseline;" src="https://static.msystems.gr/theme/img/teliko_logo_m15.png"> PC?</strong></a>
-        </div>
-        <div class="nav-item border-bottom">
-          <a class="nav-link" href="/"><strong>Msystems Store</strong></a>
+        <div class="accordion" id="offcanvas_nav">  
+
+          <div class="nav-item border-bottom mt-3">
+            <a class="nav-link" href="#offcanvas_navcat_0" id="offcanvas_navcat_0_head" data-bs-toggle="collapse"><strong>Gaming</strong></a>
+            <div class="accordion-collapse collapse" id="offcanvas_navcat_0" data-bs-parent="#offcanvas_nav">
+              <a class="nav-link pt-1 pb-2 fs-sm" href="/gaming-systems-browser#g3gaming">G3 Gaming</a>
+              <a class="nav-link pt-1 pb-2 fs-sm" href="/gaming-systems-browser#g5gaming">G5 Gaming</a>
+              <a class="nav-link pt-1 pb-2 fs-sm" href="/gaming-systems-browser#g7gaming">G7 Gaming</a>
+              <a class="nav-link pt-1 pb-2 fs-sm" href="/gaming-systems-browser#g9gaming">G9 Gaming</a>
+              <a class="nav-link pt-1 pb-2 fs-sm" href="/gaming-systems-browser#g10gaming">G10 Gaming</a>
+            </div>
+          </div>
+          <div class="nav-item border-bottom">
+            <a class="nav-link" href="#offcanvas_navcat_1" id="offcanvas_navcat_1_head" data-bs-toggle="collapse"><strong>Business</strong></a>
+            <div class="accordion-collapse collapse" id="offcanvas_navcat_1" data-bs-parent="#offcanvas_nav">
+              <a class="nav-link pt-1 pb-2 fs-sm" href="/business-systems-browser#b3business">B3 Business</a>
+              <a class="nav-link pt-1 pb-2 fs-sm" href="/business-systems-browser#b5business">B5 Business</a>
+            </div>
+          </div>
+          <div class="nav-item border-bottom mb-3">
+            <a class="nav-link" href="#offcanvas_navcat_2" id="offcanvas_navcat_2_head" data-bs-toggle="collapse"><strong>Workstations</strong></a>
+            <div class="accordion-collapse collapse" id="offcanvas_navcat_2" data-bs-parent="#offcanvas_nav">
+              <a class="nav-link pt-1 pb-2 fs-sm" href="/workstation-systems-browser#W5workstation">W5 Workstation</a>
+              <a class="nav-link pt-1 pb-2 fs-sm" href="/workstation-systems-browser#W7workstation">W7 Workstation</a>
+              <a class="nav-link pt-1 pb-2 fs-sm" href="/workstation-systems-browser#W9workstation">W9 Workstation</a>
+            </div>
+          </div>
+
+          <div class="nav-item border-bottom">
+            <a class="nav-link" href="/syspage/why-choose-m"><strong>Γιατί να επιλέξεις ένα <img class="img-responsive ps-1" style="vertical-align: baseline;" src="https://static.msystems.gr/theme/img/teliko_logo_m15.png"> PC?</strong></a>
+          </div>
+          <div class="nav-item border-bottom">
+            <a class="nav-link" href="/"><strong>Msystems Store</strong></a>
+          </div>
         </div>
 
       </div>
@@ -110,7 +129,25 @@
 						<img src="../img/logo_mobile.png" width="38" alt="Msystems">
 					</a>
           <ul class="navbar-nav d-none d-sm-none d-md-none d-lg-flex">
-            <li class="nav-item dropdown"><a class="nav-link fs-md" href="/section/gaming-systems-browser"><strong>Gaming PCs</strong></a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle fs-md" href="/section/gaming-systems-browser" data-bs-toggle="dropdown" data-bs-auto-close="outside"><strong>Gaming PCs</strong></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown position-static mb-0"><a class="dropdown-item border-bottom py-2" href="home-nft.html"><span class="d-block">G3 Gaming</span></span></a>
+                  <div class="dropdown-menu h-100 animation-none mt-0 p-3"><a class="d-block" href="home-nft.html" style="width: 250px;"><img src="img/home/preview/th08.jpg" alt="NFT Marketplace"></a></div>
+                </li>
+                <li class="dropdown position-static mb-0"><a class="dropdown-item py-2 border-bottom" href="home-fashion-store-v1.html"><span class="d-block">G5 Gaming</span></a>
+                  <div class="dropdown-menu h-100 animation-none mt-0 p-3"><a class="d-block" href="home-fashion-store-v1.html" style="width: 250px;"><img src="img/home/preview/th01.jpg" alt="Fashion Store v.1"></a></div>
+                </li>
+                <li class="dropdown position-static mb-0"><a class="dropdown-item py-2 border-bottom" href="home-electronics-store.html"><span class="d-block">G7 Gaming</span></a>
+                  <div class="dropdown-menu h-100 animation-none mt-0 p-3"><a class="d-block" href="home-electronics-store.html" style="width: 250px;"><img src="img/home/preview/th03.jpg" alt="Electronics Store"></a></div>
+                </li>
+                <li class="dropdown position-static mb-0"><a class="dropdown-item py-2 border-bottom" href="home-marketplace.html"><span class="d-block">G9 Gaming</span></a>
+                  <div class="dropdown-menu h-100 animation-none mt-0 p-3"><a class="d-block" href="home-marketplace.html" style="width: 250px;"><img src="img/home/preview/th04.jpg" alt="Marketplace"></a></div>
+                </li>
+                <li class="dropdown position-static mb-0"><a class="dropdown-item py-2" href="home-grocery-store.html"><span class="d-block">G10 Gaming</span></a>
+                  <div class="dropdown-menu h-100 animation-none mt-0 p-3"><a class="d-block" href="home-grocery-store.html" style="width: 250px;"><img src="img/home/preview/th06.jpg" alt="Grocery Store"></a></div>
+                </li>
+              </ul>
             </li>
             <li class="nav-item dropdown"><a class="nav-link fs-md" href="#"><strong>Home &amp; Office PCs</strong></a>
             </li>
