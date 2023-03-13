@@ -921,7 +921,7 @@ let build = {
     bTK.CFGRdBtHandler.push(build.updateBuildIMG);
     bTK.CFGCbBtHandler.push(build.updateBuildIMG);
     
-    for (const [pnm, pob] of domCashe.dom["cat0"]) build.getAltIMG(pnm, pob);
+    for (const [pnm, pob] of Object.entries(domCashe.dom["cat0"].prodList)) build.getAltIMG(pnm, pob);
        
   }
 

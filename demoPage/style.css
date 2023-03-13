@@ -301,6 +301,15 @@ body.alt-dark {
 }
 
 
+footer {
+  background-color: var(--bg-gray-20);
+}
+footer > :nth-child(2){
+  background-color: var(--bg-gray-15);
+}
+
+
+
 
 
 .cont-prod-header {
