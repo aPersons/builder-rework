@@ -173,6 +173,13 @@ body.alt-dark {
   border-bottom: 1px solid var(--bg-gray-20)!important;
 }
 
+.navbar .dropdown-item {
+  color: var(--txt-white-80);
+}
+.navbar .dropdown-item:hover {
+  color: var(--txt-white-100)!important;
+}
+
 
 
 .offcanvas-header {
