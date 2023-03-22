@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>builder.local</title>
-	<link rel="icon" href="../img/oci_ogol.ico">
+	<link rel="icon" href="img/oci_ogol.ico">
 	<!-- Vendor Styles including: Font Icons, Plugins, etc.-->
 	<link rel="stylesheet" href="https://static.msystems.gr/theme_new/vendor/simplebar/dist/simplebar.min.css"/>
 	<link rel="stylesheet" href="https://static.msystems.gr/theme_new/vendor/tiny-slider/dist/tiny-slider.css"/>
@@ -15,7 +15,6 @@
 	<link rel="stylesheet" href="https://static.msystems.gr/theme_new/css/theme.min.css">
 	<link rel="stylesheet" href="https://static.msystems.gr/theme_new/css/jquery-ui.min.css">
 	<link rel="stylesheet" href="https://static.msystems.gr/theme_new/bootstrap-icons.css">
-	<!-- <link href="../style.css" rel="stylesheet"> -->
 	<link href="style.css" rel="stylesheet">
 </head>
 <body class="alt-dark">
@@ -126,7 +125,7 @@
 						<img src="https://static.msystems.gr/theme_new/img/logo_2021.png" width="142" alt="Msystems">
 					</a>
           <a class="navbar-brand d-sm-none me-2" href="/section/m-systems-browser">
-						<img src="../img/logo_mobile.png" width="38" alt="Msystems">
+						<img src="img/logo_mobile.png" width="38" alt="Msystems">
 					</a>
           <ul class="navbar-nav d-none d-sm-none d-md-none d-lg-flex">
             <li class="nav-item dropdown position-static">
@@ -135,12 +134,17 @@
                   <style>
                     .sysmenu-inner {
                       position: relative;
+                      max-width: 1170px;
+                      padding: var(--bs-gutter-x,0.9375rem);
+                      min-height: 525px;
                     }
                     .sysmenu-item {
-                      background-color: var(--bg-gray-25);
-                      border-bottom: 1px solid var(--bg-gray-20);
+                      background-color: var(--bg-gray-20);
+                      border-bottom: 1px solid var(--bg-gray-10);
                       transition: 0.25s;
                       width: 20%;
+                      color: var(--txt-white-80);
+
                     }
                     .sysmenu-item-title {
                       padding: 1rem;
@@ -150,7 +154,7 @@
                       display: inline-block;
                     }
                     .sysmenu-item:hover {
-                      background-color: var(--bg-gray-20);
+                      background-color: var(--bg-gray-15);
                     }
                     .sysmenu-item:hover .sysmenu-item-title {
                       color: var(--txt-white-100);
@@ -159,21 +163,52 @@
                       display: none;
                       width: 80%;
                       padding: 1rem;
+                      gap: 1rem;
                       position: absolute;
                       top: 0;
                       right: 0;
                       height: 100%;
+                      width: 79.2%;
                     }
                     .sysmenu-item:hover .sysmenu-item-overview {
-                      display: block;
+                      display: flex;
                     }
 
                   </style>
-                <div class="sysmenu m-auto" style="max-width: 1170px; padding: var(--bs-gutter-x,0.9375rem);">
-                  <div class="sysmenu-inner">
+                  <div class="sysmenu-inner m-auto">
                     <div class="sysmenu-item">
                       <a href="" class="sysmenu-item-title">sysmenu item </a>
-                      <div class="sysmenu-item-overview">......... overview ......... overview ......... overview ......... overview ......... overview ......... overview ......... overview ......... overview ......... overview ......... overview ......... overview ......... overview ......... overview ......... overview ......... overview ......... overview</div>
+                      <div class="sysmenu-item-overview">
+                        <div style="width: 40%;">
+                          <h4>G3 Gaming</h4>
+                          <p>Σχεδιασμένα για απολαυστικό Full HD gaming τα συστήματα της σειράς G3 έρχονται εξοπλισμένα με το κατάλληλο επώνυμο hardware που θα καλύψει όλες σου τις απαιτήσεις. Τα PC της σειράς G3 είναι ιδανικά για τίτλους όπως League of Legends, Fortnite, CS: GO, Dota 2.</p>
+                        </div>
+                        <div class="syscard d-flex flex-column align-items-center rounded pb-2" style="background-color: var(--bg-gray-20);overflow: hidden;">
+                          <img src="https://static.msystems.gr/photos/cat_thumbs/23219.jpg" alt="G3 Intel">
+                          <h5>G3 Intel</h5>
+                          <span class="fs-sm w-100 ms-5 me-2 text-start d-block" style="line-height: 25px;"><i class="bi bi-cpu fs-lg me-2"></i> Intel Core i3 13100F</span>
+                          <span class="fs-sm w-100 ms-5 me-2 text-start d-block" style="line-height: 25px;"><i class="bi bi-motherboard fs-lg me-2"></i> H610 mATX</span>
+                          <span class="fs-sm w-100 ms-5 me-2 text-start d-block" style="line-height: 25px;"><i class="bi bi-gpu-card fs-lg me-2"></i> Nvidia GTX 1650 4GB</span>
+                          <span class="fs-sm w-100 ms-5 me-2 text-start d-block" style="line-height: 25px;"><i class="bi bi-memory fs-lg me-2"></i> 8GB DDR4 3200MHz</span>
+                          <span class="fs-sm w-100 ms-5 me-2 text-start d-block" style="line-height: 25px;"><i class="bi bi-device-hdd fs-lg me-2"></i> 250GB M.2 NVMe SSD</span>
+                          <span class="fs-sm w-100 ms-5 me-2 text-start d-block" style="line-height: 25px;"><i class="bi bi-windows fs-lg me-2"></i> Windows 11 Home</span>
+                          <span class="fs-3 fw-bold text-center w-100 d-block">835,90 €</span>
+                          <div class="text-center w-100 d-block"><a class="btn btn-success btn-sm mt-2 fw-bold" href="https://www.msystems.gr/section/systems_new/?&amp;system=40&amp;spec_level=1"><i class="ci-settings me-2"></i>Τροποποίηση</a></div>
+                        </div>
+                      
+                        <div class="syscard d-flex flex-column align-items-center rounded pb-2" style="background-color: var(--bg-gray-20);overflow: hidden;">
+                          <img src="https://static.msystems.gr/photos/cat_thumbs/23219.jpg" alt="G3 AMD">
+                          <h5>G3 AMD</h5>
+                          <span class="fs-sm w-100 ms-5 me-2 text-start d-block" style="line-height: 25px;"><i class="bi bi-cpu fs-lg me-2"></i> Intel Core i3 13100F</span>
+                          <span class="fs-sm w-100 ms-5 me-2 text-start d-block" style="line-height: 25px;"><i class="bi bi-motherboard fs-lg me-2"></i> H610 mATX</span>
+                          <span class="fs-sm w-100 ms-5 me-2 text-start d-block" style="line-height: 25px;"><i class="bi bi-gpu-card fs-lg me-2"></i> Nvidia GTX 1650 4GB</span>
+                          <span class="fs-sm w-100 ms-5 me-2 text-start d-block" style="line-height: 25px;"><i class="bi bi-memory fs-lg me-2"></i> 8GB DDR4 3200MHz</span>
+                          <span class="fs-sm w-100 ms-5 me-2 text-start d-block" style="line-height: 25px;"><i class="bi bi-device-hdd fs-lg me-2"></i> 250GB M.2 NVMe SSD</span>
+                          <span class="fs-sm w-100 ms-5 me-2 text-start d-block" style="line-height: 25px;"><i class="bi bi-windows fs-lg me-2"></i> Windows 11 Home</span>
+                          <span class="fs-3 fw-bold text-center w-100 d-block">835,90 €</span>
+                          <div class="text-center w-100 d-block"><a class="btn btn-success btn-sm mt-2 fw-bold" href="https://www.msystems.gr/section/systems_new/?&amp;system=40&amp;spec_level=1"><i class="ci-settings me-2"></i>Τροποποίηση</a></div>
+                        </div>
+                      </div>
                     </div>
                     <div class="sysmenu-item">
                       <a href="" class="sysmenu-item-title">sysmenu item </a>
@@ -192,7 +227,6 @@
                       <div class="sysmenu-item-overview">......... overview ......... overview ......... overview ......... overview ......... overview ......... overview ......... overview ......... overview ......... overview ......... overview ......... overview ......... overview ......... overview ......... overview ......... overview ......... overview</div>
                     </div>
                   </div>
-                </div>                
               </div>
             </li>
             <li class="nav-item dropdown"><a class="nav-link fs-md" href="#"><strong>Home &amp; Office PCs</strong></a>
@@ -230,75 +264,6 @@
 
   <!-- Content Starts Here -->
 
-  <div class="py-3">
-    <div class="container d-lg-flex justify-content-between py-2 py-lg-3">
-      <div class="order-lg-2 mb-3 mb-lg-0 pt-lg-1">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb breadcrumb-light opacity-60 flex-lg-nowrap justify-content-center justify-content-lg-start">
-            <li class="breadcrumb-item"><a class="text-nowrap" href="/section/m-systems-browser"><i class="ci-home"></i></a></li>
-            <li class="breadcrumb-item text-nowrap active" aria-current="page"><a href="/section/m-systems-browser">Custom Msystems PCs</a></li>
-          </ol>
-        </nav>
-      </div>
-      <div class="order-lg-1 pe-lg-4 text-center text-lg-start">
-        <h1 class="h3 mb-0">Gaming G3 Intel</h1>
-      </div>
-    </div>
-  </div>
-  
-  <div class="container pb-md-4">
-    <div class="rounded-3 px-4 py-lg-4 py-3 mb-5 cont-prod-header">
-      <div class="py-lg-3 py-2 px-lg-3">
-        <div class="row gy-4">
-          <!-- Product image-->
-          <div class="col-lg-7">
-            <div class="position-relative rounded-3 h-100 bg-white overflow-hidden mb-lg-4 mb-2 d-flex justify-content-center align-items-center align-content-center">
-              <img src="https://static.msystems.gr/photos/big_photos/23219.jpg" class="img-responsive build-img" alt="Gaming G3 Intel">
-            </div>
-          </div>
-          <!-- Product details-->
-          <div class="col-lg-5 ps-lg-0">
-            <div class="ms-auto p-3 rounded-3">
-              <div class="d-flex flex-column align-items-center mb-3 gap-1">
-                <span class="h3 fw-normal mb-0"><strong><span class="build-price-total">-,--</span> €</strong></span>
-                <span class="text-muted fs-xs">Χωρίς ΦΠΑ: <span class="build-price-taxless">-,--</span> €</span>
-              </div>
-              <div class="mb-2">
-                <button class="btn btn-success d-block w-100" onclick="$('#builder-form').submit();" type="submit" id="builder_addtocart"><i class="ci-cart fs-lg me-2"></i><strong>Προσθήκη στο Καλάθι</strong></button>
-              </div>
-              <div class="mb-3 d-flex flex-wrap gap-2">
-                <button type="button" class="btn btn-primary d-block flex-grow-1" data-bs-toggle="modal" data-bs-target="#build-modal">
-                  <strong>Σύνοψη &amp; Αποθήκευση</strong>
-                </button>
-                <button type="button" class="btn btn-primary d-block flex-grow-1" onclick="
-                  scrollToC(
-                    document.documentElement,
-                    window.scrollY,
-                    window.scrollY + document.querySelector('.builder-parts').getBoundingClientRect().top - (window.innerWidth > 991 ? 95 : 125),
-                    500
-                  )
-                ">
-                  <strong>Τροποποίηση</strong>
-                </button>
-              </div>
-              <h5 class="h6 mb-2 pb-2 border-bottom fs-sm"><i class="ci-announcement text-muted fs-lg align-middle mt-n1 me-2"></i>Πληροφορίες</h5>
-              <ul class="build-summary">
-                <div class="bg-placeholder bg-placeholder-dark placeholder col-12"><div class="activity activity-dark"></div></div>
-						<div class="bg-placeholder bg-placeholder-dark placeholder col-12"><div class="activity activity-dark"></div></div>
-						<div class="bg-placeholder bg-placeholder-dark placeholder col-12"><div class="activity activity-dark"></div></div>
-						<div class="bg-placeholder bg-placeholder-dark placeholder col-12"><div class="activity activity-dark"></div></div>
-						<div class="bg-placeholder bg-placeholder-dark placeholder col-12"><div class="activity activity-dark"></div></div>
-						<div class="bg-placeholder bg-placeholder-dark placeholder col-12"><div class="activity activity-dark"></div></div>
-						<div class="bg-placeholder bg-placeholder-dark placeholder col-12"><div class="activity activity-dark"></div></div>
-						<div class="bg-placeholder bg-placeholder-dark placeholder col-12"><div class="activity activity-dark"></div></div>
-						<div class="bg-placeholder bg-placeholder-dark placeholder col-12"><div class="activity activity-dark"></div></div>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>      
-    </div>
-  </div>
 
 
   <div class="cont-descr mb-5">
@@ -396,57 +361,6 @@
     </div>
 
 
-
-    <div class="d-flex justify-content-center position-relative" style="margin-top:-1rem;">
-      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#cont-descr-collapse" aria-expanded="false" aria-controls="Description Collapse">
-      <span class="clps-a">Show More...</span>
-      <span class="clps-b">Show Less...</span>
-      </button>
-    </div>
-  </div>
-    
-  <div class="container pb-md-4 builder-body-container">  
-    <div class="row cont-body">
-			
-      <div class="col-lg-3 order-lg-2 builder-panel">
-				<div class="panel-inner">
-          <div class="shopControls mb-3 d-none d-lg-flex flex-column align-items-stretch gap-2">
-            <div class="d-flex flex-column align-items-center">
-              <span class="h3 fw-normal mb-0"><strong><span class="build-price-total">-,--</span> €</strong></span>
-              <span class="text-muted fs-xs">Χωρίς ΦΠΑ: <span class="build-price-taxless">-,--</span> €</span>
-            </div>
-            <div>
-              <button class="btn btn-success d-block w-100" onclick="$('#builder-form').submit();" type="submit" id="builder_addtocart"><i class="ci-cart fs-lg me-2"></i><strong>Προσθήκη στο Καλάθι</strong></button>
-            </div>
-            <div >
-              <button type="button" class="btn btn-primary d-block w-100" data-bs-toggle="modal" data-bs-target="#build-modal">
-                <strong>Σύνοψη &amp; Αποθήκευση</strong>
-              </button>
-            </div>
-          </div>
-					<div class="prod-navigation">
-						<div class="bg-placeholder bg-placeholder-dark placeholder col-12"><div class="activity activity-dark"></div></div>
-						<div class="bg-placeholder bg-placeholder-dark placeholder col-12"><div class="activity activity-dark"></div></div>
-						<div class="bg-placeholder bg-placeholder-dark placeholder col-12"><div class="activity activity-dark"></div></div>
-						<div class="bg-placeholder bg-placeholder-dark placeholder col-12"><div class="activity activity-dark"></div></div>
-						<div class="bg-placeholder bg-placeholder-dark placeholder col-12"><div class="activity activity-dark"></div></div>
-						<div class="bg-placeholder bg-placeholder-dark placeholder col-12"><div class="activity activity-dark"></div></div>
-						<div class="bg-placeholder bg-placeholder-dark placeholder col-12"><div class="activity activity-dark"></div></div>
-						<div class="bg-placeholder bg-placeholder-dark placeholder col-12"><div class="activity activity-dark"></div></div>
-						<div class="bg-placeholder bg-placeholder-dark placeholder col-12"><div class="activity activity-dark"></div></div>
-						<div class="bg-placeholder bg-placeholder-dark placeholder col-12"><div class="activity activity-dark"></div></div>
-						<div class="bg-placeholder bg-placeholder-dark placeholder col-12"><div class="activity activity-dark"></div></div>
-						<div class="bg-placeholder bg-placeholder-dark placeholder col-12"><div class="activity activity-dark"></div></div>
-						<div class="bg-placeholder bg-placeholder-dark placeholder col-12"><div class="activity activity-dark"></div></div>
-						<div class="bg-placeholder bg-placeholder-dark placeholder col-12"><div class="activity activity-dark"></div></div>
-						<div class="bg-placeholder bg-placeholder-dark placeholder col-12"><div class="activity activity-dark"></div></div>
-					</div>
-				</div>				
-			</div>
-			
-			{category_container}
-			
-		</div>
     
                 
  
@@ -639,7 +553,6 @@
   <script src="https://static.msystems.gr/theme_new/js/cookie.1.js"></script>
   <script src="https://static.msystems.gr/theme_new/js/theme.min.1.js"></script>
   <script src="https://static.msystems.gr/theme_new/js/mstheme.min.1.js"></script>
-  <script src="../script.js" defer></script>
   <script src="https://static.msystems.gr/theme_new/js/quick_view2.2.js"></script>
   </body>
 </body>

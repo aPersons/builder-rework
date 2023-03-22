@@ -1,6 +1,5 @@
 import json
 
-demo = True
 
 def crNumberInput(cat, prod):
   res = ""
@@ -40,7 +39,7 @@ def crProdList(cat):
 <input type="{btn_type}" class="{type_class}" id="{prod_code}" name="{cat_code}{type_ism}" value="{prod_val}"{prod_erp}>
 <label class="listed-part" for="{prod_code}">
   <div class="part-img">
-    <img class="prod-img" src="{demopage}img/{prod_code}.jpg" width="100%">
+    <img class="prod-img" src="img/{prod_code}.jpg" width="100%">
   </div>
   <div class="part-text">
     <div class="part-text-head fs-xs">
@@ -57,7 +56,6 @@ def crProdList(cat):
       prod_val = prod["prod-code"] if prod["prod-erp"] != "-" else "0",
       cat_code = cat["cat-code"],
       prod_erp = f' data-erp="{prod["prod-erp"]}"' if prod["prod-erp"] != "-" else "",
-      demopage = "../" if demo else "",
       prod_name = prod["prod-name"],
       number_input = crNumberInput(cat, prod),
       prod_price = prod["prod-price"],
@@ -78,7 +76,7 @@ def crCat(cat):
 <div class="builder-part-category{isHidden}" id="{catId}">
   <div class="part-category-header">
     <div class="part-category-bar">{catName}</div>
-    <div class="part-category-img"><img src="{demopage}img/cat29-prod0.jpg"></div>
+    <div class="part-category-img"><img src="img/cat29-prod0.jpg"></div>
     <div class="part-category-details"></div>
   </div>
   <div class="catCollapsible">
@@ -89,7 +87,6 @@ def crCat(cat):
 </div>""".format(
     isHidden = " d-none" if "hide-cat" in cat else "",
     catId = cat["cat-code"],
-    demopage = "../" if demo else "",
     catName = cat["cat-name"],
     description = "" if cat["cat-desc"] == "$blank" else f'<div class="part-category-description fs-md">{cat["cat-desc"]}</div>',
     prodlist = crProdList(cat)
@@ -118,7 +115,7 @@ def crContent():
 
 with open("product-list.json","r",encoding="UTF-8") as rawjson:
     prodlist = json.loads(rawjson.read())
-with open(f'{"../demoPage/" if demo else ""}index-template.html',"r",encoding="UTF-8") as readtemp:
+with open("index-template.html","r",encoding="UTF-8") as readtemp:
     # results = readtemp.read().format(
     #   category_container = crContent(),
     #   quick_view_modal = ""
@@ -126,5 +123,5 @@ with open(f'{"../demoPage/" if demo else ""}index-template.html',"r",encoding="U
     results = readtemp.read()
     results = results.replace("{category_container}", crContent())
     results = results.replace("{quick_view_modal}", "")
-with open(f'../{"demoPage/" if demo else ""}index.html',"w",encoding="UTF-8") as out:
+with open("../index.html","w",encoding="UTF-8") as out:
     out.write(results)
