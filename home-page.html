@@ -19,45 +19,7 @@
 </head>
 <body class="alt-dark">
 
-  <!-- modal start -->
-  <div class="modal fade" id="build-modal" tabindex="-1">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title"><img src="https://static.msystems.gr/images/logo_2020.png"></h5>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-				</div>
-				<div class="modal-body">
-					<div class="modal-table fs-sm">
-						
-							<div class="bg-placeholder placeholder col-12"><div class="activity"></div></div>
-							<div class="bg-placeholder placeholder col-12"><div class="activity"></div></div>
-							<div class="bg-placeholder placeholder col-12"><div class="activity"></div></div>
-							<div class="bg-placeholder placeholder col-12"><div class="activity"></div></div>
-							<div class="bg-placeholder placeholder col-12"><div class="activity"></div></div>
-							<div class="bg-placeholder placeholder col-12"><div class="activity"></div></div>
-							<div class="bg-placeholder placeholder col-12"><div class="activity"></div></div>
-						
-					</div>
-				</div>
-				<div class="modal-footer">
-					<div class="footer-interface">
-						<div class="btns">
-							<button class="btn btn-primary btn-copy-link" title="Αντιγραφή συνδέσμου στο Clipboard"><i class="bi bi-paperclip"></i></button>
-							<button class="btn btn-success btn-print-pg" onclick="window.print()" title="Εκτύπωση"><i class="bi bi-printer"></i></button>
-						</div>
-						<span class="footer-text">Για να αποθηκεύσετε το σύστημα με τις επιλογές που έχετε κάνει αποθηκεύστε τον παρακάτω σύνδεσμο:</span>
-						<div class="footer-link-body">
-							<div class="bg-placeholder placeholder col-12"><div class="activity"></div></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-  <!-- modal end -->
 
-  {quick_view_modal}
 
 <main class="page-wrapper d-print-none">
   <header>
@@ -264,114 +226,98 @@
 
   <!-- Content Starts Here -->
 
-
-
-  <div class="cont-descr mb-5">
-    <div class="desc-item pt-5 pb-4" style="background: 20% 2%/ 101% no-repeat url(https://www.intel.com/content/dam/www/central-libraries/us/en/images/2022-08/rpl-2022-dotcom-multiasset-corelineup.png.rendition.intel.web.1920.1080.png);">
-      <div class="container">
+  <style type="text/css">
+    .tns-carousel [data-controls] {
+      background-color: #fff !important;
+      color: #000 !important;
+      width: 2.25rem !important;
+      height: 2.25rem !important;
+      line-height: 2.25rem !important;
+    }
+    .tns-nav {
+      background-color: #000 !important;
+    }
+  </style>
+  <div class="container">
+    <div class="row main-row text-black">
+      <div class="col-12">
         <div class="row">
-          <div class="align-content-center align-items-center col-md-6 d-flex justify-content-center order-md-2">
-            <div>
-              <h4 class="text-center">Intel eπεξεργαστές 13ης γενιάς</h4>
-              <p class="text-center fs-sm">Με συχνότητες λειτουργίας που αγγίζουν τα 5.80GHz out of the box οι επεξεργαστές 13ης γενίας Intel διαθέτουν ως 8 Performance cores οι οποίοι είναι υπεύθυνοι για την διαχείρηση single threaded και gaming εφαρμογών ενώ την πολύ επιθυμητή διαχείρηση του multitasking αναλαμβάνουν την διαχείρηση οι εως και 16 Efficient cores. Εύκολο overclocking ακόμα και για αρχάριους χάρη στο Intel Extreme Tuning Utility με κάθε ξεκλείδωτο επεξεργαστή 13ης γενίας Intel.</p>
+          <div id="myCarousel" class="tns-carousel tns-nav-enabled border-bottom p-0">
+            <div class="tns-carousel-inner" data-carousel-options='{"autoplay": true}'>
+              <a href="/syspage/rtx-redfall-bite-back-edition">
+                <img src="https://static.msystems.gr/images/spot/new/redfall_rtx_bundle.jpg">
+              </a>
+              <a href="/syspage/amd-swjs-bundle">
+                <img src="https://static.msystems.gr/images/spot/new/amd_swjs_bundle.jpg">
+              </a>
+              <a href="/syspage/amd-coh3-bundle">
+                <img src="https://static.msystems.gr/images/spot/new/amd_coh3_bundle.jpg">
+              </a>
+              <a href="/syspage/powered-by-corsair-icue-msystems-pcs">
+                <img src="https://static.msystems.gr/images/spot/new/corsair_icue.jpg">
+              </a>
             </div>
-          </div>    
-          <div class="align-content-center align-items-center col-md-6 d-flex justify-content-center">
-            <div>
-              <p class="text-center"><img class="img-responsive rounded" src="https://static.msystems.gr/systems/images/intel_13th_gen.jpg"></p>
-            </div>
+          </div>			</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="desc-item pt-5 pb-4" style="background: center / cover no-repeat url(https://static.msystems.gr/systems/images/rtx_4000_bg_2.jpg);">
+    <div class="container">
+      <div class="row">
+        <div class="align-content-center align-items-center col-md-6 d-flex justify-content-center order-md-2">
+          <div>
+            <h4 class="text-center">Gaming PCs</h4>
+            <p class="text-center fs-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce congue orci at finibus mollis. Phasellus scelerisque vehicula magna non porta. Nullam non varius est. Etiam non malesuada sapien. Cras vitae congue quam. Mauris metus neque, semper et fringilla ut, tincidunt eu ex. Fusce ut placerat magna.</p>
+            <div class="text-center w-100 d-block"><a class="btn btn-success btn-sm mt-2 fw-bold" href="https://www.msystems.gr/section/systems_new/?&amp;system=62&amp;spec_level=1"><i class="ci-settings me-2"></i>Περισσότερα...</a></div>
+          </div>
+        </div>    
+        <div class="align-content-center align-items-center col-md-6 d-flex justify-content-center">
+          <div>
+            <p class="text-center"><img class="img-responsive rounded" src="https://static.msystems.gr/systems/images/intel_13th_gen.jpg"></p>
           </div>
         </div>
       </div>
     </div>
-
-
-
-    <div class="desc-item pt-5 pb-4" style="background: left / cover no-repeat url(https://cwsmgmt.corsair.com/pdp/k70-mini-wireless/k70-tri-hex-bg.jpg);">
-      <div class="container">
-        <div class="row">
-          <div class="align-content-center align-items-center col-md-6 d-flex justify-content-center">
-            <div>
-              <h4 class="text-center">RAM DDR4</h4>
-              <p class="text-center fs-sm">Μνήμες RAM από 4GB ως 256GB χωρητικότητα και συχνότητα λειτουργίας 2666Mhz ως 5333Mhz.</p>
-            </div>
-          </div>    
-          <div class="align-content-center align-items-center col-md-6 d-flex justify-content-center">
-            <div>
-              <p class="text-center"><img class="img-responsive rounded" src="https://static.msystems.gr/systems/images/ddr4_ram.jpg"></p>
-            </div>
+  </div>
+  
+  <div class="desc-item pt-5 pb-4" style="background: left / cover no-repeat url(https://cwsmgmt.corsair.com/pdp/k70-mini-wireless/k70-tri-hex-bg.jpg);">
+    <div class="container">
+      <div class="row">
+        <div class="align-content-center align-items-center col-md-6 d-flex justify-content-center">
+          <div>
+            <h4 class="text-center">Business PCs</h4>
+            <p class="text-center fs-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce congue orci at finibus mollis. Phasellus scelerisque vehicula magna non porta. Nullam non varius est. Etiam non malesuada sapien. Cras vitae congue quam. Mauris metus neque, semper et fringilla ut, tincidunt eu ex. Fusce ut placerat magna.</p>
+            <div class="text-center w-100 d-block"><a class="btn btn-success btn-sm mt-2 fw-bold" href="https://www.msystems.gr/section/systems_new/?&amp;system=62&amp;spec_level=1"><i class="ci-settings me-2"></i>Περισσότερα...</a></div>
+          </div>
+        </div>    
+        <div class="align-content-center align-items-center col-md-6 d-flex justify-content-center">
+          <div>
+            <p class="text-center"><img class="img-responsive rounded" src="https://static.msystems.gr/systems/images/ddr4_ram.jpg"></p>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="collapse" id="cont-descr-collapse">
-
-      <script>
-        let contDescrCollape = document.querySelector("#cont-descr-collapse");
-
-        if (contDescrCollape.classList.contains("show")) contDescrCollape.previousElementSibling.classList.remove("show-partial");
-        else contDescrCollape.previousElementSibling.classList.add("show-partial");
-
-        contDescrCollape.addEventListener("show.bs.collapse", function() {
-          this.previousElementSibling.classList.remove("show-partial");
-        })
-        contDescrCollape.addEventListener("hide.bs.collapse", function() {
-          this.previousElementSibling.classList.add("show-partial");
-        })
-      </script>
-
-      <div class="desc-item pt-5 pb-4" style="background-color: #00ff005c;">
-        <div class="container">
-          <div class="row">
-            <div class="align-content-center align-items-center col-md-6 d-flex justify-content-center order-md-2">
-              <div>
-                <h4 class="text-center">Nvidia RTX 3000 Series</h4>
-                <p class="text-center fs-sm">Το Ray Tracing 2ης γενίας και το NVIDIA DLSS είναι δύο κύρια χαρακτηριστικά των GeForce RTX 30 Series τα οποία παρέχουν ρεαλιστικό gameplay και αυξημένες επιδόσεις χάρη στο AI της NVIDIA. Η σύγκριση κόστος/επίδοσή τους, τις καθιστούν ως "must have" τόσο για gaming αλλά και για content creation. Το NVIDIA Reflex σε συνδιασμό με ένα G-SYNC monitor "εκμιδενίζει" το χρόνο καθυστέρησης του συστήματός σου στους πιο δημοφιλής τίτλους παιχνιδιών. 
-                </p>
-              </div>
-            </div>    
-            <div class="align-content-center align-items-center col-md-6 d-flex justify-content-center">
-              <div>
-                <p class="text-center"><img class="img-responsive rounded" src="https://static.msystems.gr/systems/images/rtx_3000_series.jpg"></p>
-              </div>
-            </div>
+  <div class="desc-item pt-5 pb-4" style="background: left / cover no-repeat url(https://cwsmgmt.corsair.com/pdp/k70-mini-wireless/k70-tri-hex-bg.jpg);">
+    <div class="container">
+      <div class="row">
+        <div class="align-content-center align-items-center col-md-6 d-flex justify-content-center order-md-1">
+          <div>
+            <h4 class="text-center">Workstation PCs</h4>
+            <p class="text-center fs-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce congue orci at finibus mollis. Phasellus scelerisque vehicula magna non porta. Nullam non varius est. Etiam non malesuada sapien. Cras vitae congue quam. Mauris metus neque, semper et fringilla ut, tincidunt eu ex. Fusce ut placerat magna.</p>
+            <div class="text-center w-100 d-block"><a class="btn btn-success btn-sm mt-2 fw-bold" href="https://www.msystems.gr/section/systems_new/?&amp;system=62&amp;spec_level=1"><i class="ci-settings me-2"></i>Περισσότερα...</a></div>
           </div>
-        </div>
-      </div>
-
-      <div class="desc-item pt-5 pb-4" >
-        <div class="container">
-          <div class="row">
-            <div class="align-content-center align-items-center col-md-6 d-flex justify-content-center">
-              <div>
-                <h4 class="text-center">NVMe Gen 3</h4>
-                <p class="text-center fs-sm">Άφησε στο παρελθόν τις αργές ταχύτητες μεταφοράς με πρωτόκολλο SATA επιλέγοντας έναν NVMe δίσκο με δίαυλο επικοινωνίας PCIe 3.0 και ταχύτητες μεταφοράς ως και 3500Mb/s.
-                </p>
-              </div>
-            </div>
-          <div class="align-content-center align-items-center col-md-6 d-flex justify-content-center">
-            <div>
-              <p class="text-center"><img class="img-responsive rounded" src="https://static.msystems.gr/systems/images/nvme_gen3.jpg"></p>
-            </div>
-          </div>
+        </div>    
+        <div class="align-content-center align-items-center col-md-6 d-flex justify-content-center">
+          <div>
+            <p class="text-center"><img class="img-responsive rounded" src="https://static.msystems.gr/systems/images/ddr4_ram.jpg"></p>
           </div>
         </div>
       </div>
     </div>
-
-
-    
-                
- 
-		
-              
-        
-                  
-		
-              
-
-  </div> 
+  </div>
   
   <!-- Content Ends Here -->
   <footer class="pt-5">
