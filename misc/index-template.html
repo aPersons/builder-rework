@@ -312,23 +312,38 @@
             </li>
           </ul>
           <div class="navbar-toolbar d-flex flex-shrink-0 align-items-center">
-						<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft"><span class="navbar-toggler-icon"></span></button>
             <div class="navbar-tool me-2 d-none d-lg-flex" id="top_cart">
               <a class="navbar-tool-icon-box bg-dark text-white" href="/section/basket">
-                <span class="navbar-tool-label bg-danger">0</span>
                 <i class="navbar-tool-icon ci-cart"></i>
               </a>
-              <!-- <a class="navbar-tool-text" href="/section/basket"><small>Καλάθι</small><strong>0,00 €</strong></a> -->
             </div>
-            <div class="d-flex d-lg-none flex-column align-items-start">
-              <div class="d-flex d-lg-none align-items-center">
-                <div class="bg-white px-2 py-1 btn pe-3" style="cursor: initial; margin-right: -0.7rem;"><strong><span class="build-price-total">343,80</span> €</strong></div>
-                <a class="navbar-tool-icon-box" style="background-color: var(--bg-green-30); color:var(--txt-white-80)" href="#">
-                  <i class="navbar-tool-icon ci-cart"></i>
-                </a>
+            <div class="btn-group fs-sm d-lg-none" role="group" aria-label="Pill solid button group">
+              <button class="btn btn-primary fs-sm p-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft" type="button" style="
+                background-color: var(--bg-gray-25);
+                border-color: var(--bg-gray-25);
+                border-right: 2px solid var(--bg-gray-20);
+              ">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <button class="btn btn-primary fs-sm p-2" type="button" data-bs-toggle="modal" data-bs-target="#build-modal" style="
+                background-color: var(--bg-gray-25);
+                border-color: var(--bg-gray-25);
+              ">
+                Σύνοψη
+              </button>
+
+              <div class="fs-sm p-2" style="
+                background-color: #fff;
+                color: #000;
+                /* border-radius: 5px 0 0 5px; */
+                line-height: 1.5rem;
+              ">
+                1818,50 €
               </div>
-              <button type="button" class="btn btn-primary d-block flex-grow-1" data-bs-toggle="modal" data-bs-target="#build-modal" style="margin-top: -0.3rem; width: 88%; padding: 0.1rem">
-                <strong>Σύνοψη</strong>
+
+              <button class="btn btn-success fs-sm py-2 px-3" type="button">
+                <i class="navbar-tool-icon ci-cart" style="line-height: 1;"></i>
               </button>
             </div>
           </div>
