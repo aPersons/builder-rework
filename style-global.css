@@ -236,8 +236,27 @@ body.alt-dark {
   padding-top: 10%;
 }
 
+.navbar-toolbar .btn-group > :nth-child(1) {
+  background-color: var(--bg-gray-25);
+  border-color: var(--bg-gray-25);
+  border-right: 2px solid var(--bg-gray-20);
+  transition: 0.25s;
+}
+.navbar-toolbar .btn-group > :nth-child(2) {
+  background-color: var(--bg-gray-25);
+  border-color: var(--bg-gray-25);
+  transition: 0.25s;
+}
+.navbar-toolbar .btn-group > :nth-child(2-n):hover {
+  background-color: var(--bg-gray-20);
+  border-color: var(--bg-gray-20);
 
-
+}
+.navbar-toolbar .btn-group > :nth-child(3) {
+  background-color: var(--bg-gray-100);
+  color: var(--txt-black-80);
+  line-height: 1.5rem;
+}
 
 .offcanvas-header {
   background-color: var(--bg-gray-25);
