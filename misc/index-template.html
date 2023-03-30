@@ -414,108 +414,141 @@
 
 
   <div class="cont-descr mb-5">
-    <div class="desc-item pt-5 pb-4" style="background: 20% 2%/ 101% no-repeat url(https://www.intel.com/content/dam/www/central-libraries/us/en/images/2022-08/rpl-2022-dotcom-multiasset-corelineup.png.rendition.intel.web.1920.1080.png);">
-      <div class="container">
-        <div class="row">
-          <div class="align-content-center align-items-center col-md-6 d-flex justify-content-center order-md-2">
-            <div>
-              <h4 class="text-center">Intel eπεξεργαστές 13ης γενιάς</h4>
-              <p class="text-center fs-sm">Με συχνότητες λειτουργίας που αγγίζουν τα 5.80GHz out of the box οι επεξεργαστές 13ης γενίας Intel διαθέτουν ως 8 Performance cores οι οποίοι είναι υπεύθυνοι για την διαχείρηση single threaded και gaming εφαρμογών ενώ την πολύ επιθυμητή διαχείρηση του multitasking αναλαμβάνουν την διαχείρηση οι εως και 16 Efficient cores. Εύκολο overclocking ακόμα και για αρχάριους χάρη στο Intel Extreme Tuning Utility με κάθε ξεκλείδωτο επεξεργαστή 13ης γενίας Intel.</p>
-            </div>
-          </div>    
-          <div class="align-content-center align-items-center col-md-6 d-flex justify-content-center">
-            <div>
-              <p class="text-center"><img class="img-responsive rounded" src="https://static.msystems.gr/systems/images/intel_13th_gen.jpg"></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+		<div class="desc-item pt-5 pb-4" style="background: center / cover url(https://static.msystems.gr/systems/images/icue_bg_1.jpg);">
+			<div class="container">
+				<div class="row" style="min-height: 30rem;">
+					<div class="align-content-center align-items-center col-md-6 d-flex justify-content-center order-md-2">
+						<div>
+							<h4 class="text-center">iCUE Certified Partner</h4>
+							<p class="text-center fs-sm">Σε συνεργασία με την Corsair σας παρουσιάζουμε τα iCUE Systems. Αποκτήστε τον πλήρη έλεγχο ολόκληρου του setup σας με το λογισμικό iCUE και δημιουργήστε ένα καθηλωτικό αποτέλεσμα.</p>
+						</div>
+					</div>
 
+					<div class="align-content-center align-items-center col-md-6 d-flex justify-content-center">
+						<div>
+							<p class="text-center"><img class="img-responsive rounded" src="https://static.msystems.gr/systems/images/icue_partner.jpg"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="desc-item pt-5 pb-4 show-partial" style="background: center / cover url(https://static.msystems.gr/systems/images/ryzen_bg_1.jpg);">
+			<div class="container">
+				<div class="row" style="min-height: 30rem;">
+					<div class="align-content-center align-items-center col-md-6 d-flex justify-content-center">
+						<div>
+							<h4 class="text-center">Ryzen 7000 Series CPU</h4>
+							<p class="text-center fs-sm">Εξοπλισμένοι με εώς και 16 φυσικούς πυρήνες, ως 32 Threads και συχνότητες λειτουργίας που αγγίζουν ακόμα και τα 5.7GHz out of the box οι επεξεργαστές Ryzen της σειράς 7000 ήρθαν για να ανταπεξέλθουν σε οποιοδήποτε πιθανό task τους ζητηθεί. Συνοδευόμενοι από την τεχνολογία Precision Boost 2 προσφέρουν έξυπνο, εύκολο και αποδοτικό overclock του επεξεργαστή. Είτε πρόκειται για Gaming, video editing ή ακόμα και 3d rendering οι επιδόσεις των Ryzen 7000 είναι κορυφαίες.</p>
+						</div>
+					</div>
 
+					<div class="align-content-center align-items-center col-md-6 d-flex justify-content-center">
+						<div>
+							<p class="text-center"><img class="img-responsive rounded" src="https://static.msystems.gr/systems/images/ryzen_7000.jpg"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<div class="collapse" id="cont-descr-collapse" style="">
 
-    <div class="desc-item pt-5 pb-4" style="background: left / cover no-repeat url(https://cwsmgmt.corsair.com/pdp/k70-mini-wireless/k70-tri-hex-bg.jpg);">
-      <div class="container">
-        <div class="row">
-          <div class="align-content-center align-items-center col-md-6 d-flex justify-content-center">
-            <div>
-              <h4 class="text-center">RAM DDR4</h4>
-              <p class="text-center fs-sm">Μνήμες RAM από 4GB ως 256GB χωρητικότητα και συχνότητα λειτουργίας 2666Mhz ως 5333Mhz.</p>
-            </div>
-          </div>    
-          <div class="align-content-center align-items-center col-md-6 d-flex justify-content-center">
-            <div>
-              <p class="text-center"><img class="img-responsive rounded" src="https://static.msystems.gr/systems/images/ddr4_ram.jpg"></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+		<script>
+			let contDescrCollape = document.querySelector("#cont-descr-collapse");
 
-    <div class="collapse" id="cont-descr-collapse">
+			if (contDescrCollape.classList.contains("show")) contDescrCollape.previousElementSibling.classList.remove("show-partial");
+			else contDescrCollape.previousElementSibling.classList.add("show-partial");
 
-      <script>
-        let contDescrCollape = document.querySelector("#cont-descr-collapse");
+			contDescrCollape.addEventListener("show.bs.collapse", function() {
+			  this.previousElementSibling.classList.remove("show-partial");
+			})
+			contDescrCollape.addEventListener("hide.bs.collapse", function() {
+			  this.previousElementSibling.classList.add("show-partial");
+			})
+		</script>
+		<div class="desc-item pt-5 pb-4" style="background: center / cover url(https://static.msystems.gr/systems/images/amd_chipset_1.jpg);">
+			<div class="container">
+				<div class="row" style="min-height: 30rem;">
+					<div class="align-content-center align-items-center col-md-6 d-flex justify-content-center order-md-2">
+						<div>
+							<h4 class="text-center">X670E Motherboard</h4>
+							<p class="text-center fs-sm">Μητρικές με chipset X670E, θύρες μνήμης DDR5 και θύρες PCIe 5.0 ήρθαν για να απογειώσουν την gaming εμπειρία σου ακόμα και στους πιο απαιτίτηκους τίτλους. "Ξεκλείδωσε" νέα υψηλότερα frame rates και smooth gameplay στα αγαπημένα σου παιχνίδια με αστραποιαίες συχνότητες λειτουργίας των RAM σου χάρη στην τεχνολογία AMD Expo.</p>
+						</div>
+					</div>
 
-        if (contDescrCollape.classList.contains("show")) contDescrCollape.previousElementSibling.classList.remove("show-partial");
-        else contDescrCollape.previousElementSibling.classList.add("show-partial");
+					<div class="align-content-center align-items-center col-md-6 d-flex justify-content-center">
+						<div>
+							<p class="text-center"><img class="img-responsive rounded" src="https://static.msystems.gr/systems/images/x670e.jpg"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="desc-item pt-5 pb-4" style="background: center / cover url(https://static.msystems.gr/systems/images/ddr5_bg_1.jpg);">
+			<div class="container">
+				<div class="row" style="min-height: 30rem;">
+					<div class="align-content-center align-items-center col-md-6 d-flex justify-content-center">
+						<div>
+							<h4 class="text-center">RAM DDR5</h4>
+							<p class="text-center fs-sm">Η τελευταία γενιά μνημών με συχνότητες λειτουργίας από 4800Mhz ως 8000Mhz και μέγιστη χωριτηκότητα 128GB.
+Μνήμες τελευταίας γενιάς με συχνότητες λειτουργίας από 4800Mhz ως 8000Mhz και μέγιστη χωριτηκότητα 128GB.
+</p>
+						</div>
+					</div>
 
-        contDescrCollape.addEventListener("show.bs.collapse", function() {
-          this.previousElementSibling.classList.remove("show-partial");
-        })
-        contDescrCollape.addEventListener("hide.bs.collapse", function() {
-          this.previousElementSibling.classList.add("show-partial");
-        })
-      </script>
+					<div class="align-content-center align-items-center col-md-6 d-flex justify-content-center">
+						<div>
+							<p class="text-center"><img class="img-responsive rounded" src="https://static.msystems.gr/systems/images/ddr5_ram.jpg"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="desc-item pt-5 pb-4" style="background: center / cover url(https://static.msystems.gr/systems/images/rtx_4000_bg_2.jpg);">
+			<div class="container">
+				<div class="row" style="min-height: 30rem;">
+					<div class="align-content-center align-items-center col-md-6 d-flex justify-content-center order-md-2">
+						<div>
+							<h4 class="text-center">Nvidia RTX 4000 Series</h4>
+							<p class="text-center fs-sm">Η νέα σειρά καρτών γραφικών της NVIDIA - GeForce RTX 40 Series προσφέρει το μέγιστο performance σε περιβάλλον gaming αλλά και content creation. Απολαύστε απίστευτα λεπτομερή εικόνα και ιδιαίτερα υψηλά frame rates ακόμα και στους πιο απαιτητικούς τίτλους παιχνιδιών χάρη στην τεχνολογία NVIDIA DLSS 3 και NVIDIA Ray Tracing. Απέκτησε πλεονέκτημα απέναντι στους αντιπάλους σου έχοντας μηδαμινό χρόνο απόκρισης με το NVIDIA Reflex.
+</p>
+						</div>
+					</div>
 
-      <div class="desc-item pt-5 pb-4" style="background-color: #00ff005c;">
-        <div class="container">
-          <div class="row">
-            <div class="align-content-center align-items-center col-md-6 d-flex justify-content-center order-md-2">
-              <div>
-                <h4 class="text-center">Nvidia RTX 3000 Series</h4>
-                <p class="text-center fs-sm">Το Ray Tracing 2ης γενίας και το NVIDIA DLSS είναι δύο κύρια χαρακτηριστικά των GeForce RTX 30 Series τα οποία παρέχουν ρεαλιστικό gameplay και αυξημένες επιδόσεις χάρη στο AI της NVIDIA. Η σύγκριση κόστος/επίδοσή τους, τις καθιστούν ως "must have" τόσο για gaming αλλά και για content creation. Το NVIDIA Reflex σε συνδιασμό με ένα G-SYNC monitor "εκμιδενίζει" το χρόνο καθυστέρησης του συστήματός σου στους πιο δημοφιλής τίτλους παιχνιδιών. 
-                </p>
-              </div>
-            </div>    
-            <div class="align-content-center align-items-center col-md-6 d-flex justify-content-center">
-              <div>
-                <p class="text-center"><img class="img-responsive rounded" src="https://static.msystems.gr/systems/images/rtx_3000_series.jpg"></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+					<div class="align-content-center align-items-center col-md-6 d-flex justify-content-center">
+						<div>
+							<p class="text-center"><img class="img-responsive rounded" src="https://static.msystems.gr/systems/images/rtx_4000_series.jpg"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="desc-item pt-5 pb-4" style="background: center / cover url(https://static.msystems.gr/systems/images/ssd_bg_1.jpg);">
+			<div class="container">
+				<div class="row" style="min-height: 30rem;">
+					<div class="align-content-center align-items-center col-md-6 d-flex justify-content-center">
+						<div>
+							<h4 class="text-center">NVME Gen 4</h4>
+							<p class="text-center fs-sm">Παρέχοντας ασυναγώνιστες ταχύτητες μεταφοράς εώς και 7300Mb/s οι NVMe gen 4 είναι το γρηγορότερο, πιο εξελιγμένο μέσω αποθήκευσης.
+</p>
+						</div>
+					</div>
 
-      <div class="desc-item pt-5 pb-4" >
-        <div class="container">
-          <div class="row">
-            <div class="align-content-center align-items-center col-md-6 d-flex justify-content-center">
-              <div>
-                <h4 class="text-center">NVMe Gen 3</h4>
-                <p class="text-center fs-sm">Άφησε στο παρελθόν τις αργές ταχύτητες μεταφοράς με πρωτόκολλο SATA επιλέγοντας έναν NVMe δίσκο με δίαυλο επικοινωνίας PCIe 3.0 και ταχύτητες μεταφοράς ως και 3500Mb/s.
-                </p>
-              </div>
-            </div>
-          <div class="align-content-center align-items-center col-md-6 d-flex justify-content-center">
-            <div>
-              <p class="text-center"><img class="img-responsive rounded" src="https://static.msystems.gr/systems/images/nvme_gen3.jpg"></p>
-            </div>
-          </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-
-    <div class="d-flex justify-content-center position-relative" style="margin-top:-1rem;">
-      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#cont-descr-collapse" aria-expanded="false" aria-controls="Description Collapse">
-      <span class="clps-a">Show More...</span>
-      <span class="clps-b">Show Less...</span>
-      </button>
-    </div>
-  </div>
+					<div class="align-content-center align-items-center col-md-6 d-flex justify-content-center">
+						<div>
+							<p class="text-center"><img class="img-responsive rounded" src="https://static.msystems.gr/systems/images/nvme_gen4.jpg"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="d-flex justify-content-center position-relative" style="margin-top:-1rem;">
+		<button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cont-descr-collapse" aria-expanded="false" aria-controls="Description Collapse">
+			<span class="clps-a">Περισσότερα <i class="bi bi-caret-down-fill"></i></span>
+			<span class="clps-b">Λιγότερα <i class="bi bi-caret-up-fill"></i></span>
+		</button>
+	</div>
+</div>
     
   <div class="container pb-md-4 builder-body-container">  
     <div class="row cont-body">
