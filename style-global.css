@@ -167,7 +167,7 @@ body.alt-dark {
   background-color: var(--bg-gray-20);  
 }
 .navbar-expand-lg .navbar-nav .dropdown-menu {
-  background-color: var(--bg-gray-10);
+  background-color: var(--bg-gray-5);
 }
 .navbar-expand-lg .navbar-nav .dropdown-menu .border-bottom {
   border-bottom: 1px solid var(--bg-gray-20)!important;
