@@ -1244,6 +1244,7 @@ let buildSummary = {
 
 
   catList: [
+    ["Barebone", false],
     ["Επεξεργαστής", false],
     ["Μητρική", false],
     ["Κάρτα Γραφικών", false],
