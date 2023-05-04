@@ -1396,6 +1396,7 @@ bModal = {
         if(request.status >= 400) throw new Error(`Response status: ${request.status}`);
         const getjson = await request.json()
         bModal.qLink = `www.msystems.gr/surl/${getjson["surl"]}`;
+        bModal.footerLinkBody.textContent = bModal.qLink;
       } catch(err) {
         console.log(err);
       }
@@ -1478,7 +1479,7 @@ document.addEventListener("DOMContentLoaded", function() {
   bTK.crHeadSel();
   bTK.crCatDetails();
   bTK.crCatIMG();
-  // build.crBuilldIMG();
+  build.crBuilldIMG();
   
   pr.crFinalPrice();
   nav.crProdNav();
