@@ -867,23 +867,33 @@ let bTK = {
 let build = {
 
   async getAltIMG(pnm, pob) {
-    try {  
-      const request = await fetch(
-        `https://static.msystems.gr/photos/big_photos/${pob.value}.sys.jpg`, {
-        }
-      )
-      if(request.status >= 300) {
-        pob.imgAlt = false;
-      } else {
-        const getimg = await request.blob();
-        pob.imgAlt = [URL.createObjectURL(getimg), getimg];
-  
-        let ob = domCashe.dom["cat0"];
-  
-        if (ob.prodType == "radio") {
-          if (ob.prodSelected == pnm) build.bIMG.src = pob.imgAlt[0];
-        } else if (ob.prodType == "checkbox") {
-          if (ob.prodSelected[0] == pnm) build.bIMG.src = pob.imgAlt[0];
+    try {
+      let p_id = new FormData();
+      p_id.append("product_id", pob.value);        
+      const pre_request = await fetch(
+        'https://www.msystems.gr/google/sysphotos.php', {
+        method: 'POST',
+        body: p_id
+      })
+      const jsn = await pre_request.json();
+
+      if (jsn.success && jsn.found) {
+        const request = await fetch(
+          `https://static.msystems.gr/photos/big_photos/${pob.value}.sys.jpg`
+        )
+        if(request.status >= 300) {
+          pob.imgAlt = false;
+        } else {
+          const getimg = await request.blob();
+          pob.imgAlt = [URL.createObjectURL(getimg), getimg];
+    
+          let ob = domCashe.dom["cat0"];
+    
+          if (ob.prodType == "radio") {
+            if (ob.prodSelected == pnm) build.bIMG.src = pob.imgAlt[0];
+          } else if (ob.prodType == "checkbox") {
+            if (ob.prodSelected[0] == pnm) build.bIMG.src = pob.imgAlt[0];
+          }
         }
       }
     } catch(err) {
@@ -1374,26 +1384,22 @@ bModal = {
     bModal.linkFull = linktext;
     bModal.qLink = bModal.linkFull;
 
-    // (async () => {
-    //   try {  
-    //     const request = await fetch(
-    //       'https://api-ssl.bitly.com/v4/shorten',{
-    //       method: 'POST',
-    //       headers: {
-    //         'Authorization': `Bearer ${gettoken}`,
-    //         'Content-Type': 'application/json'
-    //       },
-    //       body: JSON.stringify({ "long_url": bModal.linkFull})
-    //     })        
-    //     if(request.status >= 400) throw new Error(`Response status: ${request.status}`);
-    //     const getjson = await request.json()
-    //     bModal.qLink = getjson["link"];
-    //   } catch(err) {
-    //     console.log(err);
-    //   }
-    // })()
-
-    bModal.footerLinkBody.textContent = bModal.qLink;
+    (async () => {
+      try {
+        let lurl = new FormData();
+        lurl.append("lurl", bModal.linkFull);
+        const request = await fetch(
+          'https://www.msystems.gr/google/surl.php',{
+          method: 'POST',
+          body: lurl
+        })        
+        if(request.status >= 400) throw new Error(`Response status: ${request.status}`);
+        const getjson = await request.json()
+        bModal.qLink = `www.msystems.gr/surl/${getjson["surl"]}`;
+      } catch(err) {
+        console.log(err);
+      }
+    })()
   },
   
   buildShortLink: function(evArgs) {
