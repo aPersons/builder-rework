@@ -1400,6 +1400,8 @@ bModal = {
         console.log(err);
       }
     })()
+
+    bModal.footerLinkBody.textContent = bModal.qLink;
   },
   
   buildShortLink: function(evArgs) {
