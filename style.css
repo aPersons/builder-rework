@@ -496,40 +496,44 @@
   overflow-wrap: break-word;
   width: calc(100% - 0.5rem);
 }
-#build-modal .modal-footer .btns {
-  padding-left: 0.25rem;
-  padding-bottom: 0.25rem;
-  margin-top: -0.5rem;
-  margin-right: 0;
-  float: right;
+
+#build-modal .modal-footer .footer-interface .socialbtns {display: contents;}
+#build-modal .modal-footer .footer-interface .socialapi {display: none;}
+#build-modal .modal-footer .footer-interface .btns {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin-bottom: 0.5rem
 }
-#build-modal .modal-footer .btns .btn {
-  padding: 0 1rem;
-}
+
 #build-modal .modal-footer .footer-link-body {
   border-radius: 5px;
   background-color: var(--bg-gray-95);  
   padding: 0.5rem;
+  display: flex;
+  gap: 1rem;
 }
+#build-modal .modal-footer .footer-link-body .link-txt {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#build-modal .modal-footer .footer-link-body button {
+  padding: 0 1rem;
+}
+
 
 #build-modal .badge, .part-category-details .badge {
   vertical-align: middle;
 }
 
-@media only screen and (max-width: 499px) {
-  #build-modal .modal-footer .btns{
-    float: none;
-    width: fit-content;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-  }
-  #build-modal .modal-footer .footer-interface {
-    padding-bottom: 2.3rem;
-  }
+@media only screen and (max-width: 565px) {
+  #build-modal .modal-footer .footer-interface.api-enabled .footer-text {display: none;}
+  #build-modal .modal-footer .footer-interface.api-enabled .socialbtns {display: none;}
+  #build-modal .modal-footer .footer-interface.api-enabled .socialapi {display: inline-block;}
 }
 
-#build-modal .modal-table .bg-placeholder{
+#build-modal .modal-table .bg-placeholder {
   grid-column: 1 / -1;
   height: auto;
   margin-bottom: 0.5rem;

@@ -1384,23 +1384,23 @@ bModal = {
     bModal.linkFull = linktext;
     bModal.qLink = bModal.linkFull;
 
-    (async () => {
-      try {
-        let lurl = new FormData();
-        lurl.append("lurl", bModal.linkFull);
-        const request = await fetch(
-          'https://www.msystems.gr/google/surl.php',{
-          method: 'POST',
-          body: lurl
-        })        
-        if(request.status >= 400) throw new Error(`Response status: ${request.status}`);
-        const getjson = await request.json()
-        bModal.qLink = `www.msystems.gr/surl/${getjson["surl"]}`;
-        bModal.footerLinkBody.textContent = bModal.qLink;
-      } catch(err) {
-        console.log(err);
-      }
-    })()
+    // (async () => {
+    //   try {
+    //     let lurl = new FormData();
+    //     lurl.append("lurl", bModal.linkFull);
+    //     const request = await fetch(
+    //       'https://www.msystems.gr/google/surl.php',{
+    //       method: 'POST',
+    //       body: lurl
+    //     })        
+    //     if(request.status >= 400) throw new Error(`Response status: ${request.status}`);
+    //     const getjson = await request.json()
+    //     bModal.qLink = `www.msystems.gr/surl/${getjson["surl"]}`;
+    //     bModal.footerLinkBody.textContent = bModal.qLink;
+    //   } catch(err) {
+    //     console.log(err);
+    //   }
+    // })()
 
     bModal.footerLinkBody.textContent = bModal.qLink;
   },
@@ -1408,14 +1408,14 @@ bModal = {
   buildShortLink: function(evArgs) {
     try {
       navigator.clipboard.writeText(bModal.qLink);
-      bModal.btnCopy.innerHTML = '<i class="bi bi-check2"></i>';
+      bModal.btnCopy.innerHTML = '<i class="bi bi-check2"></i> Αντιγραφή';
       setTimeout(() => {
-        bModal.btnCopy.innerHTML = '<i class="bi bi-paperclip"></i>';      
+        bModal.btnCopy.innerHTML = '<i class="bi bi-paperclip"></i> Αντιγραφή';  
       },2000)
     } catch {
-      bModal.btnCopy.innerHTML = '<i class="bi bi-check2"></i>';
+      bModal.btnCopy.innerHTML = '<i class="bi bi-x-lg"></i> Αντιγραφή';
       setTimeout(() => {
-        bModal.btnCopy.innerHTML = '<i class="bi bi-x-lg"></i>';      
+        bModal.btnCopy.innerHTML = '<i class="bi bi-paperclip"></i> Αντιγραφή';  
       },2000)
     }
   },
@@ -1442,8 +1442,8 @@ bModal = {
       ntlDom.replaceChildren(ntlDom.childNodes[0], document.createTextNode(nTitle.textContent));
     }
     bModal.modalTable = mdl.querySelector(".modal-body .modal-table");
-    bModal.footerLinkBody = mdl.querySelector(".footer-link-body");
-    bModal.linkFull = "";
+    bModal.footerLinkBody = mdl.querySelector(".footer-link-body .link-txt");
+    bModal.qLink = bModal.linkFull = document.URL;
     bModal.btnCopy = mdl.querySelector(".btn-copy-link");
     bModal.btnCopy.removeEventListener("click", bModal.buildShortLinkHandler);
     bModal.btnCopy.addEventListener("click", bModal.buildShortLinkHandler);
@@ -1479,7 +1479,7 @@ document.addEventListener("DOMContentLoaded", function() {
   bTK.crHeadSel();
   bTK.crCatDetails();
   bTK.crCatIMG();
-  build.crBuilldIMG();
+  // build.crBuilldIMG();
   
   pr.crFinalPrice();
   nav.crProdNav();

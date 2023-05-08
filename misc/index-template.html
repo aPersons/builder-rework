@@ -42,15 +42,44 @@
 					</div>
 				</div>
 				<div class="modal-footer">
-					<div class="footer-interface">
-						<div class="btns">
-							<button class="btn btn-primary btn-copy-link" title="Αντιγραφή συνδέσμου στο Clipboard"><i class="bi bi-paperclip"></i></button>
-							<button class="btn btn-success btn-print-pg" onclick="window.print()" title="Εκτύπωση"><i class="bi bi-printer"></i></button>
-						</div>
-						<span class="footer-text">Για να αποθηκεύσετε το σύστημα με τις επιλογές που έχετε κάνει αποθηκεύστε τον παρακάτω σύνδεσμο:</span>
-						<div class="footer-link-body">
-							<div class="bg-placeholder placeholder col-12"><div class="activity"></div></div>
-						</div>
+					<div class="footer-interface">            
+            <span class="footer-text">Μοιράσου το:</span>
+            <div class="btns">
+              <span class="socialbtns">
+                <button class="btn btn-share btn-facebook">
+                  <i class="ci-facebook me-0"></i><span class="ms-1">Facebook</span>
+                </button>              
+                <button class="btn btn-share btn-twitter">
+                  <i class="ci-twitter me-0"></i><span class="ms-1">Twitter</span>
+                </button>               
+                <button class="btn btn-share btn-instagram">
+                  <i class="ci-mail me-0"></i><span class="ms-1">Email</span>
+                </button>
+              <!-- <script>
+                document.querySelector(".footer-interface .btn-instagram").addEventListener('click', ()=>open(
+                  `mailtp:?subject:=${document.title}&amp;body=${bModal.qLink ?? document.URL}`,
+                  "_blank"
+                ));
+              </script>                 -->
+              </span>
+              <button class="btn btn-primary btn-sm btn-share socialapi"><i class="bi bi-share-fill"></i> Μοιράσου το</button>
+              <script>
+                if (navigator.share) {
+                  document.querySelector(".footer-interface").classList.add("api-enabled");
+                  document.querySelector(".footer-interface .socialapi").addEventListener('click', ()=>navigator.share({
+                    title: document.title,
+                    url: bModal.qLink ?? document.URL
+                  }));                  
+                }
+              </script>
+              <button class="btn btn-success btn-print-pg btn-share" onclick="window.print()" title="Εκτύπωση"><i class="bi bi-printer"></i> Εκτύπωση</button>
+            </div>
+            <div class="footer-link-body">
+              <span class="link-txt">
+                <div class="bg-placeholder placeholder col-12"><div class="activity"></div></div>
+              </span>
+              <button class="btn btn-outline-primary btn-copy-link" title="Αντιγραφή συνδέσμου στο Clipboard"><i class="bi bi-paperclip"></i> Αντιγραφή</button>
+            </div>
 					</div>
 				</div>
 			</div>
