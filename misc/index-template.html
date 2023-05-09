@@ -48,19 +48,28 @@
               <span class="socialbtns">
                 <button class="btn btn-share btn-facebook">
                   <i class="ci-facebook me-0"></i><span class="ms-1">Facebook</span>
-                </button>              
+                </button>
+                <script>
+                  document.querySelector(".footer-interface .btn-facebook").addEventListener('click', ()=>open(
+                    `https://www.facebook.com/sharer.php?u=${encodeURIComponent(bModal.qLink ?? document.URL)}`,
+                  ));                
+                </script>        
                 <button class="btn btn-share btn-twitter">
                   <i class="ci-twitter me-0"></i><span class="ms-1">Twitter</span>
-                </button>               
+                </button>
+                <script>
+                  document.querySelector(".footer-interface .btn-twitter").addEventListener('click', ()=>open(
+                    `https://twitter.com/intent/tweet?url=${encodeURIComponent(bModal.qLink ?? document.URL)}&text=${encodeURIComponent(document.title)}`,
+                  ));                
+                </script>            
                 <button class="btn btn-share btn-instagram">
                   <i class="ci-mail me-0"></i><span class="ms-1">Email</span>
                 </button>
-              <!-- <script>
-                document.querySelector(".footer-interface .btn-instagram").addEventListener('click', ()=>open(
-                  `mailtp:?subject:=${document.title}&amp;body=${bModal.qLink ?? document.URL}`,
-                  "_blank"
-                ));
-              </script>                 -->
+                <script>
+                  document.querySelector(".footer-interface .btn-instagram").addEventListener('click', ()=>open(
+                    `mailtp:?subject:=${document.title}&body=${bModal.qLink ?? document.URL}`,
+                  ));                
+                </script>
               </span>
               <button class="btn btn-primary btn-sm btn-share socialapi"><i class="bi bi-share-fill"></i> Μοιράσου το</button>
               <script>

@@ -46,15 +46,30 @@
             <span class="footer-text">Μοιράσου το:</span>
             <div class="btns">
               <span class="socialbtns">
-                <a class="btn btn-share btn-facebook" id="shareBtn" href="#">
+                <button class="btn btn-share btn-facebook">
                   <i class="ci-facebook me-0"></i><span class="ms-1">Facebook</span>
-                </a>
-                <a class="btn btn-share btn-twitter" href="https://twitter.com/intent/tweet?text=Asus ROG Strix G15 (G513RC-HN088W) - Ryzen 7-6800H - 16GB - 512GB SSD - Nvidia RTX 3050 4GB - Win 11 Home - Eclipse Gray [90NR08A5-M00C10]&amp;url=https%3A%2F%2Fwww.msystems.gr%2Flaptops%2Fasus-rog-strix-g15-g513rc-hn088w-ryzen-7-6800h-16gb-512gb-ssd-nvidia-rtx-3050-4gb-win-11-home-eclipse-gray-90nr08a5-m00c10">
+                </button>
+                <script>
+                  document.querySelector(".footer-interface .btn-facebook").addEventListener('click', ()=>open(
+                    `https://www.facebook.com/sharer.php?u=${encodeURIComponent(bModal.qLink ?? document.URL)}`,
+                  ));                
+                </script>        
+                <button class="btn btn-share btn-twitter">
                   <i class="ci-twitter me-0"></i><span class="ms-1">Twitter</span>
-                </a>
-                <a class="btn btn-share btn-instagram" href="mailto:?subject=Asus ROG Strix G15 (G513RC-HN088W) - Ryzen 7-6800H - 16GB - 512GB SSD - Nvidia RTX 3050 4GB - Win 11 Home - Eclipse Gray [90NR08A5-M00C10]&amp;body=https://www.msystems.gr/laptops/asus-rog-strix-g15-g513rc-hn088w-ryzen-7-6800h-16gb-512gb-ssd-nvidia-rtx-3050-4gb-win-11-home-eclipse-gray-90nr08a5-m00c10">
+                </button>
+                <script>
+                  document.querySelector(".footer-interface .btn-twitter").addEventListener('click', ()=>open(
+                    `https://twitter.com/intent/tweet?url=${encodeURIComponent(bModal.qLink ?? document.URL)}&text=${encodeURIComponent(document.title)}`,
+                  ));                
+                </script>            
+                <button class="btn btn-share btn-instagram">
                   <i class="ci-mail me-0"></i><span class="ms-1">Email</span>
-                </a>
+                </button>
+                <script>
+                  document.querySelector(".footer-interface .btn-instagram").addEventListener('click', ()=>open(
+                    `mailtp:?subject:=${document.title}&body=${bModal.qLink ?? document.URL}`,
+                  ));                
+                </script>
               </span>
               <button class="btn btn-primary btn-sm btn-share socialapi"><i class="bi bi-share-fill"></i> Μοιράσου το</button>
               <script>
