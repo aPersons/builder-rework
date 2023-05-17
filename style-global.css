@@ -182,38 +182,44 @@ body.alt-dark {
 
 
 
-.syscol-type1 {
+.syscol-type1 > a {
   display: flex;
   flex-direction: column;
   align-items: stretch;
   text-align: center;
 }
-.syscol-type1 > h4 {
+.syscol-type1 > a > h4 {
+  transition: background-color 0.2s;
   padding: 1rem;
   margin-bottom: 0;
   background-color: var(--bg-gray-10);
   border-top-right-radius: 0.3125rem;
   border-top-left-radius: 0.3125rem;
 }
-.syscol-type1 > div {
+.syscol-type1 > a > div {
+  transition: background-color 0.2s;
   display: flex;
   align-items: center;
   background-color: var(--bg-gray-25);
 }
-.syscol-type1 > div p {
+.syscol-type1 > a > div p {
   color: var(--txt-white-95);
   padding: 0.25rem;
 }
-.syscol-type1 > a {
+.syscol-type1 > a > span {
+  transition: background-color 0.2s;
   background-color: var(--bg-gray-10);
   padding: 1rem;
   color: var(--txt-white-80);
   border-bottom-right-radius: 0.3125rem;
   border-bottom-left-radius: 0.3125rem;
 }
-.syscol-type1 > a:hover {
-  color: var(--txt-white-100);
-}
+
+.syscol-type1 > a:hover > h4 {background-color: var(--bg-gray-15);}
+.syscol-type1 > a:hover > div {background-color: var(--bg-gray-30);}
+.syscol-type1 > a:hover > span {background-color: var(--bg-gray-15);}
+
+
 .syscol-type2 {
   display: flex;
   flex-direction: column;
@@ -225,22 +231,24 @@ body.alt-dark {
   flex-grow: 1;
   display: flex;
 }
-.syscol-type2 > div > :nth-child(1) {
+.syscol-type2 > a > :nth-child(1) {
   background-color: var(--bg-gray-10);
   width: 125px;
   border-bottom-left-radius: 0.3125rem;
   border-top-left-radius: 0.3125rem;
   display: grid;
   place-items: center;
+  transition: background-color 0.2s;
 }
-.syscol-type2 > div > :nth-child(2) {
+.syscol-type2 > a > :nth-child(2) {
   flex-grow: 1;
   background-color: var(--bg-gray-25);
   color: var(--txt-white-95);
   display: grid;
   place-items: center;
+  transition: background-color 0.2s;
 }
-.syscol-type2 > div > :nth-child(3) {
+.syscol-type2 > a > :nth-child(3) {
   background-color: var(--bg-gray-10);
   border-bottom-right-radius: 0.3125rem;
   border-top-right-radius: 0.3125rem;
@@ -249,7 +257,12 @@ body.alt-dark {
   display: grid;
   place-items: center;
   color: var(--txt-white-10);
+  transition: background-color 0.2s;
 }
+
+.syscol-type2 > a:hover > :nth-child(1) {background-color: var(--bg-gray-15);}
+.syscol-type2 > a:hover > :nth-child(2) {background-color: var(--bg-gray-30);}
+.syscol-type2 > a:hover > :nth-child(3) {background-color: var(--bg-gray-15);}
 
 
 
