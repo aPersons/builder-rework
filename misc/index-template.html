@@ -67,7 +67,7 @@
                 </button>
                 <script>
                   document.querySelector(".footer-interface .btn-instagram").addEventListener('click', ()=>open(
-                    `mailtp:?subject:=${document.title}&body=${bModal.qLink ?? document.URL}`,
+                    `mailto:?subject=${document.title}&body=${bModal.qLink ?? document.URL}`,
                   ));                
                 </script>
               </span>
