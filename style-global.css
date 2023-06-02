@@ -421,3 +421,41 @@ footer {
 footer > :nth-child(2){
   background-color: var(--bg-gray-15);
 }
+
+
+
+/* logo style */
+
+.blockglow {
+  width: 61px;
+  height: 61px;
+  background: linear-gradient(0deg, #000, #272727);
+  overflow: hidden;
+}
+.moving-glow {
+  content: '';
+  left: 0%;
+  top: 0px;
+  position: absolute;
+  background: linear-gradient(90deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, 
+      #0000ff, #00ff00,#ffff00, #ff0000, #fb0094);
+  background-size: 4000%;
+  z-index: 0;
+  animation: anim-moving-glow 80s linear infinite;
+
+}
+@keyframes anim-moving-glow {
+  0% {
+      background-position: 0 0;
+  }
+  100% {
+      background-position: 200% 0;
+  }
+}
+.logo-container {
+  filter: none !important;
+  position: relative;
+}
+.glow-container {
+  position: relative;
+}
