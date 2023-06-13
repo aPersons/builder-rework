@@ -96,7 +96,6 @@ let domCashe = {
   dom: {},
   domOrder: [],
   avCats: [],
-  groups: []
 }
 
 
@@ -250,72 +249,6 @@ let bTK = {
     }
     bTK.CFGcHeadHandler.length = 0;
     bTK.CFGcHeadHandler.push(bTK.catGroupAction);
-  },
-
-
-  groupOpen: function(groupNm) {
-    if (!domCashe.groups[groupNm].isHidden) return;    
-    domCashe.groups[groupNm].isHidden = false;
-    domCashe.groups[groupNm].selfDom.classList.remove("isHidden");
-  },
-  
-  
-  groupClose: function(groupNm) {
-    if (domCashe.groups[groupNm].isHidden) return;
-    for (cnm of domCashe.groups[groupNm].catList) {
-      bTK.catCloseQ({cnm:cnm});
-    }    
-    domCashe.groups[groupNm].isHidden = true;
-    domCashe.groups[groupNm].selfDom.classList.add("isHidden");
-  },
-
-
-  groupSelect: function(gList) {
-    for (groupNm of domCashe.groupOrder) {
-      if (groupNm == "group-default") continue;
-      if (gList.includes(groupNm)) {
-        bTK.groupOpen(groupNm);
-      } else {
-        bTK.groupClose(groupNm);
-      }
-    }
-    bTK.groupUpdateHandler();
-  },
-
-
-  CFGgroupUpdateHandler: [],
-  groupUpdateHandler: function() {
-    for (const fnc of bTK.CFGgroupUpdateHandler) fnc();
-  },
-
-
-  crGroups: function() {
-    domCashe.groups = {"group-default": {
-      "title": "Default",
-      "catList": [],
-      "selfDom": null,
-      "isHidden": false
-    }};
-    domCashe.groupOrder = ["group-default"];
-    for (const [cnm, ob] of domCashe.avCats) {
-      let qGroup = ob.selfDom.parentElement;
-      if (qGroup.classList.contains("cat-group")) {
-        if (!domCashe.groups.hasOwnProperty(qGroup.id)) {
-          domCashe.groupOrder.push(qGroup.id);
-          domCashe.groups[qGroup.id] = {
-            "title": qGroup.dataset.title,
-            "catList": [],
-            "selfDom": qGroup,
-            "isHidden": qGroup.classList.contains("isHidden")
-          }
-        }
-        domCashe.groups[qGroup.id].catList.push(cnm);
-        ob.group = qGroup.id;
-      } else {
-        domCashe.groups["group-default"].catList.push(cnm);
-        ob.group = "group-default";
-      }
-    }
   },
 
 
@@ -1463,13 +1396,30 @@ bModal = {
 }
 
 
+// (async () => {
+  // const request = await fetch(
+    // 'https://www.msystems.gr/api/gameperf.php',{
+    // method: 'POST',
+    // body: '{"cpu":"4698-419","gpu":"5063"}'
+  // })
+  // const getjson = await request.json();
+  // console.log(getjson);
+// })()
+
+perfKit = {
+
+  crPerfKit: function() {
+    
+  }
+}
+
+
 
 
 
 document.addEventListener("DOMContentLoaded", function() {
 
   bTK.crCats();
-  // bTK.crGroups();
   bTK.crCOpen();
   bTK.crRdBt();
   bTK.crCbBt();
@@ -1485,6 +1435,6 @@ document.addEventListener("DOMContentLoaded", function() {
   nav.crProdNav();
   buildSummary.crSummary();
   bModal.crBuildModal();
-  // bTK.setTimeout(crDomReduce, 0);//quick_view.js must run before this. Won't add events otherwise.
-  
+  perfKit.crPerfKit();
+
 })

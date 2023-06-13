@@ -548,6 +548,29 @@
 }
 
 
+
+
+/*     Perfeormance Kit     */
+
+/*  Main */
+
+
+.perfKitMain .gameSelect {
+  transition: border-color 0.25s;
+  border-color: rgb(255 255 255 / 12%)!important;
+
+}
+.perfKitMain .gameSelect:hover {
+  border-color: #e3e9ef!important;
+  cursor: pointer;
+}
+
+
+
+/*  Widget */
+
+
+
 @media print {  
   header,
   .page-title-overlap,
