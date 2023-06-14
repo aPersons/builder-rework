@@ -1270,7 +1270,7 @@ let buildSummary = {
 
 
 
-bModal = {
+let bModal = {
 
   updateBuildModal: function(evArgs) {
     let linktext = window.location.href.split('&');
@@ -1383,7 +1383,7 @@ bModal = {
   
     let btns = document.querySelectorAll('[data-bs-toggle="modal"][data-bs-target="#build-modal"]');
     for (const btn of btns) {
-      btn.removeEventListener("click", bModal.uildModalOpenHandler);
+      btn.removeEventListener("click", bModal.buildModalOpenHandler);
       btn.addEventListener("click", bModal.buildModalOpenHandler);
     }
     bModal.CFGbuildModalOpenHandler.length = 0;
@@ -1397,18 +1397,48 @@ bModal = {
 
 
 // (async () => {
-  // const request = await fetch(
-    // 'https://www.msystems.gr/api/gameperf.php',{
-    // method: 'POST',
-    // body: '{"cpu":"4698-419","gpu":"5063"}'
-  // })
-  // const getjson = await request.json();
-  // console.log(getjson);
+//   const request = await fetch(
+//     'https://www.msystems.gr/api/gameperf.php',{
+//     method: 'POST',
+//     body: '{"cpu":"4698-419","gpu":"5063"}'
+//   })
+//   const getjson = await request.json();
+//   console.log(getjson);
 // })()
+// cat2 -- data-perf
+// cat2 -- data-cpu
+// cat5 -- data-gpu
 
-perfKit = {
+
+let perfKit = {
+
+  gameData: {},
+
+  kitMain: {
+    CFGkitMainBtHandler: [],
+    kitMainBtHandler: function() {
+    let evArgs = {
+      gameSelect: this.dataset.gameNM
+    }
+    for (const fnc of bModal.CFGkitMainBtHandler) fnc(evArgs);
+    },
+    GameSelected: 0
+  },
+
+
+
 
   crPerfKit: function() {
+    let kitMainDom = document.querySelector(".perfKitMain");
+    if (!kitMainDom) return;
+
+    for (const [ ,pob] of domCashe.dom["cat2"].avProds) {
+      pob.cpuNM = pob.selfDom.dataset.cpu ?? false;
+      pob.cpuPerf = pob.selfDom.dataset.cpuperf ?? false;
+    }
+    for (const [ ,pob] of domCashe.dom["cat5"].avProds) {
+      pob.gpuNM = pob.selfDom.dataset.gpu ?? false;
+    }
     
   }
 }

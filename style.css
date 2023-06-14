@@ -554,6 +554,10 @@
 
 /*  Main */
 
+.perfKitMain {
+  position: relative;
+  z-index: 0;
+}
 
 .perfKitMain .gameSelect {
   transition: border-color 0.25s;
@@ -564,7 +568,46 @@
   border-color: #e3e9ef!important;
   cursor: pointer;
 }
+.perfKitMain .gameSelect.gameSelected {
+  border-color: #e3e9ef!important;
+}
+.perfKitMain .gameSelect.gameSelected {
+  border-color: #e3e9ef!important;
+}
 
+
+
+.perfKitMain .game-img,
+.perfKitMain .game-img-vertical {
+  mask-image: radial-gradient(farthest-side at top left, rgba(0,0,0,0.6), rgba(0,0,0,0) 100%);
+  -webkit-mask-image: radial-gradient(farthest-side at top left, rgba(0,0,0,0.6), rgba(0,0,0,0) 100%);
+  position: absolute;
+  z-index: -1;
+  max-height: 90%;
+  max-width: 90%;
+  height: auto;
+  width: auto;
+  padding: 0;
+  border-radius: 0.4rem;
+}
+
+
+.perfKitMain .game-img-vertical.gameSelected {
+  display: revert!important;
+}
+@media only screen and (min-width: 500px) {
+  .perfKitMain .game-img.gameSelected {
+    display: revert!important;
+  }
+  .perfKitMain .game-img-vertical.gameSelected {
+    display: none!important;
+  }
+}
+
+.perfKitMain .GameTitle h6.gameSelected {display: revert!important;}
+
+.perfKitMain .perfBadge.text-success .bi-check-circle {display: revert!important;}
+.perfKitMain .perfBadge.text-success .bi-dash-circle {display: none!important;}
 
 
 /*  Widget */
