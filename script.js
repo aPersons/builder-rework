@@ -1422,7 +1422,16 @@ let perfKit = {
     }
     for (const fnc of bModal.CFGkitMainBtHandler) fnc(evArgs);
     },
-    GameSelected: 0
+    selfDom: false,
+    
+    barMultimediaDom: false,
+    barMultimedia: false,
+    barGameDom: false,
+    barGame: false,
+    
+    perfBadges: {},
+    gameItems: {},
+    GameSelected: false
   },
 
 
@@ -1439,7 +1448,48 @@ let perfKit = {
     for (const [ ,pob] of domCashe.dom["cat5"].avProds) {
       pob.gpuNM = pob.selfDom.dataset.gpu ?? false;
     }
+
+    perfKit.kitMain.selfDom = kitMainDom;
+    perfKit.kitMain.barMultimediaDom = kitMainDom.querySelector(".perfBar-multimedia") ?? false;
+    perfKit.kitMain.barGameDom = kitMainDom.querySelector("perfBar-game") ?? false;
+
+    let badgeList = kitMainDom.querySelectorAll(".perfBadge");
+    for (const badge of badgeList) {
+      perfKit.kitMain.perfBadges[badge.dataset.perfconfig] = {
+        selfDom: badge,
+        status: false
+      }
+    }
+    let gameBtList = kitMainDom.querySelectorAll(".gameSelect");
+    for (const bt of gameBtList) {
+      perfKit.kitMain.gameItems[bt.dataset.gamenm] = {
+        selfDom: bt,
+        gameSelected: false
+      }
+    }
+    let gameTitle = kitMainDom.querySelectorAll(".gameTitle h6");
+    for (const title of gameTitle) {
+      perfKit.kitMain.gameItems[title.dataset.gamenm]["titleDom"] = title;
+    }
+    let gameBg = kitMainDom.querySelectorAll(".game-img");
+    for (const gImg of gameBg) {
+      perfKit.kitMain.gameItems[gImg.dataset.gamenm]["imgDom"] = gImg;
+    }
+    gameBg = kitMainDom.querySelectorAll(".game-img-vertical");
+    for (const gImg of gameBg) {
+      perfKit.kitMain.gameItems[gImg.dataset.gamenm]["imgDom-vertical"] = gImg;
+    }
+    for (const gameNM of Object.keys(perfKit.kitMain.gameItems)) {
+      perfKit.gameData[gameNM] = {};
+      for (const config of Object.keys(perfKit.kitMain.perfBadges)) {
+        perfKit.gameData[gameNM][config] = false
+      }
+    }
+
+
+
     
+
   }
 }
 
