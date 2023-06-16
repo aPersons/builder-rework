@@ -1415,12 +1415,43 @@ let perfKit = {
   gameData: {},
 
   kitMain: {
+    gameSelectUpdate: function (evArgs) {
+      let qGame = evArgs.gameSelect ?? false;
+      if (!qGame) return;
+
+      if (qGame != perfKit.kitMain.gameSelected) perfKit.kitMain.gameSelected = qGame;
+
+      for (const [gnm, gob] of perfKit.kitMain.gameItems) {
+        if (gnm == qGame && !gob.gameSelected) {
+          gob.gameSelected = true;
+          gob.selfDom.classList.add("gameSelected");
+          gob.titleDom.classList.add("gameSelected");
+          gob.imgDom.classList.add("gameSelected");
+          gob.imgDom_vertical.classList.add("gameSelected");
+        } else if (gnm != qGame && gob.gameSelected) {
+          gob.gameSelected = false;
+          gob.selfDom.classList.remove("gameSelected");
+          gob.titleDom.classList.remove("gameSelected");
+          gob.imgDom.classList.remove("gameSelected");
+          gob.imgDom_vertical.classList.remove("gameSelected");
+        }
+      }
+
+    },
+    perfDataUpdate: function (evArgs) {
+
+    },
+    perfDrawUpdate: function (evArgs) {
+
+    },
+
     CFGkitMainBtHandler: [],
     kitMainBtHandler: function() {
     let evArgs = {
-      gameSelect: this.dataset.gameNM
+      gameSelect: this.dataset.gamenm
     }
-    for (const fnc of bModal.CFGkitMainBtHandler) fnc(evArgs);
+    console.log(evArgs.gameSelect);
+    for (const fnc of perfKit.kitMain.CFGkitMainBtHandler) fnc(evArgs);
     },
     selfDom: false,
     
@@ -1431,7 +1462,7 @@ let perfKit = {
     
     perfBadges: {},
     gameItems: {},
-    GameSelected: false
+    gameSelected: false
   },
 
 
@@ -1466,6 +1497,8 @@ let perfKit = {
         selfDom: bt,
         gameSelected: false
       }
+      bt.removeEventListener("click", perfKit.kitMain.kitMainBtHandler);
+      bt.addEventListener("click", perfKit.kitMain.kitMainBtHandler);
     }
     let gameTitle = kitMainDom.querySelectorAll(".gameTitle h6");
     for (const title of gameTitle) {
@@ -1477,7 +1510,7 @@ let perfKit = {
     }
     gameBg = kitMainDom.querySelectorAll(".game-img-vertical");
     for (const gImg of gameBg) {
-      perfKit.kitMain.gameItems[gImg.dataset.gamenm]["imgDom-vertical"] = gImg;
+      perfKit.kitMain.gameItems[gImg.dataset.gamenm]["imgDom_vertical"] = gImg;
     }
     for (const gameNM of Object.keys(perfKit.kitMain.gameItems)) {
       perfKit.gameData[gameNM] = {};
