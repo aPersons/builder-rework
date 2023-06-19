@@ -1413,15 +1413,41 @@ let bModal = {
 let perfKit = {
 
   gameData: {},
+  qCPU: false,
+  qGPU: false,
+
+
+  CFGdataUpdate: [],
+  dataUpdateHandler: function() {
+    for (const fnc of perfKit.kitMain.CFGkitMainBtHandler) fnc({});
+  },
+
+  perfDataUpdate: function (evArgs) {
+    if (perfKit.qCPU == domCashe.dom["cat2"].prodSelected && perfKit.qGPU == domCashe.dom["cat5"].prodSelected) return;
+    (async function() {
+      try {
+
+      } catch {
+        for (const gob of Object.values(perfKit.gameData)) {
+          for (const confnm of Object.keys(gob)) {
+            gob[confnm] = false;
+          }
+        }
+      }
+    })()
+  },
 
   kitMain: {
     gameSelectUpdate: function (evArgs) {
-      let qGame = evArgs.gameSelect ?? false;
-      if (!qGame) return;
-
-      if (qGame != perfKit.kitMain.gameSelected) perfKit.kitMain.gameSelected = qGame;
-
-      for (const [gnm, gob] of perfKit.kitMain.gameItems) {
+      let qGame = evArgs?.gameSelect ?? false;
+      if (qGame) {
+        if (qGame != perfKit.kitMain.gameSelected) {
+          perfKit.kitMain.gameSelected = qGame;
+        }
+      } else {
+        qGame = perfKit.kitMain.gameSelected;
+      }
+      for (const [gnm, gob] of Object.entries(perfKit.kitMain.gameItems)) {
         if (gnm == qGame && !gob.gameSelected) {
           gob.gameSelected = true;
           gob.selfDom.classList.add("gameSelected");
@@ -1438,9 +1464,6 @@ let perfKit = {
       }
 
     },
-    perfDataUpdate: function (evArgs) {
-
-    },
     perfDrawUpdate: function (evArgs) {
 
     },
@@ -1450,7 +1473,6 @@ let perfKit = {
     let evArgs = {
       gameSelect: this.dataset.gamenm
     }
-    console.log(evArgs.gameSelect);
     for (const fnc of perfKit.kitMain.CFGkitMainBtHandler) fnc(evArgs);
     },
     selfDom: false,
@@ -1482,7 +1504,7 @@ let perfKit = {
 
     perfKit.kitMain.selfDom = kitMainDom;
     perfKit.kitMain.barMultimediaDom = kitMainDom.querySelector(".perfBar-multimedia") ?? false;
-    perfKit.kitMain.barGameDom = kitMainDom.querySelector("perfBar-game") ?? false;
+    perfKit.kitMain.barGameDom = kitMainDom.querySelector(".perfBar-game") ?? false;
 
     let badgeList = kitMainDom.querySelectorAll(".perfBadge");
     for (const badge of badgeList) {
@@ -1493,13 +1515,19 @@ let perfKit = {
     }
     let gameBtList = kitMainDom.querySelectorAll(".gameSelect");
     for (const bt of gameBtList) {
-      perfKit.kitMain.gameItems[bt.dataset.gamenm] = {
+      let btnm = bt.dataset.gamenm;
+      perfKit.kitMain.gameItems[btnm] = {
         selfDom: bt,
         gameSelected: false
+      }
+      if (!perfKit.kitMain.gameSelected && bt.classList.contains("gameSelected")) {
+        perfKit.kitMain.gameSelected = btnm;
       }
       bt.removeEventListener("click", perfKit.kitMain.kitMainBtHandler);
       bt.addEventListener("click", perfKit.kitMain.kitMainBtHandler);
     }
+    if (!perfKit.kitMain.gameSelected) perfKit.kitMain.gameSelected = Object.keys(perfKit.kitMain.gameItems)[0];    
+
     let gameTitle = kitMainDom.querySelectorAll(".gameTitle h6");
     for (const title of gameTitle) {
       perfKit.kitMain.gameItems[title.dataset.gamenm]["titleDom"] = title;
@@ -1518,6 +1546,10 @@ let perfKit = {
         perfKit.gameData[gameNM][config] = false
       }
     }
+
+    perfKit.kitMain.gameSelectUpdate({});
+    perfKit.kitMain.CFGkitMainBtHandler.length = 0;
+    perfKit.kitMain.CFGkitMainBtHandler.push(perfKit.kitMain.gameSelectUpdate);
 
 
 

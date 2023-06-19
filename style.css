@@ -579,8 +579,8 @@
 
 .perfKitMain .game-img,
 .perfKitMain .game-img-vertical {
-  mask-image: radial-gradient(farthest-side at top left, rgba(0,0,0,0.6), rgba(0,0,0,0) 100%);
-  -webkit-mask-image: radial-gradient(farthest-side at top left, rgba(0,0,0,0.6), rgba(0,0,0,0) 100%);
+  mask-image: radial-gradient(farthest-side at top left, rgba(0,0,0,0.8), rgba(0,0,0,0) 100%);
+  -webkit-mask-image: radial-gradient(farthest-side at top left, rgba(0,0,0,0.8), rgba(0,0,0,0) 100%);
   position: absolute;
   z-index: -1;
   max-height: 90%;
