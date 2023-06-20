@@ -1415,6 +1415,7 @@ let perfKit = {
   gameData: {},
   qCPU: false,
   qGPU: false,
+  gameScore: false,
 
 
   CFGdataUpdate: [],
@@ -1424,15 +1425,100 @@ let perfKit = {
 
   perfDataUpdate: function (evArgs) {
     if (perfKit.qCPU == domCashe.dom["cat2"].prodSelected && perfKit.qGPU == domCashe.dom["cat5"].prodSelected) return;
+    perfKit.qCPU = domCashe.dom["cat2"].prodSelected;
+    perfKit.qGPU = domCashe.dom["cat5"].prodSelected;
     (async function() {
       try {
+        let cpuNM = domCashe.dom["cat2"].prodList[perfKit.qCPU].cpuNM;
+        let gpuNM = domCashe.dom["cat5"].prodList[perfKit.qCPU].gpuNM;
+        if (!cpu || !gpu) throw new Error(`Incorect CPU/GPU Key: {"cpu":"${cpuNM}","gpu":"${gpuNM}"}`)
+        const request = await fetch(
+          'https://www.msystems.gr/api/gameperf.php',{
+          method: 'POST',
+          body: `{"cpu":"${cpuNM}","gpu":"${gpuNM}"}`
+        })
+        let perfJSON = await request.json();
+        if (perfJSON["result"] != "success") throw new Error("Bad Result");
+        
+        perfJSON = {
+          "cpu": "4698-419",
+          "gpu": "5063",
+          "lol1": 1,
+          "lol2": 1,
+          "lol3": 1,
+          "lol4": 1,
+          "lol5": 1,
+          "lol6": 1,
+          "val1": 1,
+          "val2": 1,
+          "val3": 1,
+          "val4": 1,
+          "val5": 1,
+          "val6": 1,
+          "gtav1": 1,
+          "gtav2": 1,
+          "gtav3": 1,
+          "gtav4": 1,
+          "gtav5": 1,
+          "gtav6": 0,
+          "fort1": 1,
+          "fort2": 1,
+          "fort3": 1,
+          "fort4": 1,
+          "fort5": 1,
+          "fort6": 1,
+          "csgo1": 1,
+          "csgo2": 1,
+          "csgo3": 1,
+          "csgo4": 1,
+          "csgo5": 1,
+          "csgo6": 1,
+          "codwz1": 1,
+          "codwz2": 1,
+          "codwz3": 1,
+          "codwz4": 1,
+          "codwz5": 1,
+          "codwz6": 0,
+          "hogl1": 1,
+          "hogl2": 0,
+          "hogl3": 1,
+          "hogl4": 0,
+          "hogl5": 1,
+          "hogl6": 0,
+          "gaming": 86,
+          "result": "success"
+        }
 
+
+
+        perfKit.gameScore = perfJSON["gaming"];
+        for (const [gnm,gob] of Object.entries(perfKit.gameData)) {
+          if (gob.hasOwnProperty["1080_60"]) {
+            gob["1080_60"] = perfJSON[`${gnm}1`] ?? false
+          }
+          if (gob.hasOwnProperty["1080_144"]) {
+            gob["1080_144"] = perfJSON[`${gnm}2`] ?? false
+          }
+          if (gob.hasOwnProperty["1440_60"]) {
+            gob["1440_60"] = perfJSON[`${gnm}3`] ?? false
+          }
+          if (gob.hasOwnProperty["1440_144"]) {
+            gob["1440_144"] = perfJSON[`${gnm}4`] ?? false
+          }
+          if (gob.hasOwnProperty["4k_60"]) {
+            gob["4k_60"] = perfJSON[`${gnm}5`] ?? false
+          }
+          if (gob.hasOwnProperty["4k_144"]) {
+            gob["4k_144"] = perfJSON[`${gnm}6`] ?? false
+          }
+        }
       } catch {
         for (const gob of Object.values(perfKit.gameData)) {
           for (const confnm of Object.keys(gob)) {
             gob[confnm] = false;
           }
         }
+        perfKit.dataUpdateHandler();
       }
     })()
   },
