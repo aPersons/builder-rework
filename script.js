@@ -1396,19 +1396,6 @@ let bModal = {
 }
 
 
-// (async () => {
-//   const request = await fetch(
-//     'https://www.msystems.gr/api/gameperf.php',{
-//     method: 'POST',
-//     body: '{"cpu":"4698-419","gpu":"5063"}'
-//   })
-//   const getjson = await request.json();
-//   console.log(getjson);
-// })()
-// cat2 -- data-perf
-// cat2 -- data-cpu
-// cat5 -- data-gpu
-
 
 let perfKit = {
 
@@ -1420,7 +1407,7 @@ let perfKit = {
 
   CFGdataUpdate: [],
   dataUpdateHandler: function() {
-    for (const fnc of perfKit.kitMain.CFGkitMainBtHandler) fnc({});
+    for (const fnc of perfKit.CFGdataUpdate) fnc({});
   },
 
   perfDataUpdate: function (evArgs) {
@@ -1430,61 +1417,26 @@ let perfKit = {
     (async function() {
       try {
         let cpuNM = domCashe.dom["cat2"].prodList[perfKit.qCPU].cpuNM;
-        let gpuNM = domCashe.dom["cat5"].prodList[perfKit.qCPU].gpuNM;
-        if (!cpu || !gpu) throw new Error(`Incorect CPU/GPU Key: {"cpu":"${cpuNM}","gpu":"${gpuNM}"}`)
-        const request = await fetch(
-          'https://www.msystems.gr/api/gameperf.php',{
-          method: 'POST',
-          body: `{"cpu":"${cpuNM}","gpu":"${gpuNM}"}`
-        })
-        let perfJSON = await request.json();
-        if (perfJSON["result"] != "success") throw new Error("Bad Result");
+        let gpuNM = domCashe.dom["cat5"].prodList[perfKit.qGPU].gpuNM;
+        // if (!cpu || !gpu) throw new Error(`Incorect CPU/GPU Key: {"cpu":"${cpuNM}","gpu":"${gpuNM}"}`)
+        // const request = await fetch(
+        //   'https://www.msystems.gr/api/gameperf.php',{
+        //   method: 'POST',
+        //   body: `{"cpu":"${cpuNM}","gpu":"${gpuNM}"}`
+        // })
+        // let perfJSON = await request.json();
+        // if (perfJSON["result"] != "success") throw new Error("Bad Result");
         
-        perfJSON = {
-          "cpu": "4698-419",
-          "gpu": "5063",
-          "lol1": 1,
-          "lol2": 1,
-          "lol3": 1,
-          "lol4": 1,
-          "lol5": 1,
-          "lol6": 1,
-          "val1": 1,
-          "val2": 1,
-          "val3": 1,
-          "val4": 1,
-          "val5": 1,
-          "val6": 1,
-          "gtav1": 1,
-          "gtav2": 1,
-          "gtav3": 1,
-          "gtav4": 1,
-          "gtav5": 1,
-          "gtav6": 0,
-          "fort1": 1,
-          "fort2": 1,
-          "fort3": 1,
-          "fort4": 1,
-          "fort5": 1,
-          "fort6": 1,
-          "csgo1": 1,
-          "csgo2": 1,
-          "csgo3": 1,
-          "csgo4": 1,
-          "csgo5": 1,
-          "csgo6": 1,
-          "codwz1": 1,
-          "codwz2": 1,
-          "codwz3": 1,
-          "codwz4": 1,
-          "codwz5": 1,
-          "codwz6": 0,
-          "hogl1": 1,
-          "hogl2": 0,
-          "hogl3": 1,
-          "hogl4": 0,
-          "hogl5": 1,
-          "hogl6": 0,
+        let perfJSON = {
+          "cpu"   : "4698-419",
+          "gpu"   : "5063",
+          "lol1"  : 1, "lol2"  : 1, "lol3"  : 1, "lol4"  : 1, "lol5"  : 1, "lol6"  : 1,
+          "val1"  : 1, "val2"  : 1, "val3"  : 1, "val4"  : 1, "val5"  : 1, "val6"  : 1,
+          "gtav1" : 1, "gtav2" : 1, "gtav3" : 1, "gtav4" : 1, "gtav5" : 1, "gtav6" : 0,
+          "fort1" : 1, "fort2" : 1, "fort3" : 1, "fort4" : 1, "fort5" : 1, "fort6" : 1,
+          "csgo1" : 1, "csgo2" : 1, "csgo3" : 1, "csgo4" : 1, "csgo5" : 1, "csgo6" : 1,
+          "codwz1": 1, "codwz2": 1, "codwz3": 1, "codwz4": 1, "codwz5": 1, "codwz6": 0,
+          "hogl1" : 1, "hogl2" : 0, "hogl3" : 1, "hogl4" : 0, "hogl5" : 1, "hogl6" : 0,
           "gaming": 86,
           "result": "success"
         }
@@ -1494,25 +1446,26 @@ let perfKit = {
         perfKit.gameScore = perfJSON["gaming"];
         for (const [gnm,gob] of Object.entries(perfKit.gameData)) {
           if (gob.hasOwnProperty["1080_60"]) {
-            gob["1080_60"] = perfJSON[`${gnm}1`] ?? false
+            gob["1080_60"] = perfJSON[`${gnm}1`] == 1 ? true : false;
           }
           if (gob.hasOwnProperty["1080_144"]) {
-            gob["1080_144"] = perfJSON[`${gnm}2`] ?? false
+            gob["1080_144"] = perfJSON[`${gnm}2`] == 1 ? true : false;
           }
           if (gob.hasOwnProperty["1440_60"]) {
-            gob["1440_60"] = perfJSON[`${gnm}3`] ?? false
+            gob["1440_60"] = perfJSON[`${gnm}3`] == 1 ? true : false;
           }
           if (gob.hasOwnProperty["1440_144"]) {
-            gob["1440_144"] = perfJSON[`${gnm}4`] ?? false
+            gob["1440_144"] = perfJSON[`${gnm}4`] == 1 ? true : false;
           }
           if (gob.hasOwnProperty["4k_60"]) {
-            gob["4k_60"] = perfJSON[`${gnm}5`] ?? false
+            gob["4k_60"] = perfJSON[`${gnm}5`] == 1 ? true : false;
           }
           if (gob.hasOwnProperty["4k_144"]) {
-            gob["4k_144"] = perfJSON[`${gnm}6`] ?? false
+            gob["4k_144"] = perfJSON[`${gnm}6`] == 1 ? true : false;
           }
         }
-      } catch {
+      } catch (er){
+        console.log(er);
         for (const gob of Object.values(perfKit.gameData)) {
           for (const confnm of Object.keys(gob)) {
             gob[confnm] = false;
@@ -1529,6 +1482,7 @@ let perfKit = {
       if (qGame) {
         if (qGame != perfKit.kitMain.gameSelected) {
           perfKit.kitMain.gameSelected = qGame;
+          perfKit.kitMain.perfDrawUpdate();
         }
       } else {
         qGame = perfKit.kitMain.gameSelected;
@@ -1551,7 +1505,37 @@ let perfKit = {
 
     },
     perfDrawUpdate: function (evArgs) {
-
+      let mperf = domCashe.dom["cat2"].prodList[domCashe.dom["cat2"].prodSelected].cpuPerf;
+      if (perfKit.kitMain.barMultimedia != mperf) {
+        if (mperf === false) {
+          perfKit.kitMain.barMultimedia = 0;
+          perfKit.kitMain.barMultimediaDom.style.width = 0;
+        } else {
+          perfKit.kitMain.barMultimedia = mperf;
+          perfKit.kitMain.barMultimediaDom.style.width = mperf;
+        }
+      }
+      let gperf = perfKit.gameScore;
+      if (perfKit.kitMain.barGame != gperf) {
+        if (gperf === false) {
+          perfKit.kitMain.barGame = 0;
+          perfKit.kitMain.barGameDom.style.width = 0;
+        } else {
+          perfKit.kitMain.barGame = gperf;
+          perfKit.kitMain.barGameDom.style.width = gperf;
+        }
+      }
+      for ( const [bnm, bob] of Object.entries(perfKit.kitMain.perfBadges)) {
+        let bValnew = perfKit.gameData[perfKit.kitMain.gameSelected][bnm];
+        if (bob.status != bValnew) {
+          if (bValnew) {
+            bob.selfDom.classList.add("text-success");
+          } else {
+            bob.selfDom.classList.remove("text-success");
+          }
+          bob.status = bValnew;
+        }
+      }
     },
 
     CFGkitMainBtHandler: [],
@@ -1637,9 +1621,10 @@ let perfKit = {
     perfKit.kitMain.CFGkitMainBtHandler.length = 0;
     perfKit.kitMain.CFGkitMainBtHandler.push(perfKit.kitMain.gameSelectUpdate);
 
-
-
     
+    perfKit.CFGdataUpdate.push(perfKit.kitMain.perfDrawUpdate);
+    perfKit.perfDataUpdate();
+    bTK.CFGRdBtHandler.push(perfKit.perfDataUpdate); 
 
   }
 }
