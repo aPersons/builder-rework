@@ -604,7 +604,7 @@
   }
 }
 
-.perfKitMain .GameTitle h6.gameSelected {display: revert!important;}
+.perfKitMain .gameTitle h6.gameSelected {display: revert!important;}
 
 .perfKitMain .perfBadge.text-success .bi-check-circle {display: revert!important;}
 .perfKitMain .perfBadge.text-success .bi-dash-circle {display: none!important;}
