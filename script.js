@@ -1563,7 +1563,159 @@ let perfKit = {
     gameSelected: false
   },
 
+  kitWidget: {
+    CFGgameSelectUpdate: [],
+    gameSelectHandler: function() {
+      for (const fnc of perfKit.kitMain.CFGgameSelectUpdate) fnc({});
+    },
+    gameSelectUpdate: function (evArgs) {},
+    perfDrawUpdate: function (evArgs) {},
 
+    CFGkitMainBtHandler: [],
+    kitMainBtHandler: function() {
+    let evArgs = {
+      gameSelect: this.dataset.gamenm
+    }
+    for (const fnc of perfKit.kitMain.CFGkitMainBtHandler) fnc(evArgs);
+    },
+
+    createWidget: function(el) {
+      /*
+        <div class="perfKitWidget">
+          <h6 class="text-center mb-0">Επιδόσεις</h6>
+          <span class="fs-sm">Multitasking</span>
+          <div class="progress" style="height: 4px;">
+							<div class="progress-bar bg-success" role="progressbar" style="width: 70%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <div class="progress" style="height: 4px;">
+							<div class="progress-bar bg-success" role="progressbar" style="width: 90%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+          <span class="fs-sm">Gaming</span>
+          <div class="widgetCollapsible">
+            <div class="text-center mt-2 gameTitle">
+              <h6 class="d-none gameSelected" data-gamenm="codwz">Call of Duty: Warzone 2.0</h6>
+              <h6 class="d-none" data-gamenm="csgo">Counter Strike: Global Offensive</h6>
+              <h6 class="d-none" data-gamenm="fort">Fortnite</h6>
+            </div>
+            <div class="px-lg-3 px-0 row text-center justify-content-center">
+              <div class="col-6 p-1">
+                <div class="border border-light py-2">
+                  <div class="fs-sm w-100">1080p<br>60Hz</div>
+                  <div class="fs-lg mt-2 w-100 perfBadge text-success" data-perfconfig="1080_60">
+                    <i class="bi bi-check-circle d-none"></i>
+                    <i class="bi bi-dash-circle"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 p-1">
+                <div class="border border-light py-2">
+                  <div class="fs-sm w-100">1080p<br>144Hz</div>
+                  <div class="fs-lg mt-2 w-100 perfBadge" data-perfconfig="1080_144">
+                    <i class="bi bi-check-circle d-none"></i>
+                    <i class="bi bi-dash-circle"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <img src="img/codwz.jpg" class="d-none game-img gameSelected" data-gamenm="codwz">
+            <img src="img/codwz-vertical.jpg" class="d-none game-img-vertical gameSelected" data-gamenm="codwz">
+            <img src="img/csgo.jpg" class="d-none game-img" data-gamenm="csgo">
+            <img src="img/csgo-vertical.jpg" class="d-none game-img-vertical" data-gamenm="csgo">
+          </div>
+
+          <div><a class="btn btn-sm btn-primary w-100 mt-2" href="#">Δες αναλυτικά</a></div>
+          <button class="btn btn-sm btn-primary w-100" type="button" data-bs-toggle="collapse" data-bs-target="" aria-expanded="true" aria-controls="perfWdget Collapse">
+            <span class="clps-a">Περισσότερα <i class="bi bi-caret-down-fill"></i></span>
+            <span class="clps-b">Λιγότερα <i class="bi bi-caret-up-fill"></i></span>
+          </button>
+        </div>
+      */
+
+      perfKit.kitWidget.selfDom = el;
+      perfKit.kitWidget.gameSelected = perfKit.kitMain.gameSelected;
+      el.innerHTML = `
+        <h6 class="text-center mb-0">Επιδόσεις</h6>
+        <span class="fs-sm">Multitasking</span>
+        <div class="progress" style="height: 4px;">
+            <div class="progress-bar bg-success perfBar-multimedia" role="progressbar" style="width: 0" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <span class="fs-sm">Gaming</span>
+        <div class="progress" style="height: 4px;">
+            <div class="progress-bar bg-success perfBar-game" role="progressbar" style="width: 0" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        <div class="widgetCollapsible collapse" id="kitWidgetCollapse">
+          <button class="gameBack"></button>
+          <div class="text-center mt-2 gameTitle"></div>
+          <button class="gameForward"></button>
+          <div class="px-lg-3 px-0 row text-center justify-content-center badgeList"></div>
+        </div>
+        <button class="btn btn-sm btn-primary w-100" type="button" data-bs-toggle="collapse" data-bs-target="#kitWidgetCollapse" aria-expanded="false" aria-controls="perfiWdget Collapse">
+          <span class="clps-a">Περισσότερα <i class="bi bi-caret-up-fill"></i></span>
+          <span class="clps-b">Λιγότερα <i class="bi bi-caret-down-fill"></i></span>
+        </button>
+      `;
+
+      perfKit.kitWidget.barMultimediaDom = el.querySelector(".perfBar-multimedia");
+      perfKit.kitWidget.barMultimedia = perfKit.kitMain.barMultimedia;
+      perfKit.kitWidget.barGameDom = el.querySelector(".perfBar-game");
+      perfKit.kitWidget.barGame = perfKit.kitMain.barGame;
+      perfKit.kitWidget.gameSelected = perfKit.kitMain.gameSelected;
+
+      let nbadgeList = [];
+      for (const bnm of Object.keys(perfKit.kitMain.perfBadges)) {
+        let qBadge = document.createElement("DIV");
+        qBadge.classList.add("col-4","p-1");
+        qBadge.innerHTML = `
+          <div class="border border-light py-1">
+            <div class="fs-sm w-100">${{
+                "1080_60": "1080p<br>60Hz",
+                "1080_144": "1080p<br>144Hz",
+                "1440_60": "1440p<br>60Hz",
+                "1440_144": "1440p<br>144Hz",
+                "4k_60": "4K<br>60Hz",
+                "4k_144": "4K<br>144Hz"
+              }[bnm]}</div>
+              <div class="fs-lg w-100 perfBadge" data-perfconfig="${bnm}">
+              <i class="bi bi-check-circle d-none"></i>
+              <i class="bi bi-dash-circle"></i>
+              </div>
+              </div>
+              `;
+        nbadgeList.push(qBadge);
+        perfKit.kitWidget.perfBadges[bnm] = {status: false}
+        perfKit.kitWidget.perfBadges[bnm].selfDom = qBadge.querySelector(".perfBadge");
+      }
+      el.querySelector(".badgeList").replaceChildren(...nbadgeList);
+
+
+      let gameTitleList = [];
+      // let gameBGlist = []
+      for (const [gnm, gob] of Object.entries(perfKit.kitMain.gameItems)) {
+        let gTitle = document.createElement("H6");
+        gTitle.classList.add("d-none");
+        gTitle.textContent = gob.titleDom.textContent;
+        perfKit.kitWidget.gameItems[gnm] = {
+          gameSelected: false,
+          titleDom: gTitle,
+        }
+        gameTitleList.push(gTitle);
+      }
+      el.querySelector(".gameTitle").replaceChildren(...gameTitleList);
+
+      
+    },
+
+    selfDom: false,
+    
+    barMultimediaDom: false,
+    barMultimedia: false,
+    barGameDom: false,
+    barGame: false,
+    
+    perfBadges: {},
+    gameItems: {},
+    gameSelected: false
+  },
 
 
   crPerfKit: function() {
@@ -1635,6 +1787,9 @@ let perfKit = {
     perfKit.CFGdataUpdate.push(perfKit.kitMain.perfDrawUpdate);
     bTK.CFGRdBtHandler.push(perfKit.perfDataUpdate); 
     perfKit.perfDataUpdate();
+
+    let widgetDom = document.querySelector(".perfKitWidget");
+    if (widgetDom) perfKit.kitWidget.createWidget(widgetDom);
 
   }
 }
