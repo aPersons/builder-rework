@@ -1510,7 +1510,7 @@ let perfKit = {
 
     },
     perfDrawUpdate: function (evArgs) {
-      let forceUpdate = evArgs?.forceUpdate;
+      let forceUpdate = evArgs?.forceUpdate ?? false;
       let mperf = domCashe.dom["cat2"].prodList[domCashe.dom["cat2"].prodSelected].cpuPerf;
       if (perfKit.kitMain.barMultimedia != mperf || forceUpdate) {
         if (mperf === false) {
@@ -1564,92 +1564,100 @@ let perfKit = {
   },
 
   kitWidget: {
-    CFGgameSelectUpdate: [],
-    gameSelectHandler: function() {
-      for (const fnc of perfKit.kitMain.CFGgameSelectUpdate) fnc({});
+    CFGgameUpdate: [],
+    gameUpdateHandler: function() {
+    for (const fnc of perfKit.kitWidget.CFGgameUpdate) fnc({});
     },
-    gameSelectUpdate: function (evArgs) {},
-    perfDrawUpdate: function (evArgs) {},
+    gameSelectUpdate: function (evArgs) {
+      let nDirection = evArgs?.direction ?? false;
+      if (nDirection == "Back") {
+        perfKit.kitWidget.gameSelected = perfKit.kitWidget.gameItems[perfKit.kitWidget.gameSelected].gameBack;
+        perfKit.kitWidget.gameUpdateHandler();
+      }
+      if (nDirection == "Forward") {
+        perfKit.kitWidget.gameSelected = perfKit.kitWidget.gameItems[perfKit.kitWidget.gameSelected].gameForward;
+        perfKit.kitWidget.gameUpdateHandler();
+      }
+      for (const [gnm, gob] of Object.entries(perfKit.kitWidget.gameItems)) {
+        if (gnm == perfKit.kitWidget.gameSelected && !gob.gameSelected) {
+          gob.gameSelected = true;
+          gob.titleDom.classList.add("gameSelected");
+          gob.imgDom_vertical.classList.add("gameSelected");
+        }
+        else if (gnm != perfKit.kitWidget.gameSelected && gob.gameSelected) {
+          gob.gameSelected = false;
+          gob.titleDom.classList.remove("gameSelected");
+          gob.imgDom_vertical.classList.remove("gameSelected");
+        }
+      }
+    },
+    perfDrawUpdate: function (evArgs) {
+      let forceUpdate = evArgs?.forceUpdate ?? false;
+      let mperf = domCashe.dom["cat2"].prodList[domCashe.dom["cat2"].prodSelected].cpuPerf;
+      if (perfKit.kitWidget.barMultimedia != mperf || forceUpdate) {
+        if (mperf === false) {
+          perfKit.kitWidget.barMultimedia = 0;
+          perfKit.kitWidget.barMultimediaDom.style.width = 0;
+        } else {
+          perfKit.kitWidget.barMultimedia = mperf;
+          perfKit.kitWidget.barMultimediaDom.style.width = `${mperf}%`;
+        }
+      }
+      let gperf = perfKit.gameScore;
+      if (perfKit.kitWidget.barGame != gperf || forceUpdate) {
+        if (gperf === false) {
+          perfKit.kitWidget.barGame = 0;
+          perfKit.kitWidget.barGameDom.style.width = 0;
+        } else {
+          perfKit.kitWidget.barGame = gperf;
+          perfKit.kitWidget.barGameDom.style.width = `${gperf}%`;
+        }
+      }
+      for ( const [bnm, bob] of Object.entries(perfKit.kitWidget.perfBadges)) {
+        let bValnew = perfKit.gameData[perfKit.kitWidget.gameSelected][bnm];
+        if (bob.status != bValnew || forceUpdate) {
+          if (bValnew) {
+            bob.selfDom.classList.add("text-success");
+          } else {
+            bob.selfDom.classList.remove("text-success");
+          }
+          bob.status = bValnew;
+        }
+      }
+    },
 
-    CFGkitMainBtHandler: [],
-    kitMainBtHandler: function() {
-    let evArgs = {
-      gameSelect: this.dataset.gamenm
-    }
-    for (const fnc of perfKit.kitMain.CFGkitMainBtHandler) fnc(evArgs);
+    CFGwidgetGameBack: [],
+    widgetGameBack: function() {
+    for (const fnc of perfKit.kitWidget.CFGwidgetGameBack) fnc({direction:"Back"});
+    },
+    CFGwidgetGameForward: [],
+    widgetGameForward: function() {
+    for (const fnc of perfKit.kitWidget.CFGwidgetGameForward) fnc({direction:"Forward"});
     },
 
     createWidget: function(el) {
-      /*
-        <div class="perfKitWidget">
-          <h6 class="text-center mb-0">Επιδόσεις</h6>
-          <span class="fs-sm">Multitasking</span>
-          <div class="progress" style="height: 4px;">
-							<div class="progress-bar bg-success" role="progressbar" style="width: 70%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-          <div class="progress" style="height: 4px;">
-							<div class="progress-bar bg-success" role="progressbar" style="width: 90%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-						</div>
-          <span class="fs-sm">Gaming</span>
-          <div class="widgetCollapsible">
-            <div class="text-center mt-2 gameTitle">
-              <h6 class="d-none gameSelected" data-gamenm="codwz">Call of Duty: Warzone 2.0</h6>
-              <h6 class="d-none" data-gamenm="csgo">Counter Strike: Global Offensive</h6>
-              <h6 class="d-none" data-gamenm="fort">Fortnite</h6>
-            </div>
-            <div class="px-lg-3 px-0 row text-center justify-content-center">
-              <div class="col-6 p-1">
-                <div class="border border-light py-2">
-                  <div class="fs-sm w-100">1080p<br>60Hz</div>
-                  <div class="fs-lg mt-2 w-100 perfBadge text-success" data-perfconfig="1080_60">
-                    <i class="bi bi-check-circle d-none"></i>
-                    <i class="bi bi-dash-circle"></i>
-                  </div>
-                </div>
-              </div>
-              <div class="col-6 p-1">
-                <div class="border border-light py-2">
-                  <div class="fs-sm w-100">1080p<br>144Hz</div>
-                  <div class="fs-lg mt-2 w-100 perfBadge" data-perfconfig="1080_144">
-                    <i class="bi bi-check-circle d-none"></i>
-                    <i class="bi bi-dash-circle"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <img src="img/codwz.jpg" class="d-none game-img gameSelected" data-gamenm="codwz">
-            <img src="img/codwz-vertical.jpg" class="d-none game-img-vertical gameSelected" data-gamenm="codwz">
-            <img src="img/csgo.jpg" class="d-none game-img" data-gamenm="csgo">
-            <img src="img/csgo-vertical.jpg" class="d-none game-img-vertical" data-gamenm="csgo">
-          </div>
-
-          <div><a class="btn btn-sm btn-primary w-100 mt-2" href="#">Δες αναλυτικά</a></div>
-          <button class="btn btn-sm btn-primary w-100" type="button" data-bs-toggle="collapse" data-bs-target="" aria-expanded="true" aria-controls="perfWdget Collapse">
-            <span class="clps-a">Περισσότερα <i class="bi bi-caret-down-fill"></i></span>
-            <span class="clps-b">Λιγότερα <i class="bi bi-caret-up-fill"></i></span>
-          </button>
-        </div>
-      */
 
       perfKit.kitWidget.selfDom = el;
       perfKit.kitWidget.gameSelected = perfKit.kitMain.gameSelected;
       el.innerHTML = `
-        <h6 class="text-center mb-0">Επιδόσεις</h6>
-        <span class="fs-sm">Multitasking</span>
-        <div class="progress" style="height: 4px;">
-            <div class="progress-bar bg-success perfBar-multimedia" role="progressbar" style="width: 0" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+        <h6 class="text-center mb-0 mt-2">Επιδόσεις</h6>
+        <span class="fs-sm" style="z-index: 1; position: relative;">Multitasking</span>
+        <div class="progress" style="height: 4px; z-index: 1; position: relative;">
+            <div class="progress-bar bg-success perfBar-multimedia" role="progressbar" style="width: 0; transition: all 0.25s ease 0s;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
-        <span class="fs-sm">Gaming</span>
-        <div class="progress" style="height: 4px;">
-            <div class="progress-bar bg-success perfBar-game" role="progressbar" style="width: 0" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+        <span class="fs-sm" style="z-index: 1; position: relative;">Gaming</span>
+        <div class="progress" style="height: 4px; z-index: 1; position: relative;">
+            <div class="progress-bar bg-success perfBar-game" role="progressbar" style="width: 0; transition: all 0.25s ease 0s;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
           </div>
-        <div class="widgetCollapsible collapse" id="kitWidgetCollapse">
-          <button class="gameBack"></button>
-          <div class="text-center mt-2 gameTitle"></div>
-          <button class="gameForward"></button>
+        <div class="widgetCollapsible collapse mt-3" id="kitWidgetCollapse">
+          <div class="gameSelect d-flex mb-2">
+            <button class="gameBack">&lt;</button>
+            <div class="text-center px-1 gameTitle"></div>
+            <button class="gameForward">&gt;</button>
+          </div>
           <div class="px-lg-3 px-0 row text-center justify-content-center badgeList"></div>
         </div>
-        <button class="btn btn-sm btn-primary w-100" type="button" data-bs-toggle="collapse" data-bs-target="#kitWidgetCollapse" aria-expanded="false" aria-controls="perfiWdget Collapse">
+        <button class="btn btn-sm btn-primary w-100 mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#kitWidgetCollapse" aria-expanded="false" aria-controls="perfiWdget Collapse">
           <span class="clps-a">Περισσότερα <i class="bi bi-caret-up-fill"></i></span>
           <span class="clps-b">Λιγότερα <i class="bi bi-caret-down-fill"></i></span>
         </button>
@@ -1689,19 +1697,58 @@ let perfKit = {
 
 
       let gameTitleList = [];
-      // let gameBGlist = []
+      let gameBGlist = []
+      
+      let gameFirst = "";
+      let gameLast = "";
+
       for (const [gnm, gob] of Object.entries(perfKit.kitMain.gameItems)) {
+        if (gameFirst == "") {
+          gameFirst = gnm;
+        }
+        if (gameLast != "") {
+          perfKit.kitWidget.gameItems[gameLast].gameForward = gnm;
+        }
+
         let gTitle = document.createElement("H6");
         gTitle.classList.add("d-none");
         gTitle.textContent = gob.titleDom.textContent;
+        
+        let gameImg = document.createElement("IMG");
+        gameImg.classList.add("d-none", "widgetBG");
+        gameImg.src = gob.imgDom_vertical.src;
+        
         perfKit.kitWidget.gameItems[gnm] = {
           gameSelected: false,
           titleDom: gTitle,
+          imgDom_vertical: gameImg,
+          gameBack: gameLast
         }
+        gameLast = gnm;
         gameTitleList.push(gTitle);
+        gameBGlist.push(gameImg);
       }
       el.querySelector(".gameTitle").replaceChildren(...gameTitleList);
+      el.querySelector(".widgetCollapsible").append(...gameBGlist);
+      perfKit.kitWidget.gameItems[gameFirst].gameBack = gameLast;
+      perfKit.kitWidget.gameItems[gameLast].gameForward = gameFirst;
 
+      perfKit.kitWidget.gameSelectUpdate();
+      perfKit.kitWidget.CFGwidgetGameBack.length = 0;
+      perfKit.kitWidget.CFGwidgetGameForward.length = 0;
+      perfKit.kitWidget.CFGwidgetGameBack.push(perfKit.kitWidget.gameSelectUpdate);
+      perfKit.kitWidget.CFGwidgetGameForward.push(perfKit.kitWidget.gameSelectUpdate);
+      let btBack = el.querySelector(".gameBack");
+      let btForward = el.querySelector(".gameForward");
+      btBack.removeEventListener("click", perfKit.kitWidget.widgetGameBack);
+      btForward.removeEventListener("click", perfKit.kitWidget.widgetGameForward);
+      btBack.addEventListener("click", perfKit.kitWidget.widgetGameBack);
+      btForward.addEventListener("click", perfKit.kitWidget.widgetGameForward);
+
+      perfKit.kitWidget.perfDrawUpdate({"forceUpdate": true})
+      perfKit.kitWidget.CFGgameUpdate.length = 0;
+      perfKit.kitWidget.CFGgameUpdate.push(perfKit.kitWidget.perfDrawUpdate);
+      perfKit.CFGdataUpdate.push(perfKit.kitWidget.perfDrawUpdate);
       
     },
 
