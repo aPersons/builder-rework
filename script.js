@@ -1317,23 +1317,23 @@ let bModal = {
     bModal.linkFull = linktext;
     bModal.qLink = bModal.linkFull;
 
-    // (async () => {
-    //   try {
-    //     let lurl = new FormData();
-    //     lurl.append("lurl", bModal.linkFull);
-    //     const request = await fetch(
-    //       'https://www.msystems.gr/google/surl.php',{
-    //       method: 'POST',
-    //       body: lurl
-    //     })        
-    //     if(request.status >= 400) throw new Error(`Response status: ${request.status}`);
-    //     const getjson = await request.json()
-    //     bModal.qLink = `www.msystems.gr/surl/${getjson["surl"]}`;
-    //     bModal.footerLinkBody.textContent = bModal.qLink;
-    //   } catch(err) {
-    //     console.log(err);
-    //   }
-    // })()
+    (async () => {
+      try {
+        let lurl = new FormData();
+        lurl.append("lurl", bModal.linkFull);
+        const request = await fetch(
+          'https://www.msystems.gr/google/surl.php',{
+          method: 'POST',
+          body: lurl
+        })        
+        if(request.status >= 400) throw new Error(`Response status: ${request.status}`);
+        const getjson = await request.json()
+        bModal.qLink = `www.msystems.gr/surl/${getjson["surl"]}`;
+        bModal.footerLinkBody.textContent = bModal.qLink;
+      } catch(err) {
+        console.log(err);
+      }
+    })()
 
     bModal.footerLinkBody.textContent = bModal.qLink;
   },
@@ -1418,31 +1418,30 @@ let perfKit = {
       try {
         let cpuNM = domCashe.dom["cat2"].prodList[perfKit.qCPU].cpuNM;
         let gpuNM = domCashe.dom["cat5"].prodList[perfKit.qGPU].gpuNM;
-        // if (!cpu || !gpu) throw new Error(`Incorect CPU/GPU Key: {"cpu":"${cpuNM}","gpu":"${gpuNM}"}`)
-        // const request = await fetch(
-        //   'https://www.msystems.gr/api/gameperf.php',{
-        //   method: 'POST',
-        //   body: `{"cpu":"${cpuNM}","gpu":"${gpuNM}"}`
-        // })
-        // let perfJSON = await request.json();
-        // if (perfJSON["result"] != "success") throw new Error("Bad Result");
+
+        if (!cpu || !gpu) throw new Error(`Incorect CPU/GPU Key: {"cpu":"${cpuNM}","gpu":"${gpuNM}"}`)
+        const request = await fetch(
+          'https://www.msystems.gr/api/gameperf.php',{
+          method: 'POST',
+          body: `{"cpu":"${cpuNM}","gpu":"${gpuNM}"}`
+        })
+        let perfJSON = await request.json();
+        if (perfJSON["result"] != "success") throw new Error("Bad Result");
         
-        await new Promise((r)=>r());
-        let perfJSON = {
-          "cpu"   : "4698-419",
-          "gpu"   : "5063",
-          "codwz1": 1, "codwz2": 0, "codwz3": 0, "codwz4": 0, "codwz5": 0, "codwz6": 0,
-          "csgo1" : 1, "csgo2" : 1, "csgo3" : 0, "csgo4" : 0, "csgo5" : 0, "csgo6" : 0,
-          "fort1" : 1, "fort2" : 1, "fort3" : 1, "fort4" : 0, "fort5" : 0, "fort6" : 0,
-          "gtav1" : 1, "gtav2" : 1, "gtav3" : 1, "gtav4" : 1, "gtav5" : 0, "gtav6" : 0,
-          "hogl1" : 1, "hogl2" : 1, "hogl3" : 1, "hogl4" : 1, "hogl5" : 1, "hogl6" : 0,
-          "lol1"  : 1, "lol2"  : 1, "lol3"  : 1, "lol4"  : 1, "lol5"  : 1, "lol6"  : 1,
-          "val1"  : 0, "val2"  : 1, "val3"  : 1, "val4"  : 1, "val5"  : 1, "val6"  : 1,
-          "gaming": 50,
-          "result": "success"
-        }
-
-
+        // await new Promise((r)=>r());
+        // let perfJSON = {
+        //   "cpu"   : "4698-419",
+        //   "gpu"   : "5063",
+        //   "codwz1": 1, "codwz2": 0, "codwz3": 0, "codwz4": 0, "codwz5": 0, "codwz6": 0,
+        //   "csgo1" : 1, "csgo2" : 1, "csgo3" : 0, "csgo4" : 0, "csgo5" : 0, "csgo6" : 0,
+        //   "fort1" : 1, "fort2" : 1, "fort3" : 1, "fort4" : 0, "fort5" : 0, "fort6" : 0,
+        //   "gtav1" : 1, "gtav2" : 1, "gtav3" : 1, "gtav4" : 1, "gtav5" : 0, "gtav6" : 0,
+        //   "hogl1" : 1, "hogl2" : 1, "hogl3" : 1, "hogl4" : 1, "hogl5" : 1, "hogl6" : 0,
+        //   "lol1"  : 1, "lol2"  : 1, "lol3"  : 1, "lol4"  : 1, "lol5"  : 1, "lol6"  : 1,
+        //   "val1"  : 0, "val2"  : 1, "val3"  : 1, "val4"  : 1, "val5"  : 1, "val6"  : 1,
+        //   "gaming": 50,
+        //   "result": "success"
+        // }
 
         perfKit.gameScore = perfJSON["gaming"];
         for (const [gnm,gob] of Object.entries(perfKit.gameData)) {
@@ -1857,7 +1856,7 @@ document.addEventListener("DOMContentLoaded", function() {
   bTK.crHeadSel();
   bTK.crCatDetails();
   bTK.crCatIMG();
-  // build.crBuilldIMG();
+  build.crBuilldIMG();
   
   pr.crFinalPrice();
   nav.crProdNav();
