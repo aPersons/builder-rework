@@ -1668,7 +1668,7 @@ let perfKit = {
       perfKit.kitWidget.barGame = perfKit.kitMain.barGame;
       perfKit.kitWidget.gameSelected = perfKit.kitMain.gameSelected;
 
-      let nbadgeList = [];
+      let nbadgeList = {};
       for (const bnm of Object.keys(perfKit.kitMain.perfBadges)) {
         let qBadge = document.createElement("DIV");
         qBadge.classList.add("col-4","p-1");
@@ -1688,11 +1688,22 @@ let perfKit = {
               </div>
               </div>
               `;
-        nbadgeList.push(qBadge);
+        nbadgeList[bnm] = qBadge
         perfKit.kitWidget.perfBadges[bnm] = {status: false}
         perfKit.kitWidget.perfBadges[bnm].selfDom = qBadge.querySelector(".perfBadge");
       }
-      el.querySelector(".badgeList").replaceChildren(...nbadgeList);
+      let badgeOrder = []
+      for (const bnm of [
+        "1080_60",
+        "1440_60",
+        "4k_60",
+        "1080_144",
+        "1440_144",
+        "4k_144"
+      ]) {
+        if (nbadgeList.hasOwnProperty(bnm)) badgeOrder.push(nbadgeList[bnm]);
+      }
+      el.querySelector(".badgeList").replaceChildren(...badgeOrder);
 
 
       let gameTitleList = [];

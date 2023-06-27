@@ -642,16 +642,16 @@
 }
 
 .perfKitWidget .badgeList > div > div {
-  -webkit-backdrop-filter: blur(3px);
-  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
 }
 
 .perfKitWidget .perfBadge.text-success .bi-dash-circle {display: none!important;}
 .perfKitWidget .perfBadge.text-success .bi-check-circle {display: revert!important;}
 
 .perfKitWidget .widgetBG {
-  -webkit-mask-image: radial-gradient(farthest-side at bottom, rgba(0,0,0,0.8), rgba(0,0,0,0) 100%);
-  mask-image: radial-gradient(farthest-side at bottom, rgba(0,0,0,0.8), rgba(0,0,0,0) 100%);
+  -webkit-mask-image: radial-gradient(farthest-side at bottom, rgba(0,0,0,0.6), rgba(0,0,0,0) 100%);
+  mask-image: radial-gradient(farthest-side at bottom, rgba(0,0,0,0.6), rgba(0,0,0,0) 100%);
   position: absolute;
   bottom: -7px;
   left: 0;
