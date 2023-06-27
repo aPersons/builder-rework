@@ -1419,7 +1419,7 @@ let perfKit = {
         let cpuNM = domCashe.dom["cat2"].prodList[perfKit.qCPU].cpuNM;
         let gpuNM = domCashe.dom["cat5"].prodList[perfKit.qGPU].gpuNM;
 
-        if (!cpu || !gpu) throw new Error(`Incorect CPU/GPU Key: {"cpu":"${cpuNM}","gpu":"${gpuNM}"}`)
+        if (!cpuNM || !gpuNM) throw new Error(`Incorect CPU/GPU Key: {"cpu":"${cpuNM}","gpu":"${gpuNM}"}`)
         const request = await fetch(
           'https://www.msystems.gr/api/gameperf.php',{
           method: 'POST',
