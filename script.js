@@ -309,14 +309,15 @@ let bTK = {
         ob.prodList[dname] = {
           "selfDom": pob,
           "cDom": cdom,
-          "nmTxt": new Array([],...cdom.querySelector(".part-text-head").childNodes).reduce((a, b) => {
-            if (b.nodeType === Node.TEXT_NODE){
-              a.push(b.data);
-            } else if (b.classList.contains("badge")) {
-              a.push(b.outerHTML);
-            }
-            return a
-          }).join(" "),
+          // "nmTxt": new Array([],...cdom.querySelector(".part-text-head").childNodes).reduce((a, b) => {
+          //   if (b.nodeType === Node.TEXT_NODE){
+          //       a.push(b.data);
+          //   } else if (b.nodeName != "BR") {
+          //     a.push(b.outerHTML);
+          //   }
+          //   return a
+          // }).join(" "),
+          "nmTxt": cdom.querySelector(".part-text-head").innerHTML.replace("<br>"," ").replace("<br/>"," "),
           "priceVal": Number(cdom.querySelector(".part-price").dataset.priceval),
           "parentCat": cnm,
           "isSelected": pob.checked,
