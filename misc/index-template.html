@@ -98,6 +98,34 @@
 
   {quick_view_modal}
 
+  <div class="modal fade" id="selAlertModal" tabindex="-1" style="color: var(--text-color-c)">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: #fff3cd; border-color: #fff3cd;">
+          <h5 class="modal-title" style="color: var(--text-color-c);"><i class="bi bi-exclamation-triangle" style="color: #f00;"></i> Αλλαγές Προεπιλογών</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Οι προεπιλογές στις παρακάτω κατηγορίες έχουν αλλάξει.</p>
+          <ul><li>placeholder</li></ul>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.selAlertModal = function (catList) {
+        console.log(catList);
+        let listString = "";
+        for (nmTxt of catList) {
+          listString += `<li>${nmTxt}</li>`;
+        }
+        let modalDom = document.getElementById("selAlertModal");
+        modalDom.querySelector(".modal-body ul").innerHTML = listString;
+        let modEl = bootstrap.Modal.getOrCreateInstance(modalDom);
+        modEl.show();
+      }
+    </script>
+  </div>
+
 <main class="page-wrapper d-print-none">
   <header>
 

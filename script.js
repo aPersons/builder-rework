@@ -269,6 +269,7 @@ let bTK = {
         ob.prodSelected = ob.prodOrder[0];
         ob.prodList[ob.prodSelected].isSelected = true;
         ob.prodList[ob.prodSelected].selfDom.checked = true;
+        selAlert.alertList.push(ob.nmTxt);
       }
     }
   },
@@ -1855,6 +1856,23 @@ let perfKit = {
 
 
 
+let selAlert = {
+  alertList: [],
+  callAlert: function () {
+    if (window.location.href.includes("&spec_level=")) return;
+    if (!window.hasOwnProperty("selAlertModal")) return;
+    if (selAlert.alertList.length == 0) return;
+    window.selAlertModal(selAlert.alertList);
+    // window.selAlertModal([
+    //   domCashe.dom["cat0"].nmTxt,
+    //   domCashe.dom["cat1"].nmTxt,
+    //   domCashe.dom["cat2"].nmTxt,
+    //   domCashe.dom["cat3"].nmTxt,
+    // ]);
+  }
+}
+
+
 
 document.addEventListener("DOMContentLoaded", function() {
 
@@ -1875,5 +1893,5 @@ document.addEventListener("DOMContentLoaded", function() {
   buildSummary.crSummary();
   bModal.crBuildModal();
   perfKit.crPerfKit();
-
+  selAlert.callAlert();
 })
