@@ -1330,7 +1330,7 @@ let bModal = {
         })        
         if(request.status >= 400) throw new Error(`Response status: ${request.status}`);
         const getjson = await request.json()
-        bModal.qLink = `www.msystems.gr/surl/${getjson["surl"]}`;
+        bModal.qLink = `https://www.msystems.gr/surl/${getjson["surl"]}`;
         bModal.footerLinkBody.textContent = bModal.qLink;
       } catch(err) {
         console.log(err);
